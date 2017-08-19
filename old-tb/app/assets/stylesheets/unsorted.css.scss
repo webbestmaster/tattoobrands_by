@@ -1,0 +1,369 @@
+@mixin prefix($property, $value) {
+  @each $prefix in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$prefix + $property}: $value;
+  }
+}
+
+@mixin prefix-property($property, $value) {
+  @each $prefix in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$property}: #{$prefix + $value};
+  }
+}
+
+html.turbolinks-progress-bar::before {
+  background-color: #bf2622 !important;
+  //height: 5px !important;
+}
+
+body {
+	font-family: Tahoma, sans-serif;
+}
+
+.login-as-existing {
+    color: #378bb2;
+    font-size: 14px;
+    line-height: 16px;
+    clear: both;
+    display: block;
+    text-align: center;
+    width: 240px;
+    margin: 0 auto;
+    padding: 14px 0;
+}
+
+.login-as-existing:hover {
+    text-decoration: none;
+}
+
+
+/* search */
+.search-result-header {
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+    padding: 15px 4px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.alert
+/*
+.alert.alert-error,
+.alert.alert-success,
+.alert.alert-notice
+*/
+{
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 21px;
+}
+
+.alert.alert-danger,
+.alert.alert-error {
+    color: #bf2622;
+}
+
+.alert.alert-registration_error {
+    display: block;
+}
+
+.col-md-12 {
+    width: 980px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.col-md-12:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.taxon-title,
+.subtaxon-title {
+    display: block;
+    text-align: center;
+    margin-left: 262px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #bf2622;
+    padding: 5px 4px 15px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.subtaxon-title {
+    margin-left: 0;
+}
+
+.subtaxon-title:hover {
+    text-decoration: none;
+}
+
+/* successful request */
+#order_summary {
+    padding: 21px 0;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.order-summary-header {
+    font-size: 18px;
+    padding-bottom: 13px;
+}
+
+/* Господь простит меня, айдишник в айдишнике потому что на этом проекте всякое может случится */
+#order_summary #line-items {
+    display: none;
+}
+
+.cart-wrapper {
+}
+
+.cart-header {
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #212121;
+    padding: 17px 4px 15px;
+    text-transform: uppercase;
+}
+
+/* user cabinet begin */
+.account-summary {
+
+}
+
+.account-summary-key {
+	padding-bottom: 5px;
+}
+
+.account-summary-value {
+	padding-bottom: 10px;
+}
+
+.account-summary-table {
+	margin: 10px 0 50px;
+	clear: both;
+	width: 100%;
+}
+
+.account-summary-row {
+	height: 32px;
+}
+
+tbody .account-summary-row .order-status,
+tbody .account-summary-row .order-payment-state,
+tbody .account-summary-row .order-shipment-state {
+	text-transform: capitalize;
+}
+
+.account-summary-row td,
+.account-summary-row th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.account-summary-row a {
+	color: #000;
+}
+
+.account-summary-row a:hover {
+	text-decoration: none;
+}
+
+.zebra-children {
+
+}
+
+.zebra-children .account-summary-row:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
+/* user cabinet end */
+
+.link-divider {
+	color: #bf2622;
+	text-decoration: none;
+	position: relative;
+	top: -1px;
+}
+
+.red {
+	color: #bf2622;
+}
+
+.info-block-paragraph-black-custom-style-1 {
+	padding-top: 5px;
+}
+
+.set-page-buttons-wrapper {
+	padding: 20px;
+	text-align: center;
+	clear: both;
+}
+
+.set-page-button {
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 5px;
+	padding: 15px 25px;
+	font-size: 22px;
+	text-decoration: none;
+	margin: 20px;
+	color: #fff;
+	position: relative;
+	display: inline-block;
+
+}
+
+.set-page-buttons-wrapper .set-page-button:active {
+	transform: translate(0, 5px);
+	-webkit-transform: translate(0, 5px);
+	box-shadow: 0 1px 0 0;
+}
+
+.set-page-button.blue {
+	background-color: #55acee;
+	box-shadow: 0 5px 0 0 #3C93D5;
+}
+
+.set-page-button.blue:hover {
+	background-color: #6FC6FF;
+}
+
+.set-page-button.green {
+	background-color: #2ecc71;
+	box-shadow: 0 5px 0 0 #15B358;
+}
+
+.set-page-button.green:hover {
+	background-color: #48E68B;
+}
+
+.set-page-button.red {
+	background-color: #e74c3c;
+	box-shadow: 0 5px 0 0 #CE3323;
+}
+
+.set-page-button.red:hover {
+	background-color: #FF6656;
+}
+
+.header-search-result-wrapper {
+
+  position: absolute;
+  top: 77px;
+  background-color: #FFF;
+  left: 364px;
+  width: 358px;
+  max-height: 400px;
+  z-index: 2;
+  overflow: auto;
+  border: 1px solid #f0f0f0;
+  @include prefix(transition, opacity linear 0.15s);
+
+  .main-content-goods-item {
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    @include prefix(box-sizing, border-box);
+    @include prefix(transition, background-color linear 0.15s);
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    height: auto;
+  }
+
+  .main-content-goods-item:hover {
+    background-color: #f5f5f5;
+    .main-content-goods-item-description {
+      text-decoration: underline;
+    }
+  }
+
+  .main-content-goods-item-img {
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin: 0 11px 0 0;
+  }
+
+  .main-content-goods-item-description {
+    margin: 0;
+    padding: 7px 0 3px;
+    height: auto;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    @include prefix(text-overflow, ellipsis);
+  }
+
+  .main-content-goods-item-full-description {
+    float: left;
+    width: 240px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 36px;
+    padding: 0;
+    @include prefix(line-clamp, 2);
+    opacity: 1;
+    position: static;
+    @include prefix(transform, translate3d(0, 0, 0));
+    @include prefix(transition, none);
+    background-color: transparent;
+  }
+
+}
+
+.header-search-result-wrapper.search-in-progress {
+  opacity: 0.5;
+}
+
+.no-search-result {
+  color: #C00;
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+.recommended-header {
+  font-size: 14px;
+  line-height: 16px;
+  color: #212121;
+  text-transform: uppercase;
+  padding: 40px 0 0 21px;
+  opacity: 0;
+}
+
+.top-slider.swiper-container .swiper-slide {
+  display: block;
+}
+
+.taxon-full-description {
+  padding: 10px 10px 35px;
+}
+
+.taxon-full-description h3 {
+  padding-bottom: 9px;
+  padding-top: 13px;
+}
+
+.taxon-full-description p {
+  padding-bottom: 9px;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.taxon-full-description ul {
+  padding-bottom: 7px;
+}
+
+.taxon-full-description li {
+  padding-bottom: 4px;
+  margin-left: 29px;
+}
+

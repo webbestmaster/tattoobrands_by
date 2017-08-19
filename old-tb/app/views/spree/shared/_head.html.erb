@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<% if content_for?(:title) %>
+  <title> <%= yield(:title) %> </title>
+<% else %>
+  <title><%= raw(@taxon.try(:meta_title) || 'Магазин профессионального оборудования и аксессуаров для тату | Tattoobrands') %></title>
+<% end %>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+<%== meta_data_tags %>
+<%= favicon_link_tag 'favicon.ico' %>
+<%= csrf_meta_tags %>
+<%= yield :head %>
+<%= stylesheet_link_tag 'application', media: 'screen' %>
+<%= javascript_include_tag 'application' %>

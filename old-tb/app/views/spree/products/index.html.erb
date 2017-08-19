@@ -1,0 +1,31 @@
+<% if "spree/products" == params[:controller] && @taxon || !@taxonomies.empty? %>
+  <% content_for :sidebar do %>
+    <div class="side">
+      <div class="side-category-list">
+        <% if "spree/products" == params[:controller] && @taxon %>
+          <%# render :partial => 'spree/shared/filters' %>
+        <% else %>
+          <%= render :partial => 'spree/shared/taxonomies' %>
+        <% end %>
+        <%# always render filters %>
+        <%= render :partial => 'spree/shared/filters' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if params[:keywords] %>
+  <div data-hook="search_results" class="search-result-wrapper js-search-result-wrapper">
+    <% if @products.empty? %>
+        <div class="search-result-header"><%= Spree.t(:no_products_found) %></div>
+    <% else %>
+      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="main-content-with-side">
+    <% cache(cache_key_for_products) do %>
+      <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+    <% end %>
+  </div>
+<% end %>

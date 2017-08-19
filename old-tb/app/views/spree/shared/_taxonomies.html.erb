@@ -1,0 +1,15 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+
+<!--side-category-name js-side-category-name-->
+
+<% @taxonomies.each do |taxonomy| %>
+  <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+    <%= link_to seo_url(taxonomy.root), class: 'side-category-name side-category-item ellipsis js-side-category-name' do %>
+      <%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %>
+    <% end %>
+    <div class="list-group">
+    <%= simple_taxons_tree(taxonomy.root, @taxon, max_level) %>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+<% end %>

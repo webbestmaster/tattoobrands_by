@@ -1,0 +1,47 @@
+<%# no need for thumbnails unless there is more than one image %>
+<% if (@product.images + @product.variant_images).uniq.size > 1 %>
+
+<div class="goods-item-swiper-container js-goods-item-swiper-container no-select">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% @product.images.each do |i| %>
+        <div class="swiper-slide" >
+          <%= image_tag(i.attachment.url(:small), :class => "goods-item-swiper-preview", data: { :'zoom-image' => i.attachment.url(:large) }) %>
+        </div>
+      <% end %>
+
+      <% if @product.has_variants? %>
+        <% @product.variant_images.each do |i| %>
+          <% next if @product.images.include?(i) %>
+            <div class="swiper-slide" >
+              <%= image_tag(i.attachment.url(:small), :class => "goods-item-swiper-preview", data: { :'zoom-image' => i.attachment.url(:large) }) %>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Add Pagination -->
+    <!--<div class="swiper-pagination"></div>-->
+    <!-- Add Arrows -->
+  </div>
+
+  <div class="swiper-button-next no-select"></div>
+  <div class="swiper-button-prev no-select"></div>
+
+</div>
+
+    <!-- data-title="some text" -->
+    <div class="js-hidden-lightbox hidden">
+      <% @product.images.each do |i| %>
+          <%= link_to '', i.attachment.url(:large), class: 'subtaxon-title', data: {:'lightbox' => 'gallery'} %>
+      <% end %>
+
+      <% if @product.has_variants? %>
+          <% @product.variant_images.each do |i| %>
+              <% next if @product.images.include?(i) %>
+              <%= link_to '', i.attachment.url(:large), class: 'subtaxon-title', data: {:'lightbox' => 'gallery'} %>
+          <% end %>
+      <% end %>
+    </div>
+
+<% end %>

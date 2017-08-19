@@ -1,0 +1,20 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @spree_user } %>
+<div class="col-md-6 col-md-offset-3" id="forgot-password">
+  <div class="panel panel-default">
+
+      <%= form_for Spree::User.new, :as => :spree_user, :url => spree.reset_password_path, :html => {:class => 'main-form clear-fix main-form-single'} do |f| %>        <p>
+
+          <h3 class="main-form-header"><%= Spree.t(:instructions_to_reset_password) %>.</h3>
+          <br />
+
+          <label class="main-form-group-wrapper main-form-group-wrapper-required">
+            <%= f.label :email, Spree.t(:email), :class => "main-form-input-name" %>
+            <%= f.email_field :email, :class => 'main-form-input', :placeholder => Spree.t(:email), required: "required", :pattern => "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", :title => "Введите правильный Email" %>
+          </label>
+
+          <%= f.submit Spree.t(:reset_password), :class => 'goods-item-required-submit' %>
+
+      <% end %>
+
+  </div>
+</div>

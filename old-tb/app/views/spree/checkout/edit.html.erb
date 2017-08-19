@@ -1,0 +1,57 @@
+<div class="width-limiter clear-fix forms-wrapper">
+
+  <% content_for :google_analytics do %>
+    <%= render partial: 'spree/shared/google_checkout.js', locals: { order: @order, step_number: (@order.checkout_steps.index(@order.state) + 1) } %>
+  <% end %>
+
+  <div class="width-100">
+
+    <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
+
+    <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}", class: "main-form clear-fix" } do |form| %>
+
+      <% if @order.state == 'address' || !@order.email? %>
+        <%= form.label :email, class: 'main-form-group-wrapper main-form-group-wrapper-required hidden' do %>
+          <span class="main-form-input-name">Email</span>
+          <%= form.text_field :email, class: 'form-control', disabled: 'disabled' %>
+        <% end %>
+      <% end %>
+      <%= form.hidden_field :state_lock_version %>
+
+      <%= render @order.state, form: form %>
+
+    <% end %>
+
+    <div class="hidden" id="checkout" data-hook>
+
+      <div class="row" data-hook="checkout_header">
+        <div class="col-sm-3">
+          <h1 data-hook="chexckout_title"><%= Spree.t(:checkout) %></h1>
+        </div>
+        <div class="col-sm-9" data-hook="checkout_progress"><%= checkout_progress %></div>
+      </div>
+
+      <div class="row" data-hook="checkout_content">
+        <div class="<%= if @order.state != 'confirm' then 'col-md-9' else 'col-md-12' end %>" data-hook="checkout_form_wrapper">
+        </div>
+        <% if @order.state != 'confirm' %>
+          <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
+            <%= render partial: 'summary', locals: { order: @order } %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <script>
+      Spree.current_order_id = "<%= @order.number %>"
+      Spree.current_order_token = "<%= @order.guest_token %>"
+    </script>
+
+    <% if I18n.locale != :en %>
+      <%= javascript_include_tag 'jquery.validate/localization/messages_' + I18n.locale.to_s.downcase.gsub('-', '') %>
+    <% end %>
+
+  </div>
+
+
+</div>

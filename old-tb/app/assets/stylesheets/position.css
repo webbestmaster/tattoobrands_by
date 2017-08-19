@@ -1,0 +1,32 @@
+html {
+	overflow-y: scroll;
+}
+
+.width-limiter {
+	width: 980px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.width-limiter-narrow {
+	width: 940px;
+	margin: 0 auto;
+	clear: both;
+}
+
+.main-page-content {
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

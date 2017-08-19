@@ -1,0 +1,46 @@
+<header class="header js-header">
+  <div class="width-limiter clear-fix">
+    <a href="/" class="logo">tattoobrands.by</a>
+    <h2 class="header-slogan">магазин профессионального<br />оборудования для тату-мастеров<br /><a class="header-slogan-link" target="_blank" href="https://www.instagram.com/romazanova_alla/">Аллы Ромазановой</a></h2>
+
+    <div class="header-search-wrapper">
+      <%= render partial: 'spree/shared/search' %>
+      <!--<input type="text" class="header-search-input" placeholder="Search..."/>-->
+      <p class="header-request-free-callback pointer">заказать бесплатный звонок</p>
+    </div>
+
+    <div class="header-search-result-wrapper hidden js-header-search-result-wrapper">
+
+
+    </div>
+
+    <div class="header-custom-data">
+      <p class="header-paragraph-custom-1 red">Время приема заказов по телефону пн-сб</p>
+      <p>с 9.00 до 18.00</p>
+    </div>
+
+    <%= render partial: 'spree/shared/login_bar' %>
+
+    <div class="header-phones-wrapper">
+      <p class="header-phone header-phone-velcom">+375 (44) <span class="red">544-99-11</span></p>
+      <!--<p class="header-phone header-phone-mts">(029) <span class="red">555-56-67</span></p>-->
+      <!--<p class="header-phone header-phone-fixed">(029) <span class="red">555-90-12</span></p>-->
+    </div>
+
+    <div class="info-block-social-wrapper">
+      <!--<a href="#" target="_blank" class="info-block-social info-block-social-facebook"></a>-->
+      <a href="https://www.instagram.com/tattoobrands_by/" target="_blank" class="info-block-social info-block-social-instagram"></a>
+      <a href="https://www.youtube.com/watch?v=_E70HsHRk4k" target="_blank" class="info-block-social info-block-social-youtube"></a>
+      <a href="https://vk.com/club116080919" target="_blank" class="info-block-social info-block-social-vk"></a>
+    </div>
+
+    <div id="link-to-cart" data-hook></div>
+
+  </div>
+
+  <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+
+</header>
+
+<div class="js-top-swiper-container top-slider swiper-container width-limiter slider-wrapper"></div>
+

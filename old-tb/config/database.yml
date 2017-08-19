@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: tatoo_store_development
+  host: 127.0.0.1
+  username: postgres
+  password: postgres
+
+
+test:
+  <<: *default
+  database: tatoo_store_test
+  host: localhost
+  username: postgres
+  password: postgres
+
+production:
+  <<: *default
+  host: 127.0.0.1
+  database: tatoo_store_production
+  username: postgres
+  password: postgres

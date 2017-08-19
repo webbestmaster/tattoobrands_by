@@ -1,0 +1,44 @@
+@mixin prefix($property, $value) {
+  @each $prefix in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$prefix + $property}: $value;
+  }
+}
+
+@mixin prefix-property($property, $value) {
+  @each $prefix in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$property}: #{$prefix + $value};
+  }
+}
+
+.top-slider.swiper-container {
+  height: 261px;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+  background-color: #A7A7A7;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  background-color: #bf2622;
+}
+
+.swiper-container.slider-wrapper {
+  display: none;
+  height: 261px;
+  margin: 16px auto 0;
+}
+
+.slider-slide {
+  background-repeat: no-repeat;
+}
+
+.swiper-container.slider-wrapper.slider-wrapper-hidden {
+  height: 1px;
+  opacity: 0;
+}
+
+@for $i from 0 to 7 {
+  .slider-slide_#{$i} {
+    background-image: image_url('slider/slider-#{$i}.png');
+  }
+}

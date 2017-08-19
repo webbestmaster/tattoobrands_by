@@ -1,0 +1,7 @@
+<% unless @product_properties.empty? %>
+  <table class="goods-item-table">
+    <% @product_properties.each do |product_property| %>
+      <tr><td class="goods-table-item-key"><%= product_property.property.presentation %></td><td class="goods-table-item-value"><%= product_property.value %></td></tr>
+    <% end %>
+  </table>
+<% end %>

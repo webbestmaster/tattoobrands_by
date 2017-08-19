@@ -1,0 +1,7 @@
+<div class="header-account-link-wrapper">
+  <% if spree_current_user %>
+    <%= link_to Spree.t(:my_account), spree.account_path, :class => 'header-account-link' %>&nbsp;<span class="header-login-link link-divider">|</span>&nbsp;<%= link_to Spree.t(:logout), spree.logout_path, :class => 'header-logout-link' %>
+  <% else %>
+      <%= link_to Spree.t(:login), spree.login_path, :class => 'header-login-link' %>&nbsp;<span class="header-login-link link-divider">|</span>&nbsp;<%= link_to "Регистрация", spree.signup_path, class: "header-login-link" %>
+  <% end %>
+</div>

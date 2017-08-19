@@ -1,0 +1,22 @@
+<h1 class="taxon-title"><%= @taxon.name %></h1>
+
+<% content_for :sidebar do %>
+  <div class="side">
+    <div class="side-category-list">
+      <%= render partial: 'spree/shared/taxonomies' %>
+      <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
+    </div>
+  </div>
+<% end %>
+
+<div class="main-content-with-side">
+  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+</div>
+
+<% unless params[:keywords].present? %>
+  <div data-hook="taxon_children">
+    <% cache [I18n.locale, @taxon] do %>
+      <%= render partial: 'taxon', collection: @taxon.children %>
+    <% end %>
+  </div>
+<% end %>

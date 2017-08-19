@@ -1,0 +1,32 @@
+<% @body_id = 'product-details' %>
+
+<% if @product.title_tag.present? %>
+  <% content_for :title do %> <%= @product.title_tag %> <% end %>
+<% end %>
+
+<% cache [I18n.locale, current_currency, @product, @product.possible_promotions] do %>
+  <div class="width-limiter clear-fix">
+    <%= breadcrumbs(@product.taxons.first) %>
+    <div class="goods-left-side">
+      <div class="goods-item-image-wrapper js-goods-item-image-wrapper">
+        <%= image_tag(@product.images[0].attachment.url(:small), :itemprop => "image", :class => "goods-item-image js-goods-item-image", data: { :'zoom-image' => @product.images[0].attachment.url(:large) }) %>
+      </div>
+      <%= render :partial => 'thumbnails' %>
+    </div>
+
+    <div class="goods-right-side">
+      <h1 class="goods-item-name"><%= @product.name %></h1>
+      <div class="description-wrapper js-description-wrapper">
+          <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+      </div>
+
+      <%= render :partial => 'properties' %>
+
+      <%= render :partial => 'cart_form' %>
+    </div>
+
+    <h2 class="recommended-header">Рекомендуем:</h2>
+    <div class="js-extra-goods-items-wrapper main-content-goods-list"></div>
+
+  </div>
+<% end %>

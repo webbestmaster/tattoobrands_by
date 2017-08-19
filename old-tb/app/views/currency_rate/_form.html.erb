@@ -1,0 +1,32 @@
+<% page_url = @currency.persisted? ? main_app.currency_rate_path(@currency) : main_app.currency_rate_index_path %>
+
+<%= form_for @currency, url: page_url, html: { :class => "form-horizontal page" } do |f| %>
+
+  <% if @currency.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@currency.errors.count, "error") %> prohibited this page from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @currency.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :title, 'Текущий курс', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rate, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group" style="margin-top: 12px;">
+    <div class="controls">
+      <%= f.submit 'Сохранить', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,12 @@
+<label class="main-form-group-wrapper main-form-group-wrapper-required">
+  <span class="main-form-input-name"><%= Spree.t(:email) %></span>
+  <%= f.email_field :email, :class => 'main-form-input', :placeholder => Spree.t(:email), required: "required", :pattern => "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", :title => "Введите правильный Email" %>
+</label>
+<label class="main-form-group-wrapper main-form-group-wrapper-required">
+  <span class="main-form-input-name"><%= Spree.t(:password) %></span>
+  <%= f.password_field :password, :class => 'main-form-input', :placeholder => Spree.t(:password), required: "required", :pattern => ".{6,}", :title => "6 символов минимум" %>
+</label>
+<label class="main-form-group-wrapper main-form-group-wrapper-required">
+  <span class="main-form-input-name"><%= Spree.t(:confirm_password) %></span>
+  <%= f.password_field :password_confirmation, :class => 'main-form-input', :placeholder => Spree.t(:confirm_password), required: "required", :pattern => ".{6,}", :title => "6 символов минимум" %>
+</label>

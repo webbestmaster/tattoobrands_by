@@ -1,0 +1,27 @@
+//.ie
+
+.ie input::-ms-clear {
+  display: none;
+}
+
+.ie body {
+  //background-color: #0c0 !important;
+}
+
+.ie .header-search-input {
+  padding-bottom: 12px;
+}
+
+//.ie-10
+
+//.ie-10 body {
+//  background-color: #0c0 !important;
+//}
+//
+//.ie-10 .header-search-input {
+//  padding-bottom: 12px;
+//}
+
+//.ie-11
+
+

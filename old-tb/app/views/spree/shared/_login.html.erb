@@ -1,0 +1,26 @@
+<%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path, :html => { class: 'main-form clear-fix main-form-single' } do |f| %>
+
+  <h3 class="main-form-header"><%= Spree.t(:login_as_existing) %></h3>
+
+  <label class="main-form-group-wrapper main-form-group-wrapper-required">
+    <%= f.label :email, Spree.t(:email), :class => 'main-form-input-name' %>
+    <%= f.email_field :email, :class => 'main-form-input', :placeholder => Spree.t(:email), required: "required", :pattern => "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", :title => "Введите правильный Email" %>
+  </label>
+
+  <label class="main-form-group-wrapper main-form-group-wrapper-required">
+    <%= f.label :password, Spree.t(:password), :class => 'main-form-input-name' %>
+    <%= f.password_field :password, :class => 'main-form-input', :placeholder => Spree.t(:password), required: "required" %>
+  </label>
+
+  <label class="main-form-group-wrapper no-select">
+    <%= f.check_box :remember_me, :class => 'main-form-checkbox' %>
+    <span class="main-form-checkbox-state"></span>
+    <span class="main-form-checkbox-name"><%= Spree.t(:remember_me) %></span>
+  </label>
+
+  <%= f.submit Spree.t(:login), :class => 'goods-item-required-submit' %>
+
+  <%= link_to Spree.t(:create_a_new_account), spree.signup_path, :class => 'login-as-existing' %>
+  <%= link_to Spree.t(:forgot_password), spree.recover_password_path, :class => 'login-as-existing' %>
+
+<% end %>

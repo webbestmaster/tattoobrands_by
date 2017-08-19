@@ -1,0 +1,47 @@
+<%= javascript_include_tag 'ckeditor/init' %>
+
+<% page_url = @page.persisted? ? main_app.page_path(@page) : main_app.pages_path %>
+
+<%= form_for @page, url: page_url, html: { :class => "form-horizontal page" } do |f| %>
+
+  <% if @page.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @page.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, 'Название', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, 'Содержимое', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.cktext_area :content, :class => 'form-control ckeditor', :rows => '15', :ckeditor => {:language => 'ru'} %>
+    </div>
+  </div>
+  <div class="control-group" style="margin-top: 12px;">
+    <div class="controls">
+      <%= f.submit 'Сохранить', :class => 'btn btn-primary' %>
+      <%= link_to 'Отмена', main_app.pages_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
