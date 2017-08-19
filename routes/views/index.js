@@ -1,14 +1,8 @@
-var keystone = require('keystone');
+const keystone = require('keystone');
 
-exports = module.exports = function (req, res) {
+exports = module.exports = (req, res) => {
+    const view = new keystone.View(req, res);
+    // const locals = res.locals;
 
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
-
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	locals.section = 'home';
-
-	// Render the view
-	view.render('index');
+    view.render('index');
 };

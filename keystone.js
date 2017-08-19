@@ -10,18 +10,18 @@ const keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-    'name': 'Tattoo Brands',
-    'brand': 'Tattoo Brands',
+    name: 'Tattoo Brands',
+    brand: 'Tattoo Brands',
 
-    'sass': 'public',
+    sass: 'public',
     'static': 'public',
-    'favicon': 'public/favicon.ico',
-    'views': 'templates/views',
+    favicon: 'public/favicon.ico',
+    views: 'templates/views',
     'view engine': 'pug',
 
     'auto update': true,
-    'session': true,
-    'auth': true,
+    session: true,
+    auth: true,
     'user model': 'User'
 });
 
@@ -32,7 +32,7 @@ keystone.import('models');
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
-    _: require('lodash'),
+    _: require('lodash'), // eslint-disable-line id-length
     env: keystone.get('env'),
     utils: keystone.utils,
     editable: keystone.content.editable

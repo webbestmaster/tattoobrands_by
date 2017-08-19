@@ -1,5 +1,6 @@
-public/js/bootstrap
-public/js/jquery
+public/front
+public/__js
+old-tb
 
 # IDE
 .idea/
