@@ -27,6 +27,7 @@ const imageStorage = new keystone.Storage({
 
 Product.add({
     title: {type: String, initial: true, required: true, index: true, 'default': ''},
+    article: {type: String},
     cost: {type: Number},
     qty: {type: Number},
     description: {type: Types.Html, wysiwyg: true, height: 300},
@@ -43,5 +44,5 @@ Product.add({
 /**
  * Registration
  */
-Product.defaultColumns = 'title, available, cost, qty, state, promotable';
+Product.defaultColumns = 'title, article, available, cost, qty, state, promotable';
 Product.register();
