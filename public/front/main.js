@@ -1,19 +1,20 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(2);
+module.exports = __webpack_require__(3);
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(3);
+__webpack_require__(4);
 
 var homeScripts = __webpack_require__(5);
 
@@ -22,20 +23,19 @@ window.addEventListener('load', function () {
 });
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 4 */,
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Swiper = __webpack_require__(4);
+var Swiper = __webpack_require__(0);
 
 module.exports.initSwiper = function () {
     var swiperWrapperNode = window.document.querySelector('.js-home-swiper-wrapper.home-swiper-wrapper');
@@ -61,5 +61,5 @@ module.exports.initSwiper = function () {
 };
 
 /***/ })
-],[1]);
+],[2]);
 //# sourceMappingURL=main.js.map
