@@ -1,38 +1,43 @@
-footer.footer
-    include ./footer-nav
+footer.footer.clear-full
 
     div.width-limiter
 
-        div.footer-position--left
-            p.footer-paragraph--type-1
-                = 'В торговом реестре с 28 августа 2015 г.'
-                br
-                = 'Регистрация №0054345, 6.09.2015,'
-                br
-                = 'Минсгорисполком.'
+        div.footer__left-part
             p.footer-paragraph--type-2
-                = 'ИП Шишкин Я.С. УНП 191877932'
-                br
-                = 'ID сайта в БелГИЭ: 143464'
-
-
-        div.footer-position--center
-            p.footer-paragraph--type-3 Время приема заказов через корзину:
-                = ' '
-                span.secondary-color круглосуточно
-            p.footer-paragraph--type-3 Время приема заказов по телефону пн-сб:
-                = ' '
-                span.secondary-color с 9.00 до 18.00
-            p.footer-paragraph--type-3 Время доставки заказов пн-сб:
-                = ' '
-                span.secondary-color с 10.00 до 21.00
-
-        div.footer-position--right
-            p.footer-paragraph--type-4
                 = 'Магазин профессионального'
                 br
                 = 'оборудования для тату-мастеров'
                 br
                 = 'Аллы Ромазановой'
                 br
-                span.secondary-color &copy; 2016 TattooBrands.by
+                span.secondary-color &copy; 2017 TattooBrands.by
+
+        div.footer__right-part
+            p.footer-paragraph--type-2 Время приема заказов через корзину:
+                = ' '
+                span.secondary-color круглосуточно
+            p.footer-paragraph--type-2 Время приема заказов по телефону пн-сб:
+                = ' '
+                span.secondary-color с 9.00 до 18.00
+            p.footer-paragraph--type-2 Время доставки заказов пн-сб:
+                = ' '
+                span.secondary-color с 10.00 до 21.00
+
+        div.footer__center-part.clear-self
+            div.w50
+                a.footer__nav_link(href='/') Каталог
+                a.footer__nav_link(href='/') Скидки
+                a.footer__nav_link(href='/') Гарантия
+                a.footer__nav_link(href='/') Контакты
+                a.footer__nav_link(href='/') Оплата и доставка
+            div.w50
+                a.footer__nav_link(href='/') Промо товары
+                a.footer__nav_link(href='/') Конкурсы
+                a.footer__nav_link(href='/') Наши группы
+                a.footer__nav_link(href='/') Ещё один пункт с длинной строкой
+                //a.footer__nav_link(href='/') оплата и доставка
+
+        div.footer__full-line
+            p.footer-paragraph--type-3 В торговом реестре с 28 августа 2015 г. Регистрация №0054345, 6.09.2015, Минсгорисполком. ИП Шишкин Я.С. УНП 191877932 ID сайта в БелГИЭ: 143464
+
+

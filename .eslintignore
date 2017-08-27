@@ -8,6 +8,9 @@ old-tb
 # npm
 node_modules
 
+# res
+/_res
+
 # example
 # /* eslint-disable no-unused-vars */
 # var React = require('react');

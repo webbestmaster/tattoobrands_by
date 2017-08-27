@@ -5,7 +5,6 @@ let result = [];
 
 function requestPromise(url) {
     return new Promise((resolve, reject) => {
-
         request(url, function (error, response, body) {
             if (error) {
                 reject(error);
@@ -22,11 +21,10 @@ function requestPromise(url) {
 
 let chain = Promise.resolve();
 let ii = 1;
-// const pagesCount = 619;
 const pagesCount = 619;
 
 for (; ii <= pagesCount; ii += 1) {
-    ((page) => {
+    (page => {
         chain = chain
             .then(() =>
                 requestPromise('http://tattoobrands.by/api/products?per_page=1&page=' + page)
@@ -35,8 +33,6 @@ for (; ii <= pagesCount; ii += 1) {
     })(ii);
 }
 
-chain.then(() => fs.writeFileSync('./result.json', JSON.stringify(result), err => console.log(err)));
-
-
+chain.then(() => fs.writeFile('./result.json', JSON.stringify(result), err => console.log(err)));
 
 
