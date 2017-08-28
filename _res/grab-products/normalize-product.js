@@ -38,21 +38,33 @@ function downloadImage(url, path) {
 function normalize(data) {
     // make folder
     const productFolder = './products/';
-    const productId = data.id;
+    const productId = data.master.sku.toLowerCase();
 
     // create folder
     return mkdir(productFolder + productId)
     // write original data
         .then(() => writeFile(productFolder + productId + '/product.json', JSON.stringify(data)))
+        .then(() => writeFile(productFolder + productId + '/data.json', JSON.stringify({
+            id: productId,
+            name: data.master.name,
+            description: data.master.description,
+            article: data.master.sku,
+            externalImages: data.master.images.map(({large_url, attachment_content_type}, ii) => ii + '.' + attachment_content_type.split('/')[1]),
+            price: parseFloat(data.master.price),
+            properties: data.product_properties.map(({property_name, value}) => ({
+                key: property_name,
+                value
+            }))
+        })))
         // create folder for images
         .then(() => mkdir(productFolder + productId + '/images'))
         // download images
         .then(() => Promise.all(data.master.images
-            .map(({product_url, attachment_content_type}, ii) =>
-                downloadImage(product_url, productFolder + productId + '/images/' + ii + '.' + attachment_content_type.split('/')[1]))))
-        .then(() => console.log('done'));
+            .map(({large_url, attachment_content_type}, ii) =>
+                downloadImage(large_url, productFolder + productId + '/images/' + ii + '.' + attachment_content_type.split('/')[1]))))
+        .then(() => console.log(productId, '- done'));
 }
 
 let chain = Promise.resolve();
 
-products.forEach((product, ii) => ii < 3000 && (chain = chain.then(() => normalize(product))));
+products.forEach((product, ii) => /* ii < 3 && */ (chain = chain.then(() => normalize(product))));
