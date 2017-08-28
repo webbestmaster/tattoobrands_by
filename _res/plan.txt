@@ -1,0 +1,8 @@
+1 - добавить товары в том виде что они сейчас есть
+2 - вывести их на титульную страницу
+3 - доделать моб версию первой страницы
+4 - начать делать меню сверху
+
+list of objects
+https://github.com/keystonejs/keystone/issues/2216
+https://stackoverflow.com/questions/22063884/how-to-add-virtual-property-of-type-array-using-keystone-js
