@@ -26,19 +26,35 @@ const imageStorage = new keystone.Storage({
 });
 
 Product.add({
+    // product name
     title: {type: String, initial: true, required: true, index: true, 'default': ''},
+    // unique product id, set by human
     article: {type: String},
+    // cost in BYN
     cost: {type: Number},
+    // quantity of products
     qty: {type: Number},
+    // description of product, in html
     description: {type: Types.Html, wysiwyg: true, height: 300},
+    // files from another domain, use full url http://github.....
+    externalFiles: {type: Types.TextArray, label: 'External Files (recommended)'},
+    // image list
+    'image 0': {type: Types.File, storage: imageStorage},
     'image 1': {type: Types.File, storage: imageStorage},
     'image 2': {type: Types.File, storage: imageStorage},
     'image 3': {type: Types.File, storage: imageStorage},
     'image 4': {type: Types.File, storage: imageStorage},
     'image 5': {type: Types.File, storage: imageStorage},
+    // shop state of product -> in stock || expected || under the order
     state: {type: Types.Select, options: 'in stock, expected, under the order', 'default': 'in stock'},
+    // product is promotable
     promotable: {type: Types.Boolean, 'default': false},
-    available: {type: Types.Boolean, 'default': true}
+    // product is available on site, use it field to filter extra product
+    available: {type: Types.Boolean, 'default': true},
+    // use ";" to separate key and value
+    properties: {type: Types.TextArray},
+    // old link from old site
+    oldLink: {type: String}
 });
 
 /**
