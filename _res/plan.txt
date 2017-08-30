@@ -12,3 +12,6 @@ xx - страница с 500
 list of objects
 https://github.com/keystonejs/keystone/issues/2216
 https://stackoverflow.com/questions/22063884/how-to-add-virtual-property-of-type-array-using-keystone-js
+
+mongodb
+https://www.tutorialspoint.com/mongodb/mongodb_create_backup.htm

@@ -2417,7 +2417,7 @@ var Swiper = function Swiper(selector, params) {
         /**
                 loopedSlides is too large if loopAdditionalSlides are set.
                 Need to divide the slides by maximum number of slides existing.
-                 @author        Tomaz Lovrec <tomaz.lovrec@blanc-noir.at>
+                  @author        Tomaz Lovrec <tomaz.lovrec@blanc-noir.at>
         */
         var numSlides = _this.slides.length;
         var fullSlideSets = Math.floor(_this.loopedSlides / numSlides);
@@ -2943,6 +2943,7 @@ if (true) {
 // if you know better way, please, talk to me. BR, Dmitry Turvotsov
 
 __webpack_require__(0);
+// require('jbone');
 
 /***/ })
 /******/ ]);

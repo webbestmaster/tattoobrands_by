@@ -35,17 +35,32 @@ window.addEventListener('load', function () {
 "use strict";
 
 
+/* global document */
 var Swiper = __webpack_require__(0);
+// const $ = require('jbone');
 
 module.exports.initSwiper = function () {
-    var swiperWrapperNode = window.document.querySelector('.js-home-swiper-wrapper.home-swiper-wrapper');
+    function onSwiperResize(swiper) {
+        // count height
+        var slideHeight = 261;
+        var slideWidth = 980;
+        var width = document.documentElement.clientWidth;
+        var neededHeight = Math.min(Math.round(slideHeight * width / slideWidth), slideHeight);
+        var neededHeightPx = neededHeight + 'px';
 
-    if (!swiperWrapperNode) {
-        console.log('swiper container node is not exist');
-        return;
+        // get nodes
+        var wrapper = swiper.wrapper,
+            container = swiper.container,
+            slides = swiper.slides;
+
+        var nodes = [wrapper, container].concat(slides);
+
+        nodes.forEach(function (node) {
+            return Object.assign(node.style, { height: neededHeightPx });
+        });
     }
 
-    var swiper = new Swiper(swiperWrapperNode, {
+    var homeSwiper = new Swiper('.js-home-swiper-wrapper.home-swiper-wrapper', {
         pagination: '.swiper-pagination',
         // nextButton: '.swiper-button-next',
         // prevButton: '.swiper-button-prev',
@@ -54,10 +69,12 @@ module.exports.initSwiper = function () {
         centeredSlides: true,
         autoplay: 6000,
         autoplayDisableOnInteraction: false,
-        loop: true
+        loop: true,
+        onInit: onSwiperResize,
+        onAfterResize: onSwiperResize
     });
 
-    console.log('swiper is here ->', swiper);
+    console.log('swiper is here ->', homeSwiper);
 };
 
 /***/ })

@@ -21,6 +21,9 @@
 
 const keystone = require('keystone');
 
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+
 // const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -39,6 +42,47 @@ exports = module.exports = app => {
     // Views
     app.get('/', routes.views.index);
 
+    app.post('/add-product', jsonParser, (req, res) => {
+        const Product = keystone.list('Product');
+
+        delete req.body.properties;
+
+        const newProduct = new Product.model(req.body);
+
+        newProduct.save(err => {
+            if (err) {
+                console.error('Error adding Product to the database:');
+                console.error(err);
+            } else {
+                console.log('Added admin Product to the database.');
+            }
+
+            res.setHeader('Content-Type', 'text/plain');
+            res.write('you posted:\n');
+            res.end(JSON.stringify(req.body, null, 2));
+        });
+    });
+
+    app.post('/remove-product', jsonParser, (req, res) => {
+        const Product = keystone.list('Product');
+
+        delete req.body.properties;
+
+        const newProduct = new Product.model(req.body);
+
+        newProduct.save(err => {
+            if (err) {
+                console.error('Error adding Product to the database:');
+                console.error(err);
+            } else {
+                console.log('Added admin Product to the database.');
+            }
+
+            res.setHeader('Content-Type', 'text/plain');
+            res.write('you posted:\n');
+            res.end(JSON.stringify(req.body, null, 2));
+        });
+    });
     // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
     // app.get('/protected', middleware.requireUser, routes.views.protected);
 };

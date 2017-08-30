@@ -1,4 +1,6 @@
 const keystone = require('keystone');
+const mongoose = require('mongoose');
+
 const {Types} = keystone.Field;
 
 /**
@@ -7,7 +9,7 @@ const {Types} = keystone.Field;
  */
 const Product = new keystone.List('Product', {
     map: {
-        name: 'title'
+        name: 'name'
     },
     autokey: {
         from: 'title',
@@ -27,7 +29,7 @@ const imageStorage = new keystone.Storage({
 
 Product.add({
     // product name
-    title: {type: String, initial: true, required: true, index: true, 'default': ''},
+    name: {type: String, initial: true, required: true, index: true, 'default': ''},
     // unique product id, set by human
     article: {type: String},
     // cost in BYN
