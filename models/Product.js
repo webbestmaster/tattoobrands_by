@@ -1,6 +1,4 @@
 const keystone = require('keystone');
-const mongoose = require('mongoose');
-
 const {Types} = keystone.Field;
 
 /**
@@ -8,11 +6,8 @@ const {Types} = keystone.Field;
  * ==========
  */
 const Product = new keystone.List('Product', {
-    map: {
-        name: 'name'
-    },
     autokey: {
-        from: 'title',
+        from: 'name',
         path: 'slug',
         unique: true
     },
@@ -30,16 +25,16 @@ const imageStorage = new keystone.Storage({
 Product.add({
     // product name
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
-    // unique product id, set by human
-    article: {type: String},
-    // cost in BYN
-    cost: {type: Number},
-    // quantity of products
-    qty: {type: Number},
     // description of product, in html
     description: {type: Types.Html, wysiwyg: true, height: 300},
+    // unique product id, set by human
+    article: {type: String},
+    // price in BYN
+    price: {type: Number},
+    // quantity of products
+    quantity: {type: Number},
     // files from another domain, use full url http://github.....
-    externalFiles: {type: Types.TextArray, label: 'External Files (recommended)'},
+    externalImages: {type: Types.TextArray, label: 'External Images (recommended)'},
     // image list
     'image 0': {type: Types.File, storage: imageStorage},
     'image 1': {type: Types.File, storage: imageStorage},
@@ -62,5 +57,5 @@ Product.add({
 /**
  * Registration
  */
-Product.defaultColumns = 'title, article, available, cost, qty, state, promotable';
+Product.defaultColumns = 'name, article, available, price, state, promotable';
 Product.register();

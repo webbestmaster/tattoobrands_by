@@ -23,7 +23,7 @@ function mkdir(path) {
 }
 
 function writeFile(pathToFile, content) {
-    return new Promise((resolve, reject) => fs.writeFile(pathToFile, content, err => err ? reject(err) : resolve()))
+    return new Promise((resolve, reject) => fs.writeFile(pathToFile, content, err => err ? reject(err) : resolve()));
 }
 
 function downloadImage(url, path) {
@@ -40,13 +40,16 @@ function normalize(data) {
     const productFolder = './products/';
     const productId = data.master.sku.toLowerCase();
 
-    // create folder
-    return mkdir(productFolder + productId)
-    // write original data
+    return Promise
+        .resolve()
+        // create folder
+        .then(() => mkdir(productFolder + productId))
+        // write original data
         .then(() => writeFile(productFolder + productId + '/product.json', JSON.stringify(data)))
         .then(() => writeFile(productFolder + productId + '/data.json', JSON.stringify({
-            id: productId,
             name: data.master.name,
+            id: productId,
+            slug: data.slug,
             description: data.master.description,
             article: data.master.sku,
             externalImages: data.master.images.map(({large_url, attachment_content_type}, ii) => ii + '.' + attachment_content_type.split('/')[1]),
