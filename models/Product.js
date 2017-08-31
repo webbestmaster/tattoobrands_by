@@ -36,12 +36,12 @@ Product.add({
     // files from another domain, use full url http://github.....
     externalImages: {type: Types.TextArray, label: 'External Images (recommended)'},
     // image list
-    'image 0': {type: Types.File, storage: imageStorage},
-    'image 1': {type: Types.File, storage: imageStorage},
-    'image 2': {type: Types.File, storage: imageStorage},
-    'image 3': {type: Types.File, storage: imageStorage},
-    'image 4': {type: Types.File, storage: imageStorage},
-    'image 5': {type: Types.File, storage: imageStorage},
+    image0: {type: Types.File, storage: imageStorage, label: 'Image 1 (not recommended)'},
+    image1: {type: Types.File, storage: imageStorage, label: 'Image 2 (not recommended)'},
+    image2: {type: Types.File, storage: imageStorage, label: 'Image 3 (not recommended)'},
+    image3: {type: Types.File, storage: imageStorage, label: 'Image 4 (not recommended)'},
+    image4: {type: Types.File, storage: imageStorage, label: 'Image 5 (not recommended)'},
+    image5: {type: Types.File, storage: imageStorage, label: 'Image 6 (not recommended)'},
     // shop state of product -> in stock || expected || under the order
     state: {type: Types.Select, options: 'in stock, expected, under the order', 'default': 'in stock'},
     // product is promotable

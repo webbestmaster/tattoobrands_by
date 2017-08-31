@@ -25,8 +25,8 @@
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "db": "./db/mongodb/bin/mongod --dbpath=./db/data",
-    "db-win": ".\\mongo-win\\bin\\mongod --dbpath=.\\mongo-win\\data",
-    "db-win-dump": ".\\mongo-win\\bin\\mongodump --out .\\mongo-win\\backup\\version",
+    "db-win": ".\\db-win\\bin\\mongod --dbpath=.\\db-win\\data",
+    "db-win-dump": ".\\db-win\\bin\\mongodump --out=.\\db-win\\backup\\set-version",
     "start": "node keystone.js"
   }
 }
