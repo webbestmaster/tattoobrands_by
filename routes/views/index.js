@@ -7,7 +7,7 @@ function normalizeProduct(product) {
         name,
         description,
         price,
-        image: externalImages.length !== 0 ? externalImages[0] : image0
+        image: externalImages.length !== 0 ? externalImages[0] : '/product/images/' + image0.filename
     };
 }
 
