@@ -62,7 +62,14 @@ function onInitView(view, next) {
             }
 
             if (product) {
-                Object.assign(locals, {product: normalizeProduct(product)});
+                const normalizedProduct = normalizeProduct(product);
+                const {name, description} = normalizedProduct;
+
+                Object.assign(locals, {
+                    product: normalizedProduct,
+                    title: name,
+                    description: name + ' - ' + description
+                });
                 next(err);
                 return;
             }
