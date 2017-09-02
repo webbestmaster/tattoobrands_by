@@ -1,35 +1,40 @@
 webpackJsonp([0],[
 /* 0 */,
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(3);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(4);
+/* global document */
+__webpack_require__(5);
 
-var homeScripts = __webpack_require__(5);
+var FastClick = __webpack_require__(1);
+
+var homeScripts = __webpack_require__(6);
 
 window.addEventListener('load', function () {
+    new FastClick(document.body); // eslint-disable-line no-new
     homeScripts.initSwiper();
 });
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78,5 +83,5 @@ module.exports.initSwiper = function () {
 };
 
 /***/ })
-],[2]);
+],[3]);
 //# sourceMappingURL=main.js.map

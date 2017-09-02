@@ -32,6 +32,7 @@ keystone.import('models');
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
+    externalStorage: 'https://tattoobrands.github.io/'
     // _: require('lodash'), // eslint-disable-line id-length
     // env: keystone.get('env')
     // utils: keystone.utils,

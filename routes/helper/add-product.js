@@ -9,7 +9,7 @@ module.exports = (req, res) => {
         name,
         description,
         article,
-        externalImages: externalImages.map(image => 'https://raw.githubusercontent.com/tattoobrands/tattoobrands.github.io/master/products/list/' + id + '/images/' + image),
+        externalImages: externalImages.map(image => 'https://tattoobrands.github.io/products/list/' + id + '/images/' + image),
         price: price * 2,
         properties: properties.map(({key, value}) => [key, value].join(' : ')),
         oldLink: 'http://tattoobrands.by/products/' + slug
