@@ -45,7 +45,9 @@ const routes = {
 exports = module.exports = app => {
     // Views
     app.get('/', routes.views.index);
+    app.get('/product/:slug', routes.views.product);
 
-    // need to add old products only
+    // helpers
+    // - need to add old products only
     app.post('/add-product', jsonParser, helperAddProduct);
 };

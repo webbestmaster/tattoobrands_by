@@ -1,9 +1,10 @@
 const keystone = require('keystone');
 
 function normalizeProduct(product) {
-    const {name, description, price, externalImages, image0} = product;
+    const {slug, name, description, price, externalImages, image0} = product;
 
     return {
+        slug,
         name,
         description,
         price,
@@ -17,7 +18,7 @@ function onInitView(locals, next) {
         .model
         .find()
         .limit(3)
-        .select('name description price externalImages image0')
+        .select('slug name description price externalImages image0')
         .exec((err, products) => {
             if (!err) {
                 Object.assign(locals, {products: products.map(normalizeProduct)});
