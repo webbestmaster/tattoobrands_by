@@ -24,6 +24,7 @@ const keystone = require('keystone');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
+const helperRemoveProduct = require('./helper/remove-product');
 // const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -50,4 +51,5 @@ exports = module.exports = app => {
     // helpers
     // - need to add old products only
     app.post('/add-product', jsonParser, helperAddProduct);
+    app.post('/remove-product', jsonParser, helperRemoveProduct);
 };

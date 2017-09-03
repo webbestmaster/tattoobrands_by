@@ -12,7 +12,7 @@ Released under the MIT license. http://opensource.736cs.com/licenses/mit
 html, body,
 h1, h2, h3, h4, h5, h6,
 form, label, input, textarea,
-header, footer, article,
+header, footer, article, ul, ol, li,
 div, p, a, span, img {
     margin: 0;
     padding: 0;
@@ -330,7 +330,7 @@ body {
   width: 50%; }
 
 .header {
-  background-image: url(img/img-bg-header-a59a60.png);
+  background-image: url(img/img-big-bg-a59a60.png);
   background-repeat: repeat-x;
   background-position: center 0;
   background-color: #f6f6f6; }
@@ -348,7 +348,7 @@ body {
   width: 200px; }
 
 .header__logo {
-  background-image: url(img/img-logo-e993eb.png);
+  background-image: url(img/img-logo-41d082.png);
   background-repeat: no-repeat;
   width: 250px;
   height: 97px;
@@ -626,12 +626,25 @@ body {
   width: 50%; }
 
 .footer {
-  background-image: url(img/img-bg-footer-539b0f.png);
-  background-repeat: repeat-x;
-  background-position: center 0;
+  position: relative;
   border-bottom: solid 3px #bf2622;
   background-color: #f6f6f6;
-  padding: 32px 0 17px; }
+  padding: 32px 0 17px;
+  z-index: 0; }
+  .footer:before {
+    -webkit-transform: scaleY(-1);
+       -moz-transform: scaleY(-1);
+            transform: scaleY(-1);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -32px;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/img-big-bg-a59a60.png);
+    background-repeat: repeat-x;
+    background-position: center 0;
+    z-index: -1; }
 
 .footer__left-part {
   float: left; }
@@ -992,5 +1005,25 @@ body {
       display: block; }
   .footer {
     padding-top: 24px; } }
+
+.seo-text {
+  padding: 10px 0 35px;
+  font-size: 16px;
+  line-height: 20px; }
+
+.seo-text__header {
+  padding-top: 13px;
+  padding-bottom: 9px; }
+
+.seo-text__paragraph {
+  padding-bottom: 9px; }
+
+.seo-text__list {
+  padding-bottom: 7px;
+  list-style: disc; }
+
+.seo-text__list-item {
+  padding-bottom: 4px;
+  margin-left: 29px; }
 
 /*# sourceMappingURL=style.css.map*/
