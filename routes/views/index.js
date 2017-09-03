@@ -20,7 +20,7 @@ function onInitView(view, next) {
         .list('Product')
         .model
         .find()
-        .limit(30)
+        // .limit(30)
         .select('slug name description price externalImages image0')
         .exec((err, products) => {
             if (err) {
