@@ -13,25 +13,54 @@ function normalizeProduct(product) {
 }
 
 function onInitView(view, next) {
-    const {res} = view;
+    const {res, req} = view;
     const {locals} = res;
 
     keystone
         .list('Product')
-        .model
-        .find()
-        // .limit(30)
+        .paginate({
+            page: req.query.page || 1,
+            perPage: 10,
+            maxPages: 10
+        })
+        // .where('state', 'published')
+        // .sort('-publishedDate')
+        // .populate('author categories')
         .select('slug name description price externalImages image0')
-        .exec((err, products) => {
+        .exec((err, result) => {
+            // todo: parse result to get pages count, current pages end etc.
+            // todo: test req.query.page || 1
+            debugger;
             if (err) {
                 res.status(500);
                 res.render('errors/500');
                 return;
             }
 
-            Object.assign(locals, {products: products.map(normalizeProduct)});
+            // locals.data.posts = results;
+            Object.assign(locals, {products: result.results.map(normalizeProduct)});
+
             next(err);
         });
+
+    /*
+        keystone
+            .list('Product')
+            .model
+            .find()
+            // .limit(30)
+            .select('slug name description price externalImages image0')
+            .exec((err, products) => {
+                if (err) {
+                    res.status(500);
+                    res.render('errors/500');
+                    return;
+                }
+
+                Object.assign(locals, {products: products.map(normalizeProduct)});
+                next(err);
+            });
+    */
 }
 
 exports = module.exports = (req, res) => {
