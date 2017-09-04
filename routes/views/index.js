@@ -20,47 +20,34 @@ function onInitView(view, next) {
         .list('Product')
         .paginate({
             page: req.query.page || 1,
-            perPage: 10,
-            maxPages: 10
+            perPage: 32
         })
-        // .where('state', 'published')
-        // .sort('-publishedDate')
-        // .populate('author categories')
         .select('slug name description price externalImages image0')
         .exec((err, result) => {
-            // todo: parse result to get pages count, current pages end etc.
-            // todo: test req.query.page || 1
-            debugger;
             if (err) {
                 res.status(500);
                 res.render('errors/500');
                 return;
             }
 
-            // locals.data.posts = results;
-            Object.assign(locals, {products: result.results.map(normalizeProduct)});
+            const {results} = result;
+
+            if (results.length === 0) {
+                res.status(404);
+                res.render('errors/404');
+                return;
+            }
+
+            Object.assign(locals, {
+                indexPagination: {
+                    totalPages: result.totalPages,
+                    startPage: result.currentPage
+                },
+                products: results.map(normalizeProduct)
+            });
 
             next(err);
         });
-
-    /*
-        keystone
-            .list('Product')
-            .model
-            .find()
-            // .limit(30)
-            .select('slug name description price externalImages image0')
-            .exec((err, products) => {
-                if (err) {
-                    res.status(500);
-                    res.render('errors/500');
-                    return;
-                }
-
-                Object.assign(locals, {products: products.map(normalizeProduct)});
-                next(err);
-            });
-    */
 }
 
 exports = module.exports = (req, res) => {

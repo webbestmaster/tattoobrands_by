@@ -3,6 +3,7 @@ div.js-home-swiper-wrapper.home-swiper-wrapper
         - var ii = 0;
         while ii <= 6
             a.swiper-slide.home-swiper__slide(href='/')
-                img.home-swiper__img(src=externalStorage + 'img/slide/slide-' + ii + '.png')
+                // TODO: remove extra underscore
+                img.home-swiper__img(src=externalStorage + 'img/slide/slide-' + ii + '.png_remove_me_')
             - ii+= 1;
     div.swiper-pagination
