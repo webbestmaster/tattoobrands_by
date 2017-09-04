@@ -22,6 +22,7 @@ function onInitView(view, next) {
             page: req.query.page || 1,
             perPage: 32
         })
+        .find({available: true})
         .select('slug name description price externalImages image0')
         .exec((err, result) => {
             if (err) {
