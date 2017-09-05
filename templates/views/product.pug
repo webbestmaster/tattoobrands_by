@@ -2,4 +2,38 @@ extends ../layouts/wrapper
 
 block content
     div.width-limiter
-        h1=JSON.stringify(product)
+        div.product.clear-self
+
+            div.product-image
+                h1 image is here
+
+            div.product-description
+                h2.product-description__header=product.name
+                div.product-description__description
+                    !=product.description
+                - var properties = product.properties
+                if properties && properties.length
+                    div.product-description__properties
+                        each property in properties
+                            p.product-properties__property=property
+
+                div.product-description__state-wrapper.clear-self
+                    p.product-description__product-state
+                        = 'Статус: '
+                        - var state = product.state
+                        if state === 'in-stock'
+                            span.product-description__state-value.product-description__state-value--in-stock в наличии
+                        if state === 'expected'
+                            span.product-description__state-value.product-description__state-value--expected ожидается
+                        if state === 'under-the-order'
+                            span.product-description__state-value.product-description__state-value--under-the-order под заказ
+                    p.product-description__price
+                        =product.price + ' руб.'
+
+                form.add-to-order.clear-self
+                    button.button.add-to-order__button(type="submit") добавить в корзину
+                    input.input-number.add-to-order__input-number(type="number" min="1" value="1" required)
+                    p.add-to-order__label Количество
+
+        div.clear-full
+            p=JSON.stringify(product)

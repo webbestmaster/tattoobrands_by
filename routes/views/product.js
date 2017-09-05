@@ -21,7 +21,8 @@ function normalizeProduct(product) {
         image2,
         image3,
         image4,
-        image5
+        image5,
+        state
     } = product;
 
     const images = externalImages
@@ -39,7 +40,8 @@ function normalizeProduct(product) {
         description,
         price,
         properties,
-        images
+        images,
+        state
     };
 }
 
@@ -53,7 +55,7 @@ function onInitView(view, next) {
         .list('Product')
         .model
         .findOne({slug})
-        .select('slug name description price externalImages properties image0 image1 image2 image3 image4 image5')
+        .select('slug name description price externalImages properties state image0 image1 image2 image3 image4 image5')
         .exec((err, product) => {
             if (err) {
                 res.status(500);
@@ -61,21 +63,22 @@ function onInitView(view, next) {
                 return;
             }
 
-            if (product) {
-                const normalizedProduct = normalizeProduct(product);
-                const {name, description} = normalizedProduct;
-
-                Object.assign(locals, {
-                    product: normalizedProduct,
-                    title: name,
-                    description: name + ' - ' + description
-                });
-                next(err);
+            if (!product) {
+                res.status(404);
+                res.render('errors/404');
                 return;
             }
 
-            res.status(404);
-            res.render('errors/404');
+            const normalizedProduct = normalizeProduct(product);
+            const {name, description} = normalizedProduct;
+
+            Object.assign(locals, {
+                product: normalizedProduct,
+                title: name,
+                description: name + ' - ' + description
+            });
+
+            next(err);
         });
 }
 

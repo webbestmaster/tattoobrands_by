@@ -43,7 +43,13 @@ Product.add({
     image4: {type: Types.File, storage: imageStorage, label: 'Image 5 (not recommended)'},
     image5: {type: Types.File, storage: imageStorage, label: 'Image 6 (not recommended)'},
     // shop state of product -> in stock || expected || under the order
-    state: {type: Types.Select, options: 'in stock, expected, under the order', 'default': 'in stock'},
+    state: {
+        type: Types.Select, options: [
+            {value: 'in-stock', label: 'in stock'},
+            {value: 'expected', label: 'expected'},
+            {value: 'under-the-order', label: 'under the order'}
+        ], 'default': 'in-stock'
+    },
     // product is promotable
     promotable: {type: Types.Boolean, 'default': false},
     // product is available on site, use it field to filter extra product

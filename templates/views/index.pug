@@ -6,8 +6,7 @@ block content
     div.products-preview.width-limiter
         each product in products
             a.product-preview(href='/product/' + product.slug)
-                // TODO: remove extra underscore
-                div.product-preview__image(style='background-image: url(' + product.image + '_remove_me_)')
+                div.product-preview__image(style='background-image: url(' + product.image + ')')
                 h3.product-preview__name= product.name
                 p.product-preview__description= product.description
                 span.product-preview__price= product.price + ' руб.'
