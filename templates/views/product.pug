@@ -5,7 +5,12 @@ block content
         div.product.clear-self
 
             div.product-image
-                h1 image is here
+                div.js-product-swiper-wrapper.product-swiper-wrapper
+                    div.swiper-wrapper
+                        each imageSrc in product.images
+                            div.swiper-slide.product-swiper__slide
+                                img.product-swiper__img(src=imageSrc)
+                    div.swiper-pagination
 
             div.product-description
                 h2.product-description__header=product.name
@@ -17,7 +22,9 @@ block content
                         each property in properties
                             p.product-properties__property=property
 
-                div.product-description__state-wrapper.clear-self
+                div.product-description__state-wrapper
+                    p.product-description__price
+                        =product.price + ' руб.'
                     p.product-description__product-state
                         = 'Статус: '
                         - var state = product.state
@@ -27,8 +34,6 @@ block content
                             span.product-description__state-value.product-description__state-value--expected ожидается
                         if state === 'under-the-order'
                             span.product-description__state-value.product-description__state-value--under-the-order под заказ
-                    p.product-description__price
-                        =product.price + ' руб.'
 
                 form.add-to-order.clear-self
                     button.button.add-to-order__button(type="submit") добавить в корзину
