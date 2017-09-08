@@ -57,7 +57,10 @@ Product.add({
     // use ";" to separate key and value
     properties: {type: Types.TextArray},
     // old link from old site
-    oldLink: {type: String}
+    oldLink: {type: String},
+    // date of create product
+    createdAt: {type: Date, 'default': Date.now}
+
 });
 
 /**

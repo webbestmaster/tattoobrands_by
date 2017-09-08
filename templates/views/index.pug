@@ -8,7 +8,7 @@ block content
             a.product-preview(href='/product/' + product.slug)
                 div.product-preview__image(style='background-image: url(' + product.image + ')')
                 h3.product-preview__name= product.name
-                p.product-preview__description= product.description
+                div.product-preview__description!= product.description
                 span.product-preview__price= product.price + ' руб.'
 
     script

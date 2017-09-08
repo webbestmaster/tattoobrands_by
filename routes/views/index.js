@@ -23,6 +23,7 @@ function onInitView(view, next) {
             perPage: 32
         })
         .find({available: true})
+        .sort({createdAt: 1})
         .select('slug name description price externalImages image0')
         .exec((err, result) => {
             if (err) {
