@@ -36,9 +36,11 @@ block content
                             span.product-description__state-value.product-description__state-value--under-the-order под заказ
 
                 form.add-to-order.clear-self
-                    button.button.add-to-order__button(type="submit") добавить в корзину
+                    button.button.add-to-order__button(type="submit")
+                        span.hidden-for-tablet добавить&nbsp;
+                        | в корзину
                     input.input-number.add-to-order__input-number(type="number" min="1" value="1" required)
-                    p.add-to-order__label Количество
+                    p.add-to-order__label.hidden-for-tablet Количество
 
         //div.clear-full
         //    p=JSON.stringify(product)
