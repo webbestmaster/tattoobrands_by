@@ -38,16 +38,13 @@ block content
                         | Артикул:&nbsp;
                         b= product.article
 
-                form.add-to-order.clear-self
-                    button.button.add-to-order__button(type="submit")
-                        span.hidden-for-tablet добавить&nbsp;
-                        | в корзину
-                    input.input-number.add-to-order__input-number(type="number" min="1" value="1" required)
-                    p.add-to-order__label.hidden-for-tablet Количество
-
-        //div.clear-full
-        //    p=JSON.stringify(product)
-        //    p=JSON.stringify(extraProducts)
+                if state === 'in-stock'
+                    form.add-to-order.clear-self
+                        button.button.add-to-order__button(type="submit")
+                            span.hidden-for-tablet добавить&nbsp;
+                            | в корзину
+                        input.input-number.add-to-order__input-number(type="number" min="1" value="1" required)
+                        p.add-to-order__label.hidden-for-tablet Количество
 
     h2.width-limiter.product-recommended__header Рекомендуем:
     div.products-preview.width-limiter
