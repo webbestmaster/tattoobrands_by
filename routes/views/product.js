@@ -23,6 +23,7 @@ function normalizeProduct(product) {
     const {
         slug,
         name,
+        article,
         description,
         price,
         externalImages,
@@ -48,6 +49,7 @@ function normalizeProduct(product) {
     return {
         slug,
         name,
+        article,
         description,
         price,
         properties,
@@ -66,7 +68,8 @@ function onInitView(view, next) {
         .list('Product')
         .model
         .findOne({slug})
-        .select('slug name description price externalImages properties state image0 image1 image2 image3 image4 image5')
+        .select('slug name article description price externalImages properties state ' +
+            'image0 image1 image2 image3 image4 image5')
         .exec((err, product) => {
             if (err) {
                 res.status(500);

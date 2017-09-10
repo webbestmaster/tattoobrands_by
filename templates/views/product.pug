@@ -34,6 +34,9 @@ block content
                             span.product-description__state-value.product-description__state-value--expected ожидается
                         if state === 'under-the-order'
                             span.product-description__state-value.product-description__state-value--under-the-order под заказ
+                    p.product-description__article
+                        | Артикул:&nbsp;
+                        b= product.article
 
                 form.add-to-order.clear-self
                     button.button.add-to-order__button(type="submit")
