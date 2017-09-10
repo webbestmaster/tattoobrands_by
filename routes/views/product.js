@@ -1,4 +1,15 @@
 const keystone = require('keystone');
+const indexNormalizeProduct = require('./helper/index').normalizeProduct;
+
+function getRandomProducts(count) {
+    return new Promise((resolve, reject) =>
+        keystone
+            .list('Product')
+            .model
+            .aggregate({$sample: {size: count}}) // eslint-disable-line id-match
+            // .select(select)
+            .exec((err, result) => err ? reject(err) : resolve(result)));
+}
 
 function imageFilterCallback(image) {
     return Boolean(image.filename);
@@ -72,13 +83,18 @@ function onInitView(view, next) {
             const normalizedProduct = normalizeProduct(product);
             const {name, description} = normalizedProduct;
 
-            Object.assign(locals, {
-                product: normalizedProduct,
-                title: name,
-                description: name + ' - ' + description
-            });
+            getRandomProducts(4, 'slug name description price externalImages image0')
+                .then(extraProducts => {
+                    Object.assign(locals, {
+                        extraProducts: extraProducts.map(indexNormalizeProduct),
+                        product: normalizedProduct,
+                        title: name,
+                        description: name + ' - ' + description
+                    });
 
-            next(err);
+                    next(err);
+                })
+                .catch(next);
         });
 }
 
