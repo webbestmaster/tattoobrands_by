@@ -6,8 +6,7 @@ function getRandomProducts(count) {
         keystone
             .list('Product')
             .model
-            // TODO: show only available: true
-            // .find({available: true})
+            .find({available: true})
             .aggregate({$sample: {size: count}}) // eslint-disable-line id-match
             // .select(select)
             .exec((err, result) => err ? reject(err) : resolve(result)));
@@ -88,7 +87,7 @@ function onInitView(view, next) {
             const normalizedProduct = normalizeProduct(product);
             const {name, description} = normalizedProduct;
 
-            getRandomProducts(4, 'slug name description price externalImages image0')
+            getRandomProducts(4)
                 .then(extraProducts => {
                     Object.assign(locals, {
                         extraProducts: extraProducts.map(indexNormalizeProduct),
