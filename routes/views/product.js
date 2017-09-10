@@ -6,6 +6,8 @@ function getRandomProducts(count) {
         keystone
             .list('Product')
             .model
+            // TODO: show only available: true
+            // .find({available: true})
             .aggregate({$sample: {size: count}}) // eslint-disable-line id-match
             // .select(select)
             .exec((err, result) => err ? reject(err) : resolve(result)));
