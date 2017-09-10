@@ -48,6 +48,23 @@ exports = module.exports = app => {
     app.get('/', routes.views.index);
     app.get('/product/:slug', routes.views.product);
 
+    // for backward compatibility only
+    app.get('/products/:slug', (req, res) => {
+        const {params} = req;
+        const {slug} = params;
+
+        keystone
+            .list('Product')
+            .model
+            .findOne({oldLink: 'http://tattoobrands.by/products/' + slug})
+            .exec((err, product) => {
+                if (!err && product) {
+                    params.slug = product.slug;
+                }
+                return routes.views.product(req, res);
+            });
+    });
+
     // helpers
     // - need to add old products only
     app.post('/add-product', jsonParser, helperAddProduct);
