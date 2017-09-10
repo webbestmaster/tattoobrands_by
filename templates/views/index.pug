@@ -5,7 +5,7 @@ block content
 
     div.products-preview.width-limiter
         each product in products
-            a.product-preview(href='/product/' + product.slug)
+            a.js-product-preview.product-preview(href='/product/' + product.slug)
                 div.product-preview__image(style='background-image: url(' + product.image + ')')
                 h3.product-preview__name= product.name
                 div.product-preview__description!= product.description
