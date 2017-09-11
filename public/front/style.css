@@ -498,7 +498,7 @@ body {
           box-sizing: border-box; }
 
 .header-search__icon {
-  background-image: url(img/img-search-daa290.svg);
+  background-image: url(img/img-search-cb0c29.svg);
   background-repeat: no-repeat;
   background-position: 7px 10px;
   background-size: 20px;
@@ -538,7 +538,7 @@ body {
 
 .header__phone--velcom {
   margin-top: 39px;
-  background-image: url(img/img-velcom-caf36e.svg); }
+  background-image: url(img/img-velcom-1c98a0.svg); }
 
 .header__social-block {
   padding: 14px 0 26px 0; }
@@ -887,6 +887,14 @@ body {
       -webkit-transform: translate3d(0, 3px, 0);
          -moz-transform: translate3d(0, 3px, 0);
               transform: translate3d(0, 3px, 0); }
+
+.product-preview--promotable {
+  -webkit-box-shadow: 0 0 5px 3px rgba(145, 0, 255, 0.5);
+          box-shadow: 0 0 5px 3px rgba(145, 0, 255, 0.5);
+  border-bottom: 1px solid #fff; }
+  .product-preview--promotable:hover {
+    -webkit-box-shadow: 0 0 5px 4px rgba(145, 0, 255, 0.35);
+            box-shadow: 0 0 5px 4px rgba(145, 0, 255, 0.35); }
 
 .product-preview__image {
   width: 200px;
