@@ -12,11 +12,15 @@ function getRandomProducts(count) {
             // use properly available: true
             .aggregate([
                 {
-                    $match: {
-                        available: !true
+                    $match: { // eslint-disable-line id-match
+                        available: true
                     }
                 },
-                {$sample: {size: count}}
+                {
+                    $sample: { // eslint-disable-line id-match
+                        size: count
+                    }
+                }
             ]) // eslint-disable-line id-match
             // .select(select)
             .exec((err, result) => err ? reject(err) : resolve(result)));
