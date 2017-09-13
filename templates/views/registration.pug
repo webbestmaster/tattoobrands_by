@@ -1,0 +1,17 @@
+extends ../layouts/wrapper
+
+block content
+    div.width-limiter.width-limiter--big-padding
+
+        h2.page-header Регистрация
+
+        form.form.clear-self(action="/api/registration")
+            label.label
+                p.label__text Email:
+                input.input.input--text(type="email" placeholder="your@email.com" required)
+
+            label.label
+                p.label__text Password:
+                input.input.input--text(type="password" placeholder="*********" required)
+
+            button.button.button--right зарегистрироваться

@@ -1,4 +1,4 @@
-/* global __dirname */
+/* global __dirname, require */
 /**
  * This file is where you define your application routes and controllers.
  *
@@ -25,6 +25,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
+const {registration} = require('./api/registration');
 // const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -44,9 +45,13 @@ const routes = {
 
 // Setup Route Bindings
 exports = module.exports = app => {
-    // Views
+    // views
     app.get('/', routes.views.index);
     app.get('/product/:slug', routes.views.product);
+    app.get('/registration/', routes.views.registration);
+
+    // user views
+    app.post('/api/registration', jsonParser, registration);
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
