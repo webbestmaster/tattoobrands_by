@@ -165,7 +165,8 @@
         "min": 3,
         "max": 34,
         "exceptions": [
-          "ii"
+          "ii",
+          "id"
         ]
       }
     ],
