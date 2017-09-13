@@ -83,8 +83,8 @@ function onInitView(view, next) {
         .list('Product')
         .model
         .findOne({slug})
-        .select('slug name article description price externalImages properties state ' +
-            'image0 image1 image2 image3 image4 image5')
+        // .select('slug name article description price externalImages properties state ' +
+            // 'image0 image1 image2 image3 image4 image5')
         .exec((err, product) => {
             if (err) {
                 res.status(500);
