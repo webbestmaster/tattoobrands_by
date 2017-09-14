@@ -48,7 +48,7 @@ exports = module.exports = app => {
     // views
     app.get('/', routes.views.index);
     app.get('/product/:slug', routes.views.product);
-    app.get('/registration/', routes.views.registration);
+    app.get('/authorization', routes.views.authorization);
 
     // user views
     app.post('/api/registration', jsonParser, registration);

@@ -1,6 +1,6 @@
 const keystone = require('keystone');
 
-const registrationResponse = {
+const authorizationResponse = {
     noNeededData: {
         id: 'no-needed-data',
         message: 'no needed data'
@@ -33,7 +33,7 @@ module.exports.registration = (req, res) => {
     if (!email || !password) {
         res.json({
             success: false,
-            error: registrationResponse.noNeededData
+            error: authorizationResponse.noNeededData
         });
         return;
     }
@@ -43,7 +43,7 @@ module.exports.registration = (req, res) => {
         if (err) {
             res.json({
                 success: false,
-                error: registrationResponse.unknowError
+                error: authorizationResponse.unknowError
             });
             return;
         }
@@ -52,7 +52,7 @@ module.exports.registration = (req, res) => {
         if (user) {
             res.json({
                 success: false,
-                error: registrationResponse.alreadyExists
+                error: authorizationResponse.alreadyExists
             });
             return;
         }
@@ -70,7 +70,7 @@ module.exports.registration = (req, res) => {
             if (savingErr) {
                 res.json({
                     success: false,
-                    error: registrationResponse.unknowError
+                    error: authorizationResponse.unknowError
                 });
                 return;
             }
@@ -91,7 +91,7 @@ module.exports.login = (req, res) => {
         if (err) {
             res.json({
                 success: false,
-                error: registrationResponse.unknowError
+                error: authorizationResponse.unknowError
             });
             return;
         }
@@ -100,7 +100,7 @@ module.exports.login = (req, res) => {
         if (!user) {
             res.json({
                 success: false,
-                error: registrationResponse.userInNotExists
+                error: authorizationResponse.userInNotExists
             });
             return;
         }
@@ -111,7 +111,7 @@ module.exports.login = (req, res) => {
             }),
             () => res.json({
                 success: false,
-                error: registrationResponse.wrongPassword
+                error: authorizationResponse.wrongPassword
             })
         );
     });
