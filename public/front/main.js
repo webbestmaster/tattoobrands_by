@@ -27,6 +27,7 @@ var $ = __webpack_require__(0);
 
 var homeScripts = __webpack_require__(8);
 var productScripts = __webpack_require__(9);
+var registrationScripts = __webpack_require__(11);
 
 $(function () {
     // main part
@@ -40,6 +41,9 @@ $(function () {
     // product
     productScripts.initSwiper();
     productScripts.initSwiperZoom();
+
+    // registration
+    registrationScripts.initRegistrationForm();
 });
 
 /***/ }),
@@ -267,6 +271,37 @@ function loadImage(src) {
 function loadImages(imageSrcList) {
     return Promise.all(imageSrcList.map(loadImage));
 }
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+
+module.exports.initRegistrationForm = function () {
+    $('.js-registration-form').on('submit', function (evt) {
+        return evt.preventDefault();
+    });
+
+    $('.js-login').on('click', function () {
+        console.log('login clicked!!!');
+    });
+
+    $('.js-register').on('click', function () {
+        $.ajax({
+            type: 'post',
+            url: '/api/registration/',
+            data: $('.js-registration-form').serialize(), // serializes the form's elements.
+            success: function success(data) {
+                console.log('add auto login here');
+                // alert(data); // show response from the php script.
+            }
+        });
+    });
+};
 
 /***/ })
 ],[5]);
