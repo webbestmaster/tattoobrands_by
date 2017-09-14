@@ -2,16 +2,24 @@ const keystone = require('keystone');
 
 const registrationResponse = {
     noNeededData: {
-        id: 1,
+        id: 'no-needed-data',
         message: 'no needed data'
     },
     alreadyExists: {
-        id: 2,
-        message: 'user with this email already exist'
+        id: 'user-already-exists',
+        message: 'user with this email already exists'
     },
     unknowError: {
-        id: 3,
-        message: 'unknow error'
+        id: 'unknow-sever-error',
+        message: 'unknow sever error'
+    },
+    userInNotExists: {
+        id: 'user-is-not-exists',
+        message: 'user with this email is NOT exists'
+    },
+    wrongPassword: {
+        id: 'wrong-password',
+        message: 'wrong password'
     }
 };
 
@@ -71,5 +79,40 @@ module.exports.registration = (req, res) => {
                 success: true
             });
         });
+    });
+};
+
+module.exports.login = (req, res) => {
+    const formData = req.body;
+    const {email, password} = formData;
+
+    keystone.list('User').model.findOne({email}).exec((err, user) => {
+        // db error
+        if (err) {
+            res.json({
+                success: false,
+                error: registrationResponse.unknowError
+            });
+            return;
+        }
+
+        // user with this email is NOT exist
+        if (!user) {
+            res.json({
+                success: false,
+                error: registrationResponse.userInNotExists
+            });
+            return;
+        }
+
+        keystone.session.signin({email, password}, req, res,
+            () => res.json({
+                success: true
+            }),
+            () => res.json({
+                success: false,
+                error: registrationResponse.wrongPassword
+            })
+        );
     });
 };

@@ -25,7 +25,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
-const {registration} = require('./api/registration');
+const {registration, login} = require('./api/authorization');
 // const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -52,6 +52,7 @@ exports = module.exports = app => {
 
     // user views
     app.post('/api/registration', jsonParser, registration);
+    app.post('/api/login', jsonParser, login);
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
