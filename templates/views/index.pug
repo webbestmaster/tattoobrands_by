@@ -3,7 +3,7 @@ extends ../layouts/wrapper
 block content
     include ./../layouts/home-swiper
 
-    div.products-preview.width-limiter
+    div.products-preview
         each product in products
             a(href='/product/' + product.slug class='js-product-preview product-preview' + (product.promotable ? ' product-preview--promotable' : ''))
                 div.product-preview__image(style='background-image: url(' + product.image + ')')
