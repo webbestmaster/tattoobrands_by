@@ -1,3 +1,4 @@
+/* global process */
 const keystone = require('keystone');
 const Types = keystone.Field.Types;
 
@@ -22,6 +23,9 @@ User.schema
         return this.isAdmin; // eslint-disable-line no-invalid-this
     });
 
+// disable mongo db auto index
+// see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
+User.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
 
 /**
  * Registration

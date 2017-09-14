@@ -1,3 +1,4 @@
+/* global process */
 const keystone = require('keystone');
 const {Types} = keystone.Field;
 
@@ -62,6 +63,10 @@ Product.add({
     createdAt: {type: Date, 'default': Date.now}
 
 });
+
+// disable mongo db auto index
+// see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
+Product.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
 
 /**
  * Registration

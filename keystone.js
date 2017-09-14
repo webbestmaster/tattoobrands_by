@@ -1,6 +1,20 @@
+/* global process */
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
+
+const DEVELOPMENT = 'development';
+const PRODUCTION = 'production';
+const {env} = process;
+const {NODE_ENV = DEVELOPMENT} = env;
+
+env.NODE_ENV = NODE_ENV;
+env.IS_DEVELOPMENT = NODE_ENV === DEVELOPMENT;
+env.IS_PRODUCTION = NODE_ENV === PRODUCTION;
+
+console.log('App Mode is - ' + env.NODE_ENV);
+console.log('IS_DEVELOPMENT - ' + env.IS_DEVELOPMENT);
+console.log('IS_PRODUCTION - ' + env.IS_PRODUCTION);
 
 // Require keystone
 const keystone = require('keystone');
