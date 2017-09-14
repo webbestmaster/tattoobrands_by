@@ -26,12 +26,12 @@ const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login} = require('./api/authorization');
-// const middleware = require('./middleware');
+const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
-// keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', middleware.initLocals);
 // keystone.pre('render', middleware.flashMessages);
 
 keystone.set('404', (req, res, next) => res.status(404).render('errors/404'));

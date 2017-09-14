@@ -10,7 +10,12 @@ header.header
                 a.header__slogan-link(target="_blank" href="https://www.instagram.com/romazanova_alla/") Аллы Ромазановой
 
         div.header__right-part
-            a.header__authorization(href="/authorization") Войти / Регистрация
+            if user
+                a.header__authorization(href="/logout") Выйти
+                span.header__authorization.header__authorization--divider |
+                a.header__authorization(href="/account") Аккаунт
+            else
+                a.header__authorization(href="/authorization") Войти / Регистрация
             a.header__phone.header__phone--velcom(href="tel:+375445449911") +375 (44)
                 = ' '
                 span.secondary-color 544-99-11

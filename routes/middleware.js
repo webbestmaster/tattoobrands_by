@@ -7,20 +7,18 @@
  * you have more middleware you may want to group it as separate
  * modules in your project's /lib directory.
  */
-/*
-var _ = require('lodash');
+// var _ = require('lodash');
 
-exports.initLocals = function (req, res, next) {
+exports.initLocals = (req, res, next) => {
     const {locals} = res;
 
-    if (!locals.title) {
-        locals.title = 'Tattoo Brands';
-    }
+    locals.title = 'Магазин профессионального оборудования и аксессуаров для тату | TattooBrands';
+    locals.description = 'Магазин профессионального оборудования и аксессуаров для тату по лучшим ценам в Беларуси. Заходите и выбирайте!'; // eslint-disable-line max-len
+    locals.keywords = '';
+    locals.user = req.user;
 
-    res.locals.user = req.user;
     next();
 };
-*/
 
 
 /*

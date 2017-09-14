@@ -7,9 +7,10 @@ html
         meta(name="format-detection" content="telephone=no")
         meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="keywords" content=keywords)
-        meta(name="description" content=description || 'Магазин профессионального оборудования и аксессуаров для тату по лучшим ценам в Беларуси. Заходите и выбирайте!')
-        title=title || 'Магазин профессионального оборудования и аксессуаров для тату | Tattoobrands'
+        if keywords !== ''
+            meta(name="keywords" content=keywords)
+        meta(name="description" content=description)
+        title=title
         link(href="/front/style.css" rel="stylesheet")
         script(src="/front/common.js" type="text/javascript" defer)
         script(src="/front/main.js" type="text/javascript" defer)
