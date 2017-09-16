@@ -53,7 +53,7 @@ exports = module.exports = app => {
     // user views
     app.post('/api/registration', jsonParser, registration);
     app.post('/api/login', jsonParser, login);
-    app.get('/api/logout', jsonParser, logout);
+    app.get('/api/logout', logout);
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
