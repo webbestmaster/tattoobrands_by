@@ -116,3 +116,5 @@ module.exports.login = (req, res) => {
         );
     });
 };
+
+module.exports.logout = (req, res) => keystone.session.signout(req, res, () => res.redirect('/'));
