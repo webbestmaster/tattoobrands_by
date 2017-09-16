@@ -39,7 +39,17 @@ block content
                         b= product.article
 
                 if state === 'in-stock'
-                    form.add-to-order.clear-self.js-add-to-basket-forms
+                    form.add-to-order.clear-self.js-add-to-basket-form
+                        script
+                            = 'window.app = window.app || {};'
+                            = 'window.app.product = {};'
+                            = 'window.app.product.slug = \'' + product.slug + '\';'
+                            = 'window.app.product.name = \'' + product.name + '\';'
+                            = 'window.app.product.description = \'' + product.description + '\';'
+                            = 'window.app.product.article = \'' + product.article + '\';'
+                            = 'window.app.product.price = ' + product.price + ';'
+                            = 'window.app.product.images = \'' + product.images + '\';'
+                            = 'window.app.product.images = window.app.product.images.split(\'\,\');'
                         button.button.add-to-order__button(type="submit")
                             span.hidden-for-tablet добавить&nbsp;
                             | в корзину
