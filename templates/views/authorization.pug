@@ -8,11 +8,19 @@ block content
         form.form.clear-self.js-authorization-form
             label.label
                 p.label__text Email:
-                input.input.input--text(type="email" name="email" placeholder="your@email.com" required)
+                input.input.input--text(type="text"
+                name="email"
+                placeholder="your@email.com"
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                required)
 
             label.label
                 p.label__text Password:
-                input.input.input--text(type="password" name="password" placeholder="*********" required)
+                input.input.input--text(type="password"
+                name="password"
+                pattern="[a-zA-Z0-9\.-_]{6,}"
+                placeholder="******"
+                required)
 
             button.button.button--right.js-login вход
             p.label__text или
