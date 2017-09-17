@@ -50,6 +50,10 @@ exports = module.exports = app => {
     app.get('/product/:slug', routes.views.product);
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
+    app.get('/ordering', (req, res) =>
+        req.user ?
+            routes.views.ordering(req, res) :
+            res.redirect('/authorization?redirect=/ordering'));
 
     // user views
     app.post('/api/registration', jsonParser, registration);
