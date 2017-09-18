@@ -20,6 +20,10 @@ const authorizationResponse = {
     wrongPassword: {
         id: 'wrong-password',
         message: 'wrong password'
+    },
+    notAuthorized: {
+        id: 'not-authorized',
+        message: 'not authorized'
     }
 };
 
@@ -112,6 +116,70 @@ module.exports.login = (req, res) => {
             () => res.json({
                 success: false,
                 error: authorizationResponse.wrongPassword
+            })
+        );
+    });
+};
+
+module.exports.update = (req, res) => {
+    const {user} = req;
+
+    if (!user) {
+        req.json({
+            success: false,
+            error: authorizationResponse.notAuthorized
+        });
+        return;
+    }
+
+    const {email} = user;
+
+    keystone.list('User').model.findOne({email}).exec((err, userModel) => {
+        // db error
+        if (err) {
+            res.json({
+                success: false,
+                error: authorizationResponse.unknowError
+            });
+            return;
+        }
+
+        // user with this email is NOT exist
+        if (!userModel) {
+            res.json({
+                success: false,
+                error: authorizationResponse.userInNotExists
+            });
+            return;
+        }
+
+        const {
+            phone,
+            region,
+            town,
+            address,
+            postcode,
+            first,
+            last
+        } = req.body;
+
+        userModel.set({
+            phone,
+            country: keystone.get('locals').defaultCountry,
+            region,
+            town,
+            address,
+            postcode,
+            name: {first, last}
+        });
+
+        userModel.save(saveErr => saveErr ?
+            res.json({
+                success: false,
+                error: authorizationResponse.unknowError
+            }) :
+            res.json({
+                success: true
             })
         );
     });

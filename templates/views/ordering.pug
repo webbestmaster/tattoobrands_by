@@ -4,7 +4,7 @@ block content
     div.width-limiter.width-limiter--big-padding
         h2.page-header Платёжный адрес
 
-        form.form.clear-self(action="/check" method="post")
+        form.form.clear-self.js-ordering-form
             label.label
                 p.label__text Имя:
                 input.input.input--text(type="text"
@@ -26,6 +26,7 @@ block content
                 input.input.input--text(type="text"
                 name="phone"
                 pattern="[\\d\\+\\-\\(\\)\\s]{5,30}"
+                value=user.phone
                 required)
 
             label.label
@@ -33,35 +34,34 @@ block content
                 input.input.input--text(type="text"
                 disabled
                 name="country"
-                value="Беларусь")
+                value=defaultCountry)
 
             label.label
                 p.label__text Область:
                 select.input.input--text(name="region" required)
-                    option(value="") -- Выберите --
-                    option Брестская область
-                    option Витебская область
-                    option Гомельская область
-                    option Гродненская область
-                    option Минская область
-                    option Могилёвская область
+                    option(value="") -- Не выбрано --
+                    - var regions = ['Брестская область', 'Витебская область', 'Брестская область', 'Витебская область', 'Гомельская область', 'Гродненская область', 'Минская область', 'Могилёвская область']
+                    each region in regions
+                        option(selected=user.region === region)=region
 
             label.label
                 p.label__text Город:
                 input.input.input--text(type="text"
                 name="town"
                 pattern="[\\s\\S]{2,30}"
+                value=user.town
                 required)
 
             label.label
                 p.label__text Адрес:
                 textarea.input.input--text(name="address"
                 rows="5"
-                required)
+                required)=user.address
 
             label.label
                 p.label__text Индекс:
                 input.input.input--text(name="postcode"
+                value=user.postcode
                 pattern="^[\\d]{6}$")
 
             label.label

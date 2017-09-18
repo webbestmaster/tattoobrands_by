@@ -18,7 +18,7 @@ User.add({
     country: {type: String},
     region: {type: String},
     town: {type: String},
-    address: {type: String},
+    address: {type: Types.Textarea},
     postcode: {type: String}
 
 }, 'Permissions', {

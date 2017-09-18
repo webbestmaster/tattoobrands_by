@@ -25,7 +25,8 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
-const {registration, login, logout} = require('./api/authorization');
+const {registration, login, logout, update} = require('./api/authorization');
+const {createOrder} = require('./api/ordering');
 const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -50,6 +51,8 @@ exports = module.exports = app => {
     app.get('/product/:slug', routes.views.product);
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
+    // TODO: do it
+    app.get('/check', routes.views.check);
     app.get('/ordering', (req, res) =>
         req.user ?
             routes.views.ordering(req, res) :
@@ -59,6 +62,11 @@ exports = module.exports = app => {
     app.post('/api/registration', jsonParser, registration);
     app.post('/api/login', jsonParser, login);
     app.get('/api/logout', logout);
+    app.post('/api/update', update);
+
+    // ordering
+    // TODO: do it
+    app.post('/api/create-order', jsonParser, createOrder);
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
