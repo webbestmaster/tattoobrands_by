@@ -1,6 +1,76 @@
 extends ../layouts/wrapper
 
 block content
-    div.width-limiter
-        h1 Ordering
-        h1= user
+    div.width-limiter.width-limiter--big-padding
+        h2.page-header Платёжный адрес
+
+        form.form.clear-self(action="/check" method="post")
+            label.label
+                p.label__text Имя:
+                input.input.input--text(type="text"
+                value=user.name.first
+                name="first"
+                pattern="[\\s\\S]{2,30}"
+                required)
+
+            label.label
+                p.label__text Фамилия:
+                input.input.input--text(type="text"
+                value=user.name.last
+                name="last"
+                pattern="[\\s\\S]{2,30}"
+                required)
+
+            label.label
+                p.label__text Телефон:
+                input.input.input--text(type="text"
+                name="phone"
+                pattern="[\\d\\+\\-\\(\\)\\s]{5,30}"
+                required)
+
+            label.label
+                p.label__text Страна:
+                input.input.input--text(type="text"
+                disabled
+                name="country"
+                value="Беларусь")
+
+            label.label
+                p.label__text Область:
+                select.input.input--text(name="region" required)
+                    option(value="") -- Выберите --
+                    option Брестская область
+                    option Витебская область
+                    option Гомельская область
+                    option Гродненская область
+                    option Минская область
+                    option Могилёвская область
+
+            label.label
+                p.label__text Город:
+                input.input.input--text(type="text"
+                name="town"
+                pattern="[\\s\\S]{2,30}"
+                required)
+
+            label.label
+                p.label__text Адрес:
+                textarea.input.input--text(name="address"
+                rows="5"
+                required)
+
+            label.label
+                p.label__text Индекс:
+                input.input.input--text(name="postcode"
+                pattern="^[\\d]{6}$")
+
+            label.label
+                p.label__text Пожелания к заказу:
+                textarea.input.input--text(name="additional"
+                rows="5")
+
+            div.buttons-wrapper
+                a.button(href="/cart") вернуться к корзине
+                button.button оформить заказ
+
+    h1= user
