@@ -4,4 +4,7 @@ block content
     div.width-limiter.width-limiter--big-padding
         h2.page-header Заказ оформлен
 
-        h1 !!Заказ оформлен!!
+        h2 order
+        h3= JSON.stringify(order)
+        h2 needed products
+        h3= JSON.stringify(products)

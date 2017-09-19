@@ -6,10 +6,6 @@ function getRandomProducts(count) {
         keystone
             .list('Product')
             .model
-
-
-            // FIXME: check for available: true
-            // use properly available: true
             .aggregate([
                 {
                     $match: { // eslint-disable-line id-match
@@ -22,7 +18,6 @@ function getRandomProducts(count) {
                     }
                 }
             ]) // eslint-disable-line id-match
-            // .select(select)
             .exec((err, result) => err ? reject(err) : resolve(result)));
 }
 
@@ -83,8 +78,6 @@ function onInitView(view, next) {
         .list('Product')
         .model
         .findOne({slug})
-        // .select('slug name article description price externalImages properties state ' +
-            // 'image0 image1 image2 image3 image4 image5')
         .exec((err, product) => {
             if (err) {
                 res.status(500);
