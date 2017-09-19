@@ -3,7 +3,7 @@ const keystone = require('keystone');
 const {Types} = keystone.Field;
 
 /**
- * User Product
+ * Product Model
  * ==========
  */
 const Product = new keystone.List('Product', {

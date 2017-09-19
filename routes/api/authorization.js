@@ -27,6 +27,8 @@ const authorizationResponse = {
     }
 };
 
+module.exports.authorizationResponse = authorizationResponse;
+
 module.exports.registration = (req, res) => {
     const User = keystone.list('User');
 

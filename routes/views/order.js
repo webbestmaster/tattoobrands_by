@@ -8,7 +8,7 @@ function onInitView(view, next) {
 exports = module.exports = (req, res) => {
     const view = new keystone.View(req, res);
 
-    view.on('init', next => onInitView(view, next));
+    // view.on('init', next => onInitView(view, next));
 
-    view.render('check');
+    view.render('order');
 };

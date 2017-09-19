@@ -51,8 +51,7 @@ exports = module.exports = app => {
     app.get('/product/:slug', routes.views.product);
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
-    // TODO: do it
-    app.get('/check', routes.views.check);
+    app.get('/order/:slug', routes.views.order);
     app.get('/ordering', (req, res) =>
         req.user ?
             routes.views.ordering(req, res) :
@@ -65,7 +64,6 @@ exports = module.exports = app => {
     app.post('/api/update', update);
 
     // ordering
-    // TODO: do it
     app.post('/api/create-order', jsonParser, createOrder);
 
     // for backward compatibility only
