@@ -9,38 +9,16 @@ function getOrder(req, res) {
         .findOne({slug})
         .exec((err, order) => {
             if (err) {
-                res.status(500);
-                res.render('errors/500');
+                reject(err);
                 return;
             }
 
             if (!order) {
-                res.status(404);
-                res.render('errors/404');
+                reject(order);
                 return;
             }
 
             resolve(order);
-        }));
-}
-
-function getProduct(slug) {
-    return new Promise((resolve, reject) => keystone
-        .list('Product')
-        .model
-        .findOne({slug})
-        .exec((err, product) => {
-            if (err) {
-                resolve({error: true});
-                return;
-            }
-
-            if (!product) {
-                resolve({error: true});
-                return;
-            }
-
-            resolve(product);
         }));
 }
 
@@ -51,11 +29,6 @@ function onInitView(view, next) {
     getOrder(req, res)
         .then(order => {
             Object.assign(locals, {order});
-
-            return Promise.all(order.products.map(productStr => getProduct(JSON.parse(productStr).slug)));
-        })
-        .then(products => {
-            Object.assign(locals, {products});
             next();
         })
         .catch(() => {

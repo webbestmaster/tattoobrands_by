@@ -40,6 +40,9 @@ Order.add({
     // product list
     products: {type: Types.TextArray},
 
+    // basket items
+    basketItems: {type: Types.Textarea, noedit: true},
+
     state: {
         type: Types.Select,
         options: [

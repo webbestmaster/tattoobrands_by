@@ -41,7 +41,8 @@ module.exports.createOrder = (req, res) => {
             address,
             postcode,
             additional,
-            products
+            products,
+            basketItems
         } = req.body;
 
         const Order = keystone.list('Order');
@@ -55,6 +56,7 @@ module.exports.createOrder = (req, res) => {
             address,
             postcode,
             additional,
+            basketItems,
             user: {
                 firstName: userModel.name.first,
                 lastName: userModel.name.last,
