@@ -31,7 +31,7 @@ Product.add({
     // unique product id, set by human
     article: {type: String},
     // price in BYN
-    price: {type: Number},
+    price: {type: Number, required: true, 'default': 0},
     // quantity of products
     quantity: {type: Number},
     // files from another domain, use full url http://github.....

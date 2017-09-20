@@ -40,7 +40,7 @@ block content
                 p.label__text Область:
                 select.input.input--text(name="region" required)
                     option(value="") -- Не выбрано --
-                    - var regions = ['Брестская область', 'Витебская область', 'Брестская область', 'Витебская область', 'Гомельская область', 'Гродненская область', 'Минская область', 'Могилёвская область']
+                    - var regions = ['Брестская область', 'Витебская область', 'Гомельская область', 'Гродненская область', 'Минская область', 'Могилёвская область']
                     each region in regions
                         option(selected=user.region === region)=region
 
@@ -72,5 +72,3 @@ block content
             div.buttons-wrapper
                 a.button(href="/cart") вернуться к корзине
                 button.button оформить заказ
-
-    h1= user

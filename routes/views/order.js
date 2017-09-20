@@ -1,5 +1,9 @@
 const keystone = require('keystone');
 
+const headers = {
+    congratulation: 'Поздравляем! Ваш заказ успешно оформлен!'
+};
+
 function getOrder(req, res) {
     const {slug} = req.params;
 
@@ -25,10 +29,48 @@ function getOrder(req, res) {
 function onInitView(view, next) {
     const {req, res} = view;
     const {locals} = res;
+    const {header} = req.query;
+
+    if (header && headers.hasOwnProperty(header)) {
+        Object.assign(locals, {header: headers[header]});
+    }
 
     getOrder(req, res)
         .then(order => {
-            Object.assign(locals, {order});
+            const {
+                createdAt,
+                name,
+                user,
+                phone,
+                country,
+                region,
+                town,
+                address,
+                postcode,
+                additional,
+                products,
+                basketItems,
+                state
+            } = order;
+
+            Object.assign(locals, {
+                order: {
+                    createdAt: new Date(createdAt).getTime(),
+                    name,
+                    user,
+                    phone,
+                    country,
+                    region,
+                    town,
+                    address,
+                    postcode,
+                    additional,
+                    products,
+                    basketItems: JSON.parse(basketItems),
+                    state
+                }
+            });
+
             next();
         })
         .catch(() => {

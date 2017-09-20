@@ -12,7 +12,7 @@ function onInitView(view, next) {
             perPage: 36
         })
         .find({available: true})
-        .sort({createdAt: 1})
+        .sort({createdAt: -1})
         // .select('slug name description price externalImages image0 promotable')
         .exec((err, result) => {
             if (err) {

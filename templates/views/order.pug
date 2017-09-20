@@ -2,7 +2,14 @@ extends ../layouts/wrapper
 
 block content
     div.width-limiter.width-limiter--big-padding
-        h2.page-header Заказ оформлен
 
-        h2 order
-        h3= JSON.stringify(order)
+        if header
+            h2.page-header= header
+
+        h2.page-header Заказ #
+            != order.name
+        script
+            = 'window.app = window.app || {};'
+            != 'window.app.order =' + JSON.stringify(order)
+
+        div.js-table-order
