@@ -26,7 +26,7 @@ const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login, logout, update} = require('./api/authorization');
-const {createOrder} = require('./api/ordering');
+const {createOrder, pdfOrder} = require('./api/ordering');
 const middleware = require('./middleware');
 
 const importRoutes = keystone.importer(__dirname);
@@ -65,6 +65,7 @@ exports = module.exports = app => {
 
     // ordering
     app.post('/api/create-order', jsonParser, createOrder);
+    app.post('/api/pdf-order', jsonParser, pdfOrder);
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {

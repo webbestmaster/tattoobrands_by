@@ -1,5 +1,9 @@
+/* global __dirname*/
 const keystone = require('keystone');
 const {authorizationResponse} = require('./authorization');
+const pdf = require('html-pdf');
+const fs = require('fs'); // eslint-disable-line id-length
+const path = require('path');
 
 module.exports.createOrder = (req, res) => {
     const {user} = req;
@@ -75,5 +79,51 @@ module.exports.createOrder = (req, res) => {
                 slug: newOrder.slug
             })
         );
+    });
+};
+
+
+const pdfCss = '.no-pdf {display: none !important;} a {text-decoration: none !important;}';
+let css = '';
+
+const config = {
+    format: 'A4',        // allowed units: A3, A4, A5, Legal, Letter, Tabloid
+    orientation: 'portrait', // portrait or landscape
+    border: '0.4in',             // default is 0, units: mm, cm, in, px
+    header: {
+        height: '15mm',
+        contents: '<h1 class="page-header">TattooBrands.by</h1>'
+    },
+    footer: {
+        height: '1mm',
+        contents: {
+            'default': 'Страница: <span>{{page}}</span> / <span>{{pages}}</span>' // fallback value
+        }
+    },
+    type: 'pdf',             // allowed file types: png, jpeg, pdf
+    quality: '75'           // only used for types png & jpeg
+};
+
+fs.readFile(path.resolve(__dirname, '..', '..', 'public', 'front', 'style.css'), 'utf-8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    css = '<style>' + data + pdfCss + '</style>';
+});
+
+module.exports.pdfOrder = (req, res) => {
+    const html = req.body.html + css;
+
+    pdf.create(html, config).toStream((err, stream) => {
+        if (err) {
+            res.toJSON({
+                success: false,
+                error: 'error with stream'
+            });
+            return;
+        }
+        stream.pipe(res);
     });
 };
