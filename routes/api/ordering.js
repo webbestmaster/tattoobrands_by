@@ -4,6 +4,7 @@ const {authorizationResponse} = require('./authorization');
 const pdf = require('html-pdf');
 const fs = require('fs'); // eslint-disable-line id-length
 const path = require('path');
+const sha1 = require('sha1');
 
 module.exports.createOrder = (req, res) => {
     const {user} = req;
@@ -52,7 +53,7 @@ module.exports.createOrder = (req, res) => {
         const Order = keystone.list('Order');
 
         const newOrder = new Order.model({ // eslint-disable-line new-cap
-            name: Date.now(),
+            name: sha1(Date.now()).substr(0, 7).toLowerCase(),
             phone,
             country,
             region,
