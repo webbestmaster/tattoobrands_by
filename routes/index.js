@@ -52,12 +52,17 @@ exports = module.exports = app => {
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
     app.get('/order/:slug', routes.views.order);
+    app.get('/account', (req, res) =>
+        req.user ?
+            routes.views.account(req, res) :
+            res.redirect('/authorization?redirect=/account'));
+
     app.get('/ordering', (req, res) =>
         req.user ?
             routes.views.ordering(req, res) :
             res.redirect('/authorization?redirect=/ordering'));
 
-    // user views
+    // user api
     app.post('/api/registration', jsonParser, registration);
     app.post('/api/login', jsonParser, login);
     app.get('/api/logout', logout);
