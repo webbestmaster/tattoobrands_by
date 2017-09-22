@@ -1,6 +1,8 @@
 /* global process */
 const keystone = require('keystone');
 const {Types} = keystone.Field;
+const {numberToMoney} = require('./my-lib/format');
+const moment = require('moment');
 
 /**
  * Order Model
@@ -56,6 +58,22 @@ Order.add({
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
 });
+
+Order.schema
+    .virtual('fullPrice')
+    .get(function getFullPrice() {
+        const order = this; // eslint-disable-line no-invalid-this
+        const fullPrice = JSON.parse(order.basketItems)
+            .reduce((accumulator, item) => accumulator + item.count * item.price, 0);
+
+        return numberToMoney(fullPrice);
+    });
+
+Order.schema
+    .virtual('createdAtFormat')
+    .get(function getCreatedAtFormat() {
+        return moment(this.createdAt).format('DD / MM / YYYY'); // eslint-disable-line no-invalid-this
+    });
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist

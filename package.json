@@ -9,9 +9,11 @@
     "html-pdf": "^2.1.0",
     "keystone": "^4.0.0-beta.5",
     "lodash": "^4.13.1",
+    "moment": "^2.18.1",
     "node-sass": "4.5.0",
     "node-sass-middleware": "0.11.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "sha1": "^1.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

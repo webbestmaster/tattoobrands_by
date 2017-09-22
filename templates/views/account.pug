@@ -2,4 +2,30 @@ extends ../layouts/wrapper
 
 block content
     div.width-limiter.width-limiter--big-padding
-        h2.page-header account
+        h2.page-header
+            = 'Заказы '
+            = user.email
+
+        if orders.length === 0
+            h2.page-header Сделайте свой первый заказ!
+        else
+            table.table
+                thead.table__head
+                    tr
+                        th.table__th Дата
+                        th.table__th Сумма (руб.)
+                        th.table__th Заказ
+                tbody
+                    each order in orders
+                        tr.table__tr
+                            td.table__td= order.createdAtFormat
+                            td.table__td.table__td--ta-right= order.fullPrice
+                            td.table__td.table__td--ta-right
+                                a(href='/order/' + order.slug).monospace= order.slug
+
+            script
+                = 'window.app = window.app || {};'
+                = 'window.app.indexPagination = {};'
+                = 'window.app.indexPagination.totalPages = ' + indexPagination.totalPages + ';'
+                = 'window.app.indexPagination.startPage = ' + indexPagination.startPage + ';'
+            div.pagination-wrapper.js-index-pagination
