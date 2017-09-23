@@ -75,6 +75,28 @@ exports = module.exports = app => {
     app.post('/api/create-order', jsonParser, createOrder);
     app.post('/api/pdf-order', jsonParser, pdfOrder);
 
+    // debugging
+    // TODO: remove this if needless
+    app.get('/api/categories', (req, res) => {
+        keystone
+            .list('Category')
+            .model
+            .find()
+            .exec((err, categories) => {
+                if (err) {
+                    Object.assign(res.locals, {err});
+                    res.json({
+                        err
+                    });
+                    return;
+                }
+
+                res.json({
+                    categories
+                });
+            });
+    });
+
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
         const {params} = req;

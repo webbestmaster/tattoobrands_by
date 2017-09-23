@@ -62,7 +62,8 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
     Users: 'User',
     Products: 'Product',
-    Orders: 'Order'
+    Orders: 'Order',
+    Categories: 'Category'
 });
 
 // Start Keystone to connect to your database and initialise the web server

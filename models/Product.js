@@ -64,6 +64,8 @@ Product.add({
 
 });
 
+Product.relationship({path: 'category', ref: 'Category', refPath: 'products'});
+
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
 Product.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
