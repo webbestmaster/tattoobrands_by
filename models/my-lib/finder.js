@@ -53,7 +53,9 @@ function getCategoriesTree(categoryId) {
 
                 Object.assign(categoryNode, categoryData);
 
-                return Promise.all(categoryData.categories.map(subCategoryId => getCategoriesTree(subCategoryId)));
+                return Promise
+                    .all(categoryData.categories.map(subCategoryId => getCategoriesTree(subCategoryId)))
+                    .then(categories => categories.filter(category => Object.keys(category).length));
             })
             .then(categories => {
                 if (!categories) {
