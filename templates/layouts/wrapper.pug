@@ -16,10 +16,10 @@ html
         script(src="/front/main.js" type="text/javascript" defer)
 
     body
+        div.main-wrapper
+            include ./header
+            include ./header-nav
 
-        include ./header
-        include ./header-nav
-
-        block content
+            block content
 
         include ./footer
