@@ -50,7 +50,9 @@ function onInitView(view, next) {
                 additional,
                 products,
                 basketItems,
-                state
+                state,
+                createdAtFormat,
+                slug
             } = order;
 
             Object.assign(locals, {
@@ -67,7 +69,9 @@ function onInitView(view, next) {
                     additional,
                     products,
                     basketItems: JSON.parse(basketItems),
-                    state
+                    createdAtFormat,
+                    state,
+                    slug
                 }
             });
 

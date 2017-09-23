@@ -9,10 +9,11 @@ block content
 
         div.js-pdf
 
-            h2.page-header Заказ #
+            h2.page-header Заказ: #
                 != order.name
+                = ', ' + order.createdAtFormat
             script
-                = 'window.app = window.app || {};'
-                != 'window.app.order =' + JSON.stringify(order)
+                != 'window.app = window.app || {};'
+                != 'window.app.order =' + JSON.stringify(order) + ';'
 
             div.js-table-order
