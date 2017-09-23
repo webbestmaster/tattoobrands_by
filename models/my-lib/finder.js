@@ -13,7 +13,19 @@ function getCategoryBy(query) {
                 .list('Category')
                 .model
                 .findOne(query)
-                .exec((err, category) => err ? reject(err) : resolve(normalizeCategory(category)))
+                .exec((err, category) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!category) {
+                        resolve(category);
+                        return;
+                    }
+
+                    resolve(normalizeCategory(category));
+                })
     );
 }
 
@@ -26,22 +38,32 @@ function getCategoryById(categoryId) {
 
 module.exports.getCategoryById = getCategoryById;
 
-function getCategoriesTree(categoryId, categoryNode = {}) {
-    return new Promise((resolve, reject) => getCategoryById(categoryId)
-        .then(categoryData => {
-            Object.assign(categoryNode, categoryData);
-            return Promise
-                .all(categoryData.categories
-                    .map(subCategoryId => ({_id: subCategoryId}))
-                    .map(subCategoryNode => getCategoriesTree(subCategoryNode._id, subCategoryNode)));
-        })
-        .then(categories => {
-            Object.assign(categoryNode, {categories: categories.map(normalizeCategory)});
-            resolve(categoryNode);
-        }))
-        .catch(evt => {
-            console.log(evt)
-        });
+function getCategoriesTree(categoryId) {
+    const categoryNode = {};
+
+    return new Promise((resolve, reject) =>
+        getCategoryById(categoryId)
+            .then(categoryData => {
+                if (!categoryData) {
+                    resolve(categoryNode);
+                    return Promise.resolve();
+                }
+
+                Reflect.deleteProperty(categoryData, '_id');
+
+                Object.assign(categoryNode, categoryData);
+
+                return Promise.all(categoryData.categories.map(subCategoryId => getCategoriesTree(subCategoryId)));
+            })
+            .then(categories => {
+                if (!categories) {
+                    return;
+                }
+
+                Object.assign(categoryNode, {categories: categories.map(normalizeCategory)});
+                resolve(categoryNode);
+            })
+    );
 }
 
 module.exports.getCategoriesTree = getCategoriesTree;
