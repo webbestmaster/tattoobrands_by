@@ -28,7 +28,7 @@ const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login, logout, update} = require('./api/authorization');
 const {createOrder, pdfOrder} = require('./api/ordering');
 const middleware = require('./middleware');
-
+const {getCategoryBy, getCategoriesTree} = require('./../models/my-lib/finder');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
@@ -77,25 +77,11 @@ exports = module.exports = app => {
 
     // debugging
     // TODO: remove this if needless
-    app.get('/api/categories', (req, res) => {
-        keystone
-            .list('Category')
-            .model
-            .find()
-            .exec((err, categories) => {
-                if (err) {
-                    Object.assign(res.locals, {err});
-                    res.json({
-                        err
-                    });
-                    return;
-                }
-
-                res.json({
-                    categories
-                });
-            });
-    });
+    app.get('/api/category-tree', (req, res) =>
+        getCategoryBy({slug: 'root'})
+            .then(({_id}) => getCategoriesTree(_id))
+            .then(data => res.json(data))
+    );
 
     // for backward compatibility only
     app.get('/products/:slug', (req, res) => {
