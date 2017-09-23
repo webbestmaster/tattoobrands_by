@@ -3,3 +3,5 @@ extends ../../layouts/wrapper
 block content
     a.page-500(href='/')
         img.page-500__image(src=externalStorage + 'img/i/500.png')
+
+    div.hidden= JSON.stringify(err)

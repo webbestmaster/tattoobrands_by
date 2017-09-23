@@ -37,7 +37,10 @@ keystone.pre('routes', middleware.initLocals);
 
 keystone.set('404', (req, res, next) => res.status(404).render('errors/404'));
 
-keystone.set('500', (err, req, res, next) => res.status(500).render('errors/500')); // eslint-disable-line handle-callback-err
+keystone.set('500', (err, req, res, next) => {
+    Object.assign(res.locals, {err});
+    return res.status(500).render('errors/500');
+});
 
 // Import Route Controllers
 const routes = {

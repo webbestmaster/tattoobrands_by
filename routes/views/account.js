@@ -6,27 +6,17 @@ function onInitView(view, next) {
 
     keystone
         .list('Order')
-        .paginate({
-            page: req.query.page || 1,
-            perPage: 50
-        })
+        .model
         .find({'user.email': locals.user.email})
-        // .find()
         .sort({createdAt: -1})
-        .exec((err, result) => {
+        .exec((err, orders) => {
             if (err) {
                 res.status(500);
                 res.render('errors/500');
                 return;
             }
 
-            Object.assign(locals, {
-                indexPagination: {
-                    totalPages: result.totalPages,
-                    startPage: result.currentPage
-                },
-                orders: result.results
-            });
+            Object.assign(locals, {orders});
 
             next(err);
         });
