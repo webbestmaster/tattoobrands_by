@@ -914,7 +914,8 @@ body {
   line-height: 14px;
   padding: 10px 19px;
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  cursor: pointer; }
   .header-nav__link:hover {
     color: #bf2622; }
 

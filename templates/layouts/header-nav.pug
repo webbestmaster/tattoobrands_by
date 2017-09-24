@@ -1,6 +1,17 @@
-nav.header-nav.clear
-    a.header-nav__link(href='/') каталог
-    a.header-nav__link(href='/') скидки
-    a.header-nav__link(href='/') гарантия
-    a.header-nav__link(href='/') контакты
-    a.header-nav__link(href='/') оплата и доставка
+//nav.header-nav.clear
+//    a.header-nav__link(href='/') каталог
+//    a.header-nav__link(href='/') скидки
+//    a.header-nav__link(href='/') гарантия
+//    a.header-nav__link(href='/') контакты
+//    a.header-nav__link(href='/') оплата и доставка
+
+script
+    != 'window.app = window.app || {};'
+    != 'window.app.categoryTree = ' + JSON.stringify(categoryTree) + ';'
+
+nav.header-nav.clear.js-header-nav
+    //a.header-nav__link(href='/') каталог
+    //a.header-nav__link(href='/') скидки
+    //a.header-nav__link(href='/') гарантия
+    //a.header-nav__link(href='/') контакты
+    //a.header-nav__link(href='/') оплата и доставка

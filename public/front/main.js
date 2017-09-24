@@ -158,10 +158,14 @@ var basketScripts = __webpack_require__(324);
 var cartScripts = __webpack_require__(325);
 var orderingScripts = __webpack_require__(326);
 var orderScripts = __webpack_require__(327);
+var headerScripts = __webpack_require__(329);
 
 $(function () {
     // main part
     new FastClick(document.body); // eslint-disable-line no-new
+
+    // main scripts
+    headerScripts.initHeaderNav();
 
     // home
     homeScripts.initSwiper();
@@ -896,7 +900,7 @@ var OrderTable = function (_Component) {
 
 
         view.state = {
-            order: order
+            order: JSON.parse(JSON.stringify(order))
         };
         return _this;
     }
@@ -1196,16 +1200,21 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/* global navigator */
+/* global document, navigator */
 var Browser = function () {
     function Browser() {
         _classCallCheck(this, Browser);
     }
 
     _createClass(Browser, [{
-        key: "isIos",
+        key: 'isIos',
         value: function isIos() {
             return Boolean(navigator.platform) && /iPad|iPhone|iPod/.test(navigator.platform);
+        }
+    }, {
+        key: 'isTouch',
+        value: function isTouch() {
+            return 'ontouchstart' in document;
         }
     }]);
 
@@ -1213,6 +1222,114 @@ var Browser = function () {
 }();
 
 module.exports.browser = new Browser();
+
+/***/ }),
+
+/***/ 329:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/* global document */
+var React = __webpack_require__(53);
+var Component = React.Component;
+
+var ReactDOM = __webpack_require__(55);
+
+var _require = __webpack_require__(328),
+    browser = _require.browser;
+
+window.app = window.app || {};
+
+var TabContent = function (_Component) {
+    _inherits(TabContent, _Component);
+
+    function TabContent() {
+        _classCallCheck(this, TabContent);
+
+        return _possibleConstructorReturn(this, (TabContent.__proto__ || Object.getPrototypeOf(TabContent)).apply(this, arguments));
+    }
+
+    _createClass(TabContent, [{
+        key: 'render',
+        value: function render() {
+            var view = this;
+            var props = view.props;
+            var content = props.content;
+
+
+            return React.createElement('div', { className: 'header-nav__tab-content' });
+        }
+    }]);
+
+    return TabContent;
+}(Component);
+
+var HeaderNav = function (_Component2) {
+    _inherits(HeaderNav, _Component2);
+
+    function HeaderNav() {
+        _classCallCheck(this, HeaderNav);
+
+        var _this2 = _possibleConstructorReturn(this, (HeaderNav.__proto__ || Object.getPrototypeOf(HeaderNav)).call(this));
+
+        var view = _this2;
+        var _window = window,
+            app = _window.app;
+        var categoryTree = app.categoryTree;
+
+
+        view.state = {
+            categoryTree: JSON.parse(JSON.stringify(categoryTree))
+        };
+        return _this2;
+    }
+
+    _createClass(HeaderNav, [{
+        key: 'render',
+        value: function render() {
+            var view = this;
+            var state = view.state;
+            var categoryTree = state.categoryTree;
+
+
+            return React.createElement(
+                'div',
+                null,
+                categoryTree.categories.sort(function (category1, category2) {
+                    return category1.order - category2.order;
+                }).map(function (category) {
+                    return React.createElement(
+                        'div',
+                        { key: category.slug, className: 'header-nav__link' },
+                        category.displayName || category.name
+                    );
+                })
+            );
+        }
+    }]);
+
+    return HeaderNav;
+}(Component);
+
+module.exports.initHeaderNav = function () {
+    var wrapper = document.querySelector('.js-header-nav');
+
+    if (!wrapper) {
+        return;
+    }
+
+    ReactDOM.render(React.createElement(HeaderNav, null), wrapper);
+};
 
 /***/ })
 

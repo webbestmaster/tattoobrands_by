@@ -9,6 +9,8 @@
  */
 // var _ = require('lodash');
 
+const {getCategoryBy, getCategoriesTree} = require('./../models/my-lib/finder');
+
 exports.initLocals = (req, res, next) => {
     const {locals} = res;
 
@@ -20,6 +22,18 @@ exports.initLocals = (req, res, next) => {
     next();
 };
 
+exports.initCategoryTree = (req, res, next) => {
+    // TODO: this prevent for extra keystone.pre('routes'
+    // this work for 404 resources too
+
+    getCategoryBy({slug: 'root'})
+        .then(({_id}) => getCategoriesTree(_id))
+        .then(categoryTree => {
+            Object.assign(res.locals, {categoryTree});
+            next();
+        })
+        .catch(next);
+};
 
 /*
 /!**

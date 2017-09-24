@@ -33,6 +33,7 @@ const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', middleware.initCategoryTree);
 // keystone.pre('render', middleware.flashMessages);
 
 keystone.set('404', (req, res, next) => res.status(404).render('errors/404'));
