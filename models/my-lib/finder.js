@@ -1,9 +1,19 @@
 const keystone = require('keystone');
 
-function normalizeCategory(category) {
-    const {categories, products, name, slug, _id} = category;
+function getImagePath(image) {
+    if (typeof image === 'string' || !image) {
+        return image;
+    }
 
-    return {categories, products, name, slug, _id};
+    const {filename} = image;
+
+    return filename ? '/category/images/' + filename : null;
+}
+
+function normalizeCategory(category) {
+    const {categories, products, name, slug, _id, displayName, image, order} = category;
+
+    return {categories, products, name, slug, _id, displayName, image: getImagePath(image), order};
 }
 
 function getCategoryBy(query) {

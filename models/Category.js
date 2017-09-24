@@ -15,12 +15,31 @@ const Category = new keystone.List('Category', {
     defaultSort: '-createdAt'
 });
 
+const imageStorage = new keystone.Storage({
+    adapter: keystone.Storage.Adapters.FS,
+    fs: { // eslint-disable-line id-length
+        path: 'public/category/images',
+        publicPath: '/public'
+    }
+});
+
 Category.add({
-    // product name
+    // product name, really this is ID
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
 
+    // name to show for user
+    displayName: {type: String},
+
+    // order in list for view
+    order: {type: Number, 'default': 0},
+
+    // preview
+    image: {type: Types.File, storage: imageStorage},
+
+    // child products
     products: {type: Types.Relationship, ref: 'Product', many: true},
 
+    // child categories
     categories: {type: Types.Relationship, ref: 'Category', many: true},
 
     // date of create product
