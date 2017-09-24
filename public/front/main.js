@@ -1207,15 +1207,15 @@ var Browser = function () {
     }
 
     _createClass(Browser, [{
-        key: 'isIos',
+        key: "isIos",
         value: function isIos() {
             return Boolean(navigator.platform) && /iPad|iPhone|iPod/.test(navigator.platform);
         }
-    }, {
-        key: 'isTouch',
-        value: function isTouch() {
-            return 'ontouchstart' in document;
-        }
+
+        // isTouch() {
+        //     return 'ontouchstart' in document;
+        // }
+
     }]);
 
     return Browser;
@@ -1244,9 +1244,8 @@ var React = __webpack_require__(53);
 var Component = React.Component;
 
 var ReactDOM = __webpack_require__(55);
-
-var _require = __webpack_require__(328),
-    browser = _require.browser;
+var find = __webpack_require__(73);
+// const {browser} = require('./my-lib/browser');
 
 window.app = window.app || {};
 
@@ -1289,31 +1288,62 @@ var HeaderNav = function (_Component2) {
 
 
         view.state = {
-            categoryTree: JSON.parse(JSON.stringify(categoryTree))
+            categoryTree: JSON.parse(JSON.stringify(categoryTree)),
+            activeCategorySlug: null
         };
         return _this2;
     }
 
     _createClass(HeaderNav, [{
+        key: 'openTab',
+        value: function openTab(slug) {
+            var view = this;
+
+            view.setState({ activeCategorySlug: slug });
+        }
+    }, {
+        key: 'closeTabs',
+        value: function closeTabs() {
+            var view = this;
+
+            view.setState({ activeCategorySlug: null });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var view = this;
             var state = view.state;
             var categoryTree = state.categoryTree;
 
+            var activeCategory = find(categoryTree.categories, { slug: state.activeCategorySlug });
 
             return React.createElement(
                 'div',
                 null,
                 categoryTree.categories.sort(function (category1, category2) {
                     return category1.order - category2.order;
-                }).map(function (category) {
+                }).map(function (_ref) {
+                    var displayName = _ref.displayName,
+                        name = _ref.name,
+                        slug = _ref.slug;
                     return React.createElement(
                         'div',
-                        { key: category.slug, className: 'header-nav__link' },
-                        category.displayName || category.name
+                        {
+                            onMouseEnter: function onMouseEnter() {
+                                return view.openTab(slug);
+                            },
+                            onMouseLeave: function onMouseLeave() {
+                                return view.closeTabs();
+                            },
+                            key: slug, className: 'header-nav__link' },
+                        displayName || name
                     );
-                })
+                }),
+                activeCategory && React.createElement(
+                    'h1',
+                    null,
+                    JSON.stringify(activeCategory)
+                )
             );
         }
     }]);
