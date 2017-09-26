@@ -12,7 +12,8 @@ const Order = new keystone.List('Order', {
     autokey: {
         from: 'name',
         path: 'slug',
-        unique: true
+        unique: true,
+        fixed: true
     },
     defaultSort: '-createdAt'
 });
