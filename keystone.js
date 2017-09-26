@@ -48,7 +48,8 @@ keystone.import('models');
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
     externalStorage: 'https://tattoobrands.github.io/',
-    defaultCountry: 'Беларусь'
+    defaultCountry: 'Беларусь',
+    host: 'http://tattoobrands.by/'
     // _: require('lodash'), // eslint-disable-line id-length
     // env: keystone.get('env')
     // utils: keystone.utils,

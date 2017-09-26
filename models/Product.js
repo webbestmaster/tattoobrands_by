@@ -1,6 +1,7 @@
 /* global process */
 const keystone = require('keystone');
 const {Types} = keystone.Field;
+const sha1 = require('sha1');
 
 /**
  * Product Model
@@ -24,6 +25,8 @@ const imageStorage = new keystone.Storage({
 });
 
 Product.add({
+    // link to products
+    link: {type: Types.Url, noedit: true, 'default': ''},
     // product name
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
     // description of product, in html
@@ -62,6 +65,24 @@ Product.add({
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
 
+});
+
+Product.schema.pre('save', function createLink(next) {
+    const model = this; // eslint-disable-line no-invalid-this
+
+    model.link = keystone.get('locals').host + 'product/' + model.slug;
+
+    next();
+});
+
+Product.schema.pre('save', function createArticle(next) {
+    const model = this; // eslint-disable-line no-invalid-this
+
+    if (!model.article) {
+        model.article = sha1(model.slug).substr(0, 5).toLowerCase();
+    }
+
+    next();
 });
 
 Product.relationship({path: 'category', ref: 'Category', refPath: 'products'});

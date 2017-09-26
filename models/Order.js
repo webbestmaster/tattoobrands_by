@@ -18,6 +18,8 @@ const Order = new keystone.List('Order', {
 });
 
 Order.add({
+    // link to products
+    link: {type: Types.Url, noedit: true, 'default': ''},
     // product name
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
 
@@ -57,6 +59,14 @@ Order.add({
 
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
+});
+
+Order.schema.pre('save', function createLink(next) {
+    const model = this; // eslint-disable-line no-invalid-this
+
+    model.link = keystone.get('locals').host + 'order/' + model.slug;
+
+    next();
 });
 
 Order.schema
