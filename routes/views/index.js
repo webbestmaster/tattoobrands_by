@@ -9,7 +9,7 @@ function onInitView(view, next) {
         .list('Product')
         .paginate({
             page: req.query.page || 1,
-            perPage: 36
+            perPage: 30
         })
         .find({available: true})
         .sort({createdAt: -1})
