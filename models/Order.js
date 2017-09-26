@@ -63,8 +63,11 @@ Order.add({
 
 Order.schema.pre('save', function createLink(next) {
     const model = this; // eslint-disable-line no-invalid-this
+    const {slug} = model;
 
-    model.link = keystone.get('locals').host + 'order/' + model.slug;
+    if (slug) {
+        model.link = keystone.get('locals').host + 'order/' + slug;
+    }
 
     next();
 });

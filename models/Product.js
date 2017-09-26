@@ -34,7 +34,7 @@ Product.add({
     // unique product id, set by human
     article: {type: String},
     // price in BYN
-    price: {type: Number, required: true, 'default': 0},
+    price: {type: Number, 'default': 0},
     // quantity of products
     quantity: {type: Number},
     // files from another domain, use full url http://github.....
@@ -69,17 +69,21 @@ Product.add({
 
 Product.schema.pre('save', function createLink(next) {
     const model = this; // eslint-disable-line no-invalid-this
+    const {slug} = model;
 
-    model.link = keystone.get('locals').host + 'product/' + model.slug;
+    if (slug) {
+        model.link = keystone.get('locals').host + 'product/' + slug;
+    }
 
     next();
 });
 
 Product.schema.pre('save', function createArticle(next) {
     const model = this; // eslint-disable-line no-invalid-this
+    const {slug, article} = model;
 
-    if (!model.article) {
-        model.article = sha1(model.slug).substr(0, 5).toLowerCase();
+    if (!article && slug) {
+        model.article = sha1(slug).substr(0, 5).toLowerCase();
     }
 
     next();

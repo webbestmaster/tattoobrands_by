@@ -52,8 +52,10 @@ module.exports.createOrder = (req, res) => {
 
         const Order = keystone.list('Order');
 
+
+        const name = sha1(Date.now()).substr(0, 7).toLowerCase();
         const newOrder = new Order.model({ // eslint-disable-line new-cap
-            name: sha1(Date.now()).substr(0, 7).toLowerCase(),
+            name,
             phone,
             country,
             region,
@@ -67,7 +69,8 @@ module.exports.createOrder = (req, res) => {
                 lastName: userModel.name.last,
                 email: userModel.email
             },
-            products
+            products,
+            link: keystone.get('locals').host + 'order/' + name
         });
 
         newOrder.save(saveErr => saveErr ?
