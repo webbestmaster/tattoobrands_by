@@ -94,7 +94,7 @@ function onInitView(view, next) {
             const normalizedProduct = normalizeProduct(product);
             const {name, description} = normalizedProduct;
 
-            getRandomProducts(5)
+            getRandomProducts(4)
                 .then(extraProducts => {
                     Object.assign(locals, {
                         extraProducts: extraProducts.map(indexNormalizeProduct),
