@@ -1,4 +1,5 @@
 const keystone = require('keystone');
+const {normalizeProduct} = require('./../../routes/views/helper/index');
 
 function getImagePath(image) {
     if (typeof image === 'string' || !image) {
@@ -79,3 +80,28 @@ function getCategoriesTree(categoryId) {
 }
 
 module.exports.getCategoriesTree = getCategoriesTree;
+
+function getProductBy(query) {
+    return new Promise(
+        (resolve, reject) =>
+            keystone
+                .list('Product')
+                .model
+                .findOne(query)
+                .exec((err, product) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!product) {
+                        resolve(product);
+                        return;
+                    }
+
+                    resolve(normalizeProduct(product));
+                })
+    );
+}
+
+module.exports.getProductBy = getProductBy;

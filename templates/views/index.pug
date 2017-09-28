@@ -1,15 +1,11 @@
 extends ../layouts/wrapper
+include ../mixins/products
 
 block content
     include ./../layouts/home-swiper
 
     div.products-preview
-        each product in products
-            a(href='/product/' + product.slug class='js-product-preview product-preview' + (product.promotable ? ' product-preview--promotable' : ''))
-                div.product-preview__image(style='background-image: url(' + product.image + ')')
-                h3.product-preview__name= product.name
-                div.product-preview__description!= product.description
-                span.product-preview__price= product.price + ' руб.'
+        +products(products)
 
     script
         = 'window.app = window.app || {};'
