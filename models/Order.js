@@ -51,11 +51,11 @@ Order.add({
     state: {
         type: Types.Select,
         options: [
-            {value: 'state-0', label: 'state 0'},
-            {value: 'state-1', label: 'state 1'},
-            {value: 'state-2', label: 'state 2'}
+            {value: 'in-processing', label: 'in processing'},
+            {value: 'confirmed', label: 'confirmed'},
+            {value: 'canceled', label: 'canceled'}
         ],
-        'default': 'state-0'
+        'default': 'in-processing'
     },
 
     // date of create product

@@ -16,6 +16,7 @@ block content
                             th.table__th Дата
                             th.table__th Сумма (руб.)
                             th.table__th Заказ
+                            th.table__th Статус
                     tbody
                         each order in orders
                             tr.table__tr
@@ -23,3 +24,12 @@ block content
                                 td.table__td.table__td--ta-right= order.fullPrice
                                 td.table__td.table__td--ta-right
                                     a(href='/order/' + order.slug).monospace= order.slug
+                                td.table__td.table__td--ta-right
+                                    - var state = order.state
+                                    if state === 'in-processing'
+                                        | в обработке
+                                    if state === 'confirmed'
+                                        | подтверждён
+                                    if state === 'canceled'
+                                        | отменён
+
