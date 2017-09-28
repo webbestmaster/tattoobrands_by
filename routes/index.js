@@ -56,6 +56,7 @@ exports = module.exports = app => {
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
     app.get('/order/:slug', routes.views.order);
+    app.get('/category', routes.views.category);
     app.get('/category/:slug', routes.views.category);
     app.get('/account', (req, res) =>
         req.user ?

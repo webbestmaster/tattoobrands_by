@@ -3,7 +3,7 @@ const {getCategoryBy, getProductBy} = require('./../../models/my-lib/finder');
 
 function onInitView(view, next) {
     const {res, req} = view;
-    const {slug} = req.params;
+    const {slug = 'root'} = req.params;
     const {locals} = res;
 
     getCategoryBy({slug})
