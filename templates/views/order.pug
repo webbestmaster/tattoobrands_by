@@ -9,9 +9,18 @@ block content
 
         div.js-pdf
 
-            h2.page-header Заказ: #
+            h2.page-header Заказ:&nbsp;#
                 != order.name
-                = ', ' + order.createdAtFormat
+                != ' | ' + order.createdAtFormat.replace(/\s/gi, '&nbsp;')
+                = ' | '
+                - var state = order.state
+                if state === 'in-processing'
+                    | в&nbsp;обработке
+                if state === 'confirmed'
+                    | подтверждён
+                if state === 'canceled'
+                    | отменён
+
             script
                 != 'window.app = window.app || {};'
                 != 'window.app.order =' + JSON.stringify(order) + ';'
