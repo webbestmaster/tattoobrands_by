@@ -24,6 +24,9 @@ const imageStorage = new keystone.Storage({
 });
 
 Category.add({
+    // link to category
+    link: {type: Types.Url, noedit: true, 'default': ''},
+
     // product name, really this is ID
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
 
@@ -44,6 +47,17 @@ Category.add({
 
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
+});
+
+Category.schema.pre('save', function createLink(next) {
+    const model = this; // eslint-disable-line no-invalid-this
+    const {slug} = model;
+
+    if (slug) {
+        model.link = keystone.get('locals').host + 'category/' + slug;
+    }
+
+    next();
 });
 
 // disable mongo db auto index
