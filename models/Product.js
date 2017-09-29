@@ -89,7 +89,7 @@ Product.schema.pre('save', function createArticle(next) {
     next();
 });
 
-Product.relationship({path: 'category', ref: 'Category', refPath: 'products'});
+Product.relationship({path: 'any-path-1', ref: 'Category', refPath: 'products'});
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
