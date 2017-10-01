@@ -57,7 +57,7 @@ Product.add({
     // product is promotable
     promotable: {type: Types.Boolean, 'default': false},
     // product is available on site, use it field to filter extra product
-    available: {type: Types.Boolean, 'default': true},
+    // available: {type: Types.Boolean, 'default': true},
     // use ";" to separate key and value
     properties: {type: Types.TextArray},
     // old link from old site

@@ -86,11 +86,11 @@ function getRandomProducts(count) {
             .list('Product')
             .model
             .aggregate([
-                {
-                    $match: { // eslint-disable-line id-match
-                        available: true
-                    }
-                },
+                // {
+                //     $match: { // eslint-disable-line id-match
+                //         available: true
+                //     }
+                // },
                 {
                     $sample: { // eslint-disable-line id-match
                         size: count

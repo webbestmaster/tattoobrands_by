@@ -11,7 +11,8 @@ function onInitView(view, next) {
             page: req.query.page || 1,
             perPage: 30
         })
-        .find({available: true})
+        .find()
+        // .find({available: true})
         .sort({createdAt: -1})
         // .select('slug name description price externalImages image0 promotable')
         .exec((err, result) => {
