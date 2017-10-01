@@ -9,7 +9,7 @@
  */
 // var _ = require('lodash');
 
-const {getCategoryBy, getCategoriesTree} = require('./../models/my-lib/finder');
+const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 
 exports.initLocals = (req, res, next) => {
     const {locals} = res;

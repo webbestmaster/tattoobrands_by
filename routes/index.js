@@ -28,7 +28,7 @@ const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login, logout, update} = require('./api/authorization');
 const {createOrder, pdfOrder} = require('./api/ordering');
 const middleware = require('./middleware');
-const {getCategoryBy, getCategoriesTree} = require('./../models/my-lib/finder');
+const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware

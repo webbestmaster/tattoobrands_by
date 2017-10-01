@@ -1,5 +1,6 @@
 const keystone = require('keystone');
-const {getCategoryBy, getProductBy} = require('./../../models/my-lib/finder');
+const {getCategoryBy} = require('./helper/category');
+const {getProductBy} = require('./helper/product');
 
 function onInitView(view, next) {
     const {res, req} = view;

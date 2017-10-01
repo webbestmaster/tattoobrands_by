@@ -1,5 +1,5 @@
 const keystone = require('keystone');
-const {normalizeProduct} = require('./helper/index');
+const {normalizeProduct} = require('./helper/product');
 
 function onInitView(view, next) {
     const {res, req} = view;

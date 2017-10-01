@@ -15,7 +15,7 @@ function roundNumber(number, value) {
     return newNumber;
 }
 
-module.exports.roundNumber = roundNumber;
+// module.exports.roundNumber = roundNumber;
 
 // test
 // console.assert(roundNumber(0.7999, 2) === 0.8);

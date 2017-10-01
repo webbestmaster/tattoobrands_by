@@ -1,7 +1,7 @@
 mixin products(products)
     each product in products
         a(href='/product/' + product.slug class='js-product-preview product-preview' + (product.promotable ? ' product-preview--promotable' : ''))
-            div.product-preview__image(style='background-image: url(' + product.image + ')')
+            div.product-preview__image(style='background-image: url(' + product.images[0] + ')')
             h3.product-preview__name= product.name
             div.product-preview__description!= product.description
             span.product-preview__price= product.price + ' руб.'
