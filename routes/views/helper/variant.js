@@ -2,6 +2,7 @@ const keystone = require('keystone');
 
 function normalizeVariant(variant) {
     const {
+        name,
         displayName,
         product1,
         product2,
@@ -19,6 +20,7 @@ function normalizeVariant(variant) {
         }));
 
     return {
+        name,
         displayName,
         items
     };

@@ -1,5 +1,6 @@
 extends ../layouts/wrapper
 include ../mixins/products
+include ../mixins/variants
 
 block content
     div.width-limiter
@@ -22,6 +23,8 @@ block content
                     div.product-description__properties
                         each property in properties
                             p.product-properties__property=property
+
+                +variants(variants, product._id)
 
                 div.product-description__state-wrapper
                     p.product-description__price

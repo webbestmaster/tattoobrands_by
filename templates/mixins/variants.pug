@@ -1,0 +1,9 @@
+mixin variants(variants, productId)
+    each variant in variants
+        div.variant
+            h3.variant__header=variant.displayName || variant.name
+            each item in variant.items
+                if item.productId === productId
+                    a.variant-link.variant-link--active(href='/product-id/' + item.productId)= item.label
+                else
+                    a.variant-link(href='/product-id/' + item.productId)= item.label
