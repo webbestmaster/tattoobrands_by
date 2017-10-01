@@ -1,6 +1,6 @@
 const keystone = require('keystone');
 const {getRandomProducts, getProductBy} = require('./helper/product');
-
+const {getProductVariants} = require('./helper/variant');
 
 function onInitView(view, next) {
     const {req, res} = view;
@@ -9,19 +9,25 @@ function onInitView(view, next) {
     const {slug} = params;
 
     Promise
-        .all([
-            getProductBy({slug}),
-            getRandomProducts(4)
-        ])
-        .then(([product, extraProducts]) => {
-            Object.assign(locals, {
-                extraProducts,
-                product,
-                title: product.name,
-                description: product.name + ' - ' + product.description
-            });
-            next();
-        })
+        .resolve()
+        .then(() => getProductBy({slug}))
+        .then(product =>
+            Promise
+                .all([
+                    getRandomProducts(4),
+                    getProductVariants(product._id) // eslint-disable-line no-underscore-dangle
+                ])
+                .then(([extraProducts, variants]) => {
+                    Object.assign(locals, {
+                        variants,
+                        extraProducts,
+                        product,
+                        title: product.name,
+                        description: product.name + ' - ' + product.description
+                    });
+                    next();
+                })
+        )
         .catch(next);
 }
 

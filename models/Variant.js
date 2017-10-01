@@ -20,7 +20,7 @@ Variant.add({
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
 
     // name to show for user
-    label: {type: String},
+    displayName: {type: String},
 
     // child products
     product1: {

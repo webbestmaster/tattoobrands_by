@@ -38,7 +38,7 @@ function normalizeProduct(product) {
         );
 
     return {
-        _id,
+        _id: _id.toString(),
         slug,
         name,
         article,
