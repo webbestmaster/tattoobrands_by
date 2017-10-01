@@ -29,6 +29,7 @@ const {registration, login, logout, update} = require('./api/authorization');
 const {createOrder, pdfOrder} = require('./api/ordering');
 const middleware = require('./middleware');
 const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
+const {getProductBy} = require('./views/helper/product');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
@@ -53,6 +54,13 @@ exports = module.exports = app => {
     // views
     app.get('/', routes.views.index);
     app.get('/product/:slug', routes.views.product);
+    app.get('/product-id/:id', (req, res) => {
+        const {params} = req;
+        const {id} = params;
+
+        getProductBy({_id: id})
+            .then(({slug}) => res.redirect('/product/' + slug));
+    });
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
     app.get('/order/:slug', routes.views.order);
