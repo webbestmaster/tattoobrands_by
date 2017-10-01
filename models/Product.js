@@ -89,7 +89,14 @@ Product.schema.pre('save', function createArticle(next) {
     next();
 });
 
-Product.relationship({path: 'any-path-1', ref: 'Category', refPath: 'products'});
+Product.relationship({path: 'path-to-category', ref: 'Category', refPath: 'products'});
+
+Product.relationship({path: 'path-to-product-1', ref: 'Variant', refPath: 'product1.product'});
+Product.relationship({path: 'path-to-product-2', ref: 'Variant', refPath: 'product2.product'});
+Product.relationship({path: 'path-to-product-3', ref: 'Variant', refPath: 'product3.product'});
+Product.relationship({path: 'path-to-product-4', ref: 'Variant', refPath: 'product4.product'});
+Product.relationship({path: 'path-to-product-5', ref: 'Variant', refPath: 'product5.product'});
+Product.relationship({path: 'path-to-product-6', ref: 'Variant', refPath: 'product6.product'});
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
