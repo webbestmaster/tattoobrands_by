@@ -2,7 +2,7 @@ const keystone = require('keystone');
 
 const {getAllCategories, getCategoryBy} = require('./../views/helper/category');
 const {getProductBy} = require('./../views/helper/product');
-const {getAllVariants} = require('./../views/helper/variant');
+const {getAllVariants, getVariantBy} = require('./../views/helper/variant');
 
 module.exports.checkStore = (req, res) => {
     Promise
@@ -13,19 +13,19 @@ module.exports.checkStore = (req, res) => {
         .then(([categories, variants]) => {
             Promise
                 .all([
-                    Promise.all(categories.map(({_id}) => checkCategoryById(_id)))
+                    Promise.all(categories.map(({_id}) => checkCategoryById(_id))),
+                    Promise.all(variants.map(({_id}) => checkVariantById(_id)))
                 ])
-                .then(([checkedCategories]) => {
+                .then(([checkedCategories, checkedVariants]) => {
                     res.json({
-                        categories: checkedCategories
-                        // variants
+                        categories: checkedCategories,
+                        variants: checkedVariants
                     });
                 });
         });
 };
 
 function checkCategoryById(categoryId) {
-    console.log(categoryId);
     return getCategoryBy({_id: categoryId})
         .then(({categories, products}) =>
             Promise.all([
@@ -34,7 +34,20 @@ function checkCategoryById(categoryId) {
             ])
         )
         .then(() => 'Category with ID: ' + categoryId + ' is correct.')
-        .catch(evt => {
-            return 'Category with ID: ' + categoryId + ' is WRONG!\n' + JSON.stringify(evt);
-        });
+        .catch(evt => 'Category with ID: ' + categoryId + ' is WRONG!\n' + JSON.stringify(evt));
+}
+
+function checkVariantById(variantId) {
+    return getVariantBy({_id: variantId})
+        .then(variant =>
+            Promise.all(variant.items
+                .map(({label, productId}) =>
+                    label ?
+                        getProductBy({_id: productId}) :
+                        Promise.reject({error: 'Product without label, product id: ' + productId})
+                )
+            )
+        )
+        .then(() => 'Variant with ID: ' + variantId + ' is correct.')
+        .catch(evt => 'Variant with ID: ' + variantId + ' is WRONG!\n' + JSON.stringify(evt));
 }

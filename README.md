@@ -8,5 +8,5 @@ Steps:
     $ npm install -g generator-keystone \
     $ yo keystone
 
-
-
+- check store
+/api/check-store

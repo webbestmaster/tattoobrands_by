@@ -11,7 +11,14 @@
 
 const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 
+function isApiUrl(url) {
+    return url.indexOf('/api/') === 0;
+}
+
 exports.initLocals = (req, res, next) => {
+    // do not use check for isApiUrl
+    // cause here user is set
+
     const {locals} = res;
 
     locals.title = 'Магазин профессионального оборудования и аксессуаров для тату | TattooBrands';
@@ -26,7 +33,7 @@ exports.initCategoryTree = (req, res, next) => {
     // TODO: this prevent for extra keystone.pre('routes'
     // this work for 404 resources too
 
-    if (req.url.indexOf('/api/') === 0) {
+    if (isApiUrl(req.url)) {
         next();
         return;
     }

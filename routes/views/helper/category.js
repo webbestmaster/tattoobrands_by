@@ -30,7 +30,7 @@ function getCategoryBy(query) {
                     }
 
                     if (!category) {
-                        reject({error: 'no category by query: ' + JSON.stringify(query)});
+                        reject({error: 'No Category by query: ' + JSON.stringify(query)});
                         return;
                     }
 
