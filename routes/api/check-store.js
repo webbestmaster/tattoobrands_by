@@ -1,25 +1,30 @@
-const keystone = require('keystone');
-
+/* global process */
+const request = require('request');
 const {getAllCategories, getCategoryBy} = require('./../views/helper/category');
-const {getProductBy} = require('./../views/helper/product');
+const {getProductBy, getAllProducts} = require('./../views/helper/product');
 const {getAllVariants, getVariantBy} = require('./../views/helper/variant');
+const {env} = process;
+const {PORT} = env;
 
 module.exports.checkStore = (req, res) => {
     Promise
         .all([
             getAllCategories(),
-            getAllVariants()
+            getAllVariants(),
+            getAllProducts()
         ])
-        .then(([categories, variants]) => {
+        .then(([categories, variants, products]) => {
             Promise
                 .all([
                     Promise.all(categories.map(({_id}) => checkCategoryById(_id))),
-                    Promise.all(variants.map(({_id}) => checkVariantById(_id)))
+                    Promise.all(variants.map(({_id}) => checkVariantById(_id))),
+                    checkProductsById(products.map(({_id}) => _id))
                 ])
-                .then(([checkedCategories, checkedVariants]) => {
+                .then(([checkedCategories, checkedVariants, checkedProducts]) => {
                     res.json({
                         categories: checkedCategories,
-                        variants: checkedVariants
+                        variants: checkedVariants,
+                        products: checkedProducts
                     });
                 });
         });
@@ -50,4 +55,33 @@ function checkVariantById(variantId) {
         )
         .then(() => 'Variant with ID: ' + variantId + ' is correct.')
         .catch(evt => 'Variant with ID: ' + variantId + ' is WRONG!\n' + JSON.stringify(evt));
+}
+
+function checkProductsById(productsIds) {
+    let chain = Promise.resolve();
+    const statuses = [];
+
+    productsIds
+        .forEach((productsId, ii) => {
+            if (ii > 10) {
+                return;
+            }
+            chain = chain.then(() => checkProductById(productsId).then(result => statuses.push(result)));
+        });
+
+    return chain.then(() => statuses);
+}
+
+function checkProductById(productId) {
+    return getProductBy({_id: productId})
+        .then(({slug}) => requestProduct(slug))
+        .then(() => 'Product with ID: ' + productId + ' is correct.')
+        .catch(evt => 'Product with ID: ' + productId + ' is WRONG!\n' + JSON.stringify(evt));
+}
+
+function requestProduct(slug) {
+    return new Promise((resolve, reject) => request
+        .get('http://localhost:' + PORT + '/product/' + slug)
+        .on('response', ({statusCode}) => statusCode === 200 ? resolve() : reject({statusCode}))
+    );
 }

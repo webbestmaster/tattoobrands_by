@@ -102,3 +102,15 @@ function getRandomProducts(count) {
 }
 
 module.exports.getRandomProducts = getRandomProducts;
+
+function getAllProducts() {
+    return new Promise((resolve, reject) =>
+        keystone
+            .list('Product')
+            .model
+            .find()
+            .exec((err, products) => err ? reject(err) : resolve(products.map(normalizeProduct)))
+    );
+}
+
+module.exports.getAllProducts = getAllProducts;
