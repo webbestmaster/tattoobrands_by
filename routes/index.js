@@ -31,6 +31,7 @@ const middleware = require('./middleware');
 const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 const {getProductBy} = require('./views/helper/product');
 const importRoutes = keystone.importer(__dirname);
+const {checkStore} = require('./../routes/api/check-store');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -50,7 +51,7 @@ const routes = {
 };
 
 // Setup Route Bindings
-exports = module.exports = app => {
+exports = module.exports = app => { // eslint-disable-line max-statements
     // views
     app.get('/', routes.views.index);
     app.get('/product/:slug', routes.views.product);
@@ -115,4 +116,7 @@ exports = module.exports = app => {
     // - need to add old products only
     app.post('/add-product', jsonParser, helperAddProduct);
     app.post('/remove-product', jsonParser, helperRemoveProduct);
+
+    // check store
+    app.get('/api/check-store', checkStore);
 };

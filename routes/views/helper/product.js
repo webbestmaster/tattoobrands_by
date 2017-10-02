@@ -68,7 +68,7 @@ function getProductBy(query) {
                     }
 
                     if (!product) {
-                        resolve(product);
+                        reject({error: 'no product by query: ' + JSON.stringify(query)});
                         return;
                     }
 

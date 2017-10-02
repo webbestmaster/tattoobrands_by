@@ -26,6 +26,11 @@ exports.initCategoryTree = (req, res, next) => {
     // TODO: this prevent for extra keystone.pre('routes'
     // this work for 404 resources too
 
+    if (req.url.indexOf('/api/') === 0) {
+        next();
+        return;
+    }
+
     getCategoryBy({slug: 'root'})
         .then(({_id}) => getCategoriesTree(_id))
         .then(categoryTree => {

@@ -36,6 +36,8 @@ function getAllVariants() {
     );
 }
 
+module.exports.getAllVariants = getAllVariants;
+
 function getProductVariants(productId) {
     return getAllVariants()
         .then(variants =>

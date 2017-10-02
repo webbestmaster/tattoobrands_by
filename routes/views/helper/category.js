@@ -30,7 +30,7 @@ function getCategoryBy(query) {
                     }
 
                     if (!category) {
-                        resolve(category);
+                        reject({error: 'no category by query: ' + JSON.stringify(query)});
                         return;
                     }
 
@@ -72,3 +72,16 @@ function getCategoriesTree(categoryId) {
 }
 
 module.exports.getCategoriesTree = getCategoriesTree;
+
+
+function getAllCategories() {
+    return new Promise((resolve, reject) =>
+        keystone
+            .list('Category')
+            .model
+            .find()
+            .exec((err, categories) => err ? reject(err) : resolve(categories.map(normalizeCategory)))
+    );
+}
+
+module.exports.getAllCategories = getAllCategories;
