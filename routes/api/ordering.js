@@ -10,7 +10,7 @@ module.exports.createOrder = (req, res) => {
     const {user} = req;
 
     if (!user) {
-        req.json({
+        res.json({
             success: false,
             error: authorizationResponse.notAuthorized
         });

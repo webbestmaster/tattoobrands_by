@@ -79,6 +79,30 @@ function getProductBy(query) {
 
 module.exports.getProductBy = getProductBy;
 
+function getProductsBy(query) {
+    return new Promise(
+        (resolve, reject) =>
+            keystone
+                .list('Product')
+                .model
+                .find(query)
+                .exec((err, products) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!products) {
+                        reject({error: 'No Products by query: ' + JSON.stringify(query)});
+                        return;
+                    }
+
+                    resolve(products.map(normalizeProduct));
+                })
+    );
+}
+
+module.exports.getProductsBy = getProductsBy;
 
 function getRandomProducts(count) {
     return new Promise((resolve, reject) =>
