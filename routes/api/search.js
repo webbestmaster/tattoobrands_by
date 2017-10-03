@@ -3,7 +3,7 @@ const {getProductsBy} = require('./../views/helper/product');
 module.exports.search = (req, res) => {
     const {query} = req.query;
 
-    if (!query || !/\w/.test(query) || query.length < 3) {
+    if (!query || !/[\wа-я]/.test(query) || query.length < 3) {
         res.json({
             products: []
         });
