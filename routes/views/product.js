@@ -28,7 +28,7 @@ function onInitView(view, next) {
                     next();
                 })
         )
-        .catch(next);
+        .catch(evt => res.status(404).render('errors/404'));
 }
 
 exports = module.exports = (req, res) => {

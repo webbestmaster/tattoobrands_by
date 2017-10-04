@@ -8,23 +8,19 @@ function onInitView(view, next) {
     const {locals} = res;
 
     getCategoryBy({slug})
-        .then(category => {
-            if (!category) {
-                res.status(404).render('errors/404');
-                return;
-            }
-
-            Object.assign(locals, {localRootCategory: category});
-
+        .then(category =>
             Promise
                 .all([
                     Promise.all(category.categories.map(_id => getCategoryBy({_id}))),
                     Promise.all(category.products.map(_id => getProductBy({_id})))
                 ])
-                .then(([categories, products]) => Object.assign(locals, {categories, products}))
+                .then(([categories, products]) => Object.assign(locals, {
+                    categories,
+                    products,
+                    localRootCategory: category
+                }))
                 .then(next)
-                .catch(evt => res.status(404).render('errors/404'));
-        })
+        )
         .catch(evt => res.status(404).render('errors/404'));
 }
 

@@ -33,7 +33,7 @@ const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 const {getProductBy} = require('./views/helper/product');
 const importRoutes = keystone.importer(__dirname);
 const {checkStore} = require('./../routes/api/check-store');
-const {getAllLinks} = require('./../routes/api/link');
+const {getAllLinks, checkAllLinks} = require('./../routes/api/link');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -62,7 +62,8 @@ exports = module.exports = app => { // eslint-disable-line max-statements
         const {id} = params;
 
         getProductBy({_id: id})
-            .then(({slug}) => res.redirect('/product/' + slug));
+            .then(({slug}) => res.redirect('/product/' + slug))
+            .catch(evt => res.status(404).render('errors/404'));
     });
     app.get('/authorization', routes.views.authorization);
     app.get('/cart', routes.views.cart);
@@ -124,4 +125,5 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     // check store
     app.get('/api/check-store', checkStore);
     app.get('/api/get-all-links', getAllLinks);
+    app.get('/api/check-all-links', checkAllLinks);
 };
