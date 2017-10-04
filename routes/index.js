@@ -33,6 +33,7 @@ const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
 const {getProductBy} = require('./views/helper/product');
 const importRoutes = keystone.importer(__dirname);
 const {checkStore} = require('./../routes/api/check-store');
+const {getAllLinks} = require('./../routes/api/link');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -122,4 +123,5 @@ exports = module.exports = app => { // eslint-disable-line max-statements
 
     // check store
     app.get('/api/check-store', checkStore);
+    app.get('/api/get-all-links', getAllLinks);
 };
