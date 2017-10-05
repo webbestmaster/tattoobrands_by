@@ -9,10 +9,10 @@ webpackJsonp([0],{
 /* global document, location, setTimeout */
 var $ = __webpack_require__(12);
 
-var _require = __webpack_require__(323),
+var _require = __webpack_require__(325),
     checkForm = _require.checkForm;
 
-var _require2 = __webpack_require__(92),
+var _require2 = __webpack_require__(56),
     getUrlQuery = _require2.getUrlQuery;
 
 function showError(_ref) {
@@ -129,36 +129,303 @@ module.exports.initAuthorizationForm = function () {
 
 /***/ }),
 
-/***/ 317:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(318);
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
 
 
 /***/ }),
 
-/***/ 318:
+/***/ 128:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/* global document */
+var React = __webpack_require__(21);
+var Component = React.Component;
+
+var ReactDOM = __webpack_require__(24);
+
+var _require = __webpack_require__(333),
+    search = _require.search,
+    sortProduct = _require.sortProduct;
+
+var _require2 = __webpack_require__(20),
+    normalizeString = _require2.normalizeString;
+
+var _require3 = __webpack_require__(56),
+    getUrlQuery = _require3.getUrlQuery;
+
+var classnames = __webpack_require__(127);
+
+var _require4 = __webpack_require__(334),
+    saveScrollTop = _require4.saveScrollTop,
+    restoreScrollTop = _require4.restoreScrollTop;
+
+var SearchPage = function (_Component) {
+    _inherits(SearchPage, _Component);
+
+    function SearchPage() {
+        _classCallCheck(this, SearchPage);
+
+        var _this = _possibleConstructorReturn(this, (SearchPage.__proto__ || Object.getPrototypeOf(SearchPage)).call(this));
+
+        var view = _this;
+
+        view.state = {
+            query: '',
+            products: [],
+            isInProgress: false
+        };
+        return _this;
+    }
+
+    _createClass(SearchPage, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var view = this;
+
+            var _getUrlQuery = getUrlQuery(),
+                _getUrlQuery$query = _getUrlQuery.query,
+                query = _getUrlQuery$query === undefined ? '' : _getUrlQuery$query;
+
+            var searchInput = view.refs.searchInput;
+
+
+            searchInput.value = decodeURI(query);
+            view.onSearchInput();
+        }
+    }, {
+        key: 'onSearchInput',
+        value: function onSearchInput() {
+            var view = this;
+            var searchInput = view.refs.searchInput;
+
+            var query = normalizeString(searchInput.value);
+
+            saveScrollTop();
+
+            view.setState({ isInProgress: true }, restoreScrollTop);
+
+            search(query).then(function (searchResult) {
+                if (query !== normalizeString(searchInput.value)) {
+                    return;
+                }
+
+                view.setState({
+                    products: sortProduct(searchResult.products, query),
+                    query: query,
+                    isInProgress: false
+                }, restoreScrollTop);
+            });
+        }
+    }, {
+        key: 'renderList',
+        value: function renderList() {
+            var view = this;
+            var state = view.state;
+            var products = state.products,
+                query = state.query;
+
+
+            if (!query) {
+                return React.createElement(
+                    'h3',
+                    { className: 'page-header' },
+                    '\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u0430\u043F\u0440\u043E\u0441 \u0434\u043B\u044F \u043F\u043E\u0438\u0441\u043A\u0430!'
+                );
+            }
+
+            if (!products.length) {
+                return React.createElement(
+                    'h3',
+                    { className: 'page-header' },
+                    '\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E!'
+                );
+            }
+
+            return products.map(function (_ref) {
+                var slug = _ref.slug,
+                    name = _ref.name,
+                    description = _ref.description,
+                    images = _ref.images,
+                    price = _ref.price,
+                    promotable = _ref.promotable;
+                return React.createElement(
+                    'a',
+                    { onContextMenu: function onContextMenu(evt) {
+                            return evt.preventDefault();
+                        },
+                        href: '/product/' + slug,
+                        className: classnames('product-preview', { 'product-preview--promotable': promotable }),
+                        key: slug },
+                    React.createElement('div', { className: 'product-preview__image',
+                        style: { backgroundImage: 'url(' + images[0] + ')' } }),
+                    React.createElement(
+                        'h3',
+                        { className: 'product-preview__name' },
+                        name
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'product-preview__description' },
+                        description
+                    ),
+                    React.createElement(
+                        'span',
+                        { className: 'product-preview__price' },
+                        price,
+                        ' \u0440\u0443\u0431.'
+                    )
+                );
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var view = this;
+            var state = view.state;
+            var isInProgress = state.isInProgress;
+
+
+            var searchIconClassName = classnames('header-search__icon', {
+                'header-search__icon--in-progress': isInProgress
+            });
+
+            return React.createElement(
+                'div',
+                { className: 'search-page' },
+                React.createElement(
+                    'div',
+                    { className: 'search-page__input-wrapper' },
+                    React.createElement('input', {
+                        ref: 'searchInput',
+                        className: 'search-page__input',
+                        placeholder: '\u041F\u043E\u0438\u0441\u043A...',
+                        onInput: function onInput(evt) {
+                            return view.onSearchInput();
+                        }
+                    }),
+                    React.createElement('div', { className: searchIconClassName })
+                ),
+                React.createElement(
+                    'div',
+                    {
+                        className: classnames('products-preview', 'search-page__result', { 'search-page__result--in-progress': isInProgress }) },
+                    view.renderList()
+                )
+            );
+        }
+    }]);
+
+    return SearchPage;
+}(Component);
+
+module.exports.initPage = function () {
+    var wrapper = document.querySelector('.js-search-page-result');
+
+    if (!wrapper) {
+        return;
+    }
+
+    ReactDOM.render(React.createElement(SearchPage, null), wrapper);
+};
+
+module.exports.SearchPage = SearchPage;
+
+/***/ }),
+
+/***/ 319:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(320);
+
+
+/***/ }),
+
+/***/ 320:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 /* global document */
-__webpack_require__(319);
+__webpack_require__(321);
 
 window.app = window.app || {};
 
 var FastClick = __webpack_require__(125);
 var $ = __webpack_require__(12);
 
-var homeScripts = __webpack_require__(320);
-var productScripts = __webpack_require__(321);
+var homeScripts = __webpack_require__(322);
+var productScripts = __webpack_require__(323);
 var authorizationScripts = __webpack_require__(126);
-var basketScripts = __webpack_require__(324);
-var cartScripts = __webpack_require__(325);
-var orderingScripts = __webpack_require__(326);
-var orderScripts = __webpack_require__(327);
-var headerScripts = __webpack_require__(329);
+var basketScripts = __webpack_require__(326);
+var cartScripts = __webpack_require__(327);
+var orderingScripts = __webpack_require__(328);
+var orderScripts = __webpack_require__(329);
+var headerScripts = __webpack_require__(331);
+var headerSearchScripts = __webpack_require__(332);
+var searchPageScripts = __webpack_require__(128);
 
 $(function () {
     // main part
@@ -166,6 +433,9 @@ $(function () {
 
     // main scripts
     headerScripts.initHeaderNav();
+
+    // search
+    headerSearchScripts.initHeaderSearch();
 
     // home
     homeScripts.initSwiper();
@@ -192,18 +462,21 @@ $(function () {
     // order
     orderScripts.initOrderTable();
     orderScripts.initPdfOrder();
+
+    // search
+    searchPageScripts.initPage();
 });
 
 /***/ }),
 
-/***/ 319:
+/***/ 321:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 320:
+/***/ 322:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -302,7 +575,7 @@ module.exports.productReview = function () {
 
 /***/ }),
 
-/***/ 321:
+/***/ 323:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -312,7 +585,7 @@ module.exports.productReview = function () {
 var Swiper = __webpack_require__(49);
 var $ = __webpack_require__(12);
 
-var _require = __webpack_require__(322),
+var _require = __webpack_require__(324),
     loadImages = _require.loadImages;
 
 module.exports.initSwiper = function () {
@@ -429,7 +702,7 @@ module.exports.initAddToBasketForm = function () {
 
 /***/ }),
 
-/***/ 322:
+/***/ 324:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -467,7 +740,7 @@ module.exports.loadImages = loadImages;
 
 /***/ }),
 
-/***/ 323:
+/***/ 325:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -503,14 +776,14 @@ module.exports.checkForm = checkForm;
 
 /***/ }),
 
-/***/ 324:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var $ = __webpack_require__(12);
-var Basket = __webpack_require__(73);
+var Basket = __webpack_require__(74);
 
 module.exports.initBasket = function () {
     var basket = new Basket({
@@ -528,7 +801,7 @@ module.exports.initBasket = function () {
 
 /***/ }),
 
-/***/ 325:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -543,12 +816,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document, history*/
-var React = __webpack_require__(39);
+var React = __webpack_require__(21);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(42);
+var ReactDOM = __webpack_require__(24);
 
-var _require = __webpack_require__(38),
+var _require = __webpack_require__(20),
     numberToMoney = _require.numberToMoney;
 
 window.app = window.app || {};
@@ -783,7 +1056,7 @@ module.exports.initCartTable = function () {
 
 /***/ }),
 
-/***/ 326:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -857,7 +1130,7 @@ module.exports.initOrderForm = function () {
 
 /***/ }),
 
-/***/ 327:
+/***/ 329:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -872,17 +1145,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document, history, navigator, URL, Blob, FormData*/
-var React = __webpack_require__(39);
+var React = __webpack_require__(21);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(42);
+var ReactDOM = __webpack_require__(24);
 
-var _require = __webpack_require__(38),
+var _require = __webpack_require__(20),
     numberToMoney = _require.numberToMoney;
 
 var $ = __webpack_require__(12);
 
-var _require2 = __webpack_require__(328),
+var _require2 = __webpack_require__(330),
     browser = _require2.browser;
 
 window.app = window.app || {};
@@ -1192,7 +1465,7 @@ module.exports.initPdfOrder = function () {
 
 /***/ }),
 
-/***/ 328:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1227,7 +1500,7 @@ module.exports.browser = new Browser();
 
 /***/ }),
 
-/***/ 329:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1242,10 +1515,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document */
-var React = __webpack_require__(39);
+var React = __webpack_require__(21);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(42);
+var ReactDOM = __webpack_require__(24);
 var find = __webpack_require__(50);
 // const {browser} = require('./my-lib/browser');
 
@@ -1503,15 +1776,270 @@ var HeaderNav = function (_Component2) {
 
 module.exports.initHeaderNav = function () {
     var wrapper = document.querySelector('.js-header-nav');
+    var categoryTree = window.app.categoryTree;
 
-    if (!wrapper) {
+
+    if (!wrapper || !categoryTree) {
         return;
     }
 
     ReactDOM.render(React.createElement(HeaderNav, null), wrapper);
 };
 
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/* global document, setTimeout, location */
+var React = __webpack_require__(21);
+var ReactDOM = __webpack_require__(24);
+var classnames = __webpack_require__(127);
+
+var _require = __webpack_require__(20),
+    normalizeString = _require.normalizeString;
+
+var _require2 = __webpack_require__(128),
+    SearchPage = _require2.SearchPage;
+
+var HeaderSearch = function (_SearchPage) {
+    _inherits(HeaderSearch, _SearchPage);
+
+    function HeaderSearch() {
+        _classCallCheck(this, HeaderSearch);
+
+        var _this = _possibleConstructorReturn(this, (HeaderSearch.__proto__ || Object.getPrototypeOf(HeaderSearch)).call(this));
+
+        var view = _this;
+
+        view.state = {
+            query: '',
+            products: [],
+            isInProgress: false,
+            hasFocus: false
+        };
+        return _this;
+    }
+
+    _createClass(HeaderSearch, [{
+        key: 'renderList',
+        value: function renderList() {
+            var view = this;
+            var state = view.state;
+            var products = state.products,
+                hasFocus = state.hasFocus,
+                query = state.query;
+
+
+            if (!hasFocus || !query) {
+                return null;
+            }
+
+            if (!products.length) {
+                return React.createElement(
+                    'div',
+                    { className: 'header-search__result-list header-search__result-list--search-empty' },
+                    '\u041F\u043E \u0437\u0430\u043F\u0440\u043E\u0441\u0443',
+                    React.createElement(
+                        'span',
+                        { className: 'bold' },
+                        ' "',
+                        query,
+                        '" '
+                    ),
+                    '\u043D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E'
+                );
+            }
+
+            return React.createElement(
+                'div',
+                { className: 'header-search__result-list' },
+                products.map(function (_ref) {
+                    var slug = _ref.slug,
+                        name = _ref.name,
+                        description = _ref.description,
+                        images = _ref.images;
+                    return React.createElement(
+                        'a',
+                        { href: '/product/' + slug, className: 'header-search__result-item clear-full',
+                            key: slug },
+                        React.createElement('div', { className: 'header-search__result-image', style: { backgroundImage: 'url(' + images[0] + ')' } }),
+                        React.createElement(
+                            'h4',
+                            { className: 'header-search__result-name' },
+                            name
+                        ),
+                        React.createElement(
+                            'p',
+                            { className: 'header-search__result-description' },
+                            description
+                        )
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'onFormSubmit',
+        value: function onFormSubmit(evt) {
+            evt.preventDefault();
+
+            var view = this;
+            var searchInput = view.refs.searchInput;
+
+            var query = normalizeString(searchInput.value);
+
+            Object.assign(location, { href: '/search?query=' + query });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var view = this;
+            var state = view.state;
+            var isInProgress = state.isInProgress;
+
+
+            var searchIconClassName = classnames('header-search__icon', {
+                'header-search__icon--in-progress': isInProgress
+            });
+
+            return React.createElement(
+                'form',
+                { className: 'header-search', onSubmit: function onSubmit(evt) {
+                        return view.onFormSubmit(evt);
+                    } },
+                React.createElement('input', {
+                    ref: 'searchInput',
+                    className: 'header-search__input',
+                    placeholder: '\u041F\u043E\u0438\u0441\u043A...',
+                    onInput: function onInput(evt) {
+                        return view.onSearchInput();
+                    },
+                    onFocus: function onFocus() {
+                        view.onSearchInput();
+                        view.setState({ hasFocus: true });
+                    },
+                    onBlur: function onBlur() {
+                        return setTimeout(function () {
+                            return view.setState({ hasFocus: false });
+                        }, 300);
+                    }
+                }),
+                React.createElement('div', { className: searchIconClassName }),
+                view.renderList()
+            );
+        }
+    }]);
+
+    return HeaderSearch;
+}(SearchPage);
+
+module.exports.initHeaderSearch = function () {
+    var wrapper = document.querySelector('.js-header-search');
+
+    if (!wrapper) {
+        return;
+    }
+
+    ReactDOM.render(React.createElement(HeaderSearch, null), wrapper);
+};
+
+/***/ }),
+
+/***/ 333:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/* global fetch, setTimeout */
+
+var emptyQuery = '';
+
+var searchCache = _defineProperty({}, emptyQuery, { products: [] });
+
+function search(query) {
+    if (searchCache.hasOwnProperty(query)) {
+        return new Promise(function (resolve) {
+            return setTimeout(function () {
+                return resolve(searchCache[query]);
+            }, 0);
+        });
+    }
+
+    return fetch('/api/search?query=' + query).then(function (rawResult) {
+        return rawResult.json();
+    }).then(function (result) {
+        Object.assign(searchCache, _defineProperty({}, query, result));
+
+        return result;
+    });
+}
+
+module.exports.search = search;
+
+function sortProduct(products, query) {
+    return products.sort(function (product1, product2) {
+        var delta = product1.name.search(new RegExp(query, 'gi')) - product2.name.search(new RegExp(query, 'gi'));
+
+        if (delta) {
+            return delta;
+        }
+
+        return product1.name > product2.name ? 0.5 : -0.5;
+    });
+}
+
+module.exports.sortProduct = sortProduct;
+
+/***/ }),
+
+/***/ 334:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/* global document*/
+
+var scrollMethods = function () {
+    var docElem = document.documentElement;
+    var _docElem$scrollTop = docElem.scrollTop,
+        scrollTop = _docElem$scrollTop === undefined ? 0 : _docElem$scrollTop;
+
+
+    function saveScrollTop() {
+        console.log('save', docElem.scrollTop);
+        scrollTop = docElem.scrollTop;
+    }
+
+    function restoreScrollTop() {
+        console.log('restore', scrollTop);
+        docElem.scrollTop = scrollTop;
+    }
+
+    return {
+        saveScrollTop: saveScrollTop,
+        restoreScrollTop: restoreScrollTop
+    };
+}();
+
+module.exports.saveScrollTop = scrollMethods.saveScrollTop;
+module.exports.restoreScrollTop = scrollMethods.restoreScrollTop;
+
 /***/ })
 
-},[317]);
+},[319]);
 //# sourceMappingURL=main.js.map
