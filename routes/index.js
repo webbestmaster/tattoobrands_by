@@ -20,7 +20,6 @@
  */
 
 const keystone = require('keystone');
-
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
@@ -34,6 +33,7 @@ const {getProductBy} = require('./views/helper/product');
 const importRoutes = keystone.importer(__dirname);
 const {checkStore} = require('./../routes/api/check-store');
 const {getAllLinks, checkAllLinks} = require('./../routes/api/link');
+const {sendEmailStatus} = require('./../routes/api/mail');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -126,4 +126,11 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     app.get('/api/check-store', checkStore);
     app.get('/api/get-all-links', getAllLinks);
     app.get('/api/check-all-links', checkAllLinks);
+
+    // admin
+    app.get('/admin/order/send-mail/:slug', (req, res) => {
+        sendEmailStatus();
+
+        routes.views.order(req, res);
+    });
 };

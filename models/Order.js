@@ -58,6 +58,8 @@ Order.add({
         'default': 'in-processing'
     },
 
+    sendEmail: {type: Types.Url, noedit: true, 'default': ''},
+
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
 });
@@ -65,9 +67,11 @@ Order.add({
 Order.schema.pre('save', function createLink(next) {
     const model = this; // eslint-disable-line no-invalid-this
     const {slug} = model;
+    const {host} = keystone.get('locals');
 
     if (slug) {
-        model.link = keystone.get('locals').host + 'order/' + slug;
+        model.link = host + 'order/' + slug;
+        model.sendEmail = host + '/admin/order/send-mail/' + slug;
     }
 
     next();
