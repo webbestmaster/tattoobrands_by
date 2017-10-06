@@ -1,0 +1,79 @@
+{{const {order} = it;}}
+{{const {state} = order;}}
+{{const translatedState = state === 'in-processing' ? 'в&nbsp;обработке' : (state === 'confirmed' ? 'подтверждён' : 'отменён'); }}
+
+<h2 class="page-header">
+    Заказ:&nbsp;#{{= it.order.slug }} | {{= it.order.createdAtFormat }} | {{= translatedState }}
+</h2>
+
+<div class="cart">
+    <table class="table">
+        <thead class="table__head">
+            <tr>
+                <th class="table__th">№</th>
+                <th class="table__th">Наименование товара</th>
+                <th class="table__th">Кол-во</th>
+                <th class="table__th">Цена (руб.)</th>
+                <th class="table__th">Сумма (руб.)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{~order.basketItems :product:ii}}
+                <tr class="table__tr">
+                    <td class="table__td table__td--ta-center">{{= ii + 1 }}</td>
+                    <td class="table__td">
+                        <div class="table__product-image no-pdf" style="background-image: url({{= product.images[0] }})"></div>
+                        <a href="{{= it.host }}/product/{{= product.slug }}" class="table__product-name">{{= product.name }}</a>
+                        <p class="table__product-article">Артикул: {{= product.article }}</p>
+                    </td>
+                    <td class="table__td">
+                        <input
+                            class="input input--number block-center"
+                            type="text"
+                            value={{= product.count }}
+                            disabled/>
+                    </td>
+                    <td class="table__td table__td--ta-right">
+                        <span class="table__number">
+                            {{= it.numberToMoney(product.price) }}
+                        </span>
+                    </td>
+                    <td class="table__td table__td--ta-right">
+                        <span class="table__number">
+                            {{= it.numberToMoney(product.count * product.price) }}
+                        </span>
+                    </td>
+                </tr>
+            {{~}}
+
+            <tr>
+                <td colSpan="3">
+                    <span class="table__number bold">
+                        Итого:
+                    </span>
+                </td>
+                <td colSpan="2">
+                    <span class="table__number table__number--left bold">
+                        {{= it.numberToMoney(it.order.fullPrice) }} руб.
+                    </span>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="form clear-self">
+        <h2 class="page-header">Платёжный адрес</h2>
+        <p class="seo-text__paragraph">Имя: {{= order.user.firstName }}</p>
+        <p class="seo-text__paragraph">Фамилия: {{= order.user.lastName }}</p>
+        <p class="seo-text__paragraph">Телефон: {{= order.phone }}</p>
+        <p class="seo-text__paragraph">Email: {{= order.user.email }}</p>
+        <p class="seo-text__paragraph">Страна: {{= order.country }}</p>
+        <p class="seo-text__paragraph">Область: {{= order.region }}</p>
+        <p class="seo-text__paragraph">Город: {{= order.town }}</p>
+        <p class="seo-text__paragraph">Адрес: {{= order.address }}</p>
+        <p class="seo-text__paragraph">Индекс: {{= order.postcode }}</p>
+        <p class="seo-text__paragraph">Пожелания к заказу: {{= order.additional }}</p>
+    </div>
+</div>

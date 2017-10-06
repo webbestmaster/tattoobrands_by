@@ -5,6 +5,9 @@ const pdf = require('html-pdf');
 const fs = require('fs'); // eslint-disable-line id-length
 const path = require('path');
 const sha1 = require('sha1');
+const dots = require('dot').process({path: './routes/api/views'});
+const host = keystone.get('locals').host.replace(/\/$/, '');
+const {getOrderBy} = require('./../views/helper/order');
 
 module.exports.createOrder = (req, res) => {
     const {user} = req;
@@ -86,6 +89,7 @@ module.exports.createOrder = (req, res) => {
     });
 };
 
+/*
 
 const pdfCss = '.no-pdf {display: none !important;} a {text-decoration: none !important;}';
 let css = '';
@@ -130,4 +134,29 @@ module.exports.pdfOrder = (req, res) => {
         }
         stream.pipe(res);
     });
+};
+*/
+
+function getOrderHtml(slug) {
+    return getOrderBy({slug})
+        .then(order => {
+            return dots.order({
+                host,
+                order
+            });
+        })
+        .catch(evt => null);
+}
+
+module.exports.pdfOrder = (req, res) => {
+    const {slug} = req.params;
+
+    getOrderHtml(slug)
+        .then(html => {
+            res.json({
+                html,
+                slug,
+                success: true
+            });
+        });
 };

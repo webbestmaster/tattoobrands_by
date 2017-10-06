@@ -1,83 +1,26 @@
 const keystone = require('keystone');
+const {getOrderBy, orderToHtml} = require('./helper/order');
 
 const headers = {
     congratulation: 'Поздравляем! Ваш заказ успешно оформлен!'
 };
 
-function getOrder(req, res) {
-    const {slug} = req.params;
-
-    return new Promise((resolve, reject) => keystone
-        .list('Order')
-        .model
-        .findOne({slug})
-        .exec((err, order) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-
-            if (!order) {
-                reject(order);
-                return;
-            }
-
-            resolve(order);
-        }));
-}
-
 function onInitView(view, next) {
     const {req, res} = view;
     const {locals} = res;
+    const {slug} = req.params;
     const {header} = req.query;
 
     if (header && headers.hasOwnProperty(header)) {
         Object.assign(locals, {header: headers[header]});
     }
 
-    getOrder(req, res)
+    getOrderBy({slug})
         .then(order => {
-            const {
-                createdAt,
-                name,
-                user,
-                phone,
-                country,
-                region,
-                town,
-                address,
-                postcode,
-                additional,
-                products,
-                basketItems,
-                state,
-                createdAtFormat,
-                slug
-            } = order;
-
-            Object.assign(locals, {
-                order: {
-                    createdAt: new Date(createdAt).getTime(),
-                    name,
-                    user,
-                    phone,
-                    country,
-                    region,
-                    town,
-                    address,
-                    postcode,
-                    additional,
-                    products,
-                    basketItems: JSON.parse(basketItems),
-                    createdAtFormat,
-                    state,
-                    slug
-                }
-            });
-
+            locals.orderHtml = orderToHtml(order);
             next();
         })
-        .catch(() => {
+        .catch(evt => {
             res.status(404);
             res.render('errors/404');
         });

@@ -91,7 +91,8 @@ exports = module.exports = app => { // eslint-disable-line max-statements
 
     // ordering
     app.post('/api/create-order', jsonParser, createOrder);
-    app.post('/api/pdf-order', jsonParser, pdfOrder);
+    // app.post('/api/pdf-order', jsonParser, pdfOrder);
+    app.get('/api/pdf-order/:slug.pdf', pdfOrder);
 
     // debugging
     // TODO: remove this if needless

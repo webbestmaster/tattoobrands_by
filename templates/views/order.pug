@@ -2,12 +2,12 @@ extends ../layouts/wrapper
 
 block content
     div.width-limiter.width-limiter--big-padding
-        div.js-pdf-order.pdf-order.hidden
+        //div.js-pdf-order.pdf-order.hidden
 
         if header
             h2.page-header= header
 
-        div.js-pdf
+        //div.js-pdf
 
             h2.page-header Заказ:&nbsp;#
                 != order.name
@@ -21,8 +21,5 @@ block content
                 if state === 'canceled'
                     | отменён
 
-            script
-                != 'window.app = window.app || {};'
-                != 'window.app.order =' + JSON.stringify(order) + ';'
-
             div.js-table-order
+        != orderHtml

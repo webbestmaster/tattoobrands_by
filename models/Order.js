@@ -21,7 +21,7 @@ const Order = new keystone.List('Order', {
 Order.add({
     // link to products
     link: {type: Types.Url, noedit: true, 'default': ''},
-    // product name
+    // order name
     name: {type: String, initial: true, required: true, index: true, 'default': ''},
 
     // user info
