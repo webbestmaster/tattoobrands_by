@@ -22,6 +22,8 @@ function getAllLinksInternal() {
         }));
 }
 
+module.exports.getAllLinksInternal = getAllLinksInternal;
+
 function getAllLinks(req, res) {
     getAllLinksInternal().then(links => res.json({links}));
 }

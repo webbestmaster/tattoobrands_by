@@ -34,6 +34,7 @@ const importRoutes = keystone.importer(__dirname);
 const {checkStore} = require('./../routes/api/check-store');
 const {getAllLinks, checkAllLinks} = require('./../routes/api/link');
 const {sendEmailStatus} = require('./../routes/api/mail');
+const {getSiteMap} = require('./../routes/api/seo');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -133,4 +134,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
 
         routes.views.order(req, res);
     });
+
+    // seo
+    app.get('/api/get-site-map', getSiteMap);
 };
