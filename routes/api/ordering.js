@@ -5,9 +5,9 @@ const pdf = require('html-pdf');
 const fs = require('fs'); // eslint-disable-line id-length
 const path = require('path');
 const sha1 = require('sha1');
-const dots = require('dot').process({path: './routes/api/views'});
-const host = keystone.get('locals').host.replace(/\/$/, '');
-const {getOrderBy} = require('./../views/helper/order');
+// const dots = require('dot').process({path: './routes/api/views'});
+// const host = keystone.get('locals').host.replace(/\/$/, '');
+const {getOrderBy, orderToHtml} = require('./../views/helper/order');
 
 module.exports.createOrder = (req, res) => {
     const {user} = req;
@@ -89,10 +89,17 @@ module.exports.createOrder = (req, res) => {
     });
 };
 
-/*
-
 const pdfCss = '.no-pdf {display: none !important;} a {text-decoration: none !important;}';
 let css = '';
+
+fs.readFile(path.resolve(__dirname, '..', '..', 'public', 'front', 'style.css'), 'utf-8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    css = '<style>' + data + pdfCss + '</style>';
+});
 
 const config = {
     format: 'A3',        // allowed units: A3, A4, A5, Legal, Letter, Tabloid
@@ -112,51 +119,20 @@ const config = {
     quality: '75'           // only used for types png & jpeg
 };
 
-fs.readFile(path.resolve(__dirname, '..', '..', 'public', 'front', 'style.css'), 'utf-8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-
-    css = '<style>' + data + pdfCss + '</style>';
-});
-
-module.exports.pdfOrder = (req, res) => {
-    const html = req.body.html + css;
-
-    pdf.create(html, config).toStream((err, stream) => {
-        if (err) {
-            res.toJSON({
-                success: false,
-                error: 'error with stream'
-            });
-            return;
-        }
-        stream.pipe(res);
-    });
-};
-*/
-
-function getOrderHtml(slug) {
-    return getOrderBy({slug})
-        .then(order => {
-            return dots.order({
-                host,
-                order
-            });
-        })
-        .catch(evt => null);
-}
-
 module.exports.pdfOrder = (req, res) => {
     const {slug} = req.params;
 
-    getOrderHtml(slug)
-        .then(html => {
-            res.json({
-                html,
-                slug,
-                success: true
+    getOrderBy({slug})
+        .then(order => {
+            const orderHtml = orderToHtml(order);
+
+            pdf.create(orderHtml + css, config).toStream((err, stream) => {
+                if (err) {
+                    res.status(404).render('errors/404');
+                    return;
+                }
+                stream.pipe(res);
             });
-        });
+        })
+        .catch(evt => res.status(404).render('errors/404'));
 };
