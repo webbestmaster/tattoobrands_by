@@ -17,7 +17,10 @@ function onInitView(view, next) {
 
     getOrderBy({slug})
         .then(order => {
-            locals.orderHtml = orderToHtml(order);
+            Object.assign(locals, {
+                slug,
+                orderHtml: orderToHtml(order)
+            });
             next();
         })
         .catch(evt => {

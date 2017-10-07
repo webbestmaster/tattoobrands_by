@@ -2,7 +2,7 @@ extends ../layouts/wrapper
 
 block content
     div.width-limiter.width-limiter--big-padding
-        //div.js-pdf-order.pdf-order.hidden
+        a(href='/api/pdf-order/' + slug + '.pdf' download='tattoobrands.by-' + slug + '.pdf').js-pdf-order.pdf-order
 
         if header
             h2.page-header= header
