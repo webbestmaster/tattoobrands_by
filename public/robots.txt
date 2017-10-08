@@ -20,7 +20,7 @@ Disallow: /order
 Disallow: /search
 Disallow: /account
 Disallow: /api
-Disallow: /products # for support old products
+# /products # for support old products
 Disallow: /add-product
 Disallow: /remove-product
 Disallow: /admin
