@@ -788,7 +788,7 @@ body {
           box-sizing: border-box; }
 
 .header-search__icon {
-  background-image: url(img/img-search-daa290.svg);
+  background-image: url(img/img-search-cb0c29.svg);
   background-repeat: no-repeat;
   background-position: 7px 10px;
   background-size: 20px;
@@ -1789,15 +1789,16 @@ body {
   height: 54px;
   margin-top: -50px;
   float: right;
-  cursor: pointer;
   -webkit-transition: 0.3s all ease-out;
   -moz-transition: 0.3s all ease-out;
   transition: 0.3s all ease-out; }
 
+/*
 .pdf-order--busy {
-  pointer-events: none;
-  background-image: url(img/img-spinner-2f2ad9.gif); }
-
+    pointer-events: none;
+    background-image: url(./../i/spinner.gif);
+}
+*/
 .main-gradient, .button, .variant-link {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4f4f), to(#b60605));
   background-image: -webkit-linear-gradient(top, #ff4f4f, #b60605);

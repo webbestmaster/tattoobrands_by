@@ -131,9 +131,14 @@ exports = module.exports = app => { // eslint-disable-line max-statements
 
     // admin
     app.get('/admin/order/send-mail/:slug', (req, res) => {
-        sendEmailStatus();
+        const {params} = req;
+        const {slug} = params;
 
-        routes.views.order(req, res);
+        sendEmailStatus(slug)
+            .then(() => {
+                routes.views.order(req, res);
+            })
+            .catch(evt => res.status(500).render('errors/500'));
     });
 
     // seo

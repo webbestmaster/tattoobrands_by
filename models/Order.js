@@ -71,7 +71,7 @@ Order.schema.pre('save', function createLink(next) {
 
     if (slug) {
         model.link = host + 'order/' + slug;
-        model.sendEmail = host + '/admin/order/send-mail/' + slug;
+        model.sendEmail = host + 'admin/order/send-mail/' + slug;
     }
 
     next();

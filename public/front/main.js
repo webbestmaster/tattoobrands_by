@@ -7,7 +7,7 @@ webpackJsonp([0],{
 
 
 /* global document, location, setTimeout */
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 
 var _require = __webpack_require__(325),
     checkForm = _require.checkForm;
@@ -200,16 +200,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document */
-var React = __webpack_require__(21);
+var React = __webpack_require__(27);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(24);
+var ReactDOM = __webpack_require__(28);
 
-var _require = __webpack_require__(333),
+var _require = __webpack_require__(331),
     search = _require.search,
     sortProduct = _require.sortProduct;
 
-var _require2 = __webpack_require__(20),
+var _require2 = __webpack_require__(26),
     normalizeString = _require2.normalizeString;
 
 var _require3 = __webpack_require__(56),
@@ -217,7 +217,7 @@ var _require3 = __webpack_require__(56),
 
 var classnames = __webpack_require__(127);
 
-var _require4 = __webpack_require__(334),
+var _require4 = __webpack_require__(332),
     saveScrollTop = _require4.saveScrollTop,
     restoreScrollTop = _require4.restoreScrollTop;
 
@@ -365,7 +365,9 @@ var SearchPage = function (_Component) {
                             return view.onSearchInput();
                         }
                     }),
-                    React.createElement('div', { className: searchIconClassName })
+                    React.createElement('div', { onClick: function onClick() {
+                            return view.refs.searchInput.focus();
+                        }, className: searchIconClassName })
                 ),
                 React.createElement(
                     'div',
@@ -414,7 +416,7 @@ __webpack_require__(321);
 window.app = window.app || {};
 
 var FastClick = __webpack_require__(125);
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 
 var homeScripts = __webpack_require__(322);
 var productScripts = __webpack_require__(323);
@@ -422,9 +424,9 @@ var authorizationScripts = __webpack_require__(126);
 var basketScripts = __webpack_require__(326);
 var cartScripts = __webpack_require__(327);
 var orderingScripts = __webpack_require__(328);
-var orderScripts = __webpack_require__(329);
-var headerScripts = __webpack_require__(331);
-var headerSearchScripts = __webpack_require__(332);
+// const orderScripts = require('./order');
+var headerScripts = __webpack_require__(329);
+var headerSearchScripts = __webpack_require__(330);
 var searchPageScripts = __webpack_require__(128);
 
 $(function () {
@@ -460,8 +462,8 @@ $(function () {
     orderingScripts.initOrderForm();
 
     // order
-    orderScripts.initOrderTable();
-    orderScripts.initPdfOrder();
+    // orderScripts.initOrderTable();
+    // orderScripts.initPdfOrder();
 
     // search
     searchPageScripts.initPage();
@@ -484,7 +486,7 @@ $(function () {
 
 /* global document */
 var Swiper = __webpack_require__(49);
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 
 module.exports.initSwiper = function () {
     function onSwiperResize(swiper) {
@@ -583,7 +585,7 @@ module.exports.productReview = function () {
 
 /* global document, Event */
 var Swiper = __webpack_require__(49);
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 
 var _require = __webpack_require__(324),
     loadImages = _require.loadImages;
@@ -782,7 +784,7 @@ module.exports.checkForm = checkForm;
 "use strict";
 
 
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 var Basket = __webpack_require__(74);
 
 module.exports.initBasket = function () {
@@ -816,12 +818,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document, history*/
-var React = __webpack_require__(21);
+var React = __webpack_require__(27);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(24);
+var ReactDOM = __webpack_require__(28);
 
-var _require = __webpack_require__(20),
+var _require = __webpack_require__(26),
     numberToMoney = _require.numberToMoney;
 
 window.app = window.app || {};
@@ -878,137 +880,141 @@ var CartTable = function (_Component) {
 
             return React.createElement(
                 'div',
-                { className: 'cart' },
+                null,
                 React.createElement(
-                    'table',
-                    { className: 'table' },
+                    'div',
+                    { className: 'cart' },
                     React.createElement(
-                        'thead',
-                        { className: 'table__head' },
+                        'table',
+                        { className: 'table' },
                         React.createElement(
-                            'tr',
-                            null,
+                            'thead',
+                            { className: 'table__head' },
                             React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u2116'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u041A\u043E\u043B-\u0432\u043E'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u0426\u0435\u043D\u0430 (\u0440\u0443\u0431.)'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u0421\u0443\u043C\u043C\u0430 (\u0440\u0443\u0431.)'
-                            ),
-                            React.createElement('th', { className: 'table__th' })
-                        )
-                    ),
-                    React.createElement(
-                        'tbody',
-                        null,
-                        items.map(function (product, ii) {
-                            return React.createElement(
                                 'tr',
-                                { className: 'table__tr', key: ii },
+                                null,
                                 React.createElement(
-                                    'td',
-                                    { className: 'table__td table__td--ta-center' },
-                                    ii + 1
+                                    'th',
+                                    { className: 'table__th' },
+                                    '\u2116'
                                 ),
                                 React.createElement(
-                                    'td',
-                                    { className: 'table__td' },
-                                    React.createElement('div', { className: 'table__product-image',
-                                        style: { backgroundImage: 'url(' + product.images[0] + ')' } }),
+                                    'th',
+                                    { className: 'table__th' },
+                                    '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    { className: 'table__th' },
+                                    '\u041A\u043E\u043B-\u0432\u043E'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    { className: 'table__th' },
+                                    '\u0426\u0435\u043D\u0430 (\u0440\u0443\u0431.)'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    { className: 'table__th' },
+                                    '\u0421\u0443\u043C\u043C\u0430 (\u0440\u0443\u0431.)'
+                                ),
+                                React.createElement('th', { className: 'table__th' })
+                            )
+                        ),
+                        React.createElement(
+                            'tbody',
+                            null,
+                            items.map(function (product, ii) {
+                                return React.createElement(
+                                    'tr',
+                                    { className: 'table__tr', key: ii },
                                     React.createElement(
-                                        'a',
-                                        { href: '/product/' + product.slug, className: 'table__product-name' },
-                                        product.name
+                                        'td',
+                                        { className: 'table__td table__td--ta-center' },
+                                        ii + 1
                                     ),
                                     React.createElement(
-                                        'p',
-                                        { className: 'table__product-article' },
-                                        '\u0410\u0440\u0442\u0438\u043A\u0443\u043B: ',
-                                        product.article
+                                        'td',
+                                        { className: 'table__td' },
+                                        React.createElement('div', { className: 'table__product-image',
+                                            style: { backgroundImage: 'url(' + product.images[0] + ')' } }),
+                                        React.createElement(
+                                            'a',
+                                            { href: '/product/' + product.slug, className: 'table__product-name' },
+                                            product.name
+                                        ),
+                                        React.createElement(
+                                            'p',
+                                            { className: 'table__product-article' },
+                                            '\u0410\u0440\u0442\u0438\u043A\u0443\u043B: ',
+                                            product.article
+                                        )
+                                    ),
+                                    React.createElement(
+                                        'td',
+                                        { className: 'table__td' },
+                                        React.createElement('input', {
+                                            className: 'input input--number block-center',
+                                            type: 'number',
+                                            min: '1',
+                                            defaultValue: product.count,
+                                            onBlur: onInputNumberBlur,
+                                            onChange: function onChange(evt) {
+                                                return view.onInputChange(product.slug, parseInt(evt.currentTarget.value, 10) || 1);
+                                            },
+                                            required: true })
+                                    ),
+                                    React.createElement(
+                                        'td',
+                                        { className: 'table__td table__td--ta-right' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'table__number' },
+                                            numberToMoney(product.price)
+                                        )
+                                    ),
+                                    React.createElement(
+                                        'td',
+                                        { className: 'table__td table__td--ta-right' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'table__number' },
+                                            numberToMoney(product.count * product.price)
+                                        )
+                                    ),
+                                    React.createElement(
+                                        'td',
+                                        { className: 'table__td' },
+                                        React.createElement('span', { onClick: function onClick(evt) {
+                                                return view.onInputChange(product.slug, 0);
+                                            }, className: 'table__close' })
                                     )
-                                ),
+                                );
+                            }),
+                            React.createElement(
+                                'tr',
+                                null,
                                 React.createElement(
                                     'td',
-                                    { className: 'table__td' },
-                                    React.createElement('input', {
-                                        className: 'input input--number block-center',
-                                        type: 'number',
-                                        min: '1',
-                                        defaultValue: product.count,
-                                        onBlur: onInputNumberBlur,
-                                        onChange: function onChange(evt) {
-                                            return view.onInputChange(product.slug, parseInt(evt.currentTarget.value, 10) || 1);
-                                        },
-                                        required: true })
-                                ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td table__td--ta-right' },
+                                    { colSpan: '3' },
                                     React.createElement(
                                         'span',
-                                        { className: 'table__number' },
-                                        numberToMoney(product.price)
+                                        { className: 'table__number bold' },
+                                        '\u0418\u0442\u043E\u0433\u043E:'
                                     )
                                 ),
                                 React.createElement(
                                     'td',
-                                    { className: 'table__td table__td--ta-right' },
+                                    { colSpan: '2' },
                                     React.createElement(
                                         'span',
-                                        { className: 'table__number' },
-                                        numberToMoney(product.count * product.price)
+                                        { className: 'table__number table__number--left bold' },
+                                        numberToMoney(window.app.basket.getFullPrice()),
+                                        ' \u0440\u0443\u0431.'
                                     )
                                 ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td' },
-                                    React.createElement('span', { onClick: function onClick(evt) {
-                                            return view.onInputChange(product.slug, 0);
-                                        }, className: 'table__close' })
-                                )
-                            );
-                        }),
-                        React.createElement(
-                            'tr',
-                            null,
-                            React.createElement(
-                                'td',
-                                { colSpan: '3' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'table__number bold' },
-                                    '\u0418\u0442\u043E\u0433\u043E:'
-                                )
-                            ),
-                            React.createElement(
-                                'td',
-                                { colSpan: '2' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'table__number table__number--left bold' },
-                                    numberToMoney(window.app.basket.getFullPrice()),
-                                    ' \u0440\u0443\u0431.'
-                                )
-                            ),
-                            React.createElement('td', null)
+                                React.createElement('td', null)
+                            )
                         )
                     )
                 ),
@@ -1065,7 +1071,7 @@ module.exports.initCartTable = function () {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 /* global location */
-var $ = __webpack_require__(12);
+var $ = __webpack_require__(14);
 
 var _require = __webpack_require__(126),
     showError = _require.showError;
@@ -1144,381 +1150,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/* global document, history, navigator, URL, Blob, FormData*/
-var React = __webpack_require__(21);
-var Component = React.Component;
-
-var ReactDOM = __webpack_require__(24);
-
-var _require = __webpack_require__(20),
-    numberToMoney = _require.numberToMoney;
-
-var $ = __webpack_require__(12);
-
-var _require2 = __webpack_require__(330),
-    browser = _require2.browser;
-
-window.app = window.app || {};
-
-var OrderTable = function (_Component) {
-    _inherits(OrderTable, _Component);
-
-    function OrderTable() {
-        _classCallCheck(this, OrderTable);
-
-        var _this = _possibleConstructorReturn(this, (OrderTable.__proto__ || Object.getPrototypeOf(OrderTable)).call(this));
-
-        var view = _this;
-        var _window = window,
-            app = _window.app;
-        var order = app.order;
-
-
-        view.state = {
-            order: JSON.parse(JSON.stringify(order))
-        };
-        return _this;
-    }
-
-    _createClass(OrderTable, [{
-        key: 'getFullPrice',
-        value: function getFullPrice() {
-            var view = this;
-            var items = view.state.order.basketItems;
-
-            return items.reduce(function (accumulator, item) {
-                return accumulator + item.count * (item.price || 0);
-            }, 0);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var view = this;
-            var state = view.state;
-            var order = state.order;
-
-
-            var items = order.basketItems;
-
-            return React.createElement(
-                'div',
-                { className: 'cart' },
-                React.createElement(
-                    'table',
-                    { className: 'table' },
-                    React.createElement(
-                        'thead',
-                        { className: 'table__head' },
-                        React.createElement(
-                            'tr',
-                            null,
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u2116'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0442\u043E\u0432\u0430\u0440\u0430'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u041A\u043E\u043B-\u0432\u043E'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u0426\u0435\u043D\u0430 (\u0440\u0443\u0431.)'
-                            ),
-                            React.createElement(
-                                'th',
-                                { className: 'table__th' },
-                                '\u0421\u0443\u043C\u043C\u0430 (\u0440\u0443\u0431.)'
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        'tbody',
-                        null,
-                        items.map(function (product, ii) {
-                            return React.createElement(
-                                'tr',
-                                { className: 'table__tr', key: ii },
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td table__td--ta-center' },
-                                    ii + 1
-                                ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td' },
-                                    React.createElement('div', { className: 'table__product-image no-pdf',
-                                        style: { backgroundImage: 'url(' + product.images[0] + ')' } }),
-                                    React.createElement(
-                                        'a',
-                                        { href: '/product/' + product.slug, className: 'table__product-name' },
-                                        product.name
-                                    ),
-                                    React.createElement(
-                                        'p',
-                                        { className: 'table__product-article' },
-                                        '\u0410\u0440\u0442\u0438\u043A\u0443\u043B: ',
-                                        product.article
-                                    )
-                                ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td' },
-                                    React.createElement('input', {
-                                        className: 'input input--number block-center',
-                                        type: 'text',
-                                        value: product.count,
-                                        disabled: true })
-                                ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td table__td--ta-right' },
-                                    React.createElement(
-                                        'span',
-                                        { className: 'table__number' },
-                                        numberToMoney(product.price)
-                                    )
-                                ),
-                                React.createElement(
-                                    'td',
-                                    { className: 'table__td table__td--ta-right' },
-                                    React.createElement(
-                                        'span',
-                                        { className: 'table__number' },
-                                        numberToMoney(product.count * product.price)
-                                    )
-                                )
-                            );
-                        }),
-                        React.createElement(
-                            'tr',
-                            null,
-                            React.createElement(
-                                'td',
-                                { colSpan: '3' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'table__number bold' },
-                                    '\u0418\u0442\u043E\u0433\u043E:'
-                                )
-                            ),
-                            React.createElement(
-                                'td',
-                                { colSpan: '2' },
-                                React.createElement(
-                                    'span',
-                                    { className: 'table__number table__number--left bold' },
-                                    numberToMoney(view.getFullPrice()),
-                                    ' \u0440\u0443\u0431.'
-                                )
-                            )
-                        )
-                    )
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'form clear-self' },
-                    React.createElement(
-                        'h2',
-                        { className: 'page-header' },
-                        '\u041F\u043B\u0430\u0442\u0451\u0436\u043D\u044B\u0439 \u0430\u0434\u0440\u0435\u0441'
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0418\u043C\u044F: ',
-                        order.user.firstName
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0424\u0430\u043C\u0438\u043B\u0438\u044F: ',
-                        order.user.lastName
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0422\u0435\u043B\u0435\u0444\u043E\u043D: ',
-                        order.phone
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        'Email: ',
-                        order.user.email
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0421\u0442\u0440\u0430\u043D\u0430: ',
-                        order.country
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u041E\u0431\u043B\u0430\u0441\u0442\u044C: ',
-                        order.region
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0413\u043E\u0440\u043E\u0434: ',
-                        order.town
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0410\u0434\u0440\u0435\u0441: ',
-                        order.address
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u0418\u043D\u0434\u0435\u043A\u0441: ',
-                        order.postcode
-                    ),
-                    React.createElement(
-                        'p',
-                        { className: 'seo-text__paragraph' },
-                        '\u041F\u043E\u0436\u0435\u043B\u0430\u043D\u0438\u044F \u043A \u0437\u0430\u043A\u0430\u0437\u0443: ',
-                        order.additional
-                    )
-                )
-            );
-        }
-    }]);
-
-    return OrderTable;
-}(Component);
-
-module.exports.initOrderTable = function () {
-    var wrapper = document.querySelector('.js-table-order');
-
-    if (!wrapper) {
-        return;
-    }
-
-    ReactDOM.render(React.createElement(OrderTable, null), wrapper);
-};
-
-module.exports.initPdfOrder = function () {
-    function saveFile(name, type, data) {
-        if (navigator.msSaveBlob) {
-            navigator.msSaveBlob(new Blob([data], { type: type }), name);
-            return;
-        }
-
-        var url = URL.createObjectURL(new Blob([data], { type: type }));
-
-        var link = $('<a />', {
-            style: 'display: none',
-            href: url,
-            download: name
-        });
-
-        link[0].click();
-        URL.revokeObjectURL(url);
-    }
-
-    if (browser.isIos()) {
-        return;
-    }
-
-    var pdfOrder = $('.js-pdf-order');
-    var cssClassBusy = 'pdf-order--busy';
-
-    pdfOrder.removeClass('hidden');
-
-    pdfOrder.on('click', function () {
-        pdfOrder.addClass(cssClassBusy);
-
-        var form = new FormData();
-
-        form.append('html', $('.js-pdf')[0].innerHTML);
-
-        var _window2 = window,
-            app = _window2.app;
-        var order = app.order;
-
-
-        window.fetch('/api/pdf-order', {
-            method: 'post',
-            body: form
-        }).then(function (response) {
-            return response.blob();
-        }).then(function (myBlob) {
-            return saveFile(('tattoobrands.by-' + order.slug + '-' + order.createdAtFormat + '.pdf').replace(/\//gi, '-').replace(/\s/gi, ''), 'octet/stream', myBlob);
-        }).catch(function (evt) {
-            return console.error(evt);
-        }).then(function () {
-            return pdfOrder.removeClass(cssClassBusy);
-        });
-    });
-};
-
-/***/ }),
-
-/***/ 330:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/* global document, navigator */
-var Browser = function () {
-    function Browser() {
-        _classCallCheck(this, Browser);
-    }
-
-    _createClass(Browser, [{
-        key: "isIos",
-        value: function isIos() {
-            return Boolean(navigator.platform) && /iPad|iPhone|iPod/.test(navigator.platform);
-        }
-
-        // isTouch() {
-        //     return 'ontouchstart' in document;
-        // }
-
-    }]);
-
-    return Browser;
-}();
-
-module.exports.browser = new Browser();
-
-/***/ }),
-
-/***/ 331:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 /* global document */
-var React = __webpack_require__(21);
+var React = __webpack_require__(27);
 var Component = React.Component;
 
-var ReactDOM = __webpack_require__(24);
+var ReactDOM = __webpack_require__(28);
 var find = __webpack_require__(50);
 // const {browser} = require('./my-lib/browser');
 
@@ -1788,7 +1424,7 @@ module.exports.initHeaderNav = function () {
 
 /***/ }),
 
-/***/ 332:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1803,11 +1439,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /* global document, setTimeout, location */
-var React = __webpack_require__(21);
-var ReactDOM = __webpack_require__(24);
+var React = __webpack_require__(27);
+var ReactDOM = __webpack_require__(28);
 var classnames = __webpack_require__(127);
 
-var _require = __webpack_require__(20),
+var _require = __webpack_require__(26),
     normalizeString = _require.normalizeString;
 
 var _require2 = __webpack_require__(128),
@@ -1917,7 +1553,7 @@ var HeaderSearch = function (_SearchPage) {
                 'form',
                 { className: 'header-search', onSubmit: function onSubmit(evt) {
                         return view.onFormSubmit(evt);
-                    } },
+                    }, ref: 'form' },
                 React.createElement('input', {
                     ref: 'searchInput',
                     className: 'header-search__input',
@@ -1935,7 +1571,9 @@ var HeaderSearch = function (_SearchPage) {
                         }, 300);
                     }
                 }),
-                React.createElement('div', { className: searchIconClassName }),
+                React.createElement('div', { onClick: function onClick(evt) {
+                        return view.onFormSubmit(evt);
+                    }, className: searchIconClassName }),
                 view.renderList()
             );
         }
@@ -1956,7 +1594,7 @@ module.exports.initHeaderSearch = function () {
 
 /***/ }),
 
-/***/ 333:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2006,7 +1644,7 @@ module.exports.sortProduct = sortProduct;
 
 /***/ }),
 
-/***/ 334:
+/***/ 332:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

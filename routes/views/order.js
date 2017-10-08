@@ -23,10 +23,7 @@ function onInitView(view, next) {
             });
             next();
         })
-        .catch(evt => {
-            res.status(404);
-            res.render('errors/404');
-        });
+        .catch(evt => res.status(404).render('errors/404'));
 }
 
 exports = module.exports = (req, res) => {
