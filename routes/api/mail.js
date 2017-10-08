@@ -1,9 +1,12 @@
 /* global process */
+const keystone = require('keystone');
 const {env} = process;
 const {ORDER_EMAIL, ORDER_PASS} = env;
 const {getOrderBy} = require('./../views/helper/order');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+const dots = require('dot').process({path: './routes/api/views'});
+const host = keystone.get('locals').host.replace(/\/$/, '');
 
 const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
@@ -22,7 +25,8 @@ function sendEmailStatus(slug) {
                     from: ORDER_EMAIL,
                     to: order.user.email, // eslint-disable-line id-length
                     subject: 'Статус вашего заказа изменён!',
-                    text: 'That was easy2'
+                    // text: 'посмотреть состояние заказа можно'
+                    html: dots['update-order-mail']({order, host})
                 };
 
                 transporter
