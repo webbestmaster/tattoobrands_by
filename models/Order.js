@@ -64,17 +64,23 @@ Order.add({
     createdAt: {type: Date, 'default': Date.now}
 });
 
-Order.schema.pre('save', function createLink(next) {
+Order.schema.post('save', function createLink() {
     const model = this; // eslint-disable-line no-invalid-this
-    const {slug} = model;
+    const {slug, link, sendEmail} = model;
     const {host} = keystone.get('locals');
 
-    if (slug) {
-        model.link = host + 'order/' + slug;
-        model.sendEmail = host + 'admin/order/send-mail/' + slug;
+    if (link && sendEmail) {
+        return;
     }
 
-    next();
+    model.link = host + 'order/' + slug;
+    model.sendEmail = host + 'admin/order/send-mail/' + slug;
+
+    model
+        .save(err => err ?
+            console.error(err) :
+            console.log('Added links were created successful, slug:', slug)
+        );
 });
 
 Order.schema

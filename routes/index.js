@@ -135,9 +135,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
         const {slug} = params;
 
         sendEmailStatus(slug)
-            .then(() => {
-                routes.views.order(req, res);
-            })
+            .then(() => routes.views.order(req, res))
             .catch(evt => res.status(500).render('errors/500'));
     });
 
