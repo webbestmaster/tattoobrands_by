@@ -5,6 +5,7 @@ const pdf = require('html-pdf');
 const fs = require('fs'); // eslint-disable-line id-length
 const path = require('path');
 const sha1 = require('sha1');
+const {sendEmailStatus} = require('./mail');
 // const dots = require('dot').process({path: './routes/api/views'});
 // const host = keystone.get('locals').host.replace(/\/$/, '');
 const {getOrderBy, orderToHtml} = require('./../views/helper/order');
@@ -76,16 +77,27 @@ module.exports.createOrder = (req, res) => {
             link: keystone.get('locals').host + 'order/' + name
         });
 
-        newOrder.save(saveErr => saveErr ?
-            res.json({
-                success: false,
-                error: authorizationResponse.unknowError
-            }) :
-            res.json({
-                success: true,
-                slug: newOrder.slug
-            })
-        );
+        newOrder.save(saveErr => {
+            if (saveErr) {
+                res.json({
+                    success: false,
+                    error: authorizationResponse.unknowError
+                });
+                return;
+            }
+
+            const {slug} = newOrder;
+
+            sendEmailStatus(slug)
+                .then(() => res.json({
+                    success: true,
+                    slug
+                }))
+                .catch(() => res.json({
+                    success: false,
+                    error: authorizationResponse.unknowError
+                }));
+        });
     });
 };
 
