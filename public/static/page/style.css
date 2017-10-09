@@ -1,0 +1,13 @@
+.static-page__social-link {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    margin-top: 14px;
+}
+
+.static-page__social-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

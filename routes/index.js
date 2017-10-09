@@ -73,6 +73,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     app.get('/category', routes.views.category);
     app.get('/category/:slug', routes.views.category);
     app.get('/search', routes.views.search);
+    app.get('/static-page/:slug', routes.views['static-page']);
     app.get('/account', (req, res) =>
         req.user ?
             routes.views.account(req, res) :
