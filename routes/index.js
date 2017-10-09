@@ -57,6 +57,7 @@ const routes = {
 exports = module.exports = app => { // eslint-disable-line max-statements
     // views
     app.get('/', routes.views.index);
+    app.get('/promo-products', routes.views['promo-products']);
     app.get('/product/:slug', routes.views.product);
     app.get('/product-id/:id', (req, res) => {
         const {params} = req;
