@@ -2,3 +2,32 @@ extends ../../layouts/wrapper
 
 block content
     div.width-limiter.width-limiter--big-padding
+
+        link(href="/static/page/style.css" rel="stylesheet")
+
+        h2.page-header Оплата и доставка
+        h3.seo-text__header Информация о доставке
+
+        p.seo-text__paragraph Заказы, принятые
+            span.bold= ' до 12:00 '
+            | - доставляются в тот же день.
+
+        p.seo-text__paragraph Заказы, принятые после
+            span.bold= ' до 12:00 '
+            | - доставляются на следующий день.
+
+        p.seo-text__paragraph Доставка производится с понедельника по субботу
+            span.bold= ' с 10.00 до 22.00 '
+            | в воскресенье выходной
+
+        h3.seo-text__header Курьерская доставка
+
+        p.seo-text__paragraph Стоимость доставки курьером по г. Минску в пределах МКАД -
+            span.bold= ' 7,00 руб'
+
+        p.seo-text__paragraph Стоимость доставки курьером за пределами МКАД -
+            span.bold= ' 10,00 руб'
+
+        p.seo-text__paragraph При сумме заказа более
+            span.bold= ' 100,00 руб '
+            | доставка по г. Минску осуществляется бесплатно
