@@ -1,29 +1,30 @@
 extends ../../layouts/wrapper
 
 block content
-    div.width-limiter
+    div.width-limiter.width-limiter--big-padding.clear-self
 
         link(href="/static/page/style.css" rel="stylesheet")
 
         h2.page-header Прием онлайн заказов круглосуточно
         h3.seo-text__header Контакты:
-        p.seo-text__paragraph
-            a.seo-text__link(href="tel:+375445449911") Телефон: +375 (44)
-                span.secondary-color= ' 544-99-11'
-            br
-        p.seo-text__paragraph
-            a.seo-text__link(href="mailto:tattoobrands.by@gmail.com") Email: tattoobrands.by@gmail.com
+        p.seo-text__paragraph Телефон: +375 (44) 544-99-11
+
+        p.seo-text__paragraph Email: tattoobrands.by@gmail.com
 
         br
         p.seo-text__paragraph Время приема заказов через корзину
             span.bold= ' круглосуточно'
+            |.
+
         p.seo-text__paragraph Время приема заказов по телефону пн-сб:
             span.bold= ' '
                 | с&nbsp;9.00&nbsp;до&nbsp;19.00
+            |.
+
         p.seo-text__paragraph Время доставки заказов пн-сб:
             span.bold= ' '
                 | с&nbsp;10.00&nbsp;до&nbsp;21.00
-
+            |.
 
         h3.seo-text__header Мы в социальных сетях:
             div.clear
@@ -33,7 +34,3 @@ block content
                     img(src="/static/page/youtube.png")
                 a.static-page__social-link(href="https://vk.com/club116080919" target="_blank")
                     img(src="/static/page/vk.png")
-
-        div.clear-full
-            br
-            br
