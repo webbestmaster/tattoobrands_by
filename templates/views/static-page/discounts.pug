@@ -3,6 +3,34 @@ extends ../../layouts/wrapper
 block content
     div.width-limiter.width-limiter--big-padding.clear-self
 
+        link(href="/static/page/style.css" rel="stylesheet")
 
+        h2.page-header Дисконтная программа
 
+        p.seo-text__paragraph.ta-center В нашем магазине для Вас действует
+            span.bold= ' накопительная система '
+            | скидок!
 
+        p.seo-text__paragraph.ta-center Скидочные карты являются именными и третьим лицам не передаются!
+
+        p.seo-text__paragraph.ta-center
+            img.discount-card(src="/static/page/card-front.png")
+            img.discount-card(src="/static/page/card-back.png")
+
+        p.seo-text__paragraph.ta-center
+            span.bold 3%
+            = ' - при покупке на сумму от '
+            span.bold 2.000 руб
+            |.
+
+        p.seo-text__paragraph.ta-center
+            span.bold 5%
+            = ' - при покупке на сумму от '
+            span.bold 4.000 руб
+            |.
+
+        p.seo-text__paragraph.ta-center
+            span.bold 10%
+            = ' - при покупке на сумму от '
+            span.bold 6.000 руб
+            |.

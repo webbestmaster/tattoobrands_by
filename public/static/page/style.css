@@ -11,3 +11,10 @@
     width: 100%;
     height: 100%;
 }
+
+.discount-card {
+    width: 300px;
+    padding: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
