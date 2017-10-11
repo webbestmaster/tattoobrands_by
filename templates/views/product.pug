@@ -46,9 +46,6 @@ block content
 
                 if state === 'in-stock'
                     form.add-to-order.clear-self.js-add-to-basket-form
-                        script
-                            != 'window.app = window.app || {};'
-                            != 'window.app.product = ' + JSON.stringify(product) + ';'
                         button.button.add-to-order__button(type="submit")
                             span.hidden-for-tablet добавить&nbsp;
                             | в корзину
@@ -58,3 +55,7 @@ block content
     h2.width-limiter.product-recommended__header Рекомендуем:
     div.products-preview.width-limiter
         +products(extraProducts)
+
+    script
+        != 'window.app = window.app || {};'
+        != 'window.app.product = ' + JSON.stringify(product) + ';'

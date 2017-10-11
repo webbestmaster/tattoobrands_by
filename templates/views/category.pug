@@ -3,6 +3,9 @@ include ../mixins/products
 
 block content
     div.width-limiter.width-limiter--big-padding
+
+        div.js-category-bread-crumbs.bread-crumbs
+
         h2.page-header= (localRootCategory.displayName || localRootCategory.name)
 
         div.products-preview.width-limiter
@@ -17,3 +20,7 @@ block content
                     a(href='/category/' + category.slug).category-item.clear-self
                         span(style='background-image: url(' + category.image + ')').category-item__image
                         p.category-item__name= (category.displayName || category.name)
+
+    script
+        != 'window.app = window.app || {};'
+        != 'window.app.category = ' + JSON.stringify(localRootCategory) + ';'
