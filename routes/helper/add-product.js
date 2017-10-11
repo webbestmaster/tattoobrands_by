@@ -3,15 +3,20 @@ const keystone = require('keystone');
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
 
-    const {name, description, article, externalImages, price, properties, id, slug} = req.body; // eslint-disable-line id-length
+    const {name, description, article, externalImages = [], price = 0, properties = [], id, slug} = req.body; // eslint-disable-line id-length
+
+    console.log(req.body);
 
     const product = {
         name,
         description,
         article,
-        externalImages: externalImages.map(image => 'https://tattoobrands.github.io/products/list/' + id + '/images/' + image),
+        externalImages: externalImages
+            .map(image => 'https://tattoobrands.github.io/products/list/' + id + '/images/' + image),
         price: price * 2,
-        properties: properties.map(({key, value}) => [key, value].join(' : ')),
+        properties: properties
+            .filter(property => property.key && property.value)
+            .map(({key, value}) => [key, value].join(' : ')),
         oldLink: 'http://tattoobrands.by/products/' + slug
     };
 

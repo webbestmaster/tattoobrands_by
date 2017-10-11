@@ -35,10 +35,10 @@ function downloadImage(url, path) {
     );
 }
 
-function normalize(data) {
+function normalize(data, ii) {
     // make folder
     const productFolder = './products/';
-    const productId = data.master.sku.toLowerCase();
+    const productId = ii;
 
     return Promise
         .resolve()
@@ -70,4 +70,4 @@ function normalize(data) {
 
 let chain = Promise.resolve();
 
-products.forEach((product, ii) => /* ii < 3 && */ (chain = chain.then(() => normalize(product))));
+products.forEach((product, ii) => /* ii < 3 && */ (chain = chain.then(() => normalize(product, ii))));

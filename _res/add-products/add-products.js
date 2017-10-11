@@ -1,12 +1,18 @@
+const sha1 = require('sha1');
 const request = require('request');
 const products = require('./../grab-products/products.json');
 
 let chain = Promise.resolve();
 
-products.forEach((product, ii) => /*ii < 3 &&*/ (chain = chain.then(() => addProduct(product).then(result => console.log(ii)))));
+products.forEach((product, ii) => /*ii < 3 &&*/ (chain = chain.then(() => addProduct(product, ii).then(result => console.log(ii)))));
 
-function addProduct(product) {
-    const productData = require('./../grab-products/products/' + product.master.sku.toLowerCase() + '/data.json');
+function addProduct(product, ii) {
+    const productData = require('./../grab-products/products/' + ii + '/data.json');
+
+    productData.article = productData.article || sha1(productData.slug);
+    productData.id = ii;
+
+    console.log(productData.article);
 
     return new Promise((resolve, reject) =>
         request
