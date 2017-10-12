@@ -252,7 +252,10 @@ var SearchPage = function (_Component) {
 
 
             searchInput.value = decodeURI(query);
-            view.onSearchInput();
+
+            if (query) {
+                view.onSearchInput();
+            }
         }
     }, {
         key: 'onSearchInput',
@@ -428,6 +431,7 @@ var orderingScripts = __webpack_require__(328);
 var headerScripts = __webpack_require__(329);
 var headerSearchScripts = __webpack_require__(330);
 var searchPageScripts = __webpack_require__(128);
+var categoryPageScripts = __webpack_require__(333);
 
 $(function () {
     // main part
@@ -446,6 +450,7 @@ $(function () {
 
     // product
     productScripts.initSwiper();
+    productScripts.initBreadCrumbs();
     productScripts.initSwiperZoom();
     productScripts.initAddToBasketForm();
 
@@ -464,6 +469,9 @@ $(function () {
     // order
     // orderScripts.initOrderTable();
     // orderScripts.initPdfOrder();
+
+    // categories
+    categoryPageScripts.initBreadCrumbs();
 
     // search
     searchPageScripts.initPage();
@@ -489,6 +497,10 @@ var Swiper = __webpack_require__(49);
 var $ = __webpack_require__(14);
 
 module.exports.initSwiper = function () {
+    var cssInitialClass = 'home-swiper-wrapper--wait-for-init';
+
+    $('.' + cssInitialClass).removeClass(cssInitialClass);
+
     function onSwiperResize(swiper) {
         // count height
         // const slideHeight = 261;
@@ -700,6 +712,84 @@ module.exports.initAddToBasketForm = function () {
             timeout: 3e3 // time in milliseconds after the snackbar autohides, 0 is disabled
         });
     });
+};
+
+function hasCategoryTheProduct(category, productId) {
+    return category.products.indexOf(productId) !== -1;
+}
+
+function findProductPath(category, productId, passList, callBack, watcher) {
+    var currentPassList = JSON.parse(JSON.stringify(passList));
+    var slug = category.slug,
+        name = category.name,
+        displayName = category.displayName;
+
+
+    currentPassList.push({ slug: slug, name: name, displayName: displayName });
+
+    if (hasCategoryTheProduct(category, productId) && watcher.hasResult === false) {
+        currentPassList.shift();
+        callBack(currentPassList);
+        Object.assign(watcher, { hasResult: true });
+        return true; // stop outside loop
+    }
+
+    category.categories.some(function (subCategory) {
+        return findProductPath(subCategory, productId, currentPassList, callBack, watcher);
+    });
+
+    // check for top category and for no result
+    if (currentPassList.length === 1 && watcher.hasResult === false) {
+        callBack(null);
+    }
+
+    return false; // continue outside loop
+}
+
+function getCategoriesPath(productId) {
+    var _window = window,
+        app = _window.app;
+
+    var categoryTree = JSON.parse(JSON.stringify(app.categoryTree));
+    var resultObject = {};
+
+    findProductPath(categoryTree, productId, [], function (result) {
+        return Object.assign(resultObject, { result: result });
+    }, { hasResult: false });
+
+    return resultObject.result;
+}
+
+module.exports.initBreadCrumbs = function () {
+    var wrapper = document.querySelector('.js-bread-crumbs');
+
+    if (!wrapper) {
+        console.log('no wrapper for bread-crumbs');
+        return;
+    }
+
+    var _window2 = window,
+        app = _window2.app;
+
+    var product = JSON.parse(JSON.stringify(app.product));
+
+    var categoriesPass = getCategoriesPath(product._id); // eslint-disable-line no-underscore-dangle
+
+    if (categoriesPass === null) {
+        console.error('Can NOT create bread crumbs for product');
+        return;
+    }
+
+    var categoryHtml = categoriesPass.map(function (_ref2) {
+        var slug = _ref2.slug,
+            name = _ref2.name,
+            displayName = _ref2.displayName;
+        return '<a class="bread-crumbs__link" href="{{href}}">{{name}}</a>'.replace('{{href}}', '/category/' + slug).replace('{{name}}', displayName || name) + '<span class="bread-crumbs__separator">&gt;</span>';
+    }).join('');
+
+    var productHtml = '<a class="bread-crumbs__link secondary-color" href="{{href}}">{{name}}</a>'.replace('{{href}}', '/product/' + product.slug).replace('{{name}}', product.displayName || product.name);
+
+    wrapper.innerHTML = categoryHtml + productHtml;
 };
 
 /***/ }),
@@ -1606,24 +1696,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var emptyQuery = '';
 
-var searchCache = _defineProperty({}, emptyQuery, { products: [] });
+var promiseCache = _defineProperty({}, emptyQuery, Promise.resolve({ products: [] }));
 
 function search(query) {
-    if (searchCache.hasOwnProperty(query)) {
-        return new Promise(function (resolve) {
-            return setTimeout(function () {
-                return resolve(searchCache[query]);
-            }, 0);
-        });
+    if (promiseCache.hasOwnProperty(query)) {
+        return promiseCache[query];
     }
 
-    return fetch('/api/search?query=' + query).then(function (rawResult) {
+    promiseCache[query] = fetch('/api/search?query=' + query).then(function (rawResult) {
         return rawResult.json();
-    }).then(function (result) {
-        Object.assign(searchCache, _defineProperty({}, query, result));
-
-        return result;
     });
+
+    return promiseCache[query];
 }
 
 module.exports.search = search;
@@ -1676,6 +1760,102 @@ var scrollMethods = function () {
 
 module.exports.saveScrollTop = scrollMethods.saveScrollTop;
 module.exports.restoreScrollTop = scrollMethods.restoreScrollTop;
+
+/***/ }),
+
+/***/ 333:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/* global document */
+function hasCategoryTheCategory(category, slug) {
+    return category.categories.some(function (subCategory) {
+        return subCategory.slug === slug;
+    });
+}
+
+function findCategoryPath(category, categorySlug, passList, callBack, watcher) {
+    var currentPassList = JSON.parse(JSON.stringify(passList));
+    var slug = category.slug,
+        name = category.name,
+        displayName = category.displayName;
+
+
+    currentPassList.push({ slug: slug, name: name, displayName: displayName });
+
+    if (hasCategoryTheCategory(category, categorySlug) && watcher.hasResult === false) {
+        currentPassList.shift();
+        callBack(currentPassList);
+        Object.assign(watcher, { hasResult: true });
+        return true; // stop outside loop
+    }
+
+    category.categories.some(function (subCategory) {
+        return findCategoryPath(subCategory, categorySlug, currentPassList, callBack, watcher);
+    });
+
+    // check for top category and for no result
+    if (currentPassList.length === 1 && watcher.hasResult === false) {
+        callBack(null);
+    }
+
+    return false; // continue outside loop
+}
+
+function getCategoriesPath(slug) {
+    var _window = window,
+        app = _window.app;
+
+    var categoryTree = JSON.parse(JSON.stringify(app.categoryTree));
+    var resultObject = {};
+
+    findCategoryPath(categoryTree, slug, [], function (result) {
+        return Object.assign(resultObject, { result: result });
+    }, { hasResult: false });
+
+    return resultObject.result;
+}
+
+module.exports.initBreadCrumbs = function () {
+    var wrapper = document.querySelector('.js-category-bread-crumbs');
+
+    if (!wrapper) {
+        console.log('no wrapper for bread-crumbs');
+        return;
+    }
+
+    var _window2 = window,
+        app = _window2.app;
+
+    var category = JSON.parse(JSON.stringify(app.category));
+
+    var categoriesPass = getCategoriesPath(category.slug); // eslint-disable-line no-underscore-dangle
+
+    if (categoriesPass === null) {
+        console.error('Can NOT create bread crumbs for category');
+        return;
+    }
+
+    if (categoriesPass.length === 0) {
+        console.log('Sub root category - do not show bread crumbs');
+        return;
+    }
+
+    categoriesPass.push({
+        slug: category.slug,
+        name: category.name,
+        displayName: category.displayName
+    });
+
+    wrapper.innerHTML = categoriesPass.map(function (_ref) {
+        var slug = _ref.slug,
+            name = _ref.name,
+            displayName = _ref.displayName;
+        return '<a class="bread-crumbs__link" href="{{href}}">{{name}}</a>'.replace('{{href}}', '/category/' + slug).replace('{{name}}', displayName || name);
+    }).join('<span class="bread-crumbs__separator">&gt;</span>');
+};
 
 /***/ })
 

@@ -367,6 +367,9 @@ Pagination Styles
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .pagination-wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -456,6 +459,9 @@ Pagination Styles
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .main-gradient, .button, .variant-link {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4f4f), to(#b60605));
   background-image: -webkit-linear-gradient(top, #ff4f4f, #b60605);
@@ -512,6 +518,9 @@ Pagination Styles
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 html,
 body {
   height: 100%; }
@@ -533,9 +542,9 @@ body {
 
 .main-wrapper {
   min-height: 100%;
-  margin-bottom: -223px; }
+  margin-bottom: -185px; }
   .main-wrapper:after {
-    height: 223px;
+    height: 185px;
     content: '';
     display: block; }
 
@@ -594,6 +603,9 @@ body {
 
 .bold {
   font-weight: bold; }
+
+.ta-center {
+  text-align: center; }
 
 .form {
   display: block;
@@ -727,6 +739,9 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .header {
   background-image: url(img/img-big-bg-a59a60.png);
   background-repeat: repeat-x;
@@ -735,11 +750,11 @@ body {
 
 .header__left-part {
   float: left;
-  width: 310px; }
+  width: 250px; }
 
 .header__center-part {
   max-width: 692px;
-  margin: 0 200px 0 310px; }
+  margin: 0 200px 0 260px; }
 
 .header__right-part {
   float: right;
@@ -788,7 +803,7 @@ body {
           box-sizing: border-box; }
 
 .header-search__icon {
-  background-image: url(img/img-search-cb0c29.svg);
+  background-image: url(img/img-search-daa290.svg);
   background-repeat: no-repeat;
   background-position: 7px 10px;
   background-size: 20px;
@@ -797,7 +812,10 @@ body {
   height: 40px;
   bottom: 0;
   right: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: background 0.05s linear;
+  -moz-transition: background 0.05s linear;
+  transition: background 0.05s linear; }
   .header-search__icon.header-search__icon--in-progress {
     background-image: url(img/img-search-in-progress-20bd4c.gif); }
 
@@ -1046,6 +1064,9 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .header-nav {
   text-align: center;
   border: 1px solid #A7A7A7;
@@ -1177,6 +1198,9 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .category-item__wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -1265,14 +1289,20 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .home-swiper-wrapper {
   width: 100%;
   overflow: hidden;
-  height: 1px;
   position: relative;
   -webkit-transition: background-color 0.3s ease-out;
   -moz-transition: background-color 0.3s ease-out;
   transition: background-color 0.3s ease-out; }
+  .home-swiper-wrapper.home-swiper-wrapper--wait-for-init {
+    height: 1px;
+    opacity: 0;
+    margin-bottom: -1px; }
   .home-swiper-wrapper:hover {
     background-color: #f6f6f6; }
 
@@ -1367,7 +1397,14 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .footer {
+  min-height: 185px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   border-bottom: solid 3px #bf2622;
   background-color: #f6f6f6;
@@ -1380,7 +1417,7 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    top: -32px;
+    top: 0;
     width: 100%;
     height: 100%;
     background-image: url(img/img-big-bg-a59a60.png);
@@ -1415,7 +1452,7 @@ body {
 .footer__full-line {
   clear: both;
   text-align: center;
-  padding: 23px 10px 0; }
+  padding: 33px 10px 0; }
 
 .footer__nav_link {
   color: #777;
@@ -1483,6 +1520,9 @@ body {
 
 .bold {
   font-weight: bold; }
+
+.ta-center {
+  text-align: center; }
 
 .products-preview {
   display: -webkit-box;
@@ -1632,6 +1672,22 @@ body {
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
 
+.bread-crumbs {
+  display: block;
+  font-size: 14px; }
+
+.bread-crumbs__link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 28px; }
+  .bread-crumbs__link:hover {
+    text-decoration: underline; }
+
+.bread-crumbs__separator {
+  display: inline-block;
+  padding: 0 8px; }
+
 .main-gradient, .button, .variant-link {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4f4f), to(#b60605));
   background-image: -webkit-linear-gradient(top, #ff4f4f, #b60605);
@@ -1687,6 +1743,9 @@ body {
 
 .bold {
   font-weight: bold; }
+
+.ta-center {
+  text-align: center; }
 
 .cart {
   overflow-y: auto; }
@@ -1855,6 +1914,9 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 .product-image {
   width: 320px;
   float: left; }
@@ -1922,8 +1984,8 @@ body {
 
 .product-description__description,
 .product-description__description p {
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 15px;
+  line-height: 18px;
   padding-bottom: 17px; }
 
 .product-description__description p:last-child {
@@ -2048,6 +2110,9 @@ body {
 
 .bold {
   font-weight: bold; }
+
+.ta-center {
+  text-align: center; }
 
 .variant {
   display: block;
@@ -2180,6 +2245,9 @@ body {
 .bold {
   font-weight: bold; }
 
+.ta-center {
+  text-align: center; }
+
 @media only screen and (max-width: 999px) {
   body {
     background-color: #c00; }
@@ -2189,10 +2257,6 @@ body {
     display: none; }
   .header__left-part {
     width: auto; }
-  .header__center-part {
-    margin-left: 270px; }
-  .footer:before {
-    display: none; }
   .footer__left-part,
   .footer__full-line {
     display: none; }
@@ -2206,7 +2270,9 @@ body {
   .products-preview {
     -webkit-box-pack: center;
        -moz-box-pack: center;
-            justify-content: center; } }
+            justify-content: center; }
+  .bread-crumbs__link {
+    padding-bottom: 10px; } }
 
 .main-gradient, .button, .variant-link {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4f4f), to(#b60605));
@@ -2263,6 +2329,9 @@ body {
 
 .bold {
   font-weight: bold; }
+
+.ta-center {
+  text-align: center; }
 
 @media only screen and (max-width: 767px) {
   body {
@@ -2334,6 +2403,8 @@ body {
       display: block; }
   .footer {
     padding-top: 24px; }
+  .footer:before {
+    display: none; }
   .label__text {
     text-align: center;
     float: none;
