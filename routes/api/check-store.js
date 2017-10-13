@@ -78,10 +78,7 @@ function checkProductsById(productsIds) {
     const statuses = [];
 
     productsIds
-        .forEach((productsId, ii) => {
-            if (ii > 10) {
-                return;
-            }
+        .forEach(productsId => {
             chain = chain.then(() => checkProductById(productsId).then(result => statuses.push(result)));
         });
 
@@ -113,10 +110,7 @@ function checkOrdersById(ordersIds) {
     const statuses = [];
 
     ordersIds
-        .forEach((orderId, ii) => {
-            if (ii > 10) {
-                return;
-            }
+        .forEach(orderId => {
             chain = chain.then(() => checkOrderById(orderId).then(result => statuses.push(result)));
         });
 

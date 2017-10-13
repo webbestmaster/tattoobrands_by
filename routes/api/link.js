@@ -42,10 +42,7 @@ function checkAllLinksInternal() {
             const statuses = [];
 
             allLinks
-                .forEach((link, ii) => {
-                    // if (ii > 20) {
-                    //     return;
-                    // }
+                .forEach(link => {
                     chain = chain
                         .then(() => checkLink(link)
                             .then(result => statuses.push({link, error: null}))
