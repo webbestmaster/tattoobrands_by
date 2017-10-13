@@ -11,24 +11,24 @@ module.exports.checkStore = (req, res) => {
     Promise
         .all([
             getAllCategories(),
-            getAllVariants(),
-            getAllProducts(),
-            getAllOrders()
+            getAllVariants()
+            // getAllProducts(),
+            // getAllOrders()
         ])
-        .then(([categories, variants, products, orders]) => {
+        .then(([categories, variants]) => {
             Promise
                 .all([
                     Promise.all(categories.map(({_id}) => checkCategoryById(_id))),
-                    Promise.all(variants.map(({_id}) => checkVariantById(_id))),
-                    checkProductsById(products.map(({_id}) => _id)),
-                    checkOrdersById(orders.map(({_id}) => _id))
+                    Promise.all(variants.map(({_id}) => checkVariantById(_id)))
+                    // checkProductsById(products.map(({_id}) => _id)),
+                    // checkOrdersById(orders.map(({_id}) => _id))
                 ])
-                .then(([checkedCategories, checkedVariants, checkedProducts, checkedOrders]) => {
+                .then(([checkedCategories, checkedVariants]) => {
                     res.json({
                         categories: checkedCategories.sort(({error}) => error ? -1 : 1),
-                        variants: checkedVariants.sort(({error}) => error ? -1 : 1),
-                        products: checkedProducts.sort(({error}) => error ? -1 : 1),
-                        orders: checkedOrders.sort(({error}) => error ? -1 : 1)
+                        variants: checkedVariants.sort(({error}) => error ? -1 : 1)
+                        // products: checkedProducts.sort(({error}) => error ? -1 : 1),
+                        // orders: checkedOrders.sort(({error}) => error ? -1 : 1)
                     });
                 });
         });
