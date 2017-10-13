@@ -35,8 +35,8 @@ module.exports.getAllLinks = getAllLinks;
 
 function checkAllLinksInternal() {
     return getAllLinksInternal()
-        .then(({categories, products}) => {
-            const allLinks = categories.concat(products);
+        .then(({categories, products, orders}) => {
+            const allLinks = categories.concat(products, orders);
 
             let chain = Promise.resolve();
             const statuses = [];
@@ -48,8 +48,8 @@ function checkAllLinksInternal() {
                     }
                     chain = chain
                         .then(() => checkLink(link)
-                            .then(result => statuses.push({link, result}))
-                            .catch(result => statuses.push({link, result}))
+                            .then(result => statuses.push({link, error: null}))
+                            .catch(result => statuses.push({link, error: result}))
                         );
                 });
 
