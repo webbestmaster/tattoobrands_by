@@ -5,6 +5,7 @@ const {numberToMoney} = require('./../../../models/my-lib/format');
 
 function normalizeOrder(order) {
     const {
+        _id,
         slug,
         user,
         phone,
@@ -22,6 +23,7 @@ function normalizeOrder(order) {
     } = order;
 
     return {
+        _id,
         slug,
         user,
         phone,
@@ -94,3 +96,15 @@ function orderToHtml(order) {
 }
 
 module.exports.orderToHtml = orderToHtml;
+
+function getAllOrders() {
+    return new Promise((resolve, reject) =>
+        keystone
+            .list('Order')
+            .model
+            .find()
+            .exec((err, orders) => err ? reject(err) : resolve(orders.map(normalizeOrder)))
+    );
+}
+
+module.exports.getAllOrders = getAllOrders;

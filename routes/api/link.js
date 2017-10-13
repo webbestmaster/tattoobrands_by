@@ -2,6 +2,7 @@
 const request = require('request');
 const {getAllCategories} = require('./../views/helper/category');
 const {getAllProducts} = require('./../views/helper/product');
+const {getAllOrders} = require('./../views/helper/order');
 const {env} = process;
 const {PORT} = env;
 
@@ -9,16 +10,18 @@ function getAllLinksInternal() {
     return Promise
         .all([
             getAllCategories(),
-            getAllProducts()
+            getAllProducts(),
+            getAllOrders()
         ])
-        .then(([categories, products]) => ({
+        .then(([categories, products, orders]) => ({
             categories: categories.map(({slug}) => '/category/' + slug),
             products: products.reduce((accum, {_id, slug}) => {
                 accum.push('/product/' + slug);
                 accum.push('/product-id/' + _id);
 
                 return accum;
-            }, [])
+            }, []),
+            orders: orders.map(({slug}) => '/order/' + slug)
         }));
 }
 
