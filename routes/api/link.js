@@ -43,9 +43,9 @@ function checkAllLinksInternal() {
 
             allLinks
                 .forEach((link, ii) => {
-                    if (ii > 20) {
-                        return;
-                    }
+                    // if (ii > 20) {
+                    //     return;
+                    // }
                     chain = chain
                         .then(() => checkLink(link)
                             .then(result => statuses.push({link, error: null}))
