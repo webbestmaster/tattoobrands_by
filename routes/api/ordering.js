@@ -116,9 +116,9 @@ fs.readFile(path.resolve(__dirname, '..', '..', 'public', 'front', 'style.css'),
 const config = {
     // height: '11.7in',        // allowed units: mm, cm, in, px
     // width: '8.3in',
-    format: 'A3',        // allowed units: A3, A4, A5, Legal, Letter, Tabloid
+    format: 'A3', // allowed units: A3, A4, A5, Legal, Letter, Tabloid
     orientation: 'portrait', // portrait or landscape
-    border: '0.4in',             // default is 0, units: mm, cm, in, px
+    border: '0.4in', // default is 0, units: mm, cm, in, px
     header: {
         height: '15mm',
         contents: '<h1 class="page-header">TattooBrands.by</h1>'
@@ -129,8 +129,8 @@ const config = {
             'default': 'Страница: <span>{{page}}</span> / <span>{{pages}}</span>' // fallback value
         }
     },
-    type: 'pdf',             // allowed file types: png, jpeg, pdf
-    quality: '75'           // only used for types png & jpeg
+    type: 'pdf', // allowed file types: png, jpeg, pdf
+    quality: '75' // only used for types png & jpeg
 };
 
 module.exports.pdfOrder = (req, res) => {
