@@ -1,4 +1,5 @@
 const keystone = require('keystone');
+const {externalStorage} = keystone.get('locals');
 
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
@@ -12,10 +13,10 @@ module.exports = (req, res) => {
         description,
         article,
         externalImages: externalImages
-            .map(image => 'https://tattoobrands.github.io/products/list/' + id + '/images/' + image),
+            .map(image => externalStorage + '/products/list/' + id + '/images/' + image),
         price: price * 2,
         properties: properties
-            .filter(property => property.key && property.value)
+            .filter(({key, value}) => key && value && key.toString().trim() && value.toString().trim())
             .map(({key, value}) => [key, value].join(' : ')),
         oldLink: 'http://tattoobrands.by/products/' + slug
     };

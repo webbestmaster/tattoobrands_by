@@ -1,19 +1,10 @@
 const keystone = require('keystone');
 
+
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
 
-    const {name, description, article, externalImages, price, properties, id, slug} = req.body; // eslint-disable-line id-length
-
-    const product = {
-        name,
-        description,
-        article,
-        externalImages: externalImages.map(image => 'https://tattoobrands.github.io/products/list/' + id + '/images/' + image),
-        price: price * 2,
-        properties: properties.map(({key, value}) => [key, value].join(' : ')),
-        oldLink: 'http://tattoobrands.by/products/' + slug
-    };
+    const {article} = req.body; // eslint-disable-line id-length
 
     Product
         .model
