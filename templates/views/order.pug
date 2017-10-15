@@ -7,19 +7,4 @@ block content
         if header
             h2.page-header= header
 
-        //div.js-pdf
-
-            h2.page-header Заказ:&nbsp;#
-                != order.name
-                != ' | ' + order.createdAtFormat.replace(/\s/gi, '&nbsp;')
-                = ' | '
-                - var state = order.state
-                if state === 'in-processing'
-                    | в&nbsp;обработке
-                if state === 'confirmed'
-                    | подтверждён
-                if state === 'canceled'
-                    | отменён
-
-            div.js-table-order
         != orderHtml

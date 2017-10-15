@@ -7,11 +7,12 @@ block content
     div.products-preview
         +products(products)
 
+    div.pagination-wrapper.js-index-pagination
+
+    include ./index-seo-text
+
     script
         = 'window.app = window.app || {};'
         = 'window.app.indexPagination = {};'
         = 'window.app.indexPagination.totalPages = ' + indexPagination.totalPages + ';'
         = 'window.app.indexPagination.startPage = ' + indexPagination.startPage + ';'
-    div.pagination-wrapper.js-index-pagination
-
-    include ./index-seo-text
