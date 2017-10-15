@@ -9,21 +9,24 @@
 const productsPath = './../public/external-storage/products/list';
 
 const tinify = require('tinify');
+
 tinify.key = 'f8ZqkiaR5hwI9QRdc8Dwropue4kENmRp';
 
-let ii = 400;
+let productNumber = 0;
 
 let chain = Promise.resolve();
 
-for (; ii <= 550; ii += 1) {
-    (index => {
+for (; productNumber <= 550; productNumber += 1) {
+    (index => { // eslint-disable-line no-loop-func
         chain = chain.then(() => optimizeProduct(index)).then(() => console.log(index));
-    })(ii);
+    })(productNumber);
 }
 
 function optimizeProduct(ii) {
     const {externalImages} = require(productsPath + '/' + ii + '/data.json');
-    return Promise.all(externalImages.map(imageName => optimizeImage(productsPath + '/' + ii + '/images/' + imageName)));
+
+    return Promise
+        .all(externalImages.map(imageName => optimizeImage(productsPath + '/' + ii + '/images/' + imageName)));
 }
 
 function optimizeImage(imagePath) {

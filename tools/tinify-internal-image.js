@@ -6,9 +6,10 @@
 // uY9x_ytUQ0sq9-bB8iTvwGnmiWVci4an - web.best.master@gmail.com
 // RmSQIT1W2KC2_gZf27_KaZ7GWIzpmKJu - ae.fan.game@gmail.com
 
-const fs = require('fs');
+const fs = require('fs'); // eslint-disable-line id-length
 
 const tinify = require('tinify');
+
 tinify.key = 'f8ZqkiaR5hwI9QRdc8Dwropue4kENmRp';
 
 let chain = Promise.resolve();
@@ -24,14 +25,14 @@ function imageFilter(fileName) {
 const productFolderImages = './../public/product/images';
 const categoryFolderImages = './../public/category/images';
 
-fs
+fs // eslint-disable-line no-sync
     .readdirSync(productFolderImages)
     .filter(imageFilter)
     .forEach(file => {
         chain = chain.then(() => optimizeImage(productFolderImages + '/' + file));
     });
 
-fs
+fs // eslint-disable-line no-sync
     .readdirSync(categoryFolderImages)
     .filter(imageFilter)
     .forEach(file => {

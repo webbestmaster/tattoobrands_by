@@ -55,7 +55,7 @@
                 </td>
                 <td colSpan="2">
                     <span class="table__number table__number--left bold">
-                        {{= it.numberToMoney(it.order.fullPrice) }} руб.
+                        {{= it.order.fullPrice }} руб.
                     </span>
                 </td>
             </tr>
