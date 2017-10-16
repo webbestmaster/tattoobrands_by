@@ -12,6 +12,9 @@ html(lang="ru")
         meta(name="description" content=description)
         title=title
 
+        style(rel="stylesheet")
+            include ./../../public/front/style.css
+
     body
 
         div.main-wrapper
@@ -28,6 +31,3 @@ html(lang="ru")
 
         script(src="/front/common.js" type="text/javascript" defer)
         script(src="/front/main.js" type="text/javascript" defer)
-
-        style(rel="stylesheet")
-            include ./../../public/front/style.css
