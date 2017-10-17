@@ -10,13 +10,13 @@ const productsPath = './../public/external-storage/products/list';
 
 const tinify = require('tinify');
 
-tinify.key = 'f8ZqkiaR5hwI9QRdc8Dwropue4kENmRp';
+tinify.key = 'uY9x_ytUQ0sq9-bB8iTvwGnmiWVci4an';
 
 let productNumber = 0;
 
 let chain = Promise.resolve();
 
-for (; productNumber <= 550; productNumber += 1) {
+for (; productNumber <= 553; productNumber += 1) {
     (index => { // eslint-disable-line no-loop-func
         chain = chain.then(() => optimizeProduct(index)).then(() => console.log(index));
     })(productNumber);
