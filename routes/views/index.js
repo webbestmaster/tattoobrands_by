@@ -39,6 +39,8 @@ function onInitView(view, next) {
             });
 
             next(err);
+            // TODO: cache result
+            // next(locals);
         });
 }
 
@@ -48,4 +50,12 @@ exports = module.exports = (req, res) => {
     view.on('init', next => onInitView(view, next));
 
     view.render('index');
+
+    // TODO: cache result
+    // use variable keystone.set({lastUpdate: Date.now()})
+    // update for every product, category, variant
+    // if page last update little then lastUpdate => update page
+    // onInitView(view, locals => {
+    //     view.render('index', locals, (err, html) => res.end(html))
+    // });
 };
