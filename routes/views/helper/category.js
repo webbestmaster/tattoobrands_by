@@ -42,6 +42,8 @@ function getCategoryBy(query) {
 module.exports.getCategoryBy = getCategoryBy;
 
 function getCategoriesTree(categoryId) {
+    // TODO: cache result
+    // use variable keystone.set({lastUpdate: Date.now()})
     const categoryNode = {};
 
     return new Promise((resolve, reject) =>

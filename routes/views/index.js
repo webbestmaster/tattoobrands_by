@@ -52,6 +52,7 @@ exports = module.exports = (req, res) => {
     view.render('index');
 
     // TODO: cache result
+    // Warning - check for login/not login
     // use variable keystone.set({lastUpdate: Date.now()})
     // update for every product, category, variant
     // if page last update little then lastUpdate => update page
