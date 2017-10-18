@@ -54,6 +54,7 @@ function getCategoriesTree(categoryId) {
                     return Promise.resolve();
                 }
 
+                // todo: try to remove Reflect.deleteProperty(categoryData, '_id');
                 Reflect.deleteProperty(categoryData, '_id');
 
                 Object.assign(categoryNode, categoryData);
