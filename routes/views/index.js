@@ -1,6 +1,7 @@
 const keystone = require('keystone');
-const {normalizeProduct} = require('./helper/product');
+// const {normalizeProduct} = require('./helper/product');
 
+/*
 function onInitView(view, next) {
     const {res, req} = view;
     const {locals} = res;
@@ -43,11 +44,12 @@ function onInitView(view, next) {
             // next(locals);
         });
 }
+*/
 
 exports = module.exports = (req, res) => {
     const view = new keystone.View(req, res);
 
-    view.on('init', next => onInitView(view, next));
+    // view.on('init', next => onInitView(view, next));
 
     view.render('index');
 

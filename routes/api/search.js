@@ -14,3 +14,12 @@ module.exports.search = (req, res) => {
         .then(products => res.json({products}))
         .catch(evt => res.send(JSON.stringify(evt)));
 };
+
+module.exports.getProductsByIds = (req, res) => {
+    const {list} = req.params;
+    const ids = list.split(';');
+
+    getProductsBy({_id: {$in: ids}}) // eslint-disable-line id-match
+        .then(products => res.json({products}))
+        .catch(error => res.json({products: [], error}));
+};
