@@ -3,6 +3,7 @@ div.js-home-swiper-wrapper.home-swiper-wrapper.home-swiper-wrapper--wait-for-ini
         - var ii = 0;
         while ii <= 6
             a.swiper-slide.home-swiper__slide(href='/')
+                div.home-swiper__slide-back(style='background-image: url(' + externalStorage + '/img/slide/slide-' + ii + '.png)')
                 img.home-swiper__img(src=externalStorage + '/img/slide/slide-' + ii + '.png' alt='')
             - ii+= 1;
     div.swiper-pagination
