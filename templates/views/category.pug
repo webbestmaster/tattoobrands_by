@@ -21,6 +21,9 @@ block content
                         span(style='background-image: url(' + category.image + ')').category-item__image
                         p.category-item__name= (category.displayName || category.name)
 
+        div.seo-text.width-limiter
+            != localRootCategory.seoDescription
+
     script
         != 'window.app = window.app || {};'
         != 'window.app.category = ' + JSON.stringify(localRootCategory) + ';'

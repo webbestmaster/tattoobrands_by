@@ -45,6 +45,9 @@ Category.add({
     // child categories
     categories: {type: Types.Relationship, ref: 'Category', many: true},
 
+    // description
+    seoDescription: {type: Types.Html, wysiwyg: true, height: 300},
+
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
 });

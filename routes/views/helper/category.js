@@ -11,9 +11,9 @@ function getImagePath(image) {
 }
 
 function normalizeCategory(category) {
-    const {categories, products, name, slug, _id, displayName, image, order} = category;
+    const {categories, products, name, slug, _id, displayName, image, order, seoDescription} = category;
 
-    return {categories, products, name, slug, _id, displayName, image: getImagePath(image), order};
+    return {categories, products, name, slug, _id, displayName, image: getImagePath(image), order, seoDescription};
 }
 
 function getCategoryBy(query) {
