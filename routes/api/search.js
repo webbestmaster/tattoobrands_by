@@ -23,3 +23,9 @@ module.exports.getProductsByIds = (req, res) => {
         .then(products => res.json({products}))
         .catch(error => res.json({products: [], error}));
 };
+
+module.exports.getPromoProducts = (req, res) => {
+    getProductsBy({promotable: true})
+        .then(products => res.json({products}))
+        .catch(error => res.json({products: [], error}));
+};

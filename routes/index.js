@@ -25,7 +25,7 @@ const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
 const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login, logout, update} = require('./api/authorization');
-const {search, getProductsByIds} = require('./api/search');
+const {search, getProductsByIds, getPromoProducts} = require('./api/search');
 const {createOrder, pdfOrder} = require('./api/ordering');
 const middleware = require('./middleware');
 const {getCategoryBy, getCategoriesTree} = require('./views/helper/category');
@@ -91,6 +91,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     app.post('/api/update', update);
     app.get('/api/search', search);
     app.get('/api/get-products-by-ids/:list', getProductsByIds);
+    app.get('/api/get-promo-products', getPromoProducts);
 
     // ordering
     app.post('/api/create-order', jsonParser, createOrder);
