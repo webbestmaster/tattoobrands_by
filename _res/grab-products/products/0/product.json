@@ -1,1 +1,112 @@
-{"id":440,"name":"0.35mm medium taper 15RL - KWADRON ROUND LINER","description":"KWADRON 0,35mm medium taper \r\n– контурные иглы средней заточки для профессиональных мастеров татуировки. \r\n\r\nИглы KWADRON – эталон качества, который придаст вашим работам новый колорит.\r\n\r\n0.35 мм– диаметр игл, средняя заточка. \r\n\r\n50 штук в коробке. ","price":"40.0","display_price":"руб.40","available_on":"2016-03-13T00:00:00.000Z","slug":"0-35mm-medium-taper-15rl-kwadron-round-liner","meta_description":null,"meta_keywords":null,"shipping_category_id":1,"taxon_ids":[72],"total_on_hand":0,"br_price":"0.0","has_variants":false,"master":{"id":456,"name":"0.35mm medium taper 15RL - KWADRON ROUND LINER","sku":"KRL17","price":"40.0","weight":"0.0","height":null,"width":null,"depth":null,"is_master":true,"slug":"0-35mm-medium-taper-15rl-kwadron-round-liner","description":"KWADRON 0,35mm medium taper \r\n– контурные иглы средней заточки для профессиональных мастеров татуировки. \r\n\r\nИглы KWADRON – эталон качества, который придаст вашим работам новый колорит.\r\n\r\n0.35 мм– диаметр игл, средняя заточка. \r\n\r\n50 штук в коробке. ","track_inventory":true,"display_price":"руб.40","options_text":"","in_stock":false,"is_backorderable":true,"total_on_hand":0,"is_destroyed":false,"option_values":[],"images":[{"id":708,"position":1,"attachment_content_type":"image/jpeg","attachment_file_name":"tb-round_liner_35_MEDIUM.jpeg","type":"Spree::Image","attachment_updated_at":"2016-03-13T13:57:17.265Z","attachment_width":500,"attachment_height":500,"alt":"","viewable_type":"Spree::Variant","viewable_id":456,"mini_url":"/spree/products/708/mini/tb-round_liner_35_MEDIUM.jpeg?1457877437","small_url":"/spree/products/708/small/tb-round_liner_35_MEDIUM.jpeg?1457877437","product_url":"/spree/products/708/product/tb-round_liner_35_MEDIUM.jpeg?1457877437","large_url":"/spree/products/708/large/tb-round_liner_35_MEDIUM.jpeg?1457877437"}]},"variants":[],"option_types":[],"product_properties":[{"id":1621,"product_id":440,"property_id":2589,"value":"KRL17","property_name":"Код"},{"id":1622,"product_id":440,"property_id":2590,"value":"Обычные","property_name":"Тип игл  "},{"id":1623,"product_id":440,"property_id":2591,"value":"0,35 мм","property_name":"Диаметр игл  "},{"id":1624,"product_id":440,"property_id":2592,"value":"50 шт ","property_name":"Упаковка  "},{"id":1625,"product_id":440,"property_id":2593,"value":"KWADRON™ Польша","property_name":"Производитель  "}],"classifications":[{"taxon_id":72,"position":16,"taxon":{"id":72,"name":"RL","pretty_name":"Иглы для тату -> Kwadron -> RL","permalink":"ighly/kwadron/rl","parent_id":57,"taxonomy_id":13,"taxons":[]}}]}
+{
+  "id": 440,
+  "name": "0.35mm medium taper 15RL - KWADRON ROUND LINER",
+  "description": "KWADRON 0,35mm medium taper \r\n– контурные иглы средней заточки для профессиональных мастеров татуировки. \r\n\r\nИглы KWADRON – эталон качества, который придаст вашим работам новый колорит.\r\n\r\n0.35 мм– диаметр игл, средняя заточка. \r\n\r\n50 штук в коробке. ",
+  "price": "40.0",
+  "display_price": "руб.40",
+  "available_on": "2016-03-13T00:00:00.000Z",
+  "slug": "0-35mm-medium-taper-15rl-kwadron-round-liner",
+  "meta_description": null,
+  "meta_keywords": null,
+  "shipping_category_id": 1,
+  "taxon_ids": [
+    72
+  ],
+  "total_on_hand": 0,
+  "br_price": "0.0",
+  "has_variants": false,
+  "master": {
+    "id": 456,
+    "name": "0.35mm medium taper 15RL - KWADRON ROUND LINER",
+    "sku": "KRL17",
+    "price": "40.0",
+    "weight": "0.0",
+    "height": null,
+    "width": null,
+    "depth": null,
+    "is_master": true,
+    "slug": "0-35mm-medium-taper-15rl-kwadron-round-liner",
+    "description": "KWADRON 0,35mm medium taper \r\n– контурные иглы средней заточки для профессиональных мастеров татуировки. \r\n\r\nИглы KWADRON – эталон качества, который придаст вашим работам новый колорит.\r\n\r\n0.35 мм– диаметр игл, средняя заточка. \r\n\r\n50 штук в коробке. ",
+    "track_inventory": true,
+    "display_price": "руб.40",
+    "options_text": "",
+    "in_stock": false,
+    "is_backorderable": true,
+    "total_on_hand": 0,
+    "is_destroyed": false,
+    "option_values": [],
+    "images": [
+      {
+        "id": 708,
+        "position": 1,
+        "attachment_content_type": "image/jpeg",
+        "attachment_file_name": "tb-round_liner_35_MEDIUM.jpeg",
+        "type": "Spree::Image",
+        "attachment_updated_at": "2016-03-13T13:57:17.265Z",
+        "attachment_width": 500,
+        "attachment_height": 500,
+        "alt": "",
+        "viewable_type": "Spree::Variant",
+        "viewable_id": 456,
+        "mini_url": "/spree/products/708/mini/tb-round_liner_35_MEDIUM.jpeg?1457877437",
+        "small_url": "/spree/products/708/small/tb-round_liner_35_MEDIUM.jpeg?1457877437",
+        "product_url": "/spree/products/708/product/tb-round_liner_35_MEDIUM.jpeg?1457877437",
+        "large_url": "/spree/products/708/large/tb-round_liner_35_MEDIUM.jpeg?1457877437"
+      }
+    ]
+  },
+  "variants": [],
+  "option_types": [],
+  "product_properties": [
+    {
+      "id": 1621,
+      "product_id": 440,
+      "property_id": 2589,
+      "value": "KRL17",
+      "property_name": "Код"
+    },
+    {
+      "id": 1622,
+      "product_id": 440,
+      "property_id": 2590,
+      "value": "Обычные",
+      "property_name": "Тип игл  "
+    },
+    {
+      "id": 1623,
+      "product_id": 440,
+      "property_id": 2591,
+      "value": "0,35 мм",
+      "property_name": "Диаметр игл  "
+    },
+    {
+      "id": 1624,
+      "product_id": 440,
+      "property_id": 2592,
+      "value": "50 шт ",
+      "property_name": "Упаковка  "
+    },
+    {
+      "id": 1625,
+      "product_id": 440,
+      "property_id": 2593,
+      "value": "KWADRON™ Польша",
+      "property_name": "Производитель  "
+    }
+  ],
+  "classifications": [
+    {
+      "taxon_id": 72,
+      "position": 16,
+      "taxon": {
+        "id": 72,
+        "name": "RL",
+        "pretty_name": "Иглы для тату -> Kwadron -> RL",
+        "permalink": "ighly/kwadron/rl",
+        "parent_id": 57,
+        "taxonomy_id": 13,
+        "taxons": []
+      }
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 const keystone = require('keystone');
 const {externalStorage} = keystone.get('locals');
+const {getCategoryBy} = require('./../views/helper/category');
 
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
 
-    const {name, description, article, externalImages = [], price = 0, properties = [], id, slug} = req.body; // eslint-disable-line id-length
+    const {name, description, article, externalImages = [], price = 0, properties = [], id, slug, classifications} = req.body; // eslint-disable-line id-length
 
     console.log(req.body);
 
@@ -30,6 +31,12 @@ module.exports = (req, res) => {
         } else {
             console.log('Added admin Product to the database.');
         }
+
+        // console.log(classifications)
+
+        Promise.all(classifications.map(({taxon}) => getCategoryBy({name: taxon.pretty_name}))).then(categoryes => {
+            categoryes.forEach(category => console.log('----> you stay here'));
+        });
 
         res.setHeader('Content-Type', 'text/plain');
         res.write('you posted:\n');

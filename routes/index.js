@@ -23,6 +23,7 @@ const keystone = require('keystone');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const helperAddProduct = require('./helper/add-product');
+const helperAddCategory = require('./helper/add-category');
 const helperRemoveProduct = require('./helper/remove-product');
 const {registration, login, logout, update} = require('./api/authorization');
 const {search, getProductsByIds, getPromoProducts} = require('./api/search');
@@ -126,6 +127,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     // helpers
     // - need to add old products only
     app.post('/add-product', jsonParser, helperAddProduct);
+    app.post('/add-category', jsonParser, helperAddCategory);
     app.post('/remove-product', jsonParser, helperRemoveProduct);
 
     // check store
