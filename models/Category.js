@@ -12,7 +12,7 @@ const Category = new keystone.List('Category', {
         path: 'slug',
         unique: true
     },
-    defaultSort: '-createdAt'
+    defaultSort: '-name'
 });
 
 const imageStorage = new keystone.Storage({

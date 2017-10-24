@@ -4,7 +4,7 @@ const products = require('./../grab-products/products.json');
 
 let chain = Promise.resolve();
 
-products.forEach((product, ii) => ii < 3 && (chain = chain.then(() => addProduct(product, ii).then(result => console.log(ii)))));
+products.forEach((product, ii) => (chain = chain.then(() => addProduct(product, ii).then(result => console.log(ii)))));
 
 function addProduct(product, ii) {
     const productData = require('./../grab-products/products/' + ii + '/data.json');

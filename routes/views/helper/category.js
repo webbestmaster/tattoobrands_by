@@ -41,6 +41,33 @@ function getCategoryBy(query) {
 
 module.exports.getCategoryBy = getCategoryBy;
 
+module.exports.getCategoryByInstance = query => {
+    return new Promise(
+        (resolve, reject) =>
+            keystone
+                .list('Category')
+                .model
+                .findOne(query)
+                .exec((err, category) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!category) {
+                        reject({error: 'No Category by query: ' + JSON.stringify(query)});
+                        return;
+                    }
+
+                    resolve(category);
+                })
+    );
+}
+
+
+
+
+
 function getCategoriesTree(categoryId) {
     // TODO: cache result
     // use variable keystone.set({lastUpdate: Date.now()})

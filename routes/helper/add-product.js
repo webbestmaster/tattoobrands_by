@@ -1,6 +1,6 @@
 const keystone = require('keystone');
 const {externalStorage} = keystone.get('locals');
-const {getCategoryBy} = require('./../views/helper/category');
+const {getCategoryByInstance} = require('./../views/helper/category');
 
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
@@ -34,9 +34,26 @@ module.exports = (req, res) => {
 
         // console.log(classifications)
 
-        Promise.all(classifications.map(({taxon}) => getCategoryBy({name: taxon.pretty_name}))).then(categoryes => {
-            categoryes.forEach(category => console.log('----> you stay here'));
-        });
+        const productId = newProduct.toJSON()._id.toString();
+
+        if (classifications && classifications.length) {
+
+
+            Promise
+                .all(classifications.map(({taxon}) => getCategoryByInstance({name: taxon.pretty_name})))
+                .then(categories => Promise
+                    .all(categories
+                        .map(category => new Promise((resolve, reject) => {
+                                category.products.push(productId);
+                                console.log('save');
+                                category.save(err => err ? reject() : resolve());
+                            })
+                        )
+                    )
+                );
+
+        }
+
 
         res.setHeader('Content-Type', 'text/plain');
         res.write('you posted:\n');
