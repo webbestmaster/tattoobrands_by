@@ -6,10 +6,12 @@ module.exports = (req, res) => {
     const Product = keystone.list('Product');
 
     const {
-        name, description, article, externalImages = [], price = 0, properties = [], id, slug, classifications // eslint-disable-line id-length
+        name, description, article, externalImages = [], price = 0, properties = [], id, slug // eslint-disable-line id-length
     } = req.body;
 
-    console.log(req.body);
+    const classifications = req.body.classifications && req.body.classifications.length > 0 ?
+        req.body.classifications :
+        [{taxon: {pretty_name: 'root'}}]; // eslint-disable-line camelcase
 
     const product = {
         name,
@@ -38,23 +40,23 @@ module.exports = (req, res) => {
 
         const productId = newProduct.toJSON()._id.toString(); // eslint-disable-line no-underscore-dangle
 
-        if (classifications && classifications.length) {
-            Promise
-                .all(classifications.map(({taxon}) => getCategoryByInstance({name: taxon.pretty_name})))
-                .then(categories => Promise
-                    .all(categories
-                        .map(category => new Promise((resolve, reject) => {
-                            category.products.push(productId);
-                            console.log('save');
-                            category.save(errSaving => errSaving ? reject(errSaving) : resolve());
-                        }))
-                    )
-                );
-        }
+        console.log(productId);
 
-
-        res.setHeader('Content-Type', 'text/plain');
-        res.write('you posted:\n');
-        res.end(JSON.stringify(req.body, null, 4));
+        Promise
+            .all(classifications.map(({taxon}) => getCategoryByInstance({name: taxon.pretty_name})))
+            .then(categories => Promise
+                .all(categories
+                    .map(category => new Promise((resolve, reject) => {
+                        category.products.push(productId);
+                        console.log('save');
+                        category.save(errSaving => errSaving ? reject(errSaving) : resolve());
+                    }))
+                )
+            ).then(() => {
+                res.setHeader('Content-Type', 'text/plain');
+                res.write('you posted:\n');
+                res.end(JSON.stringify(req.body, null, 4));
+            }
+            );
     });
 };
