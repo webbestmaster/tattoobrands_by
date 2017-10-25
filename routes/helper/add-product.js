@@ -5,7 +5,9 @@ const {getCategoryByInstance} = require('./../views/helper/category');
 module.exports = (req, res) => {
     const Product = keystone.list('Product');
 
-    const {name, description, article, externalImages = [], price = 0, properties = [], id, slug, classifications} = req.body; // eslint-disable-line id-length
+    const {
+        name, description, article, externalImages = [], price = 0, properties = [], id, slug, classifications // eslint-disable-line id-length
+    } = req.body;
 
     console.log(req.body);
 
@@ -34,24 +36,20 @@ module.exports = (req, res) => {
 
         // console.log(classifications)
 
-        const productId = newProduct.toJSON()._id.toString();
+        const productId = newProduct.toJSON()._id.toString(); // eslint-disable-line no-underscore-dangle
 
         if (classifications && classifications.length) {
-
-
             Promise
                 .all(classifications.map(({taxon}) => getCategoryByInstance({name: taxon.pretty_name})))
                 .then(categories => Promise
                     .all(categories
                         .map(category => new Promise((resolve, reject) => {
-                                category.products.push(productId);
-                                console.log('save');
-                                category.save(err => err ? reject() : resolve());
-                            })
-                        )
+                            category.products.push(productId);
+                            console.log('save');
+                            category.save(errSaving => errSaving ? reject(errSaving) : resolve());
+                        }))
                     )
                 );
-
         }
 
 

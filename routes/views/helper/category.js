@@ -62,10 +62,7 @@ module.exports.getCategoryByInstance = query => {
                     resolve(category);
                 })
     );
-}
-
-
-
+};
 
 
 function getCategoriesTree(categoryId) {
