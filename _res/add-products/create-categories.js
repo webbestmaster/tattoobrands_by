@@ -31,6 +31,57 @@ products.forEach(product => {
     });
 });
 
+categories.push(
+    {
+        name: 'Иглы для тату',
+        displayName: 'Иглы для тату'
+    },
+    {
+        name: 'Иглы для тату -> Kwadron',
+        displayName: 'Kwadron'
+    },
+    {
+        name: 'Иглы для тату -> Иглы стандартные (Китай)',
+        displayName: 'Иглы стандартные (Китай)'
+    },
+    {
+        name: 'Иглы для тату -> Модули Cheyenne',
+        displayName: 'Модули Cheyenne'
+    },
+    {
+        name: 'Иглы для тату -> Модули Cheyenne -> CHEYENNE HAWK',
+        displayName: 'CHEYENNE HAWK'
+    },
+    {
+        name: 'Краски для тату -> WORLD FAMOUS',
+        displayName: 'WORLD FAMOUS'
+    },
+    {
+        name: 'Краски для тату -> WORLD FAMOUS -> Индивидуальные цвета',
+        displayName: 'Индивидуальные цвета'
+    },
+    {
+        name: 'Краски для тату -> INTENZE',
+        displayName: 'INTENZE'
+    },
+    {
+        name: 'Краски для тату -> INTENZE -> Индивидуальные цвета',
+        displayName: 'Индивидуальные цвета'
+    },
+    {
+        name: 'Типсы одноразовые',
+        displayName: ''
+    },
+    {
+        name: 'Микроблейдинг',
+        displayName: ''
+    },
+    {
+        name: 'Перманентный макияж -> Пигменты для татуажа',
+        displayName: 'Пигменты для татуажа'
+    }
+);
+
 function addCategory(category) {
 
     return new Promise((resolve, reject) =>
