@@ -23,3 +23,5 @@ ps -ax | grep mongo // get mongo status
 ps -e | grep mongod // almost the same, show mongod process only
 
 top/htop - to show all processes
+
+scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/site-2017-10-28-08-48-51.zip
