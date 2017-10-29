@@ -26,6 +26,31 @@ top/htop - to show all processes
 
 scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/site-2017-10-28-08-48-51.zip
 
+#How to start
+0 - go to tattoobrands_by
+
+1 - run mongo
+
+> sudo mongod --fork --logpath ./db/log.txt --dbpath ./db/data
+- should return - about to fork child process, waiting until server is ready for connections.
+                  forked process: 17350
+                  child process started successfully, parent exiting
+
+2 - run store
+> pm2 start ./keystone.js --name store
+
+3 - make sure store is running
+> pm2 monit
+
+4 - run store monit
+    4.1 - go to tattoobrands_monit
+    4.2 - start store monit
+    > pm2 start ./index.js --name monit
+
+5 - make sure store and store monit works properly
+> pm2 monit
+
+
 #How to make backup
 
 1 - Enter to machine
@@ -34,7 +59,7 @@ scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/
 2 - Kill all pm2 processes
 > pm2 kill
 
-3 - MongoDB
+3 - Stop MongoDB
     3.0 - go to tattoobrands_by
 
     3.1 - make sure mongodb is running
