@@ -25,3 +25,28 @@ ps -e | grep mongod // almost the same, show mongod process only
 top/htop - to show all processes
 
 scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/site-2017-10-28-08-48-51.zip
+
+#How to make backup
+
+1 - Enter to machine
+> ssh deploy@188.166.70.236
+
+2 - Kill all pm2 processes
+> pm2 kill
+
+3 - MongoDB
+    3.0 - go to tattoobrands_by
+
+    3.1 - make sure mongodb is running
+    > ps -e | grep mongod
+        - should return smth like this - 7884 ? 00:09:38 mongod
+
+    3.2 - kill mongodb process
+    > sudo mongod --shutdown --dbpath ./db/data
+        - should return smth like this - killing process with pid: 7884
+
+4 - make backup
+> zip -r --exclude=*.git* --exclude=*.idea* --exclude=*node_modules* --exclude=*old-tb* --exclude=*_res* site-`date +%Y-%m-%d-%H-%M-%S`.zip ./
+
+#How to download backup
+scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-<date>.zip ~/site-<date>.zip
