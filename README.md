@@ -74,4 +74,4 @@ scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/
 > zip -r --exclude=*.git* --exclude=*.idea* --exclude=*node_modules* --exclude=*old-tb* --exclude=*_res* site-`date +%Y-%m-%d-%H-%M-%S`.zip ./
 
 #How to download backup
-scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-<date>.zip ~/site-<date>.zip
+scp deploy@188.166.70.236:~/tb-<date>.zip ~/tb-<date>.zip
