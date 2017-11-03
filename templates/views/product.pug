@@ -44,13 +44,12 @@ block content
                         | Артикул:&nbsp;
                         b= product.article
 
-                if state === 'in-stock'
-                    form.add-to-order.clear-self.js-add-to-basket-form
-                        button.button.add-to-order__button(type="submit")
-                            span.hidden-for-tablet добавить&nbsp;
-                            | в корзину
-                        input.input.input--number.add-to-order__input-number.js-count(type="number" min="1" value="1" required)
-                        p.add-to-order__label.hidden-for-tablet Количество
+                form.add-to-order.clear-self.js-add-to-basket-form
+                    button.button.add-to-order__button(type="submit")
+                        span.hidden-for-tablet добавить&nbsp;
+                        | в корзину
+                    input.input.input--number.add-to-order__input-number.js-count(type="number" min="1" value="1" required)
+                    p.add-to-order__label.hidden-for-tablet Количество
 
     h2.width-limiter.product-recommended__header Рекомендуем:
     div.products-preview.width-limiter
