@@ -106,5 +106,5 @@ Order.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-lin
 /**
  * Registration
  */
-Order.defaultColumns = 'name user.email createdAt';
+Order.defaultColumns = 'name state user.email createdAt';
 Order.register();
