@@ -4,6 +4,8 @@ mixin variants(variants, productId)
             h3.variant__header=variant.displayName || variant.name
             each item in variant.items
                 if item.productId === productId
-                    a.variant-link.variant-link--active(href='/product-id/' + item.productId)= item.label
+                    a.variant-link.js-variant-link.variant-link--active(data-product-id=item.productId href='/product-id/' + item.productId)= item.label
+                        span.variant-link_cost.js-variant-link_cost
                 else
-                    a.variant-link(href='/product-id/' + item.productId)= item.label
+                    a.variant-link.js-variant-link(data-product-id=item.productId href='/product-id/' + item.productId)= item.label
+                        span.variant-link_cost.js-variant-link_cost
