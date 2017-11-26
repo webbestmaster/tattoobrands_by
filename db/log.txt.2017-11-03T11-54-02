@@ -1,0 +1,65 @@
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] MongoDB starting : pid=7766 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] db version v3.2.16
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] modules: none
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] build environment:
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-11-03T07:50:39.756-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2017-11-03T07:50:39.782-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-11-03T07:50:39.782-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-11-03T07:50:40.676-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-11-03T07:50:40.676-0400 I CONTROL  [initandlisten] 
+2017-11-03T07:50:40.706-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2017-11-03T07:50:40.706-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2017-11-03T07:50:40.707-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-11-03T07:50:47.069-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54409 #1 (1 connection now open)
+2017-11-03T07:50:47.110-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54410 #2 (2 connections now open)
+2017-11-03T07:50:47.111-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54411 #3 (3 connections now open)
+2017-11-03T07:50:47.111-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54412 #4 (4 connections now open)
+2017-11-03T07:50:47.111-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54413 #5 (5 connections now open)
+2017-11-03T07:51:38.274-0400 I COMMAND  [conn5] command tattoo-brands.categories command: find { find: "categories", filter: { _id: ObjectId('59f4703e0d3be519731f28ae') }, limit: 1, batchSize: 1, singleBatch: true } keysExamined:1 docsExamined:1 idhack:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:2448 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 158ms
+2017-11-03T07:51:38.275-0400 I COMMAND  [conn4] command tattoo-brands.categories command: find { find: "categories", filter: { _id: ObjectId('59f4703c0d3be519731f28a2') }, limit: 1, batchSize: 1, singleBatch: true } keysExamined:1 docsExamined:1 idhack:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:2280 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 158ms
+2017-11-03T07:51:38.275-0400 I COMMAND  [conn2] command tattoo-brands.categories command: find { find: "categories", filter: { _id: ObjectId('59f4703b0d3be519731f289c') }, limit: 1, batchSize: 1, singleBatch: true } keysExamined:1 docsExamined:1 idhack:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:1892 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 158ms
+2017-11-03T07:51:38.275-0400 I COMMAND  [conn1] command tattoo-brands.categories command: find { find: "categories", filter: { _id: ObjectId('59f4703f0d3be519731f28b4') }, limit: 1, batchSize: 1, singleBatch: true } keysExamined:1 docsExamined:1 idhack:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:1852 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 158ms
+2017-11-03T07:51:40.325-0400 I NETWORK  [conn2] end connection 127.0.0.1:54410 (4 connections now open)
+2017-11-03T07:51:40.325-0400 I NETWORK  [conn5] end connection 127.0.0.1:54413 (4 connections now open)
+2017-11-03T07:51:40.325-0400 I NETWORK  [conn4] end connection 127.0.0.1:54412 (4 connections now open)
+2017-11-03T07:51:40.325-0400 I NETWORK  [conn1] end connection 127.0.0.1:54409 (4 connections now open)
+2017-11-03T07:51:40.326-0400 I NETWORK  [conn3] end connection 127.0.0.1:54411 (4 connections now open)
+2017-11-03T07:51:46.150-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54418 #6 (1 connection now open)
+2017-11-03T07:51:46.250-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54419 #7 (2 connections now open)
+2017-11-03T07:51:46.250-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54420 #8 (3 connections now open)
+2017-11-03T07:51:46.251-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54421 #9 (4 connections now open)
+2017-11-03T07:51:46.252-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54422 #10 (5 connections now open)
+2017-11-03T07:52:29.177-0400 I NETWORK  [conn9] end connection 127.0.0.1:54421 (4 connections now open)
+2017-11-03T07:52:29.177-0400 I NETWORK  [conn10] end connection 127.0.0.1:54422 (4 connections now open)
+2017-11-03T07:52:29.177-0400 I NETWORK  [conn6] end connection 127.0.0.1:54418 (4 connections now open)
+2017-11-03T07:52:29.177-0400 I NETWORK  [conn8] end connection 127.0.0.1:54420 (4 connections now open)
+2017-11-03T07:52:29.177-0400 I NETWORK  [conn7] end connection 127.0.0.1:54419 (4 connections now open)
+2017-11-03T07:52:39.716-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54427 #11 (1 connection now open)
+2017-11-03T07:52:40.854-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54428 #12 (2 connections now open)
+2017-11-03T07:52:40.856-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54429 #13 (3 connections now open)
+2017-11-03T07:52:40.857-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54430 #14 (4 connections now open)
+2017-11-03T07:52:40.861-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54431 #15 (5 connections now open)
+2017-11-03T07:53:33.092-0400 I COMMAND  [conn12] command tattoo-brands.app_sessions command: find { find: "app_sessions", filter: { _id: "GzIP3ltpzw26ZjC-Dcz8Cehp1tcWRDC3", $or: [ { expires: { $exists: false } }, { expires: { $gt: new Date(1509710012951) } } ] }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { _id: 1 } keysExamined:1 docsExamined:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:359 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 116ms
+2017-11-03T07:53:52.196-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2017-11-03T07:53:52.200-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-11-03T07:53:52.229-0400 I CONTROL  [signalProcessingThread] now exiting
+2017-11-03T07:53:52.229-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-11-03T07:53:52.230-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2017-11-03T07:53:52.230-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-11-03T07:53:52.230-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-11-03T07:53:52.236-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-11-03T07:53:52.236-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2017-11-03T07:53:52.242-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-11-03T07:53:52.246-0400 I NETWORK  [conn14] end connection 127.0.0.1:54430 (4 connections now open)
+2017-11-03T07:53:52.247-0400 I NETWORK  [conn15] end connection 127.0.0.1:54431 (4 connections now open)
+2017-11-03T07:53:52.247-0400 I NETWORK  [conn11] end connection 127.0.0.1:54427 (4 connections now open)
+2017-11-03T07:53:52.247-0400 I NETWORK  [conn13] end connection 127.0.0.1:54429 (4 connections now open)
+2017-11-03T07:53:52.253-0400 I NETWORK  [conn12] end connection 127.0.0.1:54428 (0 connections now open)
+2017-11-03T07:53:52.461-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-11-03T07:53:52.462-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

@@ -1,0 +1,237 @@
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] MongoDB starting : pid=25935 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] db version v3.2.16
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] modules: none
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] build environment:
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-11-11T01:59:49.630-0500 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2017-11-11T01:59:49.654-0500 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-11-11T01:59:49.655-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-11-11T01:59:50.848-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-11-11T01:59:50.848-0500 I CONTROL  [initandlisten] 
+2017-11-11T01:59:50.863-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2017-11-11T01:59:50.863-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2017-11-11T01:59:50.863-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-11-11T01:59:51.652-0500 I NETWORK  [initandlisten] connection accepted from 114.221.124.14:42312 #1 (1 connection now open)
+2017-11-11T01:59:55.105-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41490 #2 (2 connections now open)
+2017-11-11T01:59:55.133-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41491 #3 (3 connections now open)
+2017-11-11T01:59:55.133-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41492 #4 (4 connections now open)
+2017-11-11T01:59:55.133-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41493 #5 (5 connections now open)
+2017-11-11T01:59:55.134-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41494 #6 (6 connections now open)
+2017-11-11T02:00:12.693-0500 I NETWORK  [initandlisten] connection accepted from 106.45.1.215:58155 #7 (7 connections now open)
+2017-11-11T02:00:33.826-0500 I NETWORK  [initandlisten] connection accepted from 112.193.192.153:61466 #8 (8 connections now open)
+2017-11-11T02:00:54.965-0500 I NETWORK  [initandlisten] connection accepted from 58.19.59.126:4978 #9 (9 connections now open)
+2017-11-11T02:16:09.544-0500 I NETWORK  [conn1] end connection 114.221.124.14:42312 (8 connections now open)
+2017-11-11T02:16:31.047-0500 I NETWORK  [conn7] end connection 106.45.1.215:58155 (7 connections now open)
+2017-11-11T02:16:51.524-0500 I NETWORK  [conn8] end connection 112.193.192.153:61466 (6 connections now open)
+2017-11-11T02:17:33.511-0500 I NETWORK  [conn9] end connection 58.19.59.126:4978 (5 connections now open)
+2017-11-11T02:17:39.968-0500 I NETWORK  [initandlisten] connection accepted from 111.162.149.112:51367 #10 (6 connections now open)
+2017-11-11T02:18:31.946-0500 I NETWORK  [initandlisten] connection accepted from 175.152.32.185:57521 #11 (7 connections now open)
+2017-11-11T02:18:52.935-0500 I NETWORK  [initandlisten] connection accepted from 106.45.0.24:49674 #12 (8 connections now open)
+2017-11-11T02:22:59.131-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4995 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 112ms
+2017-11-11T02:34:28.295-0500 I NETWORK  [conn10] end connection 111.162.149.112:51367 (7 connections now open)
+2017-11-11T02:34:49.799-0500 I NETWORK  [conn11] end connection 175.152.32.185:57521 (6 connections now open)
+2017-11-11T02:35:27.581-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:5009 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 105ms
+2017-11-11T02:36:27.311-0500 I NETWORK  [initandlisten] connection accepted from 106.45.1.225:54234 #13 (7 connections now open)
+2017-11-11T02:36:48.267-0500 I NETWORK  [initandlisten] connection accepted from 60.1.123.231:11030 #14 (8 connections now open)
+2017-11-11T02:40:52.297-0500 I NETWORK  [conn12] end connection 106.45.0.24:49674 (7 connections now open)
+2017-11-11T02:52:44.999-0500 I NETWORK  [conn13] end connection 106.45.1.225:54234 (6 connections now open)
+2017-11-11T02:53:06.501-0500 I NETWORK  [conn14] end connection 60.1.123.231:11030 (5 connections now open)
+2017-11-11T02:53:22.602-0500 I NETWORK  [initandlisten] connection accepted from 106.45.0.32:40414 #15 (6 connections now open)
+2017-11-11T02:54:14.447-0500 I NETWORK  [initandlisten] connection accepted from 117.14.146.239:61033 #16 (7 connections now open)
+2017-11-11T02:54:56.610-0500 I NETWORK  [initandlisten] connection accepted from 182.101.53.69:7184 #17 (8 connections now open)
+2017-11-11T03:08:51.697-0500 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 703ms
+2017-11-11T03:10:11.015-0500 I NETWORK  [conn15] end connection 106.45.0.32:40414 (7 connections now open)
+2017-11-11T03:10:52.485-0500 I NETWORK  [conn16] end connection 117.14.146.239:61033 (6 connections now open)
+2017-11-11T03:11:13.989-0500 I NETWORK  [conn17] end connection 182.101.53.69:7184 (5 connections now open)
+2017-11-11T03:11:29.227-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.206:37448 #18 (6 connections now open)
+2017-11-11T03:11:38.697-0500 I COMMAND  [conn6] command tattoo-brands.categories command: find { find: "categories", filter: { slug: "root" }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { slug: 1 } keysExamined:1 docsExamined:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:946 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 123ms
+2017-11-11T03:27:56.998-0500 I NETWORK  [conn18] end connection 124.88.64.206:37448 (5 connections now open)
+2017-11-11T03:28:24.442-0500 I NETWORK  [initandlisten] connection accepted from 171.34.218.174:15601 #19 (6 connections now open)
+2017-11-11T03:30:16.655-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:4317 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 177ms
+2017-11-11T03:44:52.293-0500 I NETWORK  [conn19] end connection 171.34.218.174:15601 (5 connections now open)
+2017-11-11T03:45:05.768-0500 I NETWORK  [initandlisten] connection accepted from 106.45.0.213:52835 #20 (6 connections now open)
+2017-11-11T03:45:47.379-0500 I NETWORK  [initandlisten] connection accepted from 123.14.126.19:34371 #21 (7 connections now open)
+2017-11-11T03:46:29.152-0500 I NETWORK  [initandlisten] connection accepted from 221.13.12.57:56341 #22 (8 connections now open)
+2017-11-11T03:47:00.621-0500 I NETWORK  [initandlisten] connection accepted from 27.19.148.44:42831 #23 (9 connections now open)
+2017-11-11T03:47:21.783-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.199:19257 #24 (10 connections now open)
+2017-11-11T03:52:01.235-0500 I NETWORK  [conn23] end connection 27.19.148.44:42831 (9 connections now open)
+2017-11-11T03:56:43.391-0500 I COMMAND  [conn5] command tattoo-brands.categories command: find { find: "categories", filter: { slug: "root" }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { slug: 1 } keysExamined:1 docsExamined:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:946 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 203ms
+2017-11-11T04:01:44.006-0500 I NETWORK  [conn20] end connection 106.45.0.213:52835 (8 connections now open)
+2017-11-11T04:02:25.478-0500 I NETWORK  [conn21] end connection 123.14.126.19:34371 (7 connections now open)
+2017-11-11T04:02:57.227-0500 I NETWORK  [conn22] end connection 221.13.12.57:56341 (6 connections now open)
+2017-11-11T04:04:00.203-0500 I NETWORK  [conn24] end connection 124.88.64.199:19257 (5 connections now open)
+2017-11-11T04:04:19.304-0500 I NETWORK  [initandlisten] connection accepted from 124.235.138.3:35189 #25 (6 connections now open)
+2017-11-11T04:04:40.183-0500 I NETWORK  [initandlisten] connection accepted from 123.245.93.177:19203 #26 (7 connections now open)
+2017-11-11T04:20:37.575-0500 I NETWORK  [conn25] end connection 124.235.138.3:35189 (6 connections now open)
+2017-11-11T04:20:43.396-0500 I NETWORK  [initandlisten] connection accepted from 175.17.199.243:52716 #27 (7 connections now open)
+2017-11-11T04:20:58.052-0500 I NETWORK  [conn26] end connection 123.245.93.177:19203 (6 connections now open)
+2017-11-11T04:21:14.750-0500 I NETWORK  [initandlisten] connection accepted from 101.24.123.198:32401 #28 (7 connections now open)
+2017-11-11T04:26:58.930-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:20 reslen:10111 locks:{ Global: { acquireCount: { r: 46 } }, Database: { acquireCount: { r: 23 } }, Collection: { acquireCount: { r: 23 } } } protocol:op_query 330ms
+2017-11-11T04:32:07.820-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6370 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 117ms
+2017-11-11T04:37:11.364-0500 I NETWORK  [conn27] end connection 175.17.199.243:52716 (6 connections now open)
+2017-11-11T04:37:32.362-0500 I NETWORK  [conn28] end connection 101.24.123.198:32401 (5 connections now open)
+2017-11-11T04:37:57.608-0500 I NETWORK  [initandlisten] connection accepted from 113.128.104.143:35159 #29 (6 connections now open)
+2017-11-11T04:38:18.558-0500 I NETWORK  [initandlisten] connection accepted from 113.128.104.42:56874 #30 (7 connections now open)
+2017-11-11T04:38:39.503-0500 I NETWORK  [initandlisten] connection accepted from 123.191.133.209:53167 #31 (8 connections now open)
+2017-11-11T04:39:52.196-0500 I NETWORK  [initandlisten] connection accepted from 220.175.61.182:16156 #32 (9 connections now open)
+2017-11-11T04:43:38.360-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4564 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 117ms
+2017-11-11T04:45:53.721-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6101 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 134ms
+2017-11-11T04:48:45.231-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 1070, after connections: 1070, after extra_info: 1080, after globalLock: 1080, after locks: 1080, after network: 1080, after opcounters: 1080, after opcountersRepl: 1080, after storageEngine: 1080, after tcmalloc: 1080, after wiredTiger: 1090, at end: 1090 }
+2017-11-11T04:54:15.878-0500 I NETWORK  [conn29] end connection 113.128.104.143:35159 (8 connections now open)
+2017-11-11T04:54:36.355-0500 I NETWORK  [conn30] end connection 113.128.104.42:56874 (7 connections now open)
+2017-11-11T04:55:48.550-0500 I NETWORK  [conn31] end connection 123.191.133.209:53167 (6 connections now open)
+2017-11-11T04:56:10.562-0500 I NETWORK  [conn32] end connection 220.175.61.182:16156 (5 connections now open)
+2017-11-11T04:56:48.675-0500 I NETWORK  [initandlisten] connection accepted from 123.245.91.211:37127 #33 (6 connections now open)
+2017-11-11T05:03:11.049-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:7799 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 146ms
+2017-11-11T05:04:41.152-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:5503 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 122ms
+2017-11-11T05:12:35.104-0500 I COMMAND  [conn6] command tattoo-brands.categories command: find { find: "categories", filter: { slug: "root" }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { slug: 1 } keysExamined:1 docsExamined:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:946 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 107ms
+2017-11-11T05:13:06.375-0500 I NETWORK  [conn33] end connection 123.245.91.211:37127 (5 connections now open)
+2017-11-11T05:13:24.394-0500 I NETWORK  [initandlisten] connection accepted from 171.118.65.63:46193 #34 (6 connections now open)
+2017-11-11T05:13:45.421-0500 I NETWORK  [initandlisten] connection accepted from 58.19.57.153:28889 #35 (7 connections now open)
+2017-11-11T05:13:58.337-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:8344 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 115ms
+2017-11-11T05:16:33.055-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6837 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 110ms
+2017-11-11T05:28:43.109-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:9011 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 156ms
+2017-11-11T05:29:42.725-0500 I NETWORK  [conn34] end connection 171.118.65.63:46193 (6 connections now open)
+2017-11-11T05:31:54.519-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.212:24774 #36 (7 connections now open)
+2017-11-11T05:35:46.243-0500 I NETWORK  [conn35] end connection 58.19.57.153:28889 (6 connections now open)
+2017-11-11T05:44:41.912-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:4763 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 120ms
+2017-11-11T05:48:07.563-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:6795 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 193ms
+2017-11-11T05:48:22.468-0500 I NETWORK  [conn36] end connection 124.88.64.212:24774 (5 connections now open)
+2017-11-11T05:49:12.040-0500 I NETWORK  [initandlisten] connection accepted from 110.177.140.215:63973 #37 (6 connections now open)
+2017-11-11T05:49:59.038-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:8487 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 101ms
+2017-11-11T05:54:35.891-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:4395 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 290ms
+2017-11-11T06:02:39.167-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:4181 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 217ms
+2017-11-11T06:06:05.438-0500 I NETWORK  [initandlisten] connection accepted from 101.24.116.163:1659 #38 (7 connections now open)
+2017-11-11T06:10:06.208-0500 I NETWORK  [conn37] end connection 110.177.140.215:63973 (6 connections now open)
+2017-11-11T06:22:23.813-0500 I NETWORK  [conn38] end connection 101.24.116.163:1659 (5 connections now open)
+2017-11-11T06:22:36.474-0500 I NETWORK  [initandlisten] connection accepted from 110.179.170.192:37948 #39 (6 connections now open)
+2017-11-11T06:22:57.695-0500 I NETWORK  [initandlisten] connection accepted from 123.245.89.146:41823 #40 (7 connections now open)
+2017-11-11T06:30:30.718-0500 I COMMAND  [conn5] command admin.$cmd command: isMaster { ismaster: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:178 locks:{} protocol:op_query 101ms
+2017-11-11T06:38:54.538-0500 I NETWORK  [conn39] end connection 110.179.170.192:37948 (6 connections now open)
+2017-11-11T06:39:15.525-0500 I NETWORK  [conn40] end connection 123.245.89.146:41823 (5 connections now open)
+2017-11-11T06:40:01.668-0500 I NETWORK  [initandlisten] connection accepted from 36.32.42.222:2561 #41 (6 connections now open)
+2017-11-11T06:40:48.160-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:9987 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 162ms
+2017-11-11T06:56:29.539-0500 I NETWORK  [initandlisten] connection accepted from 106.114.62.54:16236 #42 (7 connections now open)
+2017-11-11T06:56:50.244-0500 I NETWORK  [conn41] end connection 36.32.42.222:2561 (6 connections now open)
+2017-11-11T06:59:55.231-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6712 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 119ms
+2017-11-11T07:12:47.685-0500 I NETWORK  [conn42] end connection 106.114.62.54:16236 (5 connections now open)
+2017-11-11T07:13:10.624-0500 I NETWORK  [initandlisten] connection accepted from 113.128.105.8:57098 #43 (6 connections now open)
+2017-11-11T07:13:31.638-0500 I NETWORK  [initandlisten] connection accepted from 175.19.254.109:53412 #44 (7 connections now open)
+2017-11-11T07:14:02.849-0500 I NETWORK  [initandlisten] connection accepted from 123.179.7.115:5506 #45 (8 connections now open)
+2017-11-11T07:16:46.389-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:5563 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 131ms
+2017-11-11T07:27:57.162-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6712 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 165ms
+2017-11-11T07:29:29.158-0500 I NETWORK  [conn43] end connection 113.128.105.8:57098 (7 connections now open)
+2017-11-11T07:29:43.626-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:5686 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 119ms
+2017-11-11T07:29:59.366-0500 I NETWORK  [conn44] end connection 175.19.254.109:53412 (6 connections now open)
+2017-11-11T07:30:30.597-0500 I NETWORK  [conn45] end connection 123.179.7.115:5506 (5 connections now open)
+2017-11-11T07:31:21.826-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:3522 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 191ms
+2017-11-11T07:31:43.192-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:8147 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 157ms
+2017-11-11T07:31:46.346-0500 I NETWORK  [initandlisten] connection accepted from 139.210.158.190:47232 #46 (6 connections now open)
+2017-11-11T07:32:05.370-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:8194 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 144ms
+2017-11-11T07:32:17.830-0500 I NETWORK  [initandlisten] connection accepted from 221.13.12.209:57738 #47 (7 connections now open)
+2017-11-11T07:32:49.349-0500 I NETWORK  [initandlisten] connection accepted from 123.191.131.120:59577 #48 (8 connections now open)
+2017-11-11T07:33:22.031-0500 I NETWORK  [initandlisten] connection accepted from 121.57.12.128:10578 #49 (9 connections now open)
+2017-11-11T07:39:09.050-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:15 reslen:6396 locks:{ Global: { acquireCount: { r: 36 } }, Database: { acquireCount: { r: 18 } }, Collection: { acquireCount: { r: 18 } } } protocol:op_query 235ms
+2017-11-11T07:46:05.999-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:3874 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 166ms
+2017-11-11T07:48:00.353-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:5472 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 114ms
+2017-11-11T07:48:14.022-0500 I NETWORK  [conn46] end connection 139.210.158.190:47232 (8 connections now open)
+2017-11-11T07:48:45.766-0500 I NETWORK  [conn47] end connection 221.13.12.209:57738 (7 connections now open)
+2017-11-11T07:49:06.335-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4100 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 159ms
+2017-11-11T07:49:16.997-0500 I NETWORK  [conn48] end connection 123.191.131.120:59577 (6 connections now open)
+2017-11-11T07:49:40.034-0500 I NETWORK  [conn49] end connection 121.57.12.128:10578 (5 connections now open)
+2017-11-11T07:50:08.003-0500 I NETWORK  [initandlisten] connection accepted from 110.179.179.72:58057 #50 (6 connections now open)
+2017-11-11T07:50:29.022-0500 I NETWORK  [initandlisten] connection accepted from 58.19.57.52:12263 #51 (7 connections now open)
+2017-11-11T07:52:51.298-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:6758 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 143ms
+2017-11-11T08:03:15.491-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4563 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 109ms
+2017-11-11T08:04:17.713-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:15 reslen:4865 locks:{ Global: { acquireCount: { r: 36 } }, Database: { acquireCount: { r: 18 } }, Collection: { acquireCount: { r: 18 } } } protocol:op_query 196ms
+2017-11-11T08:06:15.523-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:7194 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 221ms
+2017-11-11T08:06:26.115-0500 I NETWORK  [conn50] end connection 110.179.179.72:58057 (6 connections now open)
+2017-11-11T08:07:28.069-0500 I NETWORK  [conn51] end connection 58.19.57.52:12263 (5 connections now open)
+2017-11-11T08:08:56.024-0500 I NETWORK  [initandlisten] connection accepted from 139.226.100.102:46908 #52 (6 connections now open)
+2017-11-11T08:09:16.959-0500 I NETWORK  [initandlisten] connection accepted from 27.19.180.17:57485 #53 (7 connections now open)
+2017-11-11T08:09:38.276-0500 I NETWORK  [initandlisten] connection accepted from 175.152.29.107:36728 #54 (8 connections now open)
+2017-11-11T08:10:09.944-0500 I NETWORK  [initandlisten] connection accepted from 101.24.122.152:4207 #55 (9 connections now open)
+2017-11-11T08:12:14.381-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:7735 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 167ms
+2017-11-11T08:25:13.542-0500 I NETWORK  [conn52] end connection 139.226.100.102:46908 (8 connections now open)
+2017-11-11T08:25:35.045-0500 I NETWORK  [conn53] end connection 27.19.180.17:57485 (7 connections now open)
+2017-11-11T08:26:06.276-0500 I NETWORK  [conn54] end connection 175.152.29.107:36728 (6 connections now open)
+2017-11-11T08:26:38.020-0500 I NETWORK  [conn55] end connection 101.24.122.152:4207 (5 connections now open)
+2017-11-11T08:27:01.947-0500 I NETWORK  [initandlisten] connection accepted from 182.101.56.172:3390 #56 (6 connections now open)
+2017-11-11T08:29:30.007-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4070 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 153ms
+2017-11-11T08:30:46.515-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4013 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 135ms
+2017-11-11T08:32:29.173-0500 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:8950 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 112ms
+2017-11-11T08:33:56.685-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:6190 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 129ms
+2017-11-11T08:35:00.556-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:11328 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 174ms
+2017-11-11T08:35:39.839-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:4285 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 145ms
+2017-11-11T08:43:20.006-0500 I NETWORK  [conn56] end connection 182.101.56.172:3390 (5 connections now open)
+2017-11-11T08:43:32.324-0500 I NETWORK  [initandlisten] connection accepted from 175.152.35.7:36654 #57 (6 connections now open)
+2017-11-11T08:43:53.545-0500 I NETWORK  [initandlisten] connection accepted from 27.16.214.8:60381 #58 (7 connections now open)
+2017-11-11T08:44:14.516-0500 I NETWORK  [initandlisten] connection accepted from 113.128.105.101:62348 #59 (8 connections now open)
+2017-11-11T08:44:45.856-0500 I NETWORK  [initandlisten] connection accepted from 171.117.9.179:50561 #60 (9 connections now open)
+2017-11-11T08:45:17.320-0500 I NETWORK  [initandlisten] connection accepted from 101.24.125.64:10563 #61 (10 connections now open)
+2017-11-11T08:49:25.081-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:5678 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 125ms
+2017-11-11T08:59:50.213-0500 I NETWORK  [conn57] end connection 175.152.35.7:36654 (9 connections now open)
+2017-11-11T09:00:11.716-0500 I NETWORK  [conn58] end connection 27.16.214.8:60381 (8 connections now open)
+2017-11-11T09:00:42.438-0500 I NETWORK  [conn59] end connection 113.128.105.101:62348 (7 connections now open)
+2017-11-11T09:01:13.670-0500 I NETWORK  [conn60] end connection 171.117.9.179:50561 (6 connections now open)
+2017-11-11T09:01:35.686-0500 I NETWORK  [conn61] end connection 101.24.125.64:10563 (5 connections now open)
+2017-11-11T09:01:58.510-0500 I NETWORK  [initandlisten] connection accepted from 59.174.105.146:61714 #62 (6 connections now open)
+2017-11-11T09:02:19.454-0500 I NETWORK  [initandlisten] connection accepted from 113.120.14.19:53395 #63 (7 connections now open)
+2017-11-11T09:02:19.753-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:6417 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 120ms
+2017-11-11T09:15:35.106-0500 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:13 reslen:4790 locks:{ Global: { acquireCount: { r: 32 } }, Database: { acquireCount: { r: 16 } }, Collection: { acquireCount: { r: 16 } } } protocol:op_query 132ms
+2017-11-11T09:16:34.734-0500 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:15 reslen:4778 locks:{ Global: { acquireCount: { r: 36 } }, Database: { acquireCount: { r: 18 } }, Collection: { acquireCount: { r: 18 } } } protocol:op_query 195ms
+2017-11-11T09:18:16.134-0500 I NETWORK  [conn62] end connection 59.174.105.146:61714 (6 connections now open)
+2017-11-11T09:20:57.869-0500 I NETWORK  [initandlisten] connection accepted from 60.1.127.1:10118 #64 (7 connections now open)
+2017-11-11T09:29:30.949-0500 I NETWORK  [conn63] end connection 113.120.14.19:53395 (6 connections now open)
+2017-11-11T09:37:46.564-0500 I NETWORK  [conn64] end connection 60.1.127.1:10118 (5 connections now open)
+2017-11-11T09:37:55.184-0500 I NETWORK  [initandlisten] connection accepted from 112.193.171.211:41989 #65 (6 connections now open)
+2017-11-11T09:38:26.920-0500 I NETWORK  [initandlisten] connection accepted from 182.101.59.119:17265 #66 (7 connections now open)
+2017-11-11T09:51:02.620-0500 I COMMAND  [conn3] command tattoo-brands.categories command: find { find: "categories", filter: { slug: "root" }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { slug: 1 } keysExamined:1 docsExamined:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:1 reslen:946 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 113ms
+2017-11-11T09:54:23.430-0500 I NETWORK  [conn65] end connection 112.193.171.211:41989 (6 connections now open)
+2017-11-11T09:54:45.450-0500 I NETWORK  [conn66] end connection 182.101.59.119:17265 (5 connections now open)
+2017-11-11T09:55:17.445-0500 I NETWORK  [initandlisten] connection accepted from 58.49.29.195:57431 #67 (6 connections now open)
+2017-11-11T09:55:38.409-0500 I NETWORK  [initandlisten] connection accepted from 123.245.95.51:28177 #68 (7 connections now open)
+2017-11-11T09:56:06.106-0500 I NETWORK  [initandlisten] connection accepted from 113.120.12.17:40376 #69 (8 connections now open)
+2017-11-11T09:57:08.949-0500 I NETWORK  [initandlisten] connection accepted from 124.235.138.172:58631 #70 (9 connections now open)
+2017-11-11T09:57:30.637-0500 I NETWORK  [initandlisten] connection accepted from 112.66.214.161:33182 #71 (10 connections now open)
+2017-11-11T09:58:02.173-0500 I NETWORK  [initandlisten] connection accepted from 150.255.208.48:53220 #72 (11 connections now open)
+2017-11-11T09:58:54.392-0500 I NETWORK  [initandlisten] connection accepted from 123.160.234.53:62353 #73 (12 connections now open)
+2017-11-11T09:59:15.456-0500 I NETWORK  [initandlisten] connection accepted from 175.42.1.216:53452 #74 (13 connections now open)
+2017-11-11T10:00:07.720-0500 I NETWORK  [initandlisten] connection accepted from 221.13.12.43:61656 #75 (14 connections now open)
+2017-11-11T10:00:13.048-0500 I COMMAND  [conn6] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:3564 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 170ms
+2017-11-11T10:00:28.954-0500 I NETWORK  [initandlisten] connection accepted from 175.152.31.55:41251 #76 (15 connections now open)
+2017-11-11T10:00:50.370-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.201:33468 #77 (16 connections now open)
+2017-11-11T10:01:34.327-0500 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:6260 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 140ms
+2017-11-11T10:01:43.962-0500 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2017-11-11T10:01:43.963-0500 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-11-11T10:01:43.969-0500 I CONTROL  [signalProcessingThread] now exiting
+2017-11-11T10:01:43.969-0500 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-11-11T10:01:43.969-0500 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2017-11-11T10:01:43.969-0500 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-11-11T10:01:43.969-0500 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-11-11T10:01:43.970-0500 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-11-11T10:01:43.970-0500 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2017-11-11T10:01:43.974-0500 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn74] end connection 175.42.1.216:53452 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn5] end connection 127.0.0.1:41493 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn68] end connection 123.245.95.51:28177 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn3] end connection 127.0.0.1:41491 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn2] end connection 127.0.0.1:41490 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn70] end connection 124.235.138.172:58631 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn77] end connection 124.88.64.201:33468 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn67] end connection 58.49.29.195:57431 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn71] end connection 112.66.214.161:33182 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn6] end connection 127.0.0.1:41494 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn4] end connection 127.0.0.1:41492 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn72] end connection 150.255.208.48:53220 (15 connections now open)
+2017-11-11T10:01:43.977-0500 I NETWORK  [conn76] end connection 175.152.31.55:41251 (15 connections now open)
+2017-11-11T10:01:43.978-0500 I NETWORK  [conn73] end connection 123.160.234.53:62353 (15 connections now open)
+2017-11-11T10:01:43.978-0500 I NETWORK  [conn75] end connection 221.13.12.43:61656 (15 connections now open)
+2017-11-11T10:01:43.979-0500 I NETWORK  [conn69] end connection 113.120.12.17:40376 (11 connections now open)
+2017-11-11T10:01:44.117-0500 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-11-11T10:01:44.120-0500 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

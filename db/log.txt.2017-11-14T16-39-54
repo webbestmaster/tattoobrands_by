@@ -1,0 +1,141 @@
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] MongoDB starting : pid=11089 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] db version v3.2.16
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] modules: none
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] build environment:
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-11-14T04:31:03.247-0500 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2017-11-14T04:31:03.283-0500 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-11-14T04:31:03.283-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-11-14T04:31:03.580-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-11-14T04:31:03.580-0500 I CONTROL  [initandlisten] 
+2017-11-14T04:31:03.601-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2017-11-14T04:31:03.601-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2017-11-14T04:31:03.602-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-11-14T04:31:08.331-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46638 #1 (1 connection now open)
+2017-11-14T04:31:08.357-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46639 #2 (2 connections now open)
+2017-11-14T04:31:08.357-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46640 #3 (3 connections now open)
+2017-11-14T04:31:08.358-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46641 #4 (4 connections now open)
+2017-11-14T04:31:08.358-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46642 #5 (5 connections now open)
+2017-11-14T04:43:33.788-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.200:40826 #6 (6 connections now open)
+2017-11-14T05:00:12.229-0500 I NETWORK  [conn6] end connection 124.88.64.200:40826 (5 connections now open)
+2017-11-14T05:01:03.062-0500 I NETWORK  [initandlisten] connection accepted from 222.82.59.51:12261 #7 (6 connections now open)
+2017-11-14T05:17:21.345-0500 I NETWORK  [conn7] end connection 222.82.59.51:12261 (5 connections now open)
+2017-11-14T05:18:47.998-0500 I NETWORK  [initandlisten] connection accepted from 222.82.62.217:3989 #8 (6 connections now open)
+2017-11-14T05:34:56.860-0500 I NETWORK  [initandlisten] connection accepted from 182.101.62.119:26116 #9 (7 connections now open)
+2017-11-14T05:35:06.305-0500 I NETWORK  [conn8] end connection 222.82.62.217:3989 (6 connections now open)
+2017-11-14T05:51:15.009-0500 I NETWORK  [conn9] end connection 182.101.62.119:26116 (5 connections now open)
+2017-11-14T05:51:31.350-0500 I NETWORK  [initandlisten] connection accepted from 121.57.15.245:41087 #10 (6 connections now open)
+2017-11-14T06:07:49.313-0500 I NETWORK  [conn10] end connection 121.57.15.245:41087 (5 connections now open)
+2017-11-14T06:08:44.054-0500 I NETWORK  [initandlisten] connection accepted from 36.106.230.53:62251 #11 (6 connections now open)
+2017-11-14T06:09:04.780-0500 I NETWORK  [initandlisten] connection accepted from 123.245.94.177:5627 #12 (7 connections now open)
+2017-11-14T06:20:00.697-0500 I NETWORK  [conn11] end connection 36.106.230.53:62251 (6 connections now open)
+2017-11-14T06:25:23.009-0500 I NETWORK  [conn12] end connection 123.245.94.177:5627 (5 connections now open)
+2017-11-14T06:25:52.782-0500 I NETWORK  [initandlisten] connection accepted from 101.24.130.61:7639 #13 (6 connections now open)
+2017-11-14T06:42:10.385-0500 I COMMAND  [conn2] command tattoo-brands.products command: count { count: "products", query: { $or: [ { name: /round liner 1/i }, { slug: /round liner 1/i } ] } } planSummary: IXSCAN { name: 1 }, IXSCAN { slug: 1 } keyUpdates:0 writeConflicts:0 numYields:10 reslen:62 locks:{ Global: { acquireCount: { r: 22 } }, Database: { acquireCount: { r: 11 } }, Collection: { acquireCount: { r: 11 } } } protocol:op_query 104ms
+2017-11-14T06:42:20.357-0500 I NETWORK  [conn13] end connection 101.24.130.61:7639 (5 connections now open)
+2017-11-14T06:43:48.985-0500 I NETWORK  [initandlisten] connection accepted from 113.128.105.88:33470 #14 (6 connections now open)
+2017-11-14T06:44:31.277-0500 I NETWORK  [initandlisten] connection accepted from 113.128.104.232:45241 #15 (7 connections now open)
+2017-11-14T06:45:12.836-0500 I NETWORK  [initandlisten] connection accepted from 106.45.0.148:43647 #16 (8 connections now open)
+2017-11-14T06:45:33.787-0500 I NETWORK  [initandlisten] connection accepted from 112.66.103.85:38510 #17 (9 connections now open)
+2017-11-14T06:46:13.952-0500 I NETWORK  [initandlisten] connection accepted from 220.175.37.22:6204 #18 (10 connections now open)
+2017-11-14T07:00:27.841-0500 I NETWORK  [conn14] end connection 113.128.105.88:33470 (9 connections now open)
+2017-11-14T07:01:09.313-0500 I NETWORK  [conn15] end connection 113.128.104.232:45241 (8 connections now open)
+2017-11-14T07:01:30.817-0500 I NETWORK  [conn16] end connection 106.45.0.148:43647 (7 connections now open)
+2017-11-14T07:02:01.537-0500 I NETWORK  [conn17] end connection 112.66.103.85:38510 (6 connections now open)
+2017-11-14T07:02:32.257-0500 I NETWORK  [conn18] end connection 220.175.37.22:6204 (5 connections now open)
+2017-11-14T07:03:38.373-0500 I NETWORK  [initandlisten] connection accepted from 106.114.68.52:5080 #19 (6 connections now open)
+2017-11-14T07:19:56.737-0500 I NETWORK  [conn19] end connection 106.114.68.52:5080 (5 connections now open)
+2017-11-14T07:20:08.791-0500 I NETWORK  [initandlisten] connection accepted from 113.62.30.198:49579 #20 (6 connections now open)
+2017-11-14T07:33:12.275-0500 I NETWORK  [conn20] end connection 113.62.30.198:49579 (5 connections now open)
+2017-11-14T07:37:30.691-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.199:34582 #21 (6 connections now open)
+2017-11-14T07:53:48.353-0500 I NETWORK  [conn21] end connection 124.88.64.199:34582 (5 connections now open)
+2017-11-14T07:55:08.749-0500 I NETWORK  [initandlisten] connection accepted from 119.118.8.124:38371 #22 (6 connections now open)
+2017-11-14T07:55:29.810-0500 I NETWORK  [initandlisten] connection accepted from 101.24.130.7:5118 #23 (7 connections now open)
+2017-11-14T08:11:27.169-0500 I NETWORK  [conn22] end connection 119.118.8.124:38371 (6 connections now open)
+2017-11-14T08:11:47.649-0500 I NETWORK  [conn23] end connection 101.24.130.7:5118 (5 connections now open)
+2017-11-14T08:12:36.837-0500 I NETWORK  [initandlisten] connection accepted from 42.80.255.132:37257 #24 (6 connections now open)
+2017-11-14T08:13:08.152-0500 I NETWORK  [initandlisten] connection accepted from 106.45.1.178:49874 #25 (7 connections now open)
+2017-11-14T08:13:29.239-0500 I NETWORK  [initandlisten] connection accepted from 112.117.19.52:51758 #26 (8 connections now open)
+2017-11-14T08:14:12.293-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.206:39969 #27 (9 connections now open)
+2017-11-14T08:29:04.961-0500 I NETWORK  [conn24] end connection 42.80.255.132:37257 (8 connections now open)
+2017-11-14T08:29:26.465-0500 I NETWORK  [conn25] end connection 106.45.1.178:49874 (7 connections now open)
+2017-11-14T08:30:07.425-0500 I NETWORK  [conn26] end connection 112.117.19.52:51758 (6 connections now open)
+2017-11-14T08:31:10.913-0500 I NETWORK  [conn27] end connection 124.88.64.206:39969 (5 connections now open)
+2017-11-14T08:31:20.356-0500 I NETWORK  [initandlisten] connection accepted from 175.152.28.143:40016 #28 (6 connections now open)
+2017-11-14T08:31:52.368-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.192:12974 #29 (7 connections now open)
+2017-11-14T08:47:48.289-0500 I NETWORK  [conn28] end connection 175.152.28.143:40016 (6 connections now open)
+2017-11-14T08:48:10.817-0500 I NETWORK  [conn29] end connection 124.88.64.192:12974 (5 connections now open)
+2017-11-14T08:49:11.619-0500 I NETWORK  [initandlisten] connection accepted from 111.162.153.255:60769 #30 (6 connections now open)
+2017-11-14T08:49:32.559-0500 I NETWORK  [initandlisten] connection accepted from 220.250.63.135:47337 #31 (7 connections now open)
+2017-11-14T08:49:53.551-0500 I NETWORK  [initandlisten] connection accepted from 121.57.9.56:23456 #32 (8 connections now open)
+2017-11-14T09:05:29.153-0500 I NETWORK  [conn30] end connection 111.162.153.255:60769 (7 connections now open)
+2017-11-14T09:05:50.657-0500 I NETWORK  [conn31] end connection 220.250.63.135:47337 (6 connections now open)
+2017-11-14T09:06:31.617-0500 I NETWORK  [conn32] end connection 121.57.9.56:23456 (5 connections now open)
+2017-11-14T09:08:04.305-0500 I NETWORK  [initandlisten] connection accepted from 171.120.157.6:52662 #33 (6 connections now open)
+2017-11-14T09:08:36.062-0500 I NETWORK  [initandlisten] connection accepted from 175.152.28.153:54663 #34 (7 connections now open)
+2017-11-14T09:09:10.806-0500 I NETWORK  [initandlisten] connection accepted from 36.5.181.112:2278 #35 (8 connections now open)
+2017-11-14T09:24:31.937-0500 I NETWORK  [conn33] end connection 171.120.157.6:52662 (7 connections now open)
+2017-11-14T09:25:04.193-0500 I NETWORK  [conn34] end connection 175.152.28.153:54663 (6 connections now open)
+2017-11-14T09:25:29.281-0500 I NETWORK  [conn35] end connection 36.5.181.112:2278 (5 connections now open)
+2017-11-14T09:26:08.126-0500 I NETWORK  [initandlisten] connection accepted from 221.14.172.51:56031 #36 (6 connections now open)
+2017-11-14T09:26:50.904-0500 I NETWORK  [initandlisten] connection accepted from 124.88.64.197:47963 #37 (7 connections now open)
+2017-11-14T09:42:46.593-0500 I NETWORK  [conn36] end connection 221.14.172.51:56031 (6 connections now open)
+2017-11-14T09:43:29.601-0500 I NETWORK  [conn37] end connection 124.88.64.197:47963 (5 connections now open)
+2017-11-14T09:43:59.388-0500 I NETWORK  [initandlisten] connection accepted from 175.152.31.216:42492 #38 (6 connections now open)
+2017-11-14T09:44:20.690-0500 I NETWORK  [initandlisten] connection accepted from 223.167.96.212:62303 #39 (7 connections now open)
+2017-11-14T09:44:51.811-0500 I NETWORK  [initandlisten] connection accepted from 113.128.105.153:64913 #40 (8 connections now open)
+2017-11-14T09:45:12.973-0500 I NETWORK  [initandlisten] connection accepted from 118.81.14.214:33019 #41 (9 connections now open)
+2017-11-14T09:45:34.135-0500 I NETWORK  [initandlisten] connection accepted from 221.11.5.62:40650 #42 (10 connections now open)
+2017-11-14T09:45:56.294-0500 I NETWORK  [initandlisten] connection accepted from 124.225.40.45:34837 #43 (11 connections now open)
+2017-11-14T09:46:27.990-0500 I NETWORK  [initandlisten] connection accepted from 222.82.57.182:33811 #44 (12 connections now open)
+2017-11-14T10:00:17.217-0500 I NETWORK  [conn38] end connection 175.152.31.216:42492 (11 connections now open)
+2017-11-14T10:00:48.449-0500 I NETWORK  [conn39] end connection 223.167.96.212:62303 (10 connections now open)
+2017-11-14T10:01:09.441-0500 I NETWORK  [conn40] end connection 113.128.105.153:64913 (9 connections now open)
+2017-11-14T10:01:30.945-0500 I NETWORK  [conn41] end connection 118.81.14.214:33019 (8 connections now open)
+2017-11-14T10:01:52.449-0500 I NETWORK  [conn42] end connection 221.11.5.62:40650 (7 connections now open)
+2017-11-14T10:02:24.193-0500 I NETWORK  [conn43] end connection 124.225.40.45:34837 (6 connections now open)
+2017-11-14T10:03:06.689-0500 I NETWORK  [conn44] end connection 222.82.57.182:33811 (5 connections now open)
+2017-11-14T10:03:42.551-0500 I NETWORK  [initandlisten] connection accepted from 36.248.63.168:52839 #45 (6 connections now open)
+2017-11-14T10:04:24.791-0500 I NETWORK  [initandlisten] connection accepted from 182.101.63.155:41781 #46 (7 connections now open)
+2017-11-14T10:20:20.929-0500 I NETWORK  [conn45] end connection 36.248.63.168:52839 (6 connections now open)
+2017-11-14T10:20:42.945-0500 I NETWORK  [conn46] end connection 182.101.63.155:41781 (5 connections now open)
+2017-11-14T10:21:24.446-0500 I NETWORK  [initandlisten] connection accepted from 150.255.211.156:59305 #47 (6 connections now open)
+2017-11-14T10:21:45.600-0500 I NETWORK  [initandlisten] connection accepted from 101.24.129.197:29625 #48 (7 connections now open)
+2017-11-14T10:37:40.138-0500 I NETWORK  [initandlisten] connection accepted from 114.221.126.177:65101 #49 (8 connections now open)
+2017-11-14T10:37:42.849-0500 I NETWORK  [conn47] end connection 150.255.211.156:59305 (7 connections now open)
+2017-11-14T10:38:03.329-0500 I NETWORK  [conn48] end connection 101.24.129.197:29625 (6 connections now open)
+2017-11-14T10:54:45.313-0500 I NETWORK  [conn49] end connection 114.221.126.177:65101 (5 connections now open)
+2017-11-14T10:55:58.728-0500 I NETWORK  [initandlisten] connection accepted from 124.236.173.249:60536 #50 (6 connections now open)
+2017-11-14T11:12:02.946-0500 I NETWORK  [initandlisten] connection accepted from 112.66.109.9:64819 #51 (7 connections now open)
+2017-11-14T11:12:16.449-0500 I NETWORK  [conn50] end connection 124.236.173.249:60536 (6 connections now open)
+2017-11-14T11:12:24.143-0500 I NETWORK  [initandlisten] connection accepted from 58.19.58.251:6660 #52 (7 connections now open)
+2017-11-14T11:28:21.057-0500 I NETWORK  [conn51] end connection 112.66.109.9:64819 (6 connections now open)
+2017-11-14T11:29:07.470-0500 I NETWORK  [initandlisten] connection accepted from 220.250.62.29:47924 #53 (7 connections now open)
+2017-11-14T11:29:41.097-0500 I NETWORK  [initandlisten] connection accepted from 113.128.105.47:51162 #54 (8 connections now open)
+2017-11-14T11:30:02.043-0500 I NETWORK  [initandlisten] connection accepted from 123.245.88.35:12630 #55 (9 connections now open)
+2017-11-14T11:32:59.458-0500 I NETWORK  [conn52] end connection 58.19.58.251:6660 (8 connections now open)
+2017-11-14T11:39:41.950-0500 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2017-11-14T11:39:41.950-0500 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-11-14T11:39:41.953-0500 I CONTROL  [signalProcessingThread] now exiting
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-11-14T11:39:41.953-0500 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2017-11-14T11:39:41.955-0500 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-11-14T11:39:41.955-0500 I NETWORK  [conn4] end connection 127.0.0.1:46641 (7 connections now open)
+2017-11-14T11:39:41.956-0500 I NETWORK  [conn2] end connection 127.0.0.1:46639 (7 connections now open)
+2017-11-14T11:39:41.956-0500 I NETWORK  [conn3] end connection 127.0.0.1:46640 (7 connections now open)
+2017-11-14T11:39:41.956-0500 I NETWORK  [conn1] end connection 127.0.0.1:46638 (7 connections now open)
+2017-11-14T11:39:41.957-0500 I NETWORK  [conn5] end connection 127.0.0.1:46642 (7 connections now open)
+2017-11-14T11:39:41.957-0500 I NETWORK  [conn54] end connection 113.128.105.47:51162 (7 connections now open)
+2017-11-14T11:39:41.957-0500 I NETWORK  [conn53] end connection 220.250.62.29:47924 (7 connections now open)
+2017-11-14T11:39:41.957-0500 I NETWORK  [conn55] end connection 123.245.88.35:12630 (7 connections now open)
+2017-11-14T11:39:42.042-0500 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-11-14T11:39:42.042-0500 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

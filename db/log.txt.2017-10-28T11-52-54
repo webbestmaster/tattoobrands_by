@@ -1,0 +1,29 @@
+2017-10-28T07:52:49.287-0400 I CONTROL  [initandlisten] MongoDB starting : pid=6443 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2017-10-28T07:52:49.287-0400 I CONTROL  [initandlisten] db version v3.2.16
+2017-10-28T07:52:49.287-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2017-10-28T07:52:49.287-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten] modules: none
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten] build environment:
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-28T07:52:49.288-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2017-10-28T07:52:49.312-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-10-28T07:52:49.389-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2017-10-28T07:52:49.389-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2017-10-28T07:52:49.389-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2017-10-28T07:52:59.807-0400 I NETWORK  [initandlisten] connection accepted from 14.134.3.4:17743 #1 (1 connection now open)
+2017-10-28T07:53:28.084-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2017-10-28T07:53:28.084-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-10-28T07:53:28.087-0400 I CONTROL  [signalProcessingThread] now exiting
+2017-10-28T07:53:28.087-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-10-28T07:53:28.087-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2017-10-28T07:53:28.087-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-10-28T07:53:28.087-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-10-28T07:53:28.088-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-10-28T07:53:28.088-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2017-10-28T07:53:28.088-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-10-28T07:53:28.090-0400 I NETWORK  [conn1] end connection 14.134.3.4:17743 (0 connections now open)
+2017-10-28T07:53:28.145-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-10-28T07:53:28.146-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
