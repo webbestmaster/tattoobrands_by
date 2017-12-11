@@ -1,6 +1,0 @@
-<nav class="header-nav">
-  <%= link_to "Каталог товаров", spree.root_path, class: "header-nav-item", id: "home-link" %>
-  <% Page.all.each do |page| %>
-    <%= link_to(page.title, main_app.page_path(page.id), class: "header-nav-item") %>
-  <% end %>
-</nav>
