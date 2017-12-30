@@ -8,9 +8,6 @@ block content
 
         h2.page-header= (localRootCategory.displayName || localRootCategory.name)
 
-        div.products-preview.width-limiter
-            +products(products)
-
         if categories.length
             if products.length
                 h2.page-header Подкатегории
@@ -20,6 +17,13 @@ block content
                     a(href='/category/' + category.slug).category-item.clear-self
                         span(style='background-image: url(' + category.image + ')').category-item__image
                         p.category-item__name= (category.displayName || category.name)
+
+        if products.length
+            if categories.length
+                h2.page-header Товары
+
+            div.products-preview.width-limiter
+                +products(products)
 
         div.seo-text.width-limiter
             != localRootCategory.seoDescription
