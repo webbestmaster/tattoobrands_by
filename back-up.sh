@@ -9,4 +9,4 @@ zip -r --exclude=*.git* --exclude=*.idea* --exclude=*node_modules* --exclude=*ol
 echo "start server"
 bash ./start-server.sh
 
-echo `ls`
+ls -1 -s -h
