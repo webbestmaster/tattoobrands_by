@@ -51,9 +51,9 @@ Order.add({
     state: {
         type: Types.Select,
         options: [
-            {value: 'in-processing', label: 'in processing'},
-            {value: 'confirmed', label: 'confirmed'},
-            {value: 'canceled', label: 'canceled'}
+            {value: 'in-processing', label: '⚠️ in processing'},
+            {value: 'confirmed', label: '✔️ confirmed'},
+            {value: 'canceled', label: '❌ canceled'}
         ],
         'default': 'in-processing'
     },
