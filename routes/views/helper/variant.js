@@ -4,16 +4,20 @@ function normalizeVariant(variant) {
     const {
         _id,
         name,
-        displayName,
-        product1,
-        product2,
-        product3,
-        product4,
-        product5,
-        product6
+        displayName
     } = variant;
 
-    const items = [product1, product2, product3, product4, product5, product6]
+
+    const products = [];
+    const maxProducts = 25;
+    let ii = 1;
+
+    for (; ii < maxProducts; ii += 1) {
+        // child products
+        products.push(variant['product' + ii]);
+    }
+
+    const items = products
         .filter(({product, label}) => product && label)
         .map(({product, label}) => ({
             productId: product.toString(),
