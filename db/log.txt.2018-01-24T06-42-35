@@ -1,0 +1,52 @@
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] MongoDB starting : pid=17873 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] db version v3.2.16
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] modules: none
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] build environment:
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-01-23T01:51:46.742-0500 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2018-01-23T01:51:46.776-0500 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-01-23T01:51:46.776-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2018-01-23T01:51:47.064-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2018-01-23T01:51:47.064-0500 I CONTROL  [initandlisten] 
+2018-01-23T01:51:47.079-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2018-01-23T01:51:47.079-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-01-23T01:51:47.079-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2018-01-23T01:51:53.885-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45458 #1 (1 connection now open)
+2018-01-23T01:51:53.908-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45459 #2 (2 connections now open)
+2018-01-23T01:51:53.909-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45460 #3 (3 connections now open)
+2018-01-23T01:51:53.909-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45461 #4 (4 connections now open)
+2018-01-23T01:51:53.909-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45462 #5 (5 connections now open)
+2018-01-23T02:09:55.487-0500 I NETWORK  [initandlisten] connection accepted from 80.82.77.139:42990 #6 (6 connections now open)
+2018-01-23T02:09:55.543-0500 I NETWORK  [conn6] end connection 80.82.77.139:42990 (5 connections now open)
+2018-01-23T02:49:48.705-0500 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:39580 #7 (6 connections now open)
+2018-01-23T02:49:48.921-0500 I NETWORK  [conn7] end connection 184.105.247.196:39580 (5 connections now open)
+2018-01-23T02:49:58.851-0500 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:47668 #8 (6 connections now open)
+2018-01-23T02:49:58.997-0500 I NETWORK  [conn8] end connection 184.105.247.196:47668 (5 connections now open)
+2018-01-23T14:52:16.485-0500 I NETWORK  [initandlisten] connection accepted from 196.52.43.127:6666 #9 (6 connections now open)
+2018-01-23T14:52:19.497-0500 I NETWORK  [conn9] end connection 196.52.43.127:6666 (5 connections now open)
+2018-01-23T17:08:09.980-0500 I NETWORK  [initandlisten] connection accepted from 208.100.26.230:49316 #10 (6 connections now open)
+2018-01-23T17:08:16.078-0500 I NETWORK  [conn10] end connection 208.100.26.230:49316 (5 connections now open)
+2018-01-23T17:10:13.584-0500 I NETWORK  [initandlisten] connection accepted from 208.100.26.230:33082 #11 (6 connections now open)
+2018-01-23T17:10:13.933-0500 I NETWORK  [conn11] end connection 208.100.26.230:33082 (5 connections now open)
+2018-01-24T01:42:15.696-0500 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2018-01-24T01:42:15.696-0500 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2018-01-24T01:42:15.701-0500 I CONTROL  [signalProcessingThread] now exiting
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2018-01-24T01:42:15.701-0500 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2018-01-24T01:42:15.706-0500 I NETWORK  [conn4] end connection 127.0.0.1:45461 (4 connections now open)
+2018-01-24T01:42:15.706-0500 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2018-01-24T01:42:15.707-0500 I NETWORK  [conn2] end connection 127.0.0.1:45459 (4 connections now open)
+2018-01-24T01:42:15.707-0500 I NETWORK  [conn3] end connection 127.0.0.1:45460 (4 connections now open)
+2018-01-24T01:42:15.707-0500 I NETWORK  [conn1] end connection 127.0.0.1:45458 (4 connections now open)
+2018-01-24T01:42:15.707-0500 I NETWORK  [conn5] end connection 127.0.0.1:45462 (4 connections now open)
+2018-01-24T01:42:15.780-0500 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2018-01-24T01:42:15.780-0500 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
