@@ -20,4 +20,4 @@ cd ./../tattoobrands_monit/
 echo "run monit"
 pm2 start ./index.js --name monit
 
-pm2 monit
+#pm2 monit
