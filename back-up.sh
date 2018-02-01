@@ -10,3 +10,4 @@ echo "start server"
 bash ./start-server.sh
 
 ls -1 -s -h
+df -h
