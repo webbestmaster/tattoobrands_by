@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "go to server repo"
-cd ./apps/tattoobrands_by/
+cd ~/apps/tattoobrands_by/
 
 echo `pwd`
 

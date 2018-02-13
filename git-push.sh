@@ -7,7 +7,7 @@
 # 31622400 = 1 year
 
 echo "go to server repo"
-cd ./apps/tattoobrands_by/
+cd ~/apps/tattoobrands_by/
 
 echo "add all files to git"
 git add .

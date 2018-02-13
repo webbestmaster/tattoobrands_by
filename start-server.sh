@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "go to server repo"
-cd ./apps/tattoobrands_by/
+cd ~/apps/tattoobrands_by/
 
 echo `pwd`
 
@@ -15,7 +15,7 @@ echo "wait 10 seconds for run server"
 sleep 10s
 
 echo "go to monit repo"
-cd ./../tattoobrands_monit/
+cd ~/apps/tattoobrands_monit/
 
 echo "run monit"
 pm2 start ./index.js --name monit
