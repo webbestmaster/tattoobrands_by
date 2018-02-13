@@ -12,5 +12,6 @@ commitMessage="save state - $currentDate"
 echo "commit $commitMessage"
 git commit -m "$commitMessage"
 
+
 echo "push to repo"
 git push
