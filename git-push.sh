@@ -15,3 +15,4 @@ git commit -m "$commitMessage"
 
 echo "push to repo"
 git push
+
