@@ -1,0 +1,1 @@
+watch -n 2 ./write-to-fle.sh </dev/null &>/dev/null &
