@@ -1,46 +1,46 @@
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] MongoDB starting : pid=23387 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] db version v3.2.16
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] allocator: tcmalloc
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] modules: none
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] build environment:
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten]     distarch: x86_64
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten]     target_arch: x86_64
-2018-04-12T02:43:19.459-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
-2018-04-12T02:43:19.485-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2018-04-12T02:43:19.485-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2018-04-12T02:43:19.797-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
-2018-04-12T02:43:19.797-0400 I CONTROL  [initandlisten] 
-2018-04-12T02:43:19.825-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
-2018-04-12T02:43:19.829-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
-2018-04-12T02:43:19.829-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
-2018-04-12T02:43:25.321-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48516 #1 (1 connection now open)
-2018-04-12T02:43:25.357-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48517 #2 (2 connections now open)
-2018-04-12T02:43:25.357-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48518 #3 (3 connections now open)
-2018-04-12T02:43:25.357-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48519 #4 (4 connections now open)
-2018-04-12T02:43:25.357-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48520 #5 (5 connections now open)
-2018-04-12T04:02:35.900-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.67:40548 #6 (6 connections now open)
-2018-04-12T04:02:36.047-0400 I NETWORK  [conn6] end connection 184.105.139.67:40548 (5 connections now open)
-2018-04-12T04:02:47.169-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.67:43756 #7 (6 connections now open)
-2018-04-12T04:02:47.306-0400 I NETWORK  [conn7] end connection 184.105.139.67:43756 (5 connections now open)
-2018-04-12T19:21:27.052-0400 I NETWORK  [initandlisten] connection accepted from 107.170.230.226:53850 #8 (6 connections now open)
-2018-04-12T19:21:27.057-0400 I NETWORK  [conn8] end connection 107.170.230.226:53850 (5 connections now open)
-2018-04-13T03:12:49.381-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
-2018-04-13T03:12:49.382-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
-2018-04-13T03:12:49.386-0400 I CONTROL  [signalProcessingThread] now exiting
-2018-04-13T03:12:49.386-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
-2018-04-13T03:12:49.387-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
-2018-04-13T03:12:49.387-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
-2018-04-13T03:12:49.387-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
-2018-04-13T03:12:49.387-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
-2018-04-13T03:12:49.387-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
-2018-04-13T03:12:49.388-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
-2018-04-13T03:12:49.394-0400 I NETWORK  [conn5] end connection 127.0.0.1:48520 (4 connections now open)
-2018-04-13T03:12:49.397-0400 I NETWORK  [conn1] end connection 127.0.0.1:48516 (3 connections now open)
-2018-04-13T03:12:49.399-0400 I NETWORK  [conn2] end connection 127.0.0.1:48517 (2 connections now open)
-2018-04-13T03:12:49.400-0400 I NETWORK  [conn3] end connection 127.0.0.1:48518 (1 connection now open)
-2018-04-13T03:12:49.413-0400 I NETWORK  [conn4] end connection 127.0.0.1:48519 (0 connections now open)
-2018-04-13T03:12:49.474-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
-2018-04-13T03:12:49.474-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] MongoDB starting : pid=6620 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] db version v3.2.16
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] modules: none
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] build environment:
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-04-13T03:12:58.777-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2018-04-13T03:12:58.806-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-04-13T03:12:58.806-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2018-04-13T03:12:59.084-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2018-04-13T03:12:59.084-0400 I CONTROL  [initandlisten] 
+2018-04-13T03:12:59.102-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2018-04-13T03:12:59.102-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-04-13T03:12:59.102-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2018-04-13T03:13:04.604-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48825 #1 (1 connection now open)
+2018-04-13T03:13:04.634-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48826 #2 (2 connections now open)
+2018-04-13T03:13:04.634-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48827 #3 (3 connections now open)
+2018-04-13T03:13:04.634-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48828 #4 (4 connections now open)
+2018-04-13T03:13:04.634-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48829 #5 (5 connections now open)
+2018-04-13T04:15:00.025-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:58178 #6 (6 connections now open)
+2018-04-13T04:15:00.469-0400 I NETWORK  [conn6] end connection 74.82.47.5:58178 (5 connections now open)
+2018-04-13T04:15:09.685-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:6128 #7 (6 connections now open)
+2018-04-13T04:15:09.824-0400 I NETWORK  [conn7] end connection 74.82.47.5:6128 (5 connections now open)
+2018-04-13T04:53:22.940-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.118:6666 #8 (6 connections now open)
+2018-04-13T04:53:25.792-0400 I NETWORK  [conn8] end connection 196.52.43.118:6666 (5 connections now open)
+2018-04-14T03:17:41.134-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2018-04-14T03:17:41.136-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2018-04-14T03:17:41.142-0400 I CONTROL  [signalProcessingThread] now exiting
+2018-04-14T03:17:41.142-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2018-04-14T03:17:41.143-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2018-04-14T03:17:41.143-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2018-04-14T03:17:41.143-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2018-04-14T03:17:41.143-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2018-04-14T03:17:41.143-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2018-04-14T03:17:41.145-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2018-04-14T03:17:41.157-0400 I NETWORK  [conn5] end connection 127.0.0.1:48829 (4 connections now open)
+2018-04-14T03:17:41.157-0400 I NETWORK  [conn2] end connection 127.0.0.1:48826 (3 connections now open)
+2018-04-14T03:17:41.157-0400 I NETWORK  [conn1] end connection 127.0.0.1:48825 (2 connections now open)
+2018-04-14T03:17:41.157-0400 I NETWORK  [conn4] end connection 127.0.0.1:48828 (1 connection now open)
+2018-04-14T03:17:41.162-0400 I NETWORK  [conn3] end connection 127.0.0.1:48827 (0 connections now open)
+2018-04-14T03:17:41.216-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2018-04-14T03:17:41.216-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
