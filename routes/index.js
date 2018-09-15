@@ -135,6 +135,22 @@ exports = module.exports = app => { // eslint-disable-line max-statements
     app.get('/api/check-store', checkStore);
     app.get('/api/get-all-links', getAllLinks);
     app.get('/api/check-all-links', checkAllLinks);
+    app.get('/api/get-product/:slug', (req, res) => {
+        const {params} = req;
+        const {slug} = params;
+
+        keystone
+            .list('Product')
+            .model
+            .findOne({slug})
+            .exec((err, product) => {
+                if (err || !product) {
+                    res.json({error: true});
+                    return;
+                }
+                res.json(product);
+            });
+    });
 
     // admin
     app.get('/admin/order/send-mail/:slug', (req, res) => {
