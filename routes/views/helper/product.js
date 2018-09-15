@@ -1,5 +1,7 @@
 const keystone = require('keystone');
 
+const {getFirstSetting} = require('./setting');
+
 function imageFilterCallback(image) {
     return Boolean(image && image.filename);
 }
@@ -8,7 +10,7 @@ function imageMapCallback(image) {
     return '/product/images/' + image.filename;
 }
 
-function normalizeProduct(product) {
+function normalizeProduct(product, setting) {
     const {
         _id,
         slug,
@@ -37,13 +39,15 @@ function normalizeProduct(product) {
             image5].filter(imageFilterCallback).map(imageMapCallback)
         );
 
+    const priceQ = price % 1 ? 2 : 1;
+
     return {
         _id: _id.toString(),
         slug,
         name,
         article,
         description,
-        price,
+        price: Math.round(price * setting.exchangeRate * priceQ) / priceQ,
         properties,
         promotable,
         images,
@@ -72,7 +76,13 @@ function getProductBy(query) {
                         return;
                     }
 
-                    resolve(normalizeProduct(product));
+                    getFirstSetting()
+                        .then(setting => {
+                            resolve(normalizeProduct(product, setting));
+                        })
+                        .catch(error => {
+                            reject(error);
+                        });
                 })
     );
 }
@@ -97,7 +107,13 @@ function getProductsBy(query) {
                         return;
                     }
 
-                    resolve(products.map(normalizeProduct));
+                    getFirstSetting()
+                        .then(setting => {
+                            resolve(products.map(product => normalizeProduct(product, setting)));
+                        })
+                        .catch(error => {
+                            reject(error);
+                        });
                 })
     );
 }
@@ -121,7 +137,20 @@ function getRandomProducts(count) {
                     }
                 }
             ]) // eslint-disable-line id-match
-            .exec((err, result) => err ? reject(err) : resolve(result.map(normalizeProduct)))
+            .exec((err, products) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                getFirstSetting()
+                    .then(setting => {
+                        resolve(products.map(product => normalizeProduct(product, setting)));
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            })
     );
 }
 
@@ -133,7 +162,20 @@ function getAllProducts() {
             .list('Product')
             .model
             .find()
-            .exec((err, products) => err ? reject(err) : resolve(products.map(normalizeProduct)))
+            .exec((err, products) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+
+                getFirstSetting()
+                    .then(setting => {
+                        resolve(products.map(product => normalizeProduct(product, setting)));
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            })
     );
 }
 

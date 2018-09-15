@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const {normalizeProduct} = require('./helper/product');
+const {getFirstSetting} = require('./helper/setting');
 
 function onInitView(view, next) {
     const {res, req} = view;
@@ -10,24 +11,29 @@ function onInitView(view, next) {
         .model
         .find({promotable: true})
         .sort({createdAt: -1})
-        .exec((err, results) => {
+        .exec((err, products) => {
             if (err) {
                 res.status(500);
                 res.render('errors/500');
                 return;
             }
 
-            if (results.length === 0) {
+            if (products.length === 0) {
                 res.status(404);
                 res.render('errors/404');
                 return;
             }
 
-            Object.assign(locals, {
-                products: results.map(normalizeProduct)
-            });
-
-            next(err);
+            getFirstSetting()
+                .then(setting => {
+                    Object.assign(locals, {
+                        products: products.map(product => normalizeProduct(product, setting))
+                    });
+                    next(err);
+                })
+                .catch(error => {
+                    next(error);
+                });
         });
 }
 
