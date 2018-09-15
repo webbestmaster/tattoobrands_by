@@ -65,7 +65,8 @@ keystone.set('nav', {
     Orders: 'Order',
     Categories: 'Category',
     Variants: 'Variant',
-    Users: 'User'
+    Users: 'User',
+    Settings: 'Setting'
 });
 
 // Start Keystone to connect to your database and initialise the web server
