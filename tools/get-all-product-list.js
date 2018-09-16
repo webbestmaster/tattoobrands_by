@@ -1,4 +1,5 @@
 const host = 'http://localhost:3000';
+// const host = 'http://tattoobrands.by';
 const http = require('http');
 const fs = require('fs');
 
@@ -27,21 +28,21 @@ async function getSlugList() {
 }
 
 async function getProductBySlug(slug) {
-    await new Promise(resolve => setTimeout(resolve, 1e3));
+    // await new Promise(resolve => setTimeout(resolve, 1e3));
 
     return JSON.parse(await request(host + '/api/get-product/' + slug));
 }
 
-async function writeAllProductListInFile() {
+async function getAllProductList() {
     const slugList = await getSlugList();
     const productList = [];
-    // const productListLength = slugList.length;
-    const productListLength = 10;
+    const slugListLength = slugList.length;
+    // const productListLength = 10;
     let ii = 0;
 
-    for (; ii < productListLength; ii += 1) {
+    for (; ii < slugListLength; ii += 1) {
         productList.push(await getProductBySlug(slugList[ii]));
-        console.log(productList.length + ' / ' + productListLength);
+        console.log(ii + ' / ' + slugListLength);
     }
 
     fs.writeFile('product-list.json', JSON.stringify(productList), err => {
@@ -53,4 +54,4 @@ async function writeAllProductListInFile() {
     });
 }
 
-writeAllProductListInFile();
+getAllProductList();
