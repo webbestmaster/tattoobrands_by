@@ -45,7 +45,7 @@ block content
                         b= product.article
 
                 form.add-to-order.clear-self.js-add-to-basket-form
-                    button.button.add-to-order__button(type="submit")
+                    button.button.add-to-order__button(type="submit" onclick="ga('send', 'event', 'dob_v_korz', 'click_dob_v_korz'); yaCounter52584814.reachGoal('dob_v_korz'); return true;")
                         span.hidden-for-tablet добавить&nbsp;
                         | в корзину
                     input.input.input--number.add-to-order__input-number.js-count(type="number" min="1" value="1" required)

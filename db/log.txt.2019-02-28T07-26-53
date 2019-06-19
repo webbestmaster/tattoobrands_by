@@ -1,0 +1,157 @@
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] MongoDB starting : pid=1642 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] db version v3.2.16
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] modules: none
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] build environment:
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-02-22T13:14:26.312-0500 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2019-02-22T13:14:26.336-0500 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-02-22T13:14:26.336-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2019-02-22T13:14:26.599-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2019-02-22T13:14:26.599-0500 I CONTROL  [initandlisten] 
+2019-02-22T13:14:26.614-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2019-02-22T13:14:26.614-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-02-22T13:14:26.614-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2019-02-22T13:14:30.731-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34942 #1 (1 connection now open)
+2019-02-22T13:14:30.768-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34943 #2 (2 connections now open)
+2019-02-22T13:14:30.768-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34944 #3 (3 connections now open)
+2019-02-22T13:14:30.768-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34945 #4 (4 connections now open)
+2019-02-22T13:14:30.768-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34946 #5 (5 connections now open)
+2019-02-22T20:16:10.515-0500 I NETWORK  [initandlisten] connection accepted from 191.96.110.57:62848 #6 (6 connections now open)
+2019-02-22T20:16:13.560-0500 I NETWORK  [conn6] end connection 191.96.110.57:62848 (5 connections now open)
+2019-02-22T22:37:02.965-0500 I NETWORK  [initandlisten] connection accepted from 125.64.94.208:48624 #7 (6 connections now open)
+2019-02-22T22:37:02.966-0500 I NETWORK  [conn7] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-02-22T22:53:55.069-0500 I NETWORK  [initandlisten] connection accepted from 218.75.37.18:28110 #8 (6 connections now open)
+2019-02-22T22:58:28.674-0500 I NETWORK  [initandlisten] connection accepted from 115.238.44.234:37626 #9 (7 connections now open)
+2019-02-22T22:58:29.533-0500 I NETWORK  [conn9] end connection 115.238.44.234:37626 (6 connections now open)
+2019-02-22T23:10:12.713-0500 I NETWORK  [conn8] end connection 218.75.37.18:28110 (5 connections now open)
+2019-02-23T04:59:23.315-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:14652 #10 (6 connections now open)
+2019-02-23T04:59:23.547-0500 I NETWORK  [conn10] end connection 74.82.47.5:14652 (5 connections now open)
+2019-02-23T04:59:36.442-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:29154 #11 (6 connections now open)
+2019-02-23T04:59:36.580-0500 I NETWORK  [conn11] end connection 74.82.47.5:29154 (5 connections now open)
+2019-02-23T06:27:41.428-0500 I NETWORK  [initandlisten] connection accepted from 144.217.65.16:51661 #12 (6 connections now open)
+2019-02-23T06:27:41.429-0500 I NETWORK  [conn12] end connection 144.217.65.16:51661 (5 connections now open)
+2019-02-23T15:20:33.240-0500 I NETWORK  [initandlisten] connection accepted from 125.64.94.208:32922 #13 (6 connections now open)
+2019-02-23T15:20:33.255-0500 I NETWORK  [conn13] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-02-23T15:24:21.737-0500 I NETWORK  [initandlisten] connection accepted from 104.131.145.112:54184 #14 (6 connections now open)
+2019-02-23T15:24:31.595-0500 I NETWORK  [conn14] end connection 104.131.145.112:54184 (5 connections now open)
+2019-02-23T18:10:53.842-0500 I NETWORK  [initandlisten] connection accepted from 104.131.145.123:56872 #15 (6 connections now open)
+2019-02-23T18:11:03.701-0500 I NETWORK  [conn15] end connection 104.131.145.123:56872 (5 connections now open)
+2019-02-23T20:13:53.382-0500 I NETWORK  [initandlisten] connection accepted from 103.86.98.10:52735 #16 (6 connections now open)
+2019-02-23T20:13:55.158-0500 I NETWORK  [initandlisten] connection accepted from 103.86.98.10:52978 #17 (7 connections now open)
+2019-02-23T20:14:19.428-0500 I NETWORK  [conn17] end connection 103.86.98.10:52978 (6 connections now open)
+2019-02-23T20:14:19.434-0500 I NETWORK  [conn16] end connection 103.86.98.10:52735 (5 connections now open)
+2019-02-24T03:14:27.924-0500 I NETWORK  [initandlisten] connection accepted from 104.152.52.24:56228 #18 (6 connections now open)
+2019-02-24T03:14:58.914-0500 I NETWORK  [conn18] end connection 104.152.52.24:56228 (5 connections now open)
+2019-02-24T04:54:56.274-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:22486 #19 (6 connections now open)
+2019-02-24T04:54:56.453-0500 I NETWORK  [conn19] end connection 74.82.47.4:22486 (5 connections now open)
+2019-02-24T04:55:08.367-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:28562 #20 (6 connections now open)
+2019-02-24T04:55:08.506-0500 I NETWORK  [conn20] end connection 74.82.47.4:28562 (5 connections now open)
+2019-02-24T07:54:00.131-0500 I NETWORK  [initandlisten] connection accepted from 51.255.71.7:47968 #21 (6 connections now open)
+2019-02-24T07:54:00.149-0500 I NETWORK  [initandlisten] connection accepted from 51.255.71.7:47970 #22 (7 connections now open)
+2019-02-24T07:54:00.493-0500 I NETWORK  [conn21] end connection 51.255.71.7:47968 (6 connections now open)
+2019-02-24T07:54:00.493-0500 I NETWORK  [conn22] end connection 51.255.71.7:47970 (5 connections now open)
+2019-02-24T08:06:24.303-0500 I NETWORK  [initandlisten] connection accepted from 125.64.94.208:44354 #23 (6 connections now open)
+2019-02-24T08:06:24.305-0500 I NETWORK  [conn23] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-02-24T09:20:35.975-0500 I NETWORK  [initandlisten] connection accepted from 72.250.137.62:3495 #24 (6 connections now open)
+2019-02-24T09:20:35.978-0500 I -        [conn24] Assertion: 10304:Client Error: Remaining data too small for BSON object
+2019-02-24T09:20:35.999-0500 I CONTROL  [conn24] 
+ 0x1556b32 0x14ee2a4 0x14d3836 0xc8fa91 0xa526ed 0xdb3de2 0xdb7396 0x9c65c0 0x14fcb51 0x7f385cb5c184 0x7f385c888ffd
+----- BEGIN BACKTRACE -----
+{"backtrace":[{"b":"400000","o":"1156B32","s":"_ZN5mongo15printStackTraceERSo"},{"b":"400000","o":"10EE2A4","s":"_ZN5mongo10logContextEPKc"},{"b":"400000","o":"10D3836","s":"_ZN5mongo11msgassertedEiPKc"},{"b":"400000","o":"88FA91","s":"_ZN5mongo9DbMessage9nextJsObjEv"},{"b":"400000","o":"6526ED","s":"_ZN5mongo12QueryMessageC2ERNS_9DbMessageE"},{"b":"400000","o":"9B3DE2"},{"b":"400000","o":"9B7396","s":"_ZN5mongo16assembleResponseEPNS_16OperationContextERNS_7MessageERNS_10DbResponseERKNS_11HostAndPortE"},{"b":"400000","o":"5C65C0"},{"b":"400000","o":"10FCB51","s":"_ZN5mongo17PortMessageServer17handleIncomingMsgEPv"},{"b":"7F385CB54000","o":"8184"},{"b":"7F385C78B000","o":"FDFFD","s":"clone"}],"processInfo":{ "mongodbVersion" : "3.2.16", "gitVersion" : "056bf45128114e44c5358c7a8776fb582363e094", "compiledModules" : [], "uname" : { "sysname" : "Linux", "release" : "3.13.0-52-generic", "version" : "#85-Ubuntu SMP Wed Apr 29 16:44:17 UTC 2015", "machine" : "x86_64" }, "somap" : [ { "elfType" : 2, "b" : "400000", "buildId" : "B4C77D1B42936B23E28A2739927CB25274DB2D96" }, { "b" : "7FFFEECA5000", "elfType" : 3, "buildId" : "F8E01F1BCB9F27FF04FC2B8C9454AD8EACB7B37C" }, { "b" : "7F385DA75000", "path" : "/lib/x86_64-linux-gnu/libssl.so.1.0.0", "elfType" : 3, "buildId" : "FF43D0947510134A8A494063A3C1CF3CEBB27791" }, { "b" : "7F385D69A000", "path" : "/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "elfType" : 3, "buildId" : "B927879B878D90DD9FF4B15B00E7799AA8E0272F" }, { "b" : "7F385D492000", "path" : "/lib/x86_64-linux-gnu/librt.so.1", "elfType" : 3, "buildId" : "AC72654C6338205F30190061C0D781CB0039B793" }, { "b" : "7F385D28E000", "path" : "/lib/x86_64-linux-gnu/libdl.so.2", "elfType" : 3, "buildId" : "EED41ABB999C74882F001C53979CC820ED15BA82" }, { "b" : "7F385CF88000", "path" : "/lib/x86_64-linux-gnu/libm.so.6", "elfType" : 3, "buildId" : "8F0318B9CC6FD523C2587A15C5447ABBB8CD813D" }, { "b" : "7F385CD72000", "path" : "/lib/x86_64-linux-gnu/libgcc_s.so.1", "elfType" : 3, "buildId" : "8D0AA71411580EE6C08809695C3984769F25725B" }, { "b" : "7F385CB54000", "path" : "/lib/x86_64-linux-gnu/libpthread.so.0", "elfType" : 3, "buildId" : "F48E96A1F4A549776CA4167095AD7527720D4B0E" }, { "b" : "7F385C78B000", "path" : "/lib/x86_64-linux-gnu/libc.so.6", "elfType" : 3, "buildId" : "3217CA3A53A930C7BB1E5C83789D09B30B0F3B39" }, { "b" : "7F385DCD3000", "path" : "/lib64/ld-linux-x86-64.so.2", "elfType" : 3, "buildId" : "37AFDBB933B8409476E845DF5FB11BC77CBCEEE6" } ] }}
+ mongod(_ZN5mongo15printStackTraceERSo+0x32) [0x1556b32]
+ mongod(_ZN5mongo10logContextEPKc+0x174) [0x14ee2a4]
+ mongod(_ZN5mongo11msgassertedEiPKc+0xB6) [0x14d3836]
+ mongod(_ZN5mongo9DbMessage9nextJsObjEv+0x111) [0xc8fa91]
+ mongod(_ZN5mongo12QueryMessageC2ERNS_9DbMessageE+0x5D) [0xa526ed]
+ mongod(+0x9B3DE2) [0xdb3de2]
+ mongod(_ZN5mongo16assembleResponseEPNS_16OperationContextERNS_7MessageERNS_10DbResponseERKNS_11HostAndPortE+0x7D6) [0xdb7396]
+ mongod(+0x5C65C0) [0x9c65c0]
+ mongod(_ZN5mongo17PortMessageServer17handleIncomingMsgEPv+0x311) [0x14fcb51]
+ libpthread.so.0(+0x8184) [0x7f385cb5c184]
+ libc.so.6(clone+0x6D) [0x7f385c888ffd]
+-----  END BACKTRACE  -----
+2019-02-24T09:20:36.000-0500 I NETWORK  [conn24] AssertionException handling request, closing client connection: 10304 Client Error: Remaining data too small for BSON object
+2019-02-24T15:41:00.708-0500 I NETWORK  [initandlisten] connection accepted from 104.131.145.116:39908 #25 (6 connections now open)
+2019-02-24T15:41:10.574-0500 I NETWORK  [conn25] end connection 104.131.145.116:39908 (5 connections now open)
+2019-02-25T05:00:08.405-0500 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:64414 #26 (6 connections now open)
+2019-02-25T05:00:08.629-0500 I NETWORK  [conn26] end connection 184.105.247.194:64414 (5 connections now open)
+2019-02-25T05:00:21.022-0500 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:14550 #27 (6 connections now open)
+2019-02-25T05:00:21.159-0500 I NETWORK  [conn27] end connection 184.105.247.194:14550 (5 connections now open)
+2019-02-25T08:46:54.182-0500 I NETWORK  [initandlisten] connection accepted from 80.82.77.33:33990 #28 (6 connections now open)
+2019-02-25T08:46:54.240-0500 I NETWORK  [conn28] end connection 80.82.77.33:33990 (5 connections now open)
+2019-02-25T23:23:15.039-0500 I NETWORK  [initandlisten] connection accepted from 191.101.128.13:61260 #29 (6 connections now open)
+2019-02-25T23:23:18.065-0500 I NETWORK  [conn29] end connection 191.101.128.13:61260 (5 connections now open)
+2019-02-26T04:49:55.548-0500 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:15846 #30 (6 connections now open)
+2019-02-26T04:49:55.721-0500 I NETWORK  [conn30] end connection 216.218.206.66:15846 (5 connections now open)
+2019-02-26T04:50:10.488-0500 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:27324 #31 (6 connections now open)
+2019-02-26T04:50:10.625-0500 I NETWORK  [conn31] end connection 216.218.206.66:27324 (5 connections now open)
+2019-02-26T05:57:15.487-0500 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:49190 #32 (6 connections now open)
+2019-02-26T05:57:15.878-0500 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:49914 #33 (7 connections now open)
+2019-02-26T05:57:26.044-0500 I NETWORK  [conn32] end connection 106.75.3.52:49190 (6 connections now open)
+2019-02-26T05:57:26.205-0500 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:44956 #34 (7 connections now open)
+2019-02-26T05:57:26.206-0500 I NETWORK  [conn34] end connection 106.75.3.52:44956 (6 connections now open)
+2019-02-26T05:57:26.317-0500 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:44954 #35 (7 connections now open)
+2019-02-26T06:13:26.377-0500 I NETWORK  [conn33] end connection 106.75.3.52:49914 (6 connections now open)
+2019-02-26T06:14:17.067-0500 I NETWORK  [conn35] end connection 106.75.3.52:44954 (5 connections now open)
+2019-02-26T18:13:44.796-0500 I NETWORK  [initandlisten] connection accepted from 104.131.144.240:34116 #36 (6 connections now open)
+2019-02-26T18:13:54.653-0500 I NETWORK  [conn36] end connection 104.131.144.240:34116 (5 connections now open)
+2019-02-26T21:15:13.097-0500 I NETWORK  [initandlisten] connection accepted from 180.163.220.95:41896 #37 (6 connections now open)
+2019-02-26T21:15:13.750-0500 I NETWORK  [initandlisten] connection accepted from 180.163.220.47:18754 #38 (7 connections now open)
+2019-02-26T21:15:15.651-0500 I NETWORK  [conn37] end connection 180.163.220.95:41896 (6 connections now open)
+2019-02-26T21:15:15.730-0500 I NETWORK  [conn38] end connection 180.163.220.47:18754 (5 connections now open)
+2019-02-27T05:12:58.167-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:8712 #39 (6 connections now open)
+2019-02-27T05:12:58.308-0500 I NETWORK  [conn39] end connection 74.82.47.5:8712 (5 connections now open)
+2019-02-27T05:13:11.129-0500 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:12714 #40 (6 connections now open)
+2019-02-27T05:13:11.267-0500 I NETWORK  [conn40] end connection 74.82.47.5:12714 (5 connections now open)
+2019-02-27T09:01:37.681-0500 I NETWORK  [initandlisten] connection accepted from 93.174.93.12:54544 #41 (6 connections now open)
+2019-02-27T09:01:38.605-0500 I NETWORK  [initandlisten] connection accepted from 93.174.93.12:54925 #42 (7 connections now open)
+2019-02-27T09:01:38.682-0500 I NETWORK  [conn41] end connection 93.174.93.12:54544 (6 connections now open)
+2019-02-27T09:01:38.682-0500 I NETWORK  [conn42] end connection 93.174.93.12:54925 (5 connections now open)
+2019-02-27T15:44:28.402-0500 I NETWORK  [initandlisten] connection accepted from 162.243.132.123:37310 #43 (6 connections now open)
+2019-02-27T15:44:38.259-0500 I NETWORK  [conn43] end connection 162.243.132.123:37310 (5 connections now open)
+2019-02-27T20:16:29.969-0500 I NETWORK  [initandlisten] connection accepted from 185.100.87.247:43256 #44 (6 connections now open)
+2019-02-27T20:16:36.008-0500 I NETWORK  [conn44] end connection 185.100.87.247:43256 (5 connections now open)
+2019-02-27T20:18:34.000-0500 I NETWORK  [initandlisten] connection accepted from 185.100.87.247:45570 #45 (6 connections now open)
+2019-02-27T20:18:34.323-0500 I NETWORK  [conn45] end connection 185.100.87.247:45570 (5 connections now open)
+2019-02-28T01:35:56.423-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:35388 #46 (6 connections now open)
+2019-02-28T01:35:56.427-0500 I NETWORK  [conn46] end connection 124.169.153.94:35388 (5 connections now open)
+2019-02-28T01:35:57.071-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:35626 #47 (6 connections now open)
+2019-02-28T01:35:57.741-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:35864 #48 (7 connections now open)
+2019-02-28T01:35:59.043-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36292 #49 (8 connections now open)
+2019-02-28T01:35:59.043-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36286 #50 (9 connections now open)
+2019-02-28T01:35:59.043-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36290 #51 (10 connections now open)
+2019-02-28T01:35:59.043-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36296 #52 (11 connections now open)
+2019-02-28T01:35:59.045-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36294 #53 (12 connections now open)
+2019-02-28T01:35:59.067-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36288 #54 (13 connections now open)
+2019-02-28T01:35:59.067-0500 I NETWORK  [initandlisten] connection accepted from 124.169.153.94:36298 #55 (14 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn53] end connection 124.169.153.94:36294 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn54] end connection 124.169.153.94:36288 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn49] end connection 124.169.153.94:36292 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn50] end connection 124.169.153.94:36286 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn51] end connection 124.169.153.94:36290 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn52] end connection 124.169.153.94:36296 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn48] end connection 124.169.153.94:35864 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn55] end connection 124.169.153.94:36298 (13 connections now open)
+2019-02-28T01:36:01.528-0500 I NETWORK  [conn47] end connection 124.169.153.94:35626 (13 connections now open)
+2019-02-28T02:26:46.298-0500 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2019-02-28T02:26:46.298-0500 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-02-28T02:26:46.302-0500 I CONTROL  [signalProcessingThread] now exiting
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-02-28T02:26:46.302-0500 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-02-28T02:26:46.302-0500 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-02-28T02:26:46.302-0500 I NETWORK  [conn2] end connection 127.0.0.1:34943 (4 connections now open)
+2019-02-28T02:26:46.302-0500 I NETWORK  [conn1] end connection 127.0.0.1:34942 (4 connections now open)
+2019-02-28T02:26:46.303-0500 I NETWORK  [conn4] end connection 127.0.0.1:34945 (4 connections now open)
+2019-02-28T02:26:46.303-0500 I NETWORK  [conn3] end connection 127.0.0.1:34944 (4 connections now open)
+2019-02-28T02:26:46.303-0500 I NETWORK  [conn5] end connection 127.0.0.1:34946 (4 connections now open)
+2019-02-28T02:26:46.418-0500 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-02-28T02:26:46.418-0500 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

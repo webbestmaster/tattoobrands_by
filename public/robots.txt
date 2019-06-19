@@ -1,26 +1,12 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
-
-# add site map in future
-Sitemap: http://tattoobrands.by/sitemap.xml
-
-# Host: tattoobrands.by
-
 User-agent: *
-# /product/:slug
-# /product-id/:id
 Disallow: /authorization
 Disallow: /cart
 Disallow: /order
-# /category
-# /category/:slug
 Disallow: /search
 Disallow: /account
 Disallow: /api
-# /products # for support old products
 Disallow: /add-product
 Disallow: /remove-product
-Disallow: /admin
+Sitemap: http://tattoobrands.by/sitemap.xml
+
+Host: http://tattoobrands.by

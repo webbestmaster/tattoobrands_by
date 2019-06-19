@@ -3,3 +3,43 @@ noscript
 
 script
     != "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5D64BG');"
+
+script.
+    var phone = document.getElementsByClassName('ga_ym_t');
+    var mail = document.getElementsByClassName('ga_ym_m');
+    console.log(mail);
+    for (i=0; i< phone.length; i++){
+        phone[i].onclick = function(e) {
+            ga('send', 'event', 'tel-info', 'ClickTel');
+            yaCounter52584814.reachGoal('ClickTelYM');
+            return true;
+        };
+        phone[i].oncopy = function(e) {
+            ga('send', 'event', 'tel-info', 'CopyTel');
+            yaCounter52584814.reachGoal('CopyTelYM');
+            return true;
+        };
+        phone[i].oncontextmenu = function(e) {
+            ga('send', 'event', 'tel-info', 'RightTel');
+            yaCounter52584814.reachGoal('RightClickTelYM');
+            return true;
+        }
+    }
+    for (i=0; i< mail.length; i++){
+        mail[i].click = function(e) {
+            ga('send', 'event', 'mail-info', 'ClickMail');
+            yaCounter52584814.reachGoal('ClickMailYM');;
+            return true;
+        };
+        mail[i].oncopy = function(e) {
+            ga('send', 'event', 'mail-info', 'CopyMail');
+            yaCounter52584814.reachGoal('CopyMailYM');
+            return true;
+        };
+        mail[i].oncontextmenu = function(e) {
+            ga('send', 'event', 'mail-info', 'RightMail');
+            yaCounter52584814.reachGoal('RightClickMailYM');
+            return true;
+        }
+    } 
+    

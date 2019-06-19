@@ -48,6 +48,10 @@ Category.add({
     // description
     seoDescription: {type: Types.Html, wysiwyg: true, height: 300},
 
+    // meta
+    title: { type: String},
+    description: { type: String},
+
     // date of create product
     createdAt: {type: Date, 'default': Date.now}
 });

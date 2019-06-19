@@ -1,40 +1,191 @@
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] MongoDB starting : pid=865 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] db version v3.2.16
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] allocator: tcmalloc
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] modules: none
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] build environment:
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten]     distmod: ubuntu1604
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten]     distarch: x86_64
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten]     target_arch: x86_64
-2019-02-22T13:04:49.457-0500 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
-2019-02-22T13:04:49.481-0500 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2019-02-22T13:04:49.481-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2019-02-22T13:04:49.786-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
-2019-02-22T13:04:49.786-0500 I CONTROL  [initandlisten] 
-2019-02-22T13:04:49.804-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
-2019-02-22T13:04:49.804-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
-2019-02-22T13:04:49.804-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
-2019-02-22T13:04:55.166-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34921 #1 (1 connection now open)
-2019-02-22T13:04:55.202-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34922 #2 (2 connections now open)
-2019-02-22T13:04:55.202-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34923 #3 (3 connections now open)
-2019-02-22T13:04:55.202-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34924 #4 (4 connections now open)
-2019-02-22T13:04:55.202-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34925 #5 (5 connections now open)
-2019-02-22T13:05:55.200-0500 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
-2019-02-22T13:05:55.200-0500 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
-2019-02-22T13:05:55.202-0500 I CONTROL  [signalProcessingThread] now exiting
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] closing listening socket: 6
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] closing listening socket: 7
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
-2019-02-22T13:05:55.202-0500 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
-2019-02-22T13:05:55.205-0500 I STORAGE  [conn5] got request after shutdown()
-2019-02-22T13:05:55.207-0500 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
-2019-02-22T13:05:55.215-0500 I NETWORK  [conn4] end connection 127.0.0.1:34924 (3 connections now open)
-2019-02-22T13:05:55.215-0500 I NETWORK  [conn1] end connection 127.0.0.1:34921 (2 connections now open)
-2019-02-22T13:05:55.215-0500 I NETWORK  [conn2] end connection 127.0.0.1:34922 (1 connection now open)
-2019-02-22T13:05:55.215-0500 I NETWORK  [conn3] end connection 127.0.0.1:34923 (0 connections now open)
-2019-02-22T13:05:55.228-0500 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
-2019-02-22T13:05:55.229-0500 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] MongoDB starting : pid=1273 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] db version v3.2.16
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] modules: none
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] build environment:
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-06-11T03:32:28.073-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2019-06-11T03:32:28.097-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-06-11T03:32:28.098-0400 W -        [initandlisten] Detected unclean shutdown - /home/deploy/apps/tattoobrands_by/./db/data/mongod.lock is not empty.
+2019-06-11T03:32:28.098-0400 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2019-06-11T03:32:28.098-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2019-06-11T03:32:28.421-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2019-06-11T03:32:28.421-0400 I CONTROL  [initandlisten] 
+2019-06-11T03:32:28.444-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2019-06-11T03:32:28.444-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-06-11T03:32:28.444-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2019-06-11T03:32:29.013-0400 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2019-06-11T03:32:33.431-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53387 #1 (1 connection now open)
+2019-06-11T03:32:33.466-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53388 #2 (2 connections now open)
+2019-06-11T03:32:33.467-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53389 #3 (3 connections now open)
+2019-06-11T03:32:33.467-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53390 #4 (4 connections now open)
+2019-06-11T03:32:33.467-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53391 #5 (5 connections now open)
+2019-06-11T05:50:24.253-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:63164 #6 (6 connections now open)
+2019-06-11T05:50:24.442-0400 I NETWORK  [conn6] end connection 216.218.206.68:63164 (5 connections now open)
+2019-06-11T05:50:31.679-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:5614 #7 (6 connections now open)
+2019-06-11T05:50:31.820-0400 I NETWORK  [conn7] end connection 216.218.206.68:5614 (5 connections now open)
+2019-06-11T06:43:48.444-0400 I NETWORK  [initandlisten] connection accepted from 157.230.252.128:33848 #8 (6 connections now open)
+2019-06-11T06:43:48.801-0400 I NETWORK  [initandlisten] connection accepted from 157.230.252.128:33858 #9 (7 connections now open)
+2019-06-11T06:43:55.726-0400 I NETWORK  [conn8] end connection 157.230.252.128:33848 (6 connections now open)
+2019-06-11T06:43:55.727-0400 I NETWORK  [conn9] end connection 157.230.252.128:33858 (6 connections now open)
+2019-06-11T14:42:00.888-0400 I NETWORK  [initandlisten] connection accepted from 104.152.52.21:57965 #10 (6 connections now open)
+2019-06-11T14:42:31.887-0400 I NETWORK  [conn10] end connection 104.152.52.21:57965 (5 connections now open)
+2019-06-11T16:31:15.258-0400 I NETWORK  [initandlisten] connection accepted from 92.118.160.29:53155 #11 (6 connections now open)
+2019-06-11T16:31:18.492-0400 I NETWORK  [conn11] end connection 92.118.160.29:53155 (5 connections now open)
+2019-06-11T16:53:51.176-0400 I NETWORK  [initandlisten] connection accepted from 107.170.238.62:42388 #12 (6 connections now open)
+2019-06-11T16:54:01.034-0400 I NETWORK  [conn12] end connection 107.170.238.62:42388 (5 connections now open)
+2019-06-12T03:35:12.771-0400 I NETWORK  [initandlisten] connection accepted from 93.100.61.228:5335 #13 (6 connections now open)
+2019-06-12T03:35:13.034-0400 I NETWORK  [initandlisten] connection accepted from 93.100.61.228:5336 #14 (7 connections now open)
+2019-06-12T03:35:13.545-0400 I COMMAND  [conn14] command tattoo-brands.orders command: find { find: "orders", filter: { $or: [ { slug: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { phone: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { country: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { region: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { town: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { address: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { postcode: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { additional: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { basketItems: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { sendEmail: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { state: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.firstName: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.lastName: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.email: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { name: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { link: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g } ] } } planSummary: COLLSCAN keysExamined:0 docsExamined:829 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:8 nreturned:0 reslen:126 locks:{ Global: { acquireCount: { r: 18 } }, Database: { acquireCount: { r: 9 } }, Collection: { acquireCount: { r: 9 } } } protocol:op_query 165ms
+2019-06-12T03:35:13.843-0400 I NETWORK  [conn13] end connection 93.100.61.228:5335 (6 connections now open)
+2019-06-12T03:35:13.844-0400 I NETWORK  [conn14] end connection 93.100.61.228:5336 (5 connections now open)
+2019-06-12T12:41:02.611-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:27808 #15 (6 connections now open)
+2019-06-12T12:41:02.772-0400 I NETWORK  [conn15] end connection 216.218.206.68:27808 (5 connections now open)
+2019-06-12T12:41:12.243-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:52302 #16 (6 connections now open)
+2019-06-12T12:41:12.388-0400 I NETWORK  [conn16] end connection 216.218.206.68:52302 (5 connections now open)
+2019-06-12T16:52:35.287-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:58984 #17 (6 connections now open)
+2019-06-12T16:52:35.600-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:58990 #18 (7 connections now open)
+2019-06-12T16:52:36.823-0400 I COMMAND  [conn18] command tattoo-brands command: eval { $eval: db.getCollection('users').stats(), args: [] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:5746 locks:{ Global: { acquireCount: { r: 5, W: 1 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_query 110ms
+2019-06-12T16:52:42.406-0400 I NETWORK  [conn17] end connection 134.209.104.48:58984 (6 connections now open)
+2019-06-12T16:52:42.406-0400 I NETWORK  [conn18] end connection 134.209.104.48:58990 (6 connections now open)
+2019-06-13T01:50:29.655-0400 I NETWORK  [initandlisten] connection accepted from 107.170.238.214:35382 #19 (6 connections now open)
+2019-06-13T01:50:39.513-0400 I NETWORK  [conn19] end connection 107.170.238.214:35382 (5 connections now open)
+2019-06-13T06:24:48.798-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:49894 #20 (6 connections now open)
+2019-06-13T06:24:49.006-0400 I NETWORK  [conn20] end connection 184.105.139.68:49894 (5 connections now open)
+2019-06-13T06:25:00.320-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:29456 #21 (6 connections now open)
+2019-06-13T06:25:00.459-0400 I NETWORK  [conn21] end connection 184.105.139.68:29456 (5 connections now open)
+2019-06-14T05:33:35.000-0400 I NETWORK  [initandlisten] connection accepted from 198.108.66.240:44830 #22 (6 connections now open)
+2019-06-14T05:33:35.211-0400 I NETWORK  [conn22] end connection 198.108.66.240:44830 (5 connections now open)
+2019-06-14T06:54:18.041-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:7468 #23 (6 connections now open)
+2019-06-14T06:54:18.268-0400 I NETWORK  [conn23] end connection 216.218.206.66:7468 (5 connections now open)
+2019-06-14T06:54:28.747-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:39166 #24 (6 connections now open)
+2019-06-14T06:54:28.888-0400 I NETWORK  [conn24] end connection 216.218.206.66:39166 (5 connections now open)
+2019-06-14T16:53:32.508-0400 I NETWORK  [initandlisten] connection accepted from 107.170.196.63:54608 #25 (6 connections now open)
+2019-06-14T16:53:42.381-0400 I NETWORK  [conn25] end connection 107.170.196.63:54608 (5 connections now open)
+2019-06-14T16:57:37.524-0400 I NETWORK  [initandlisten] connection accepted from 94.102.49.65:36718 #26 (6 connections now open)
+2019-06-14T16:57:37.525-0400 I NETWORK  [conn26] end connection 94.102.49.65:36718 (5 connections now open)
+2019-06-14T16:57:40.766-0400 I NETWORK  [initandlisten] connection accepted from 94.102.49.65:38358 #27 (6 connections now open)
+2019-06-14T16:57:40.929-0400 I NETWORK  [conn27] end connection 94.102.49.65:38358 (5 connections now open)
+2019-06-14T17:20:01.154-0400 I NETWORK  [initandlisten] connection accepted from 107.170.200.60:35812 #28 (6 connections now open)
+2019-06-14T17:20:11.013-0400 I NETWORK  [conn28] end connection 107.170.200.60:35812 (5 connections now open)
+2019-06-14T18:43:07.511-0400 I NETWORK  [initandlisten] connection accepted from 185.173.35.17:51421 #29 (6 connections now open)
+2019-06-14T18:43:11.233-0400 I NETWORK  [conn29] end connection 185.173.35.17:51421 (5 connections now open)
+2019-06-15T15:29:45.305-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:46086 #30 (6 connections now open)
+2019-06-15T15:29:45.654-0400 I NETWORK  [conn30] end connection 184.105.247.196:46086 (5 connections now open)
+2019-06-15T15:29:54.592-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:8646 #31 (6 connections now open)
+2019-06-15T15:29:54.733-0400 I NETWORK  [conn31] end connection 184.105.247.196:8646 (5 connections now open)
+2019-06-16T04:46:29.247-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46906 #32 (6 connections now open)
+2019-06-16T04:46:29.302-0400 I NETWORK  [conn32] end connection 46.101.236.114:46906 (5 connections now open)
+2019-06-16T04:46:29.406-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46908 #33 (6 connections now open)
+2019-06-16T04:46:29.428-0400 I NETWORK  [conn33] end connection 46.101.236.114:46908 (5 connections now open)
+2019-06-16T04:46:29.526-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46910 #34 (6 connections now open)
+2019-06-16T04:46:29.558-0400 I NETWORK  [conn34] end connection 46.101.236.114:46910 (5 connections now open)
+2019-06-16T04:46:29.663-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46912 #35 (6 connections now open)
+2019-06-16T04:46:29.720-0400 I NETWORK  [conn35] end connection 46.101.236.114:46912 (5 connections now open)
+2019-06-16T04:46:29.800-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46918 #36 (6 connections now open)
+2019-06-16T04:46:29.822-0400 I NETWORK  [conn36] end connection 46.101.236.114:46918 (5 connections now open)
+2019-06-16T04:46:29.911-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46920 #37 (6 connections now open)
+2019-06-16T04:46:29.964-0400 I NETWORK  [conn37] end connection 46.101.236.114:46920 (5 connections now open)
+2019-06-16T04:46:30.044-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46922 #38 (6 connections now open)
+2019-06-16T04:46:30.092-0400 I NETWORK  [conn38] end connection 46.101.236.114:46922 (5 connections now open)
+2019-06-16T04:46:30.191-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46924 #39 (6 connections now open)
+2019-06-16T04:46:30.245-0400 I NETWORK  [conn39] end connection 46.101.236.114:46924 (5 connections now open)
+2019-06-16T04:46:30.352-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46928 #40 (6 connections now open)
+2019-06-16T04:46:30.428-0400 I NETWORK  [conn40] end connection 46.101.236.114:46928 (5 connections now open)
+2019-06-16T04:46:30.517-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46932 #41 (6 connections now open)
+2019-06-16T04:46:30.571-0400 I NETWORK  [conn41] end connection 46.101.236.114:46932 (5 connections now open)
+2019-06-16T04:46:30.666-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46934 #42 (6 connections now open)
+2019-06-16T04:46:30.744-0400 I NETWORK  [conn42] end connection 46.101.236.114:46934 (5 connections now open)
+2019-06-16T04:46:30.853-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46938 #43 (6 connections now open)
+2019-06-16T04:46:30.909-0400 I NETWORK  [conn43] end connection 46.101.236.114:46938 (5 connections now open)
+2019-06-16T04:46:30.988-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46940 #44 (6 connections now open)
+2019-06-16T04:46:31.032-0400 I NETWORK  [conn44] end connection 46.101.236.114:46940 (5 connections now open)
+2019-06-16T04:46:31.130-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46944 #45 (6 connections now open)
+2019-06-16T04:46:31.189-0400 I NETWORK  [conn45] end connection 46.101.236.114:46944 (5 connections now open)
+2019-06-16T04:46:31.299-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46948 #46 (6 connections now open)
+2019-06-16T04:46:31.403-0400 I NETWORK  [conn46] end connection 46.101.236.114:46948 (5 connections now open)
+2019-06-16T04:46:31.496-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46950 #47 (6 connections now open)
+2019-06-16T04:46:31.549-0400 I NETWORK  [conn47] end connection 46.101.236.114:46950 (5 connections now open)
+2019-06-16T04:46:31.638-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46954 #48 (6 connections now open)
+2019-06-16T04:46:31.714-0400 I NETWORK  [conn48] end connection 46.101.236.114:46954 (5 connections now open)
+2019-06-16T04:46:31.807-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46956 #49 (6 connections now open)
+2019-06-16T04:46:31.885-0400 I NETWORK  [conn49] end connection 46.101.236.114:46956 (5 connections now open)
+2019-06-16T04:46:31.979-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46960 #50 (6 connections now open)
+2019-06-16T04:46:32.084-0400 I NETWORK  [conn50] end connection 46.101.236.114:46960 (5 connections now open)
+2019-06-16T04:46:32.184-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46964 #51 (6 connections now open)
+2019-06-16T04:46:32.263-0400 I NETWORK  [conn51] end connection 46.101.236.114:46964 (5 connections now open)
+2019-06-16T04:46:32.365-0400 I NETWORK  [initandlisten] connection accepted from 46.101.236.114:46966 #52 (6 connections now open)
+2019-06-16T04:46:32.412-0400 I NETWORK  [conn52] end connection 46.101.236.114:46966 (5 connections now open)
+2019-06-16T05:22:37.236-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.67:55056 #53 (6 connections now open)
+2019-06-16T05:22:37.373-0400 I NETWORK  [conn53] end connection 216.218.206.67:55056 (5 connections now open)
+2019-06-16T05:22:44.673-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.67:60098 #54 (6 connections now open)
+2019-06-16T05:22:44.811-0400 I NETWORK  [conn54] end connection 216.218.206.67:60098 (5 connections now open)
+2019-06-17T00:40:14.642-0400 I NETWORK  [initandlisten] connection accepted from 107.170.198.245:57850 #55 (6 connections now open)
+2019-06-17T00:40:24.506-0400 I NETWORK  [conn55] end connection 107.170.198.245:57850 (5 connections now open)
+2019-06-17T07:32:37.327-0400 I NETWORK  [initandlisten] connection accepted from 34.76.120.31:57902 #56 (6 connections now open)
+2019-06-17T07:32:37.363-0400 I NETWORK  [conn56] end connection 34.76.120.31:57902 (5 connections now open)
+2019-06-17T08:07:33.106-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:41040 #57 (6 connections now open)
+2019-06-17T08:07:33.353-0400 I NETWORK  [conn57] end connection 216.218.206.66:41040 (5 connections now open)
+2019-06-17T08:07:40.825-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:52194 #58 (6 connections now open)
+2019-06-17T08:07:40.965-0400 I NETWORK  [conn58] end connection 216.218.206.66:52194 (5 connections now open)
+2019-06-17T16:54:51.352-0400 I NETWORK  [initandlisten] connection accepted from 162.243.136.225:58778 #59 (6 connections now open)
+2019-06-17T16:55:01.218-0400 I NETWORK  [conn59] end connection 162.243.136.225:58778 (5 connections now open)
+2019-06-17T17:58:58.896-0400 I NETWORK  [initandlisten] connection accepted from 91.92.109.5:60660 #60 (6 connections now open)
+2019-06-17T17:58:59.100-0400 I NETWORK  [conn60] end connection 91.92.109.5:60660 (5 connections now open)
+2019-06-18T04:33:01.780-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:25970 #61 (6 connections now open)
+2019-06-18T04:33:01.961-0400 I NETWORK  [conn61] end connection 216.218.206.68:25970 (5 connections now open)
+2019-06-18T04:33:09.500-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:34378 #62 (6 connections now open)
+2019-06-18T04:33:09.638-0400 I NETWORK  [conn62] end connection 216.218.206.68:34378 (5 connections now open)
+2019-06-18T05:27:57.738-0400 I NETWORK  [initandlisten] connection accepted from 94.102.49.190:36621 #63 (6 connections now open)
+2019-06-18T05:27:57.845-0400 I NETWORK  [conn63] end connection 94.102.49.190:36621 (5 connections now open)
+2019-06-18T06:25:43.953-0400 I NETWORK  [initandlisten] connection accepted from 78.109.23.2:36567 #64 (6 connections now open)
+2019-06-18T06:25:44.365-0400 I NETWORK  [initandlisten] connection accepted from 78.109.23.2:37587 #65 (7 connections now open)
+2019-06-18T06:25:46.772-0400 I NETWORK  [conn64] end connection 78.109.23.2:36567 (6 connections now open)
+2019-06-18T06:25:46.772-0400 I NETWORK  [conn65] end connection 78.109.23.2:37587 (5 connections now open)
+2019-06-18T06:38:49.895-0400 I NETWORK  [initandlisten] connection accepted from 185.220.101.33:56819 #66 (6 connections now open)
+2019-06-18T06:38:51.148-0400 I NETWORK  [initandlisten] connection accepted from 18.85.192.253:34908 #67 (7 connections now open)
+2019-06-18T06:38:55.117-0400 I NETWORK  [conn66] end connection 185.220.101.33:56819 (6 connections now open)
+2019-06-18T06:38:55.244-0400 I NETWORK  [conn67] end connection 18.85.192.253:34908 (5 connections now open)
+2019-06-18T06:52:11.496-0400 I NETWORK  [initandlisten] connection accepted from 185.220.101.58:43650 #68 (6 connections now open)
+2019-06-18T06:52:12.185-0400 I NETWORK  [initandlisten] connection accepted from 185.220.101.58:42522 #69 (7 connections now open)
+2019-06-18T06:52:15.800-0400 I NETWORK  [conn69] end connection 185.220.101.58:42522 (6 connections now open)
+2019-06-18T06:52:15.800-0400 I NETWORK  [conn68] end connection 185.220.101.58:43650 (5 connections now open)
+2019-06-18T07:06:04.647-0400 I NETWORK  [initandlisten] connection accepted from 23.129.64.153:55669 #70 (6 connections now open)
+2019-06-18T07:06:05.247-0400 I NETWORK  [initandlisten] connection accepted from 87.120.36.157:47148 #71 (7 connections now open)
+2019-06-18T07:06:08.614-0400 I NETWORK  [conn70] end connection 23.129.64.153:55669 (6 connections now open)
+2019-06-18T07:06:08.635-0400 I NETWORK  [conn71] end connection 87.120.36.157:47148 (5 connections now open)
+2019-06-18T07:20:08.580-0400 I NETWORK  [initandlisten] connection accepted from 23.129.64.174:36733 #72 (6 connections now open)
+2019-06-18T07:20:09.416-0400 I NETWORK  [initandlisten] connection accepted from 23.129.64.174:39640 #73 (7 connections now open)
+2019-06-18T07:20:15.384-0400 I NETWORK  [conn72] end connection 23.129.64.174:36733 (6 connections now open)
+2019-06-18T07:20:15.387-0400 I NETWORK  [conn73] end connection 23.129.64.174:39640 (5 connections now open)
+2019-06-18T11:14:53.953-0400 I NETWORK  [initandlisten] connection accepted from 104.200.16.191:60000 #74 (6 connections now open)
+2019-06-18T11:15:24.959-0400 I NETWORK  [conn74] end connection 104.200.16.191:60000 (5 connections now open)
+2019-06-19T02:00:23.106-0400 I NETWORK  [initandlisten] connection accepted from 5.34.180.177:41370 #75 (6 connections now open)
+2019-06-19T02:00:23.108-0400 I NETWORK  [conn75] end connection 5.34.180.177:41370 (5 connections now open)
+2019-06-19T02:00:58.356-0400 I NETWORK  [initandlisten] connection accepted from 185.117.119.210:56250 #76 (6 connections now open)
+2019-06-19T02:00:58.668-0400 I NETWORK  [initandlisten] connection accepted from 185.117.119.210:56502 #77 (7 connections now open)
+2019-06-19T02:01:02.864-0400 I NETWORK  [conn77] end connection 185.117.119.210:56502 (6 connections now open)
+2019-06-19T02:01:02.875-0400 I NETWORK  [conn76] end connection 185.117.119.210:56250 (5 connections now open)
+2019-06-19T08:06:02.761-0400 I NETWORK  [initandlisten] connection accepted from 92.118.160.49:60456 #78 (6 connections now open)
+2019-06-19T08:06:05.875-0400 I NETWORK  [conn78] end connection 92.118.160.49:60456 (5 connections now open)
+2019-06-19T12:36:16.863-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2019-06-19T12:36:16.863-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-06-19T12:36:16.870-0400 I CONTROL  [signalProcessingThread] now exiting
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-06-19T12:36:16.870-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-06-19T12:36:16.871-0400 I NETWORK  [conn2] end connection 127.0.0.1:53388 (4 connections now open)
+2019-06-19T12:36:16.871-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-06-19T12:36:16.871-0400 I NETWORK  [conn1] end connection 127.0.0.1:53387 (4 connections now open)
+2019-06-19T12:36:16.871-0400 I NETWORK  [conn4] end connection 127.0.0.1:53390 (4 connections now open)
+2019-06-19T12:36:16.871-0400 I NETWORK  [conn3] end connection 127.0.0.1:53389 (4 connections now open)
+2019-06-19T12:36:16.871-0400 I NETWORK  [conn5] end connection 127.0.0.1:53391 (4 connections now open)
+2019-06-19T12:36:17.129-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-06-19T12:36:17.129-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

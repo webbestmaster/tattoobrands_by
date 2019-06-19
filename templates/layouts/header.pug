@@ -3,11 +3,11 @@ header.header
 
         div.header__left-part
             a.header__logo(href="/")
-            h1.header__slogan Магазин профессионального
+            p.header__slogan Магазин профессионального
                 br
                 = 'оборудования для тату-мастеров'
                 br
-                a.header__slogan-link(target="_blank" href="https://www.instagram.com/romazanova_alla/") Аллы Ромазановой
+                a.header__slogan-link(target="_blank" rel="nofollow" href="https://www.instagram.com/romazanova_alla/") Аллы Ромазановой
 
         div.header__right-part
             if user
@@ -16,14 +16,14 @@ header.header
                 a.header__authorization(href="/account") Аккаунт
             else
                 a.header__authorization(href="/authorization") Вход / Регистрация
-            a.header__phone.header__phone--velcom(href="tel:+375445449911") +375 (44)
+            a.header__phone.header__phone--velcom.ga_ym_t(href="tel:+375445449911") +375 (44)
                 = ' '
                 span.secondary-color 544-99-11
 
             div.header__social-block.clear-full
-                a.header__social-link.header__social-link--vk(target="_blank" href="https://vk.com/club116080919")
-                a.header__social-link.header__social-link--youtube(target="_blank" href="https://www.youtube.com/watch?v=_E70HsHRk4k")
-                a.header__social-link.header__social-link--instagram(target="_blank" href="https://www.instagram.com/tattoobrands_by/")
+                a.header__social-link.header__social-link--vk(target="_blank" rel="nofollow" href="https://vk.com/club116080919")
+                a.header__social-link.header__social-link--youtube(target="_blank" rel="nofollow" href="https://www.youtube.com/watch?v=_E70HsHRk4k")
+                a.header__social-link.header__social-link--instagram(target="_blank" rel="nofollow" href="https://www.instagram.com/tattoobrands_by/")
 
             a.header__cart(href="/cart")
                 span.header__cart-counter.hidden.js-counter 0
