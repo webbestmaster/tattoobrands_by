@@ -1,0 +1,376 @@
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] MongoDB starting : pid=32731 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] db version v3.2.16
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] modules: none
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] build environment:
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-06-19T12:52:21.038-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2019-06-19T12:52:21.062-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-06-19T12:52:21.062-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2019-06-19T12:52:21.383-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2019-06-19T12:52:21.383-0400 I CONTROL  [initandlisten] 
+2019-06-19T12:52:21.403-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2019-06-19T12:52:21.404-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2019-06-19T12:52:21.404-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-06-19T12:52:26.396-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55878 #1 (1 connection now open)
+2019-06-19T12:52:26.433-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55879 #2 (2 connections now open)
+2019-06-19T12:52:26.433-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55880 #3 (3 connections now open)
+2019-06-19T12:52:26.434-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55881 #4 (4 connections now open)
+2019-06-19T12:52:26.434-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55882 #5 (5 connections now open)
+2019-06-19T14:57:57.729-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:65354 #6 (6 connections now open)
+2019-06-19T14:57:57.895-0400 I NETWORK  [conn6] end connection 74.82.47.5:65354 (5 connections now open)
+2019-06-19T14:58:02.631-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:1826 #7 (6 connections now open)
+2019-06-19T14:58:02.772-0400 I NETWORK  [conn7] end connection 74.82.47.5:1826 (5 connections now open)
+2019-06-19T16:22:00.890-0400 I NETWORK  [initandlisten] connection accepted from 94.23.255.52:47442 #8 (6 connections now open)
+2019-06-19T16:22:00.905-0400 I NETWORK  [initandlisten] connection accepted from 94.23.255.52:47444 #9 (7 connections now open)
+2019-06-19T16:22:01.291-0400 I NETWORK  [conn8] end connection 94.23.255.52:47442 (6 connections now open)
+2019-06-19T16:22:01.291-0400 I NETWORK  [conn9] end connection 94.23.255.52:47444 (5 connections now open)
+2019-06-19T17:52:20.456-0400 I NETWORK  [initandlisten] connection accepted from 139.180.136.69:50138 #10 (6 connections now open)
+2019-06-19T17:52:20.456-0400 I NETWORK  [conn10] end connection 139.180.136.69:50138 (5 connections now open)
+2019-06-19T17:53:06.033-0400 I NETWORK  [initandlisten] connection accepted from 139.180.136.69:53164 #11 (6 connections now open)
+2019-06-19T17:53:06.532-0400 I NETWORK  [conn11] end connection 139.180.136.69:53164 (5 connections now open)
+2019-06-19T20:37:59.072-0400 I NETWORK  [initandlisten] connection accepted from 162.243.151.237:47816 #12 (6 connections now open)
+2019-06-19T20:38:08.930-0400 I NETWORK  [conn12] end connection 162.243.151.237:47816 (5 connections now open)
+2019-06-19T21:57:01.582-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:39528 #13 (6 connections now open)
+2019-06-19T21:57:01.950-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:39540 #14 (7 connections now open)
+2019-06-19T21:57:09.041-0400 I NETWORK  [conn13] end connection 134.209.104.48:39528 (6 connections now open)
+2019-06-19T21:57:09.041-0400 I NETWORK  [conn14] end connection 134.209.104.48:39540 (6 connections now open)
+2019-06-20T06:07:21.649-0400 I NETWORK  [initandlisten] connection accepted from 45.67.14.199:34222 #15 (6 connections now open)
+2019-06-20T06:07:21.649-0400 I NETWORK  [conn15] end connection 45.67.14.199:34222 (5 connections now open)
+2019-06-20T15:16:08.518-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:16674 #16 (6 connections now open)
+2019-06-20T15:16:08.752-0400 I NETWORK  [conn16] end connection 184.105.247.194:16674 (5 connections now open)
+2019-06-20T15:16:16.953-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:38522 #17 (6 connections now open)
+2019-06-20T15:16:17.095-0400 I NETWORK  [conn17] end connection 184.105.247.194:38522 (5 connections now open)
+2019-06-20T16:58:45.054-0400 I NETWORK  [initandlisten] connection accepted from 162.243.149.232:57314 #18 (6 connections now open)
+2019-06-20T16:58:54.912-0400 I NETWORK  [conn18] end connection 162.243.149.232:57314 (5 connections now open)
+2019-06-21T05:05:48.919-0400 I NETWORK  [initandlisten] connection accepted from 198.108.66.208:14738 #19 (6 connections now open)
+2019-06-21T05:05:49.124-0400 I NETWORK  [conn19] end connection 198.108.66.208:14738 (5 connections now open)
+2019-06-21T05:31:59.152-0400 I NETWORK  [initandlisten] connection accepted from 195.154.61.206:47511 #20 (6 connections now open)
+2019-06-21T05:32:09.521-0400 I NETWORK  [conn20] end connection 195.154.61.206:47511 (5 connections now open)
+2019-06-21T11:54:59.914-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.3:45108 #21 (6 connections now open)
+2019-06-21T11:55:00.459-0400 I NETWORK  [conn21] end connection 74.82.47.3:45108 (5 connections now open)
+2019-06-21T11:55:08.859-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.3:3986 #22 (6 connections now open)
+2019-06-21T11:55:08.998-0400 I NETWORK  [conn22] end connection 74.82.47.3:3986 (5 connections now open)
+2019-06-21T13:14:36.867-0400 I NETWORK  [initandlisten] connection accepted from 107.170.201.213:33282 #23 (6 connections now open)
+2019-06-21T13:14:46.725-0400 I NETWORK  [conn23] end connection 107.170.201.213:33282 (5 connections now open)
+2019-06-21T14:19:45.656-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.125:63188 #24 (6 connections now open)
+2019-06-21T14:19:48.760-0400 I NETWORK  [conn24] end connection 196.52.43.125:63188 (5 connections now open)
+2019-06-22T02:23:20.272-0400 I NETWORK  [initandlisten] connection accepted from 185.174.101.198:53364 #25 (6 connections now open)
+2019-06-22T02:23:20.417-0400 I NETWORK  [conn25] end connection 185.174.101.198:53364 (5 connections now open)
+2019-06-22T04:32:59.702-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:41654 #26 (6 connections now open)
+2019-06-22T04:32:59.934-0400 I NETWORK  [conn26] end connection 216.218.206.66:41654 (5 connections now open)
+2019-06-22T04:33:08.507-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:64668 #27 (6 connections now open)
+2019-06-22T04:33:08.646-0400 I NETWORK  [conn27] end connection 216.218.206.66:64668 (5 connections now open)
+2019-06-22T21:13:47.409-0400 I NETWORK  [initandlisten] connection accepted from 185.220.101.24:36219 #28 (6 connections now open)
+2019-06-22T21:13:47.879-0400 I NETWORK  [initandlisten] connection accepted from 23.129.64.156:31092 #29 (7 connections now open)
+2019-06-22T21:14:04.033-0400 I NETWORK  [conn28] end connection 185.220.101.24:36219 (6 connections now open)
+2019-06-22T21:14:04.078-0400 I NETWORK  [initandlisten] connection accepted from 185.220.101.24:46869 #30 (7 connections now open)
+2019-06-22T21:14:04.177-0400 I NETWORK  [conn29] end connection 23.129.64.156:31092 (6 connections now open)
+2019-06-22T21:14:04.260-0400 I NETWORK  [initandlisten] connection accepted from 185.220.100.253:5706 #31 (7 connections now open)
+2019-06-22T21:14:09.482-0400 I NETWORK  [conn30] end connection 185.220.101.24:46869 (6 connections now open)
+2019-06-22T21:14:09.551-0400 I NETWORK  [conn31] end connection 185.220.100.253:5706 (5 connections now open)
+2019-06-22T21:14:09.555-0400 I NETWORK  [initandlisten] connection accepted from 193.90.12.115:49915 #32 (6 connections now open)
+2019-06-22T21:14:10.036-0400 I NETWORK  [initandlisten] connection accepted from 23.129.64.211:40357 #33 (7 connections now open)
+2019-06-22T21:14:25.865-0400 I NETWORK  [conn32] end connection 193.90.12.115:49915 (6 connections now open)
+2019-06-22T21:14:25.962-0400 I NETWORK  [conn33] end connection 23.129.64.211:40357 (5 connections now open)
+2019-06-23T12:22:26.053-0400 I NETWORK  [initandlisten] connection accepted from 107.170.194.187:34936 #34 (6 connections now open)
+2019-06-23T12:22:35.916-0400 I NETWORK  [conn34] end connection 107.170.194.187:34936 (5 connections now open)
+2019-06-23T12:50:27.827-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:8472 #35 (6 connections now open)
+2019-06-23T12:50:28.032-0400 I NETWORK  [conn35] end connection 216.218.206.68:8472 (5 connections now open)
+2019-06-23T12:50:35.823-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.68:17374 #36 (6 connections now open)
+2019-06-23T12:50:35.962-0400 I NETWORK  [conn36] end connection 216.218.206.68:17374 (5 connections now open)
+2019-06-23T16:58:31.264-0400 I NETWORK  [initandlisten] connection accepted from 162.243.136.110:41216 #37 (6 connections now open)
+2019-06-23T16:58:41.122-0400 I NETWORK  [conn37] end connection 162.243.136.110:41216 (5 connections now open)
+2019-06-24T06:45:23.581-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:2520 #38 (6 connections now open)
+2019-06-24T06:45:23.822-0400 I NETWORK  [conn38] end connection 74.82.47.4:2520 (5 connections now open)
+2019-06-24T06:45:31.827-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:17390 #39 (6 connections now open)
+2019-06-24T06:45:31.967-0400 I NETWORK  [conn39] end connection 74.82.47.4:17390 (5 connections now open)
+2019-06-24T06:54:33.209-0400 I NETWORK  [initandlisten] connection accepted from 34.77.75.163:46934 #40 (6 connections now open)
+2019-06-24T06:54:33.233-0400 I NETWORK  [conn40] end connection 34.77.75.163:46934 (5 connections now open)
+2019-06-24T09:29:18.909-0400 I NETWORK  [initandlisten] connection accepted from 77.127.6.36:51113 #41 (6 connections now open)
+2019-06-24T09:29:18.936-0400 I NETWORK  [conn41] end connection 77.127.6.36:51113 (5 connections now open)
+2019-06-24T09:29:20.550-0400 I NETWORK  [initandlisten] connection accepted from 77.127.6.36:51202 #42 (6 connections now open)
+2019-06-24T09:29:20.559-0400 I NETWORK  [conn42] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-06-24T09:29:20.740-0400 I NETWORK  [initandlisten] connection accepted from 77.127.6.36:51211 #43 (6 connections now open)
+2019-06-24T09:29:20.803-0400 I NETWORK  [conn43] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-06-24T09:29:20.953-0400 I NETWORK  [initandlisten] connection accepted from 77.127.6.36:51234 #44 (6 connections now open)
+2019-06-24T09:29:20.955-0400 I NETWORK  [conn44] end connection 77.127.6.36:51234 (5 connections now open)
+2019-06-24T09:29:23.183-0400 I NETWORK  [initandlisten] connection accepted from 77.127.6.36:51343 #45 (6 connections now open)
+2019-06-24T09:29:23.196-0400 I NETWORK  [conn45] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-06-25T09:22:17.875-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.69:27354 #46 (6 connections now open)
+2019-06-25T09:22:18.099-0400 I NETWORK  [conn46] end connection 216.218.206.69:27354 (5 connections now open)
+2019-06-25T09:22:26.145-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.69:42880 #47 (6 connections now open)
+2019-06-25T09:22:26.287-0400 I NETWORK  [conn47] end connection 216.218.206.69:42880 (5 connections now open)
+2019-06-26T01:11:12.695-0400 I NETWORK  [initandlisten] connection accepted from 92.118.160.45:55795 #48 (6 connections now open)
+2019-06-26T01:11:15.409-0400 I NETWORK  [conn48] end connection 92.118.160.45:55795 (5 connections now open)
+2019-06-26T02:23:35.072-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:54216 #49 (6 connections now open)
+2019-06-26T02:23:35.318-0400 I NETWORK  [conn49] end connection 74.82.47.5:54216 (5 connections now open)
+2019-06-26T02:23:43.686-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.5:9804 #50 (6 connections now open)
+2019-06-26T02:23:43.823-0400 I NETWORK  [conn50] end connection 74.82.47.5:9804 (5 connections now open)
+2019-06-26T09:14:43.748-0400 I NETWORK  [initandlisten] connection accepted from 162.243.144.22:39098 #51 (6 connections now open)
+2019-06-26T09:14:53.614-0400 I NETWORK  [conn51] end connection 162.243.144.22:39098 (5 connections now open)
+2019-06-26T09:34:19.651-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:46300 #52 (6 connections now open)
+2019-06-26T09:34:20.017-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:46314 #53 (7 connections now open)
+2019-06-26T09:34:21.474-0400 I COMMAND  [conn53] command tattoo-brands command: eval { $eval: db.getCollection('users').stats(), args: [] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:5746 locks:{ Global: { acquireCount: { r: 5, W: 1 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_query 260ms
+2019-06-26T09:34:27.331-0400 I NETWORK  [conn52] end connection 157.230.45.52:46300 (6 connections now open)
+2019-06-26T09:34:27.331-0400 I NETWORK  [conn53] end connection 157.230.45.52:46314 (6 connections now open)
+2019-06-26T16:59:51.651-0400 I NETWORK  [initandlisten] connection accepted from 107.170.201.223:47702 #54 (6 connections now open)
+2019-06-26T17:00:01.509-0400 I NETWORK  [conn54] end connection 107.170.201.223:47702 (5 connections now open)
+2019-06-27T06:44:35.220-0400 I COMMAND  [conn1] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:8 reslen:7216 locks:{ Global: { acquireCount: { r: 22 } }, Database: { acquireCount: { r: 11 } }, Collection: { acquireCount: { r: 11 } } } protocol:op_query 154ms
+2019-06-27T08:10:18.246-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.3:49968 #55 (6 connections now open)
+2019-06-27T08:10:18.405-0400 I NETWORK  [conn55] end connection 74.82.47.3:49968 (5 connections now open)
+2019-06-27T08:10:26.087-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.3:58338 #56 (6 connections now open)
+2019-06-27T08:10:26.228-0400 I NETWORK  [conn56] end connection 74.82.47.3:58338 (5 connections now open)
+2019-06-27T17:35:04.057-0400 I NETWORK  [initandlisten] connection accepted from 45.67.14.199:46146 #57 (6 connections now open)
+2019-06-27T17:35:04.057-0400 I NETWORK  [conn57] end connection 45.67.14.199:46146 (5 connections now open)
+2019-06-27T19:28:42.839-0400 I NETWORK  [initandlisten] connection accepted from 185.100.87.247:57212 #58 (6 connections now open)
+2019-06-27T19:28:48.881-0400 I NETWORK  [conn58] end connection 185.100.87.247:57212 (5 connections now open)
+2019-06-27T19:30:47.055-0400 I NETWORK  [initandlisten] connection accepted from 185.100.87.247:47402 #59 (6 connections now open)
+2019-06-27T19:30:47.372-0400 I NETWORK  [conn59] end connection 185.100.87.247:47402 (5 connections now open)
+2019-06-27T21:05:45.214-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:47106 #60 (6 connections now open)
+2019-06-27T21:05:45.571-0400 I NETWORK  [initandlisten] connection accepted from 134.209.104.48:47116 #61 (7 connections now open)
+2019-06-27T21:05:46.973-0400 I COMMAND  [conn61] command tattoo-brands command: eval { $eval: db.getCollection('users').stats(), args: [] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:5746 locks:{ Global: { acquireCount: { r: 5, W: 1 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_query 145ms
+2019-06-27T21:05:52.601-0400 I NETWORK  [conn60] end connection 134.209.104.48:47106 (6 connections now open)
+2019-06-27T21:05:52.601-0400 I NETWORK  [conn61] end connection 134.209.104.48:47116 (6 connections now open)
+2019-06-28T03:22:35.357-0400 I NETWORK  [initandlisten] connection accepted from 80.82.77.33:40888 #62 (6 connections now open)
+2019-06-28T03:22:35.878-0400 I NETWORK  [conn62] end connection 80.82.77.33:40888 (5 connections now open)
+2019-06-28T04:45:13.670-0400 I COMMAND  [conn4] command tattoo-brands.users command: find { find: "users", filter: { email: "helen_mironova3@mail.ru" }, limit: 1, batchSize: 1, singleBatch: true } planSummary: IXSCAN { email: 1 } keysExamined:0 docsExamined:0 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:0 reslen:125 locks:{ Global: { acquireCount: { r: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } protocol:op_query 164ms
+2019-06-28T04:45:14.059-0400 I COMMAND  [conn5] command tattoo-brands.users command: insert { insert: "users", documents: [ { email: "helen_mironova3@mail.ru", password: "$2a$10$c944v9jcm0b0XJwW8dGdnO37BWu9GjhklL7u1F80GS.9X.8jGdkuu", isAdmin: false, name: { first: "", last: "" }, _id: ObjectId('5d15d399bd9b22012ff8859f'), __v: 0 } ], ordered: false, writeConcern: { w: 1 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 107ms
+2019-06-28T05:23:36.955-0400 I NETWORK  [initandlisten] connection accepted from 115.206.202.89:63766 #63 (6 connections now open)
+2019-06-28T05:23:37.435-0400 I NETWORK  [initandlisten] connection accepted from 115.206.202.89:63773 #64 (7 connections now open)
+2019-06-28T05:23:41.544-0400 I NETWORK  [conn64] end connection 115.206.202.89:63773 (6 connections now open)
+2019-06-28T05:23:41.564-0400 I NETWORK  [conn63] end connection 115.206.202.89:63766 (5 connections now open)
+2019-06-28T06:05:21.704-0400 I NETWORK  [initandlisten] connection accepted from 198.108.66.16:4736 #65 (6 connections now open)
+2019-06-28T06:05:21.992-0400 I NETWORK  [conn65] end connection 198.108.66.16:4736 (5 connections now open)
+2019-06-28T06:30:24.139-0400 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 135ms
+2019-06-28T06:31:07.077-0400 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:23 reslen:6973 locks:{ Global: { acquireCount: { r: 52 } }, Database: { acquireCount: { r: 26 } }, Collection: { acquireCount: { r: 26 } } } protocol:op_query 1217ms
+2019-06-28T06:32:10.851-0400 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:14 reslen:7900 locks:{ Global: { acquireCount: { r: 34 } }, Database: { acquireCount: { r: 17 } }, Collection: { acquireCount: { r: 17 } } } protocol:op_query 429ms
+2019-06-28T06:32:20.160-0400 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:16 reslen:8138 locks:{ Global: { acquireCount: { r: 38 } }, Database: { acquireCount: { r: 19 } }, Collection: { acquireCount: { r: 19 } } } protocol:op_query 589ms
+2019-06-28T06:32:25.929-0400 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:12 reslen:6204 locks:{ Global: { acquireCount: { r: 30 } }, Database: { acquireCount: { r: 15 } }, Collection: { acquireCount: { r: 15 } } } protocol:op_query 208ms
+2019-06-28T06:34:32.598-0400 I COMMAND  [conn2] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:7 reslen:8260 locks:{ Global: { acquireCount: { r: 20 } }, Database: { acquireCount: { r: 10 } }, Collection: { acquireCount: { r: 10 } } } protocol:op_query 128ms
+2019-06-28T07:05:23.615-0400 I COMMAND  [conn5] command tattoo-brands.orders command: find { find: "orders", filter: {}, sort: { createdAt: -1 }, limit: 100 } planSummary: COLLSCAN keysExamined:0 docsExamined:861 hasSortStage:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:42 nreturned:100 reslen:479885 locks:{ Global: { acquireCount: { r: 86 } }, Database: { acquireCount: { r: 43 } }, Collection: { acquireCount: { r: 43 } } } protocol:op_query 4423ms
+2019-06-28T07:56:20.910-0400 I WRITE    [conn5] update tattoo-brands.app_sessions query: { _id: "OQy9q0CR43xgxL7xOkK4jSlqOhgSUBub" } update: { _id: "OQy9q0CR43xgxL7xOkK4jSlqOhgSUBub", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"userId":"5b505a1fb4656e0512ff5c2c"}", expires: new Date(1562932580637) } keysExamined:0 docsExamined:0 nMatched:1 nModified:1 upsert:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } 200ms
+2019-06-28T07:56:20.910-0400 I COMMAND  [conn5] command tattoo-brands.$cmd command: update { update: "app_sessions", updates: [ { q: { _id: "OQy9q0CR43xgxL7xOkK4jSlqOhgSUBub" }, u: { _id: "OQy9q0CR43xgxL7xOkK4jSlqOhgSUBub", session: "{"cookie":{"originalMaxAge":null,"expires":null,"httpOnly":true,"path":"/"},"userId":"5b505a1fb4656e0512ff5c2c"}", expires: new Date(1562932580637) }, upsert: true, multi: false } ], ordered: true, writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:131 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 271ms
+2019-06-28T08:14:02.349-0400 I COMMAND  [conn1] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:8 reslen:21079 locks:{ Global: { acquireCount: { r: 22 } }, Database: { acquireCount: { r: 11 } }, Collection: { acquireCount: { r: 11 } } } protocol:op_query 330ms
+2019-06-28T08:31:33.939-0400 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:9 reslen:10029 locks:{ Global: { acquireCount: { r: 24 } }, Database: { acquireCount: { r: 12 } }, Collection: { acquireCount: { r: 12 } } } protocol:op_query 168ms
+2019-06-28T09:25:37.595-0400 I WRITE    [conn4] update tattoo-brands.orders query: { _id: ObjectId('5d161551bd9b22012ff885a1') } update: { $set: { sendEmail: "http://tattoobrands.by/admin/order/send-mail/0b57565" } } keysExamined:1 docsExamined:1 nMatched:1 nModified:1 keyUpdates:0 writeConflicts:0 numYields:1 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } 196ms
+2019-06-28T09:25:37.595-0400 I COMMAND  [conn4] command tattoo-brands.$cmd command: update { update: "orders", updates: [ { q: { _id: ObjectId('5d161551bd9b22012ff885a1') }, u: { $set: { sendEmail: "http://tattoobrands.by/admin/order/send-mail/0b57565" } }, upsert: false, multi: false } ], ordered: true, writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:55 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 196ms
+2019-06-28T11:27:38.360-0400 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:9 reslen:5446 locks:{ Global: { acquireCount: { r: 24 } }, Database: { acquireCount: { r: 12 } }, Collection: { acquireCount: { r: 12 } } } protocol:op_query 107ms
+2019-06-28T12:21:04.964-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:46868 #66 (6 connections now open)
+2019-06-28T12:21:05.403-0400 I NETWORK  [conn66] end connection 184.105.247.194:46868 (5 connections now open)
+2019-06-28T12:21:13.148-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:64810 #67 (6 connections now open)
+2019-06-28T12:21:13.617-0400 I NETWORK  [conn67] end connection 184.105.247.194:64810 (5 connections now open)
+2019-06-28T16:36:46.887-0400 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:8 reslen:14865 locks:{ Global: { acquireCount: { r: 22 } }, Database: { acquireCount: { r: 11 } }, Collection: { acquireCount: { r: 11 } } } protocol:op_query 131ms
+2019-06-28T19:49:32.359-0400 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:9 reslen:10797 locks:{ Global: { acquireCount: { r: 24 } }, Database: { acquireCount: { r: 12 } }, Collection: { acquireCount: { r: 12 } } } protocol:op_query 107ms
+2019-06-29T04:50:47.029-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:50586 #68 (6 connections now open)
+2019-06-29T04:50:47.396-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:50594 #69 (7 connections now open)
+2019-06-29T04:50:48.692-0400 I COMMAND  [conn69] command tattoo-brands command: eval { $eval: db.getCollection('users').stats(), args: [] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:5746 locks:{ Global: { acquireCount: { r: 5, W: 1 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_query 122ms
+2019-06-29T04:50:54.535-0400 I NETWORK  [conn68] end connection 157.230.45.52:50586 (6 connections now open)
+2019-06-29T04:50:54.535-0400 I NETWORK  [conn69] end connection 157.230.45.52:50594 (6 connections now open)
+2019-06-29T06:10:25.573-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.62:60551 #70 (6 connections now open)
+2019-06-29T06:10:27.720-0400 I NETWORK  [conn70] end connection 196.52.43.62:60551 (5 connections now open)
+2019-06-29T07:16:02.139-0400 I COMMAND  [conn2] command tattoo-brands.orders command: find { find: "orders", filter: { user.email: "Antonnikola94@gmail.com" }, sort: { createdAt: -1 } } planSummary: COLLSCAN keysExamined:0 docsExamined:864 hasSortStage:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:8 nreturned:6 reslen:38839 locks:{ Global: { acquireCount: { r: 18 } }, Database: { acquireCount: { r: 9 } }, Collection: { acquireCount: { r: 9 } } } protocol:op_query 113ms
+2019-06-29T08:15:10.895-0400 I NETWORK  [initandlisten] connection accepted from 107.170.240.68:35322 #71 (6 connections now open)
+2019-06-29T08:15:20.761-0400 I NETWORK  [conn71] end connection 107.170.240.68:35322 (5 connections now open)
+2019-06-29T10:09:00.458-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.195:31976 #72 (6 connections now open)
+2019-06-29T10:09:00.681-0400 I NETWORK  [conn72] end connection 184.105.247.195:31976 (5 connections now open)
+2019-06-29T10:09:08.950-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.195:53186 #73 (6 connections now open)
+2019-06-29T10:09:09.092-0400 I NETWORK  [conn73] end connection 184.105.247.195:53186 (5 connections now open)
+2019-06-29T16:58:57.274-0400 I NETWORK  [initandlisten] connection accepted from 107.170.195.201:35316 #74 (6 connections now open)
+2019-06-29T16:59:07.133-0400 I NETWORK  [conn74] end connection 107.170.195.201:35316 (5 connections now open)
+2019-06-29T17:10:18.554-0400 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:37818 #75 (6 connections now open)
+2019-06-29T17:10:18.858-0400 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:38534 #76 (7 connections now open)
+2019-06-29T17:10:29.016-0400 I NETWORK  [conn75] end connection 106.75.3.52:37818 (6 connections now open)
+2019-06-29T17:10:29.166-0400 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:51928 #77 (7 connections now open)
+2019-06-29T17:10:29.171-0400 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:51930 #78 (8 connections now open)
+2019-06-29T17:10:29.171-0400 I NETWORK  [conn78] end connection 106.75.3.52:51930 (7 connections now open)
+2019-06-29T17:10:29.695-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.20:15410 #79 (8 connections now open)
+2019-06-29T17:10:29.696-0400 I NETWORK  [conn79] end connection 120.52.152.20:15410 (7 connections now open)
+2019-06-29T17:26:36.947-0400 I NETWORK  [conn76] end connection 106.75.3.52:38534 (6 connections now open)
+2019-06-29T17:26:47.187-0400 I NETWORK  [conn77] end connection 106.75.3.52:51928 (5 connections now open)
+2019-06-29T19:55:54.346-0400 I NETWORK  [initandlisten] connection accepted from 45.33.88.233:40088 #80 (6 connections now open)
+2019-06-29T19:55:55.377-0400 I NETWORK  [initandlisten] connection accepted from 139.162.206.150:41042 #81 (7 connections now open)
+2019-06-29T19:55:55.497-0400 I NETWORK  [conn81] end connection 139.162.206.150:41042 (6 connections now open)
+2019-06-29T19:55:55.849-0400 I NETWORK  [conn80] end connection 45.33.88.233:40088 (5 connections now open)
+2019-06-29T19:55:55.925-0400 I NETWORK  [initandlisten] connection accepted from 45.33.88.233:41042 #82 (6 connections now open)
+2019-06-29T19:55:57.427-0400 I NETWORK  [conn82] end connection 45.33.88.233:41042 (5 connections now open)
+2019-06-29T19:55:57.524-0400 I NETWORK  [initandlisten] connection accepted from 45.33.88.233:41792 #83 (6 connections now open)
+2019-06-29T19:55:57.616-0400 I NETWORK  [conn83] end connection 45.33.88.233:41792 (5 connections now open)
+2019-06-30T01:54:32.011-0400 I NETWORK  [initandlisten] connection accepted from 93.100.61.228:37929 #84 (6 connections now open)
+2019-06-30T01:54:32.265-0400 I NETWORK  [initandlisten] connection accepted from 93.100.61.228:37930 #85 (7 connections now open)
+2019-06-30T01:54:32.745-0400 I COMMAND  [conn85] command tattoo-brands.orders command: find { find: "orders", filter: { $or: [ { slug: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { phone: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { country: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { region: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { town: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { address: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { postcode: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { additional: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { basketItems: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { sendEmail: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { state: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.firstName: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.lastName: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { user.email: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { name: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g }, { link: /[5KL][1-9A-HJ-NP-Za-km-z]{50,51}|[0-9a-fA-F]{64}/g } ] } } planSummary: COLLSCAN keysExamined:0 docsExamined:864 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:7 nreturned:0 reslen:126 locks:{ Global: { acquireCount: { r: 16 } }, Database: { acquireCount: { r: 8 } }, Collection: { acquireCount: { r: 8 } } } protocol:op_query 150ms
+2019-06-30T01:54:33.035-0400 I NETWORK  [conn84] end connection 93.100.61.228:37929 (6 connections now open)
+2019-06-30T01:54:33.035-0400 I NETWORK  [conn85] end connection 93.100.61.228:37930 (5 connections now open)
+2019-06-30T06:11:52.344-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:11690 #86 (6 connections now open)
+2019-06-30T06:11:52.555-0400 I NETWORK  [conn86] end connection 184.105.247.194:11690 (5 connections now open)
+2019-06-30T06:12:00.570-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.194:27608 #87 (6 connections now open)
+2019-06-30T06:12:00.706-0400 I NETWORK  [conn87] end connection 184.105.247.194:27608 (5 connections now open)
+2019-06-30T17:50:43.680-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:40686 #88 (6 connections now open)
+2019-06-30T17:50:44.051-0400 I NETWORK  [initandlisten] connection accepted from 157.230.45.52:40694 #89 (7 connections now open)
+2019-06-30T17:50:45.346-0400 I COMMAND  [conn89] command tattoo-brands command: eval { $eval: db.getCollection('users').stats(), args: [] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:5746 locks:{ Global: { acquireCount: { r: 5, W: 1 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_query 112ms
+2019-06-30T17:50:51.216-0400 I NETWORK  [conn89] end connection 157.230.45.52:40694 (6 connections now open)
+2019-06-30T17:50:51.217-0400 I NETWORK  [conn88] end connection 157.230.45.52:40686 (5 connections now open)
+2019-06-30T18:50:19.245-0400 I NETWORK  [initandlisten] connection accepted from 107.170.192.80:48246 #90 (6 connections now open)
+2019-06-30T18:50:29.103-0400 I NETWORK  [conn90] end connection 107.170.192.80:48246 (5 connections now open)
+2019-07-01T05:25:15.230-0400 I NETWORK  [initandlisten] connection accepted from 35.189.236.135:50154 #91 (6 connections now open)
+2019-07-01T05:25:15.252-0400 I NETWORK  [conn91] end connection 35.189.236.135:50154 (5 connections now open)
+2019-07-01T05:25:57.266-0400 I COMMAND  [conn5] command tattoo-brands.orders command: find { find: "orders", filter: {}, sort: { createdAt: -1 }, limit: 100 } planSummary: COLLSCAN keysExamined:0 docsExamined:864 hasSortStage:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:9 nreturned:100 reslen:489342 locks:{ Global: { acquireCount: { r: 20 } }, Database: { acquireCount: { r: 10 } }, Collection: { acquireCount: { r: 10 } } } protocol:op_query 211ms
+2019-07-01T07:16:43.847-0400 I COMMAND  [conn5] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:9 reslen:6074 locks:{ Global: { acquireCount: { r: 24 } }, Database: { acquireCount: { r: 12 } }, Collection: { acquireCount: { r: 12 } } } protocol:op_query 104ms
+2019-07-01T15:16:37.231-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:36886 #92 (6 connections now open)
+2019-07-01T15:16:37.422-0400 I NETWORK  [conn92] end connection 184.105.247.196:36886 (5 connections now open)
+2019-07-01T15:16:45.274-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:48682 #93 (6 connections now open)
+2019-07-01T15:16:45.415-0400 I NETWORK  [conn93] end connection 184.105.247.196:48682 (5 connections now open)
+2019-07-02T01:16:51.312-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:49926 #94 (6 connections now open)
+2019-07-02T01:16:51.496-0400 I NETWORK  [conn94] end connection 184.105.139.68:49926 (5 connections now open)
+2019-07-02T01:16:58.674-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:6334 #95 (6 connections now open)
+2019-07-02T01:16:59.218-0400 I NETWORK  [conn95] end connection 184.105.139.68:6334 (5 connections now open)
+2019-07-02T05:00:33.836-0400 I NETWORK  [initandlisten] connection accepted from 3.208.86.245:35770 #96 (6 connections now open)
+2019-07-02T05:00:33.837-0400 I NETWORK  [conn96] end connection 3.208.86.245:35770 (5 connections now open)
+2019-07-02T15:09:38.774-0400 I NETWORK  [initandlisten] connection accepted from 107.170.202.8:37736 #97 (6 connections now open)
+2019-07-02T15:09:48.635-0400 I NETWORK  [conn97] end connection 107.170.202.8:37736 (5 connections now open)
+2019-07-02T15:43:14.999-0400 I NETWORK  [initandlisten] connection accepted from 106.75.3.52:39542 #98 (6 connections now open)
+2019-07-02T15:43:25.664-0400 I NETWORK  [conn98] end connection 106.75.3.52:39542 (5 connections now open)
+2019-07-02T17:00:06.430-0400 I NETWORK  [initandlisten] connection accepted from 107.170.193.44:43744 #99 (6 connections now open)
+2019-07-02T17:00:16.288-0400 I NETWORK  [conn99] end connection 107.170.193.44:43744 (5 connections now open)
+2019-07-02T23:39:45.417-0400 I NETWORK  [initandlisten] connection accepted from 45.67.14.199:48748 #100 (6 connections now open)
+2019-07-02T23:39:45.421-0400 I NETWORK  [conn100] end connection 45.67.14.199:48748 (5 connections now open)
+2019-07-03T01:47:10.059-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.53:50098 #101 (6 connections now open)
+2019-07-03T01:47:13.021-0400 I NETWORK  [conn101] end connection 196.52.43.53:50098 (5 connections now open)
+2019-07-03T07:00:32.762-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:38810 #102 (6 connections now open)
+2019-07-03T07:00:32.998-0400 I NETWORK  [conn102] end connection 216.218.206.66:38810 (5 connections now open)
+2019-07-03T07:00:40.966-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.66:56576 #103 (6 connections now open)
+2019-07-03T07:00:41.103-0400 I NETWORK  [conn103] end connection 216.218.206.66:56576 (5 connections now open)
+2019-07-03T11:09:34.335-0400 I NETWORK  [initandlisten] connection accepted from 104.152.52.22:45336 #104 (6 connections now open)
+2019-07-03T11:10:05.321-0400 I NETWORK  [conn104] end connection 104.152.52.22:45336 (5 connections now open)
+2019-07-03T15:39:16.504-0400 I NETWORK  [initandlisten] connection accepted from 185.234.219.122:56116 #105 (6 connections now open)
+2019-07-03T15:39:16.542-0400 I NETWORK  [conn105] end connection 185.234.219.122:56116 (5 connections now open)
+2019-07-04T01:19:31.076-0400 I NETWORK  [initandlisten] connection accepted from 185.10.68.124:43418 #106 (6 connections now open)
+2019-07-04T01:19:31.151-0400 I NETWORK  [conn106] end connection 185.10.68.124:43418 (5 connections now open)
+2019-07-04T08:24:45.849-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:63906 #107 (6 connections now open)
+2019-07-04T08:24:46.081-0400 I NETWORK  [conn107] end connection 184.105.247.196:63906 (5 connections now open)
+2019-07-04T08:24:53.348-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.196:8486 #108 (6 connections now open)
+2019-07-04T08:24:53.489-0400 I NETWORK  [conn108] end connection 184.105.247.196:8486 (5 connections now open)
+2019-07-04T14:29:18.950-0400 I NETWORK  [initandlisten] connection accepted from 178.62.203.61:55232 #109 (6 connections now open)
+2019-07-04T14:29:19.036-0400 I NETWORK  [conn109] end connection 178.62.203.61:55232 (5 connections now open)
+2019-07-04T14:32:56.123-0400 I NETWORK  [initandlisten] connection accepted from 139.162.187.19:53920 #110 (6 connections now open)
+2019-07-04T14:32:57.625-0400 I NETWORK  [conn110] end connection 139.162.187.19:53920 (5 connections now open)
+2019-07-04T14:32:57.639-0400 I NETWORK  [initandlisten] connection accepted from 139.162.187.19:54360 #111 (6 connections now open)
+2019-07-04T14:32:59.141-0400 I NETWORK  [conn111] end connection 139.162.187.19:54360 (5 connections now open)
+2019-07-04T14:32:59.149-0400 I NETWORK  [initandlisten] connection accepted from 139.162.187.19:54808 #112 (6 connections now open)
+2019-07-04T14:32:59.162-0400 I NETWORK  [conn112] end connection 139.162.187.19:54808 (5 connections now open)
+2019-07-05T02:08:37.798-0400 I NETWORK  [initandlisten] connection accepted from 107.170.203.244:46558 #113 (6 connections now open)
+2019-07-05T02:08:47.656-0400 I NETWORK  [conn113] end connection 107.170.203.244:46558 (5 connections now open)
+2019-07-05T06:25:17.155-0400 I NETWORK  [initandlisten] connection accepted from 198.108.66.96:38782 #114 (6 connections now open)
+2019-07-05T06:25:17.353-0400 I NETWORK  [conn114] end connection 198.108.66.96:38782 (5 connections now open)
+2019-07-05T06:41:48.570-0400 I COMMAND  [conn4] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:10 reslen:24688 locks:{ Global: { acquireCount: { r: 26 } }, Database: { acquireCount: { r: 13 } }, Collection: { acquireCount: { r: 13 } } } protocol:op_query 108ms
+2019-07-05T13:44:15.229-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:45864 #115 (6 connections now open)
+2019-07-05T13:44:15.456-0400 I NETWORK  [conn115] end connection 184.105.139.68:45864 (5 connections now open)
+2019-07-05T13:44:22.957-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.68:57000 #116 (6 connections now open)
+2019-07-05T13:44:23.096-0400 I NETWORK  [conn116] end connection 184.105.139.68:57000 (5 connections now open)
+2019-07-05T17:01:01.704-0400 I NETWORK  [initandlisten] connection accepted from 162.243.143.136:51216 #117 (6 connections now open)
+2019-07-05T17:01:11.563-0400 I NETWORK  [conn117] end connection 162.243.143.136:51216 (5 connections now open)
+2019-07-05T22:22:21.422-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.108:56963 #118 (6 connections now open)
+2019-07-05T22:22:24.250-0400 I NETWORK  [conn118] end connection 196.52.43.108:56963 (5 connections now open)
+2019-07-06T08:57:02.691-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.70:32926 #119 (6 connections now open)
+2019-07-06T08:57:02.916-0400 I NETWORK  [conn119] end connection 184.105.139.70:32926 (5 connections now open)
+2019-07-06T08:57:10.432-0400 I NETWORK  [initandlisten] connection accepted from 184.105.139.70:47068 #120 (6 connections now open)
+2019-07-06T08:57:10.573-0400 I NETWORK  [conn120] end connection 184.105.139.70:47068 (5 connections now open)
+2019-07-06T10:19:11.601-0400 I NETWORK  [initandlisten] connection accepted from 188.165.216.213:45626 #121 (6 connections now open)
+2019-07-06T10:19:11.614-0400 I NETWORK  [initandlisten] connection accepted from 188.165.216.213:45628 #122 (7 connections now open)
+2019-07-06T10:19:11.948-0400 I NETWORK  [conn121] end connection 188.165.216.213:45626 (6 connections now open)
+2019-07-06T10:19:11.949-0400 I NETWORK  [conn122] end connection 188.165.216.213:45628 (5 connections now open)
+2019-07-06T11:59:00.747-0400 I NETWORK  [initandlisten] connection accepted from 67.21.36.5:42814 #123 (6 connections now open)
+2019-07-06T11:59:01.059-0400 I NETWORK  [conn123] end connection 67.21.36.5:42814 (5 connections now open)
+2019-07-06T20:56:09.791-0400 I NETWORK  [initandlisten] connection accepted from 45.67.14.199:54386 #124 (6 connections now open)
+2019-07-06T20:56:09.792-0400 I NETWORK  [conn124] end connection 45.67.14.199:54386 (5 connections now open)
+2019-07-07T01:09:40.683-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35506 #125 (6 connections now open)
+2019-07-07T01:09:40.726-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35508 #126 (7 connections now open)
+2019-07-07T01:09:40.765-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35510 #127 (8 connections now open)
+2019-07-07T01:09:40.780-0400 I NETWORK  [conn127] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-07-07T01:09:41.294-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35526 #128 (8 connections now open)
+2019-07-07T01:09:41.294-0400 I NETWORK  [conn128] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-07-07T01:09:41.819-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35538 #129 (8 connections now open)
+2019-07-07T01:09:41.835-0400 I NETWORK  [conn129] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-07-07T01:09:42.348-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35550 #130 (8 connections now open)
+2019-07-07T01:09:42.348-0400 I NETWORK  [conn130] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-07-07T01:09:42.873-0400 I NETWORK  [initandlisten] connection accepted from 159.89.15.163:35564 #131 (8 connections now open)
+2019-07-07T01:09:42.873-0400 I NETWORK  [conn131] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-07-07T01:40:29.339-0400 I NETWORK  [conn125] end connection 159.89.15.163:35506 (6 connections now open)
+2019-07-07T01:40:29.345-0400 I NETWORK  [conn126] end connection 159.89.15.163:35508 (5 connections now open)
+2019-07-07T05:19:50.715-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.252:24450 #132 (6 connections now open)
+2019-07-07T05:19:51.026-0400 I NETWORK  [conn132] end connection 184.105.247.252:24450 (5 connections now open)
+2019-07-07T05:19:58.391-0400 I NETWORK  [initandlisten] connection accepted from 184.105.247.252:31872 #133 (6 connections now open)
+2019-07-07T05:19:58.530-0400 I NETWORK  [conn133] end connection 184.105.247.252:31872 (5 connections now open)
+2019-07-07T11:42:59.696-0400 I NETWORK  [initandlisten] connection accepted from 162.243.144.116:40986 #134 (6 connections now open)
+2019-07-07T11:43:09.558-0400 I NETWORK  [conn134] end connection 162.243.144.116:40986 (5 connections now open)
+2019-07-07T21:40:54.225-0400 I NETWORK  [initandlisten] connection accepted from 82.25.220.240:3879 #135 (6 connections now open)
+2019-07-07T21:40:54.239-0400 I -        [conn135] Assertion: 10304:Client Error: Remaining data too small for BSON object
+2019-07-07T21:40:54.340-0400 I CONTROL  [conn135] 
+ 0x1556b32 0x14ee2a4 0x14d3836 0xc8fa91 0xa526ed 0xdb3de2 0xdb7396 0x9c65c0 0x14fcb51 0x7ff75b2c6184 0x7ff75aff2ffd
+----- BEGIN BACKTRACE -----
+{"backtrace":[{"b":"400000","o":"1156B32","s":"_ZN5mongo15printStackTraceERSo"},{"b":"400000","o":"10EE2A4","s":"_ZN5mongo10logContextEPKc"},{"b":"400000","o":"10D3836","s":"_ZN5mongo11msgassertedEiPKc"},{"b":"400000","o":"88FA91","s":"_ZN5mongo9DbMessage9nextJsObjEv"},{"b":"400000","o":"6526ED","s":"_ZN5mongo12QueryMessageC2ERNS_9DbMessageE"},{"b":"400000","o":"9B3DE2"},{"b":"400000","o":"9B7396","s":"_ZN5mongo16assembleResponseEPNS_16OperationContextERNS_7MessageERNS_10DbResponseERKNS_11HostAndPortE"},{"b":"400000","o":"5C65C0"},{"b":"400000","o":"10FCB51","s":"_ZN5mongo17PortMessageServer17handleIncomingMsgEPv"},{"b":"7FF75B2BE000","o":"8184"},{"b":"7FF75AEF5000","o":"FDFFD","s":"clone"}],"processInfo":{ "mongodbVersion" : "3.2.16", "gitVersion" : "056bf45128114e44c5358c7a8776fb582363e094", "compiledModules" : [], "uname" : { "sysname" : "Linux", "release" : "3.13.0-52-generic", "version" : "#85-Ubuntu SMP Wed Apr 29 16:44:17 UTC 2015", "machine" : "x86_64" }, "somap" : [ { "elfType" : 2, "b" : "400000", "buildId" : "B4C77D1B42936B23E28A2739927CB25274DB2D96" }, { "b" : "7FFFE02B2000", "elfType" : 3, "buildId" : "F8E01F1BCB9F27FF04FC2B8C9454AD8EACB7B37C" }, { "b" : "7FF75C1DF000", "path" : "/lib/x86_64-linux-gnu/libssl.so.1.0.0", "elfType" : 3, "buildId" : "FF43D0947510134A8A494063A3C1CF3CEBB27791" }, { "b" : "7FF75BE04000", "path" : "/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "elfType" : 3, "buildId" : "B927879B878D90DD9FF4B15B00E7799AA8E0272F" }, { "b" : "7FF75BBFC000", "path" : "/lib/x86_64-linux-gnu/librt.so.1", "elfType" : 3, "buildId" : "AC72654C6338205F30190061C0D781CB0039B793" }, { "b" : "7FF75B9F8000", "path" : "/lib/x86_64-linux-gnu/libdl.so.2", "elfType" : 3, "buildId" : "EED41ABB999C74882F001C53979CC820ED15BA82" }, { "b" : "7FF75B6F2000", "path" : "/lib/x86_64-linux-gnu/libm.so.6", "elfType" : 3, "buildId" : "8F0318B9CC6FD523C2587A15C5447ABBB8CD813D" }, { "b" : "7FF75B4DC000", "path" : "/lib/x86_64-linux-gnu/libgcc_s.so.1", "elfType" : 3, "buildId" : "8D0AA71411580EE6C08809695C3984769F25725B" }, { "b" : "7FF75B2BE000", "path" : "/lib/x86_64-linux-gnu/libpthread.so.0", "elfType" : 3, "buildId" : "F48E96A1F4A549776CA4167095AD7527720D4B0E" }, { "b" : "7FF75AEF5000", "path" : "/lib/x86_64-linux-gnu/libc.so.6", "elfType" : 3, "buildId" : "3217CA3A53A930C7BB1E5C83789D09B30B0F3B39" }, { "b" : "7FF75C43D000", "path" : "/lib64/ld-linux-x86-64.so.2", "elfType" : 3, "buildId" : "37AFDBB933B8409476E845DF5FB11BC77CBCEEE6" } ] }}
+ mongod(_ZN5mongo15printStackTraceERSo+0x32) [0x1556b32]
+ mongod(_ZN5mongo10logContextEPKc+0x174) [0x14ee2a4]
+ mongod(_ZN5mongo11msgassertedEiPKc+0xB6) [0x14d3836]
+ mongod(_ZN5mongo9DbMessage9nextJsObjEv+0x111) [0xc8fa91]
+ mongod(_ZN5mongo12QueryMessageC2ERNS_9DbMessageE+0x5D) [0xa526ed]
+ mongod(+0x9B3DE2) [0xdb3de2]
+ mongod(_ZN5mongo16assembleResponseEPNS_16OperationContextERNS_7MessageERNS_10DbResponseERKNS_11HostAndPortE+0x7D6) [0xdb7396]
+ mongod(+0x5C65C0) [0x9c65c0]
+ mongod(_ZN5mongo17PortMessageServer17handleIncomingMsgEPv+0x311) [0x14fcb51]
+ libpthread.so.0(+0x8184) [0x7ff75b2c6184]
+ libc.so.6(clone+0x6D) [0x7ff75aff2ffd]
+-----  END BACKTRACE  -----
+2019-07-07T21:40:54.342-0400 I NETWORK  [conn135] AssertionException handling request, closing client connection: 10304 Client Error: Remaining data too small for BSON object
+2019-07-08T03:27:10.674-0400 I NETWORK  [initandlisten] connection accepted from 173.82.206.147:48254 #136 (6 connections now open)
+2019-07-08T03:27:20.680-0400 I NETWORK  [conn136] end connection 173.82.206.147:48254 (5 connections now open)
+2019-07-08T04:22:47.534-0400 I NETWORK  [initandlisten] connection accepted from 35.241.209.78:50768 #137 (6 connections now open)
+2019-07-08T04:22:47.556-0400 I NETWORK  [conn137] end connection 35.241.209.78:50768 (5 connections now open)
+2019-07-08T04:27:17.416-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.67:12442 #138 (6 connections now open)
+2019-07-08T04:27:17.636-0400 I NETWORK  [conn138] end connection 216.218.206.67:12442 (5 connections now open)
+2019-07-08T04:27:25.858-0400 I NETWORK  [initandlisten] connection accepted from 216.218.206.67:32378 #139 (6 connections now open)
+2019-07-08T04:27:25.998-0400 I NETWORK  [conn139] end connection 216.218.206.67:32378 (5 connections now open)
+2019-07-08T13:27:14.648-0400 I NETWORK  [initandlisten] connection accepted from 173.82.206.147:48432 #140 (6 connections now open)
+2019-07-08T13:27:14.959-0400 I NETWORK  [conn140] end connection 173.82.206.147:48432 (5 connections now open)
+2019-07-08T17:02:19.557-0400 I NETWORK  [initandlisten] connection accepted from 162.243.149.232:53758 #141 (6 connections now open)
+2019-07-08T17:02:29.418-0400 I NETWORK  [conn141] end connection 162.243.149.232:53758 (5 connections now open)
+2019-07-08T21:00:36.672-0400 I NETWORK  [initandlisten] connection accepted from 196.52.43.58:56421 #142 (6 connections now open)
+2019-07-08T21:00:39.816-0400 I NETWORK  [conn142] end connection 196.52.43.58:56421 (5 connections now open)
+2019-07-09T03:12:16.420-0400 I COMMAND  [conn1] command tattoo-brands.orders command: find { find: "orders", filter: {}, sort: { createdAt: -1 }, limit: 100 } planSummary: COLLSCAN keysExamined:0 docsExamined:883 hasSortStage:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:7 nreturned:100 reslen:501089 locks:{ Global: { acquireCount: { r: 16 } }, Database: { acquireCount: { r: 8 } }, Collection: { acquireCount: { r: 8 } } } protocol:op_query 241ms
+2019-07-09T05:03:25.094-0400 I NETWORK  [initandlisten] connection accepted from 173.82.206.147:42230 #143 (6 connections now open)
+2019-07-09T05:03:35.105-0400 I NETWORK  [conn143] end connection 173.82.206.147:42230 (5 connections now open)
+2019-07-09T05:09:39.730-0400 I NETWORK  [initandlisten] connection accepted from 173.82.206.147:55480 #144 (6 connections now open)
+2019-07-09T05:09:40.437-0400 I NETWORK  [conn144] end connection 173.82.206.147:55480 (5 connections now open)
+2019-07-09T06:33:31.304-0400 I COMMAND  [conn3] command tattoo-brands.products command: aggregate { aggregate: "products", pipeline: [ { $sample: { size: 4 } } ] } keyUpdates:0 writeConflicts:0 numYields:9 reslen:10820 locks:{ Global: { acquireCount: { r: 24 } }, Database: { acquireCount: { r: 12 } }, Collection: { acquireCount: { r: 12 } } } protocol:op_query 101ms
+2019-07-09T06:41:05.575-0400 I COMMAND  [conn4] command tattoo-brands.orders command: find { find: "orders", filter: {}, sort: { createdAt: -1 }, limit: 100 } planSummary: COLLSCAN keysExamined:0 docsExamined:884 hasSortStage:1 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:8 nreturned:100 reslen:493978 locks:{ Global: { acquireCount: { r: 18 } }, Database: { acquireCount: { r: 9 } }, Collection: { acquireCount: { r: 9 } } } protocol:op_query 121ms
+2019-07-09T10:10:20.715-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:46284 #145 (6 connections now open)
+2019-07-09T10:10:20.947-0400 I NETWORK  [conn145] end connection 74.82.47.4:46284 (5 connections now open)
+2019-07-09T10:10:29.183-0400 I NETWORK  [initandlisten] connection accepted from 74.82.47.4:2896 #146 (6 connections now open)
+2019-07-09T10:10:29.324-0400 I NETWORK  [conn146] end connection 74.82.47.4:2896 (5 connections now open)
+2019-07-09T14:02:31.077-0400 I NETWORK  [initandlisten] connection accepted from 162.243.150.222:57028 #147 (6 connections now open)
+2019-07-09T14:02:40.934-0400 I NETWORK  [conn147] end connection 162.243.150.222:57028 (5 connections now open)
+2019-07-09T19:37:49.900-0400 I NETWORK  [initandlisten] connection accepted from 185.193.125.140:53640 #148 (6 connections now open)
+2019-07-09T19:37:49.971-0400 I NETWORK  [conn148] end connection 185.193.125.140:53640 (5 connections now open)
+2019-07-10T02:19:54.223-0400 I NETWORK  [initandlisten] connection accepted from 45.67.14.199:46342 #149 (6 connections now open)
+2019-07-10T02:19:54.226-0400 I NETWORK  [conn149] end connection 45.67.14.199:46342 (5 connections now open)
+2019-07-10T03:34:09.374-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2019-07-10T03:34:09.374-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-07-10T03:34:09.380-0400 I CONTROL  [signalProcessingThread] now exiting
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-07-10T03:34:09.380-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-07-10T03:34:09.381-0400 I NETWORK  [conn2] end connection 127.0.0.1:55879 (4 connections now open)
+2019-07-10T03:34:09.381-0400 I NETWORK  [conn1] end connection 127.0.0.1:55878 (4 connections now open)
+2019-07-10T03:34:09.381-0400 I NETWORK  [conn4] end connection 127.0.0.1:55881 (4 connections now open)
+2019-07-10T03:34:09.381-0400 I NETWORK  [conn3] end connection 127.0.0.1:55880 (4 connections now open)
+2019-07-10T03:34:09.381-0400 I NETWORK  [conn5] end connection 127.0.0.1:55882 (4 connections now open)
+2019-07-10T03:34:09.382-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-07-10T03:34:09.451-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-07-10T03:34:09.452-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

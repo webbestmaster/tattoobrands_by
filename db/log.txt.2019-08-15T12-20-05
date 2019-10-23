@@ -1,0 +1,82 @@
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] MongoDB starting : pid=12039 port=27017 dbpath=/home/deploy/apps/tattoobrands_by/./db/data 64-bit host=tatoo-store
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] db version v3.2.16
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] git version: 056bf45128114e44c5358c7a8776fb582363e094
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1f 6 Jan 2014
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] modules: none
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] build environment:
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten]     distarch: x86_64
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-08-15T05:33:30.166-0400 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, storage: { dbPath: "./db/data" }, systemLog: { destination: "file", path: "./db/log.txt" } }
+2019-08-15T05:33:30.190-0400 I -        [initandlisten] Detected data files in /home/deploy/apps/tattoobrands_by/./db/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-08-15T05:33:30.190-0400 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2019-08-15T05:33:30.472-0400 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2019-08-15T05:33:30.472-0400 I CONTROL  [initandlisten] 
+2019-08-15T05:33:30.488-0400 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/deploy/apps/tattoobrands_by/./db/data/diagnostic.data'
+2019-08-15T05:33:30.488-0400 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-08-15T05:33:30.488-0400 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2019-08-15T05:33:35.144-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44365 #1 (1 connection now open)
+2019-08-15T05:33:35.169-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44366 #2 (2 connections now open)
+2019-08-15T05:33:35.169-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44367 #3 (3 connections now open)
+2019-08-15T05:33:35.169-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44368 #4 (4 connections now open)
+2019-08-15T05:33:35.170-0400 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44369 #5 (5 connections now open)
+2019-08-15T07:24:21.560-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:35241 #6 (6 connections now open)
+2019-08-15T07:24:25.269-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:36046 #7 (7 connections now open)
+2019-08-15T07:24:40.980-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:41132 #8 (8 connections now open)
+2019-08-15T07:25:00.982-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:47176 #9 (9 connections now open)
+2019-08-15T07:25:15.117-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:51432 #10 (10 connections now open)
+2019-08-15T07:25:32.359-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:56422 #11 (11 connections now open)
+2019-08-15T07:25:32.372-0400 I NETWORK  [conn6] end connection 120.52.152.3:35241 (10 connections now open)
+2019-08-15T07:25:34.699-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:56734 #12 (11 connections now open)
+2019-08-15T07:25:40.444-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:58872 #13 (12 connections now open)
+2019-08-15T07:25:40.812-0400 I NETWORK  [conn13] end connection 120.52.152.3:58872 (11 connections now open)
+2019-08-15T07:25:43.109-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:60084 #14 (12 connections now open)
+2019-08-15T07:25:57.076-0400 I NETWORK  [conn14] end connection 120.52.152.3:60084 (11 connections now open)
+2019-08-15T07:26:05.730-0400 I NETWORK  [initandlisten] connection accepted from 120.52.152.3:33612 #15 (12 connections now open)
+2019-08-15T07:26:06.811-0400 I NETWORK  [conn15] AssertionException handling request, closing client connection: 17132 SSL handshake received but server is started without SSL support
+2019-08-15T07:33:55.306-0400 I NETWORK  [initandlisten] connection accepted from 117.50.63.227:35640 #16 (12 connections now open)
+2019-08-15T07:33:55.725-0400 I NETWORK  [initandlisten] connection accepted from 117.50.63.227:36102 #17 (13 connections now open)
+2019-08-15T07:34:05.974-0400 I NETWORK  [conn16] end connection 117.50.63.227:35640 (12 connections now open)
+2019-08-15T07:34:06.182-0400 I NETWORK  [initandlisten] connection accepted from 117.50.63.227:47456 #18 (13 connections now open)
+2019-08-15T07:34:06.183-0400 I NETWORK  [initandlisten] connection accepted from 117.50.63.227:47458 #19 (14 connections now open)
+2019-08-15T07:34:11.142-0400 I NETWORK  [initandlisten] connection accepted from 117.50.63.227:52644 #20 (15 connections now open)
+2019-08-15T07:34:11.142-0400 I NETWORK  [conn20] end connection 117.50.63.227:52644 (14 connections now open)
+2019-08-15T07:34:11.620-0400 I NETWORK  [initandlisten] connection accepted from 106.75.85.117:36402 #21 (15 connections now open)
+2019-08-15T07:34:11.620-0400 I NETWORK  [conn21] end connection 106.75.85.117:36402 (14 connections now open)
+2019-08-15T07:38:49.149-0400 I NETWORK  [conn9] end connection 120.52.152.3:47176 (13 connections now open)
+2019-08-15T07:39:04.510-0400 I NETWORK  [conn10] end connection 120.52.152.3:51432 (12 connections now open)
+2019-08-15T07:39:50.535-0400 I NETWORK  [initandlisten] connection accepted from 117.50.5.94:47640 #22 (13 connections now open)
+2019-08-15T07:39:51.406-0400 I NETWORK  [initandlisten] connection accepted from 117.50.5.94:48532 #23 (14 connections now open)
+2019-08-15T07:40:01.601-0400 I NETWORK  [conn22] end connection 117.50.5.94:47640 (13 connections now open)
+2019-08-15T07:40:01.796-0400 I NETWORK  [initandlisten] connection accepted from 117.50.5.94:59028 #24 (14 connections now open)
+2019-08-15T07:40:01.798-0400 I NETWORK  [initandlisten] connection accepted from 117.50.5.94:59030 #25 (15 connections now open)
+2019-08-15T07:40:06.791-0400 I NETWORK  [initandlisten] connection accepted from 117.50.5.94:35868 #26 (16 connections now open)
+2019-08-15T07:40:06.792-0400 I NETWORK  [conn26] end connection 117.50.5.94:35868 (15 connections now open)
+2019-08-15T07:40:37.183-0400 I NETWORK  [conn11] end connection 120.52.152.3:56422 (14 connections now open)
+2019-08-15T07:40:37.686-0400 I NETWORK  [conn12] end connection 120.52.152.3:56734 (13 connections now open)
+2019-08-15T07:40:40.467-0400 I NETWORK  [conn8] end connection 120.52.152.3:41132 (12 connections now open)
+2019-08-15T07:40:46.611-0400 I NETWORK  [conn7] end connection 120.52.152.3:36046 (11 connections now open)
+2019-08-15T07:50:13.395-0400 I NETWORK  [conn17] end connection 117.50.63.227:36102 (10 connections now open)
+2019-08-15T07:50:24.659-0400 I NETWORK  [conn18] end connection 117.50.63.227:47456 (9 connections now open)
+2019-08-15T07:50:24.659-0400 I NETWORK  [conn19] end connection 117.50.63.227:47458 (9 connections now open)
+2019-08-15T07:56:09.747-0400 I NETWORK  [conn23] end connection 117.50.5.94:48532 (7 connections now open)
+2019-08-15T07:56:19.987-0400 I NETWORK  [conn25] end connection 117.50.5.94:59030 (6 connections now open)
+2019-08-15T07:56:19.987-0400 I NETWORK  [conn24] end connection 117.50.5.94:59028 (6 connections now open)
+2019-08-15T08:19:52.867-0400 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2019-08-15T08:19:52.867-0400 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-15T08:19:52.869-0400 I CONTROL  [signalProcessingThread] now exiting
+2019-08-15T08:19:52.869-0400 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-15T08:19:52.869-0400 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-15T08:19:52.869-0400 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2019-08-15T08:19:52.869-0400 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2019-08-15T08:19:52.869-0400 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-15T08:19:52.870-0400 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-15T08:19:52.872-0400 I NETWORK  [conn2] end connection 127.0.0.1:44366 (4 connections now open)
+2019-08-15T08:19:52.872-0400 I NETWORK  [conn1] end connection 127.0.0.1:44365 (4 connections now open)
+2019-08-15T08:19:52.872-0400 I NETWORK  [conn4] end connection 127.0.0.1:44368 (4 connections now open)
+2019-08-15T08:19:52.872-0400 I NETWORK  [conn3] end connection 127.0.0.1:44367 (4 connections now open)
+2019-08-15T08:19:52.872-0400 I NETWORK  [conn5] end connection 127.0.0.1:44369 (4 connections now open)
+2019-08-15T08:19:52.875-0400 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-15T08:19:52.911-0400 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-15T08:19:52.911-0400 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
