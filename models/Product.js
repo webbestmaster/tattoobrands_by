@@ -28,7 +28,7 @@ Product.add({
     // link to products
     link: {type: Types.Url, noedit: true, 'default': ''},
     // product name
-    name: {type: String, initial: true, required: true, index: true, 'default': ''},
+    name: {type: String, initial: true, required: true, 'default': ''},
     // description of product, in html
     description: {type: Types.Html, wysiwyg: true, height: 300},
     // unique product id, set by human

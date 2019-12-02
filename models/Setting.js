@@ -26,7 +26,7 @@ const imageStorage = new keystone.Storage({
 
 Setting.add({
     // product name
-    name: {type: String, initial: true, required: true, index: true, 'default': ''},
+    name: {type: String, initial: true, required: true, 'default': ''},
     exchangeRate: {type: Number, 'default': 1, label: 'Exchange rate'}
 });
 

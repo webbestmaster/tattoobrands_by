@@ -22,7 +22,7 @@ Order.add({
     // link to products
     link: {type: Types.Url, noedit: true, 'default': ''},
     // order name
-    name: {type: String, initial: true, required: true, index: true, 'default': ''},
+    name: {type: String, initial: true, required: true, 'default': ''},
 
     // user info
     user: {

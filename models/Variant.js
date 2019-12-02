@@ -17,7 +17,7 @@ const Variant = new keystone.List('Variant', {
 
 const variantSrc = {
     // product name, really this is ID
-    name: {type: String, initial: true, required: true, index: true, 'default': ''},
+    name: {type: String, initial: true, required: true, 'default': ''},
 
     // name to show for user
     displayName: {type: String}
