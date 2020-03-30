@@ -75,3 +75,6 @@ scp deploy@188.166.70.236:~/apps/tattoobrands_by/site-2017-10-28-08-48-51.zip ~/
 
 #How to download backup
 scp deploy@188.166.70.236:~/tb-<date>.zip ~/tb-<date>.zip
+
+make back up every 1 hour
+> $ nohup watch -n 3600 ./make-file-list.sh &

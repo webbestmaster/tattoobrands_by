@@ -33,7 +33,7 @@ keystone.init({
     views: 'templates/views',
     'view engine': 'pug',
 
-    'auto update': true,
+    'auto update': false,
     session: true,
     'session store': 'mongo',
     auth: true,
