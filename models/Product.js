@@ -100,7 +100,7 @@ Product.relationship({path: 'path-to-product-6', ref: 'Variant', refPath: 'produ
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
-Product.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
+Product.schema.set('autoIndex', false); // eslint-disable-line no-process-env
 
 /**
  * Registration

@@ -101,7 +101,7 @@ Order.schema
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
-Order.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
+Order.schema.set('autoIndex', false); // eslint-disable-line no-process-env
 
 /**
  * Registration

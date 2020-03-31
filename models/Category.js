@@ -69,7 +69,7 @@ Category.schema.pre('save', function createLink(next) {
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
-Category.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
+Category.schema.set('autoIndex', false); // eslint-disable-line no-process-env
 
 Category.relationship({path: 'category', ref: 'Category', refPath: 'categories'});
 

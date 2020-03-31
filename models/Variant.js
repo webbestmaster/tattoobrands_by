@@ -42,7 +42,7 @@ Variant.add(variantSrc);
 
 // disable mongo db auto index
 // see https://github.com/keystonejs/keystone/wiki/Deployment-Checklist
-Variant.schema.set('autoIndex', process.env.IS_DEVELOPMENT); // eslint-disable-line no-process-env
+Variant.schema.set('autoIndex', false); // eslint-disable-line no-process-env
 
 /**
  * Registration
