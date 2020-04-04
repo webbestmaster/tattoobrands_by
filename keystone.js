@@ -35,6 +35,7 @@ keystone.init({
 
     'auto update': false,
     session: true,
+    // TODO: try to remove - 'session store': 'mongo';
     'session store': 'mongo',
     auth: true,
     'user model': 'User'
