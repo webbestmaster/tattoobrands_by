@@ -23,6 +23,9 @@ const keystone = require('keystone');
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+// TODO: connect to mongo, field mongo
+// https://v4.keystonejs.com/documentation/configuration/database-options/
+
 keystone.init({
     name: 'Tattoo Brands',
     brand: 'Tattoo Brands',
@@ -35,7 +38,6 @@ keystone.init({
 
     'auto update': false,
     session: true,
-    // TODO: try to remove - 'session store': 'mongo';
     'session store': 'mongo',
     auth: true,
     'user model': 'User'
