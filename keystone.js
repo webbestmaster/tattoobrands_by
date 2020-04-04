@@ -12,6 +12,8 @@ env.NODE_ENV = NODE_ENV;
 env.IS_DEVELOPMENT = NODE_ENV === DEVELOPMENT;
 env.IS_PRODUCTION = NODE_ENV === PRODUCTION;
 
+console.log(process.env.MONGO_URI)
+
 console.log('App Mode is - ' + env.NODE_ENV);
 console.log('IS_DEVELOPMENT - ' + env.IS_DEVELOPMENT);
 console.log('IS_PRODUCTION - ' + env.IS_PRODUCTION);
@@ -38,6 +40,7 @@ keystone.init({
 
     'auto update': false,
     session: true,
+    mongo: env.MONGO_URI,
     'session store': 'mongo',
     auth: true,
     'user model': 'User'

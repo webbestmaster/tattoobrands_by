@@ -6,7 +6,7 @@ cd ~/apps/tattoobrands_by/
 echo `pwd`
 
 echo "run mongo db"
-sudo mongod --fork --logpath ./db/log.txt --dbpath ./db/data
+sudo mongod --fork --logpath ./db/log.txt --dbpath ./db/data --port=27001
 
 echo "run server"
 pm2 start ./keystone.js --name store

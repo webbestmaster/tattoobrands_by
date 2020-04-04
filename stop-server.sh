@@ -6,7 +6,7 @@ cd ~/apps/tattoobrands_by/
 echo `pwd`
 
 echo "stop mongod"
-sudo mongod --shutdown --dbpath ./db/data
+sudo mongod --shutdown --dbpath ./db/data --port=27001
 
 if [[ `ps -e | grep mongod` = *[!\ ]* ]]; then
   echo "[ERROR] MongoDB still is RUNNING!!!"

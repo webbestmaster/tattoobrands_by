@@ -27,7 +27,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "db": "mongod --dbpath=./db/data",
+    "db": "mongod --dbpath=./db/data --port=27001",
     "db-win": ".\\db-win\\bin\\mongod --dbpath=.\\db-win\\data",
     "db-win-dump": ".\\db-win\\bin\\mongodump --out=.\\db-win\\backup\\set-version",
     "start": "node keystone.js"

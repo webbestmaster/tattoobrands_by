@@ -78,3 +78,6 @@ scp deploy@188.166.70.236:~/tb-<date>.zip ~/tb-<date>.zip
 
 make back up every 1 hour
 > $ nohup watch -n 3600 ./make-file-list.sh &
+
+mongodump --port=27017 --db=tattoo-brands --archive=db.zip
+mongorestore --port=27001 --db=tattoo-brands --archive=./_res/db.zip
