@@ -81,3 +81,4 @@ make back up every 1 hour
 
 mongodump --port=27017 --db=tattoo-brands --archive=db.zip
 mongorestore --port=27001 --db=tattoo-brands --archive=./_res/db.zip
+mongodump --port=27017 --db=tattoo-brands --archive=db-dump-`date +%Y-%m-%d-%H-%M-%S`.zip
