@@ -3,10 +3,14 @@
 // customising the .env file in your project's root folder.
 require('dotenv').config();
 
+const {exec} = require('child_process');
+
 const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 const {env} = process;
 const {NODE_ENV = DEVELOPMENT} = env;
+
+const {dataBaseConst} = require('./const.js');
 
 env.NODE_ENV = NODE_ENV;
 env.IS_DEVELOPMENT = NODE_ENV === DEVELOPMENT;
@@ -77,3 +81,25 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 keystone.start();
+
+function makeDataBaseBackUp() {
+    return new Promise((resolve) => {
+        exec(dataBaseConst.shallCommand.backup, (error, stdout, stderr) => {
+            if (error) {
+                console.log('---> Error:', stderr);
+                resolve(error);
+                return;
+            }
+
+            console.log('db was dumped');
+
+            console.log(stdout);
+
+            resolve(null);
+        });
+    });
+}
+
+makeDataBaseBackUp();
+
+setInterval(makeDataBaseBackUp, 60 * 60 * 1000); // every one hour

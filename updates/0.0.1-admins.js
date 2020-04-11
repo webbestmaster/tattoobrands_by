@@ -7,6 +7,7 @@
  * module.exports = function(done) { ... }
  */
 
+/*
 exports.create = {
     User: [
         {
@@ -18,6 +19,7 @@ exports.create = {
         }
     ]
 };
+*/
 
 /*
 

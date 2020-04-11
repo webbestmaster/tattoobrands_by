@@ -16,5 +16,5 @@ node_modules/
 package-lock.json
 
 # Data Base
-#/db
+/db
 /db-win
