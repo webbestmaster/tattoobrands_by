@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-start ./keystone.js
+node ./keystone.js
