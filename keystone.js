@@ -4,13 +4,15 @@
 require('dotenv').config();
 
 const {exec} = require('child_process');
+const fileSystem = require('fs');
+const path = require('path');
 
 const DEVELOPMENT = 'development';
 const PRODUCTION = 'production';
 const {env} = process;
 const {NODE_ENV = DEVELOPMENT} = env;
 
-const {dataBaseConst} = require('./const.js');
+const {dataBaseConst, databaseDumpFolderName} = require('./const.js');
 
 env.NODE_ENV = NODE_ENV;
 env.IS_DEVELOPMENT = NODE_ENV === DEVELOPMENT;
@@ -95,7 +97,38 @@ function makeDataBaseBackUp() {
 
             console.log(stdout);
 
+            removeOldDataBaseBackUp();
+
             resolve(null);
+        });
+    });
+}
+
+function removeOldDataBaseBackUp() {
+    const maxBackUpCount = 200;
+
+    fileSystem.readdir(databaseDumpFolderName, (error, fileList) => {
+        if (error) {
+            console.log('removeOldDataBaseBackUp: unable to scan directory: ' + error.message);
+            return;
+        }
+
+        // new files at first
+        const sortedFileNameList = fileList.sort((nameA, nameB) => {
+            return nameA < nameB ? 1 : -1;
+        });
+
+        // all files after maxBackUpCount
+        const extraFileNameList = sortedFileNameList.slice(maxBackUpCount);
+
+        extraFileNameList.forEach((fileNameToRemove) => {
+            const pathToFile = path.join(databaseDumpFolderName, fileNameToRemove);
+
+            fileSystem.unlink(pathToFile, (errorForRemove) => {
+                if (errorForRemove) {
+                    console.log('removeOldDataBaseBackUp: can not remove file: ' + errorForRemove.message);
+                }
+            });
         });
     });
 }

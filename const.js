@@ -1,6 +1,8 @@
 const mainDataBaseName = 'tattoo-brands';
 const databaseDumpFolderName = 'db-dump';
 
+module.exports.databaseDumpFolderName = databaseDumpFolderName;
+
 module.exports.dataBaseConst = {
     url: 'mongodb://localhost:27001,localhost:27002,localhost:27003,localhost:27004?replicaSet=MyBestReplica',
     shallCommand: {
