@@ -6,6 +6,6 @@
 
 <p><a href="{{= host }}/order/{{= order.slug }}" target="_blank">Открыть заказ в браузере.</a></p>
 
-<p><a href="{{= host }}/api/pdf-order/{{= slug }}.pdf" download="tattoobrands.by-{{= slug }}.pdf">Скачать заказ как PDF.</a></p>
+<p><a href="{{= host }}/api/pdf-order/{{= slug }}.pdf" download="tattoo-brands.by-{{= slug }}.pdf">Скачать заказ как PDF.</a></p>
 <br />
-<p>С уважением команда TattooBrands.by</p>
+<p>С уважением команда Tattoo-Brands.by</p>

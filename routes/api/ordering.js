@@ -121,7 +121,7 @@ const config = {
     border: '0.4in', // default is 0, units: mm, cm, in, px
     header: {
         height: '15mm',
-        contents: '<h1 class="page-header">TattooBrands.by</h1>'
+        contents: '<h1 class="page-header">Tattoo-Brands.by</h1>'
     },
     footer: {
         height: '1mm',

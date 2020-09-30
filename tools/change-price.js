@@ -1,5 +1,5 @@
 const host = 'http://localhost:3000';
-// const host = 'http://tattoobrands.by';
+// const host = 'http://tattoo-brands.by';
 const http = require('http');
 const productList = require('./product-list');
 

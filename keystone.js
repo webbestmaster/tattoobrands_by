@@ -61,7 +61,7 @@ keystone.import('models');
 keystone.set('locals', {
     externalStorage: '/external-storage',
     defaultCountry: 'Беларусь',
-    host: 'http://tattoobrands.by/'
+    host: 'http://tattoo-brands.by/'
     // _: require('lodash'), // eslint-disable-line id-length
     // env: keystone.get('env')
     // utils: keystone.utils,
