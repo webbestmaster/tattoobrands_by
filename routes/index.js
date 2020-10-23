@@ -116,7 +116,7 @@ exports = module.exports = app => { // eslint-disable-line max-statements
         keystone
             .list('Product')
             .model
-            .findOne({oldLink: 'http://tattoo-brands.by/products/' + slug})
+            .findOne({oldLink: 'http://tattoobrands.by/products/' + slug})
             .exec((err, product) => {
                 if (!err && product) {
                     params.slug = product.slug;

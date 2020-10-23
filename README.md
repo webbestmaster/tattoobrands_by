@@ -1,5 +1,5 @@
-# tattoo-brands_by
-Tattoo-Brands.by
+# tattoobrands_by
+TattooBrands.by
 
 Steps:
 

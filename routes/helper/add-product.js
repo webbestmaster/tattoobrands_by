@@ -23,7 +23,7 @@ module.exports = (req, res) => {
         properties: properties
             .filter(({key, value}) => key && value && key.toString().trim() && value.toString().trim())
             .map(({key, value}) => [key, value].join(' : ')),
-        oldLink: 'http://tattoo-brands.by/products/' + slug
+        oldLink: 'http://tattoobrands.by/products/' + slug
     };
 
     const newProduct = new Product.model(product); // eslint-disable-line new-cap

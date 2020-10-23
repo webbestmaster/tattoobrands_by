@@ -21,7 +21,7 @@ exports.initLocals = (req, res, next) => {
 
     const {locals} = res;
 
-    locals.title = 'Магазин профессионального оборудования и аксессуаров для тату | Tattoo-Brands';
+    locals.title = 'Магазин профессионального оборудования и аксессуаров для тату | TattooBrands';
     locals.description = 'Магазин профессионального оборудования и аксессуаров для тату по лучшим ценам в Беларуси. Заходите и выбирайте!'; // eslint-disable-line max-len
     locals.keywords = '';
     locals.user = req.user;

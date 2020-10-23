@@ -7,6 +7,6 @@ Disallow: /account
 Disallow: /api
 Disallow: /add-product
 Disallow: /remove-product
-Sitemap: http://tattoo-brands.by/sitemap.xml
+Sitemap: http://tattoobrands.by/sitemap.xml
 
-Host: http://tattoo-brands.by
+Host: http://tattoobrands.by
