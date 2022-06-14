@@ -88,6 +88,12 @@ module.exports.createOrder = (req, res) => {
 
             const {slug} = newOrder;
 
+            res.json({
+                success: true,
+                slug
+            });
+
+/*
             sendEmailStatus(slug)
                 .then(() => res.json({
                     success: true,
@@ -97,6 +103,7 @@ module.exports.createOrder = (req, res) => {
                     success: false,
                     error: authorizationResponse.canNotSendEmailAuthorized
                 }));
+*/
         });
     });
 };
