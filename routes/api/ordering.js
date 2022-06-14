@@ -95,7 +95,7 @@ module.exports.createOrder = (req, res) => {
                 }))
                 .catch(() => res.json({
                     success: false,
-                    error: authorizationResponse.unknowError
+                    error: authorizationResponse.canNotSendEmailAuthorized
                 }));
         });
     });

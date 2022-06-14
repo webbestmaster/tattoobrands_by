@@ -24,6 +24,10 @@ const authorizationResponse = {
     notAuthorized: {
         id: 'not-authorized',
         message: 'not authorized'
+    },
+    canNotSendEmailAuthorized: {
+        id: 'can-not-send-email',
+        message: 'can-not-send-email'
     }
 };
 
