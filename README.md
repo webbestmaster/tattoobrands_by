@@ -3,7 +3,7 @@ TattooBrands.by
 
 Rerun
 
-> ./mongo-start.sh
+> ./mongo-start.sh \
 > sudo pm2 start ./start-server.sh
 
 Steps:
