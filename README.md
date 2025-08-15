@@ -1,6 +1,11 @@
 # tattoobrands_by
 TattooBrands.by
 
+Rerun
+
+> ./mongo-start.sh
+> sudo pm2 start ./start-server.sh
+
 Steps:
 
 - Install keystone:
